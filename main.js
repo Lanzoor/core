@@ -37,6 +37,3 @@ time_text.addEventListener('mouseenter', () => (time_hovered = true));
 time_text.addEventListener('mouseleave', () => (time_hovered = false));
 
 updateTime();
-
-const mbti_text = document.getElementById('mbti_text');
-mbti_text.title = 'I - Introverted&#10;N - Overthinks&#10;T - Thinks before empathizing&#10;P - Prefers the flow';
