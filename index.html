@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lanzoor's Profile</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to my profile!</h1>
+        <h1 id="top">Welcome to my profile!</h1>
 
         <div id="profile-block">
             <img id="profile-pic" src="./assets/iris_modern.png" alt="profile picture">
@@ -32,27 +32,52 @@
         <h2>About me</h2>
 
         <p>
+            Hover over
+            <span class="tooltip">
+                <span class="tooltip-label">cyan</span>
+                <span class="tooltip-text">Yep, just like this! :D</span>
+            </span>
+            text for more information!
+
+            <br><br>
+
             <b>Hello there!</b> 👋<br>
 
-            I go by the name of <b>Lanzoor</b>, but you can also call me <b>Lanzy</b>! My Japanese name is
-            <ruby>
-                光星
-                <rp>(</rp><rt>こうせい</rt>
-            </ruby>
-            <ruby>
-                蘭蒼瑠
-                <rt>らんそうる</rt><rp>)</rp>
-            </ruby> but you can still call me ランジョア.<br>
+            I go by the name of
+
+            <span class="tooltip">
+                <span class="tooltip-label">Lanzoor</span>
+                <span class="tooltip-text">There's no specific origin in this name, <br>I just thought of it when I was very young.<br>My name is pronounced <i>/lɑn'zɔəɹ/</i>,<br>and the <b>oo</b> in my name is NOT pronounced like <i>/u/</i>.</span>
+            </span>, but you can also call me <b>Lanzy</b>! My Japanese name is
+
+            <span class="tooltip">
+                <span class="tooltip-label">光星 蘭蒼瑠 (こうせい らんそうる)</span>
+                <span class="tooltip-text">
+                    The primary name means <b>glowing star</b>,<br>
+                    and the secondary name means <b>orchid + teal/blue/cyan + lapis lazuli</b>.<br>
+                </span>
+            </span> but you can still call me ランジョア.<br>
+
             My pronouns are <b>he/him</b>, and I live in <b>South Korea</b> 🇰🇷! (UTC+9, it is <code id="time_text">HH:MM:SS</code> here!)<br>
-            I joined Discord on <b>October 7th, 2023</b>, and I am usually active on Discord most of the time. My birthday is <b>November 2nd</b> 🎂<br>
-            My MBTI is <span class="tooltip"><b>INTP</b><span class="tooltip-text">
-        I - Introverted<br>
-        N - Overthinks<br>
-        T - Thinks before empathizing<br>
-        P - Prefers the flow
-    </span>
-</span>! <span title="Not this text, though!">(hover for more information)</span> However, due to some <span title="If you want, add /private to the URL."><i>personal reasons</i></span>, <span title="Definitely not a
-命に嫌われている reference...">life decided to hate on me</span>, and I have developed ADHD, OCD and social anxiety.<br>
+            I am usually active on Discord most of the time. My birthday is <b>November 2nd</b> 🎂, and my <span title="In fact, I love this color so much that the whole document you're reading RIGHT NOW is purple! How interesting!!!!">favorite color</span> is <b id="color">Blue / Indigo / Purple</b>.<br>
+            My MBTI is
+            <span class="tooltip">
+                <span class="tooltip-label">INTP</span>
+                <span class="tooltip-text">
+                    I - Introverted<br>
+                    N - Overthinks<br>
+                    T - Thinks before empathizing<br>
+                    P - Prefers the flow
+                </span>
+            </span>!
+
+            However, due to
+            <span class="tooltip">
+                <span class="tooltip-label"><i>some reasons</i></span>
+                <span class="tooltip-text">
+                    If you want to, append <b>/private</b> to the URL.
+                </span>
+            </span>, life decided to hate on me, and I have developed ADHD, OCD and social anxiety.<br>
             I enjoy doing lots of things, but I am just going to name a few:
         </p>
 
@@ -87,7 +112,7 @@
                 I play games everytime I'm bored or I'm overwhelmed by everything, but lately I have been returning back to programming.<br>
             </li>
             <li>
-                🎧 <b>Listening to music, and playing instruments.</b><br>
+                🎧 <b>Listening to music, and playing instruments</b><br>
                 <span title="I really, REALLY hate Korean music.">I really, <i>really</i> like Japanese music.</span> I mostly enjoy <span title="HELLO!! I'M EMU OTORI! EMU IS MEANING... SMILE!!!!!!!!"><b>Project Sekai</b></span> songs and <b>vocaloid</b> songs, as well as general J-pop.<br>
                 I also listen to electronic music occasionally. I always put music on when programming or working on anything.<br>
                 I like discovering random music, and occasionally looking back at Geometry Dash music. <span title="Yes. Everything is nostalgia for me.">(brings me a lot of nostalgia)</span><br>
@@ -101,51 +126,52 @@
         <p>
             That said, if you have any suggestions for any of my conlangs or my works, feel free to <a href="#connections">contact me </a> and ask me about your inquiry!<br><br>
             Thanks for reading this to the end! I will add more stuff about myself later on, <span title="I know that you won't. ( ͡° ͜ʖ ͡°)">so please check here frequently, but only if you'd like :3</span><br>
-            <span id="dim">Psst, there's some easter eggs scattered around that pop up when you hover over texts. Good luck finding them!</span>
+            <span class="dim">Psst, there's some easter eggs scattered around that pop up when you hover over texts. Good luck finding them!</span>
         </p>
 
         <h2 id="connections">Connections</h2>
 
         <table id="connections-table">
-        <tr>
-            <th class="strong">Platform</th>
-            <th class="strong">Link / Handle</th>
-        </tr>
-        <tr>
-            <th><span id="steam">Steam</span></th>
-            <td>
-            <a href="https://steamcommunity.com/id/lanzoor/" target="_blank">
-                steamcommunity.com/id/lanzoor/
-            </a>
-            </td>
-        </tr>
-        <tr>
-            <th><span id="github">GitHub</span></th>
-            <td>
-            <a href="https://github.com/Lanzoor" target="_blank">
-                github.com/Lanzoor
-            </a>
-            </td>
-        </tr>
-        <tr>
-            <th><span id="reddit">Reddit</span></th>
-            <td>
-            <a href="https://www.reddit.com/user/Lanzoor/" target="_blank">
-                reddit.com/user/Lanzoor
-            </a>
-            </td>
-        </tr>
-        <tr>
-            <th><span id="discord">Discord</span></th>
-            <td><code>lanzoor</code></td>
-        </tr>
+            <tr>
+                <th class="strong">Platform</th>
+                <th class="strong">Link / Handle</th>
+            </tr>
+            <tr>
+                <th><span id="steam">Steam</span></th>
+                <td>
+                <a href="https://steamcommunity.com/id/lanzoor/" target="_blank">
+                    steamcommunity.com/id/lanzoor/
+                </a>
+                </td>
+            </tr>
+            <tr>
+                <th><span id="github">GitHub</span></th>
+                <td>
+                <a href="https://github.com/Lanzoor" target="_blank">
+                    github.com/Lanzoor
+                </a>
+                </td>
+            </tr>
+            <tr>
+                <th><span id="reddit">Reddit</span></th>
+                <td>
+                <a href="https://www.reddit.com/user/Lanzoor/" target="_blank">
+                    reddit.com/user/Lanzoor
+                </a>
+                </td>
+            </tr>
+            <tr>
+                <th><span id="discord">Discord</span></th>
+                <td><code>lanzoor</code></td>
+            </tr>
 
-        <tr>
-            <th><span id="google">Google / Gmail</span></th>
-            <td><code>lanzoorgaming@gmail.com</code></td>
-        </tr>
+            <tr>
+                <th><span id="google">Google / Gmail</span></th>
+                <td><code>lanzoorgaming@gmail.com</code></td>
+            </tr>
         </table>
 
+        <button id="back-to-top">↑ Go back to the top ↑</button>
     </div>
     <script src="./main.js"></script>
 </body>

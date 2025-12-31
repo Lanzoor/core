@@ -54,6 +54,7 @@ body {
 .container h1 {
     color: #ffffff;
     margin: 2rem 0;
+    margin-bottom: 4rem;
     line-height: 1.2;
 }
 
@@ -110,12 +111,12 @@ body {
 .container strong {
     text-shadow: 0 0 25px currentColor;
     color: #e6e6fa;
-    font-weight: 700;
+    font-style: bold;
 }
 
 .container i,
 .container em {
-    color: #d8bfd8;
+    color: #ffe4ff;
     font-style: italic;
 }
 
@@ -147,41 +148,6 @@ body {
     color: #ffffff;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-
-    .container {
-        padding: 1.5rem;
-        max-width: 98%;
-    }
-
-    .container p {
-        line-height: 1.4;
-        font-size: 1rem;
-        text-align: justify;
-    }
-
-    .container li {
-        line-height: 1.45;
-        margin-bottom: 0.5em;
-    }
-}
-
-@media (max-width: 480px) {
-    .container h1 {
-        margin: 1.5rem 0;
-    }
-    .container h2 {
-        margin: 1.5rem 0;
-    }
-    .container p {
-        line-height: 1.35;
-        padding: 0 0.5rem;
-    }
-}
-
 #profile-block {
     position: fixed;
     top: 7rem;
@@ -194,7 +160,7 @@ body {
 }
 
 #profile-pic {
-    width: clamp(80px, 10vw, 140px);
+    width: clamp(80px, 10vw, 250px);
     height: auto;
     border-radius: 10%;
     border: 2px solid white;
@@ -204,46 +170,14 @@ body {
 
 @keyframes pulseGlow {
     0% {
-        box-shadow: 0 0 10px white;
+        box-shadow: 0 0 20px white;
     }
     50% {
-        box-shadow: 0 0 30px white;
+        box-shadow: 0 0 40px white;
     }
     100% {
-        box-shadow: 0 0 10px white;
+        box-shadow: 0 0 20px white;
     }
-}
-
-.tooltip {
-    position: relative;
-    cursor: pointer;
-}
-
-.tooltip-text {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 130%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(50, 4, 111, 0.5);
-    backdrop-filter: blur(4px);
-    border: 2px solid rgb(168, 121, 255);
-    box-shadow: inset 0 0 10px rgb(168, 121, 255);
-    padding: 16px 20px;
-    border-radius: 12px;
-    white-space: nowrap;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-}
-
-.tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-}
-
-rt {
-    font-size: 10px;
 }
 
 #private {
@@ -297,8 +231,7 @@ rt {
 #connections-table,
 #connections-table th,
 #connections-table td {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 2em;
     text-align: center;
     border: 2px solid rgb(100, 105, 130);
     border-collapse: collapse;
@@ -313,13 +246,129 @@ rt {
 }
 
 #connections-table th {
-    background-color: rgba(100, 105, 130, 0.5);
+    background-color: rgba(100, 105, 130, 0.4);
 }
 
 #connections-table .strong {
-    background-color: rgba(100, 105, 130, 0.75);
+    background-color: rgba(100, 105, 130, 0.6);
 }
 
-#dim {
+#connections-table td:hover,
+#connections-table th:hover,
+#connections-table .strong:hover {
+    box-shadow: inset 0 0 10px #ffffff50;
+}
+
+#connections-table td:hover {
+    background-color: rgba(100, 105, 130, 0.25);
+}
+
+#connections-table th:hover {
+    background-color: rgba(100, 105, 130, 0.5);
+}
+
+#connections-table .strong:hover {
+    background-color: rgba(100, 105, 130, 0.9);
+}
+
+#color {
+    background: linear-gradient(90deg, #4a36ff, #6f36ff, #8c3aff);
+    text-shadow: 0 0 20px #6f43ff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#back-to-top {
+    margin: 10vh auto 0 auto;
+    display: block;
+
+    margin-top: 10vh;
+    padding: 1em;
+    border-radius: 50px;
+    font-size: 50px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+    box-shadow: inset 0 0 20px #3e0edd, 0 50px 50px #3e0edd;
+    border: 5px solid #6464e5;
+    background: linear-gradient(120deg, #18065f, #3e0edd);
+    transition: all 0.2s ease;
+}
+
+.dim {
     opacity: 0.25;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container p {
+        line-height: 1.4;
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    .container li {
+        line-height: 1.45;
+        margin-bottom: 0.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container h1 {
+        margin: 1.5rem 0;
+    }
+
+    .container h2 {
+        margin: 1.5rem 0;
+    }
+
+    .container p {
+        line-height: 1.35;
+        padding: 0 0.5rem;
+    }
+}
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.tooltip-label {
+    text-shadow: 0 0 10px rgb(80, 238, 255) !important;
+    display: inline-block;
+    position: relative;
+    vertical-align: 0em;
+    font-weight: bold;
+}
+
+.tooltip-label i {
+    text-shadow: 0 0 20px rgb(40, 5, 111);
+}
+.tooltip-text {
+    display: inline-block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(50, 4, 111, 0.5);
+    backdrop-filter: blur(4px);
+    border: 2px solid rgb(168, 121, 255);
+    box-shadow: inset 0 0 10px rgb(168, 121, 255);
+    font-size: 20px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
