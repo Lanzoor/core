@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'JetBrains Mono';
-    src: url('./fonts/JetBrainsMono-Regular.woff2') format('woff2'), url('./fonts/JetBrainsMono-Bold.woff2') format('woff2'), url('./fonts/JetBrainsMono-BoldItalic.woff2') format('woff2'), url('./fonts/JetBrainsMono-Italic.woff2') format('woff2');
+    src: url('./assets/fonts/JetBrainsMono-Regular.woff2') format('woff2'), url('./assets/fonts/JetBrainsMono-Bold.woff2') format('woff2'), url('./assets/fonts/JetBrainsMono-BoldItalic.woff2') format('woff2'), url('./assets/fonts/JetBrainsMono-Italic.woff2') format('woff2');
     font-style: normal;
     font-display: swap;
 }
@@ -122,15 +122,20 @@ body {
 }
 
 .container a {
-    color: #6f3aff;
+    background: linear-gradient(120deg, #6f3aff, #385de2);
+    text-shadow: 0 0 25px #7142ff;
     text-decoration: none;
     transition: color 0.3s ease;
-    text-shadow: 0 0 25px currentColor;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .container a:hover {
-    color: #8a2be2;
-    text-shadow: 0 0 25px currentColor;
+    background: linear-gradient(120deg, #8f66ff, #6284ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .container code {
@@ -410,7 +415,6 @@ body {
 #status-bar {
     border: 2px solid #aaa;
     padding: 1em 2em;
-    max-width: 75vw;
     margin-top: 1em;
     margin-bottom: 1em;
     box-shadow: 0 0 20px #aaa, inset 0 0 20px #aaa;
