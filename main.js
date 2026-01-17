@@ -58,3 +58,19 @@ backToTop.addEventListener('mouseup', () => {
         });
     }, 250);
 });
+
+function updateSecretDisplay() {
+    const secretLink = document.getElementById('secret-link');
+    if (localStorage.getItem('secret') === null) {
+        localStorage.setItem('secret', 'false');
+    }
+
+    const secret = localStorage.getItem('secret');
+    if (secret == 'false') {
+        secretLink.style.display = 'none';
+    } else {
+        secretLink.style.display = 'flex';
+    }
+}
+
+setInterval(updateSecretDisplay, 250);
