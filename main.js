@@ -17,7 +17,7 @@ function getUTC9Time() {
     return `${year}-${month}-${day} ${String(displayHour).padStart(2, '0')}:${minute}:${second}.${millisecond} ${determiner}`;
 }
 
-const timeText = document.getElementById('time_text');
+const timeText = document.getElementById('time-text');
 
 function updateTime() {
     timeText.textContent = getUTC9Time();
