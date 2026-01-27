@@ -416,7 +416,7 @@ body {
         inset 0 0 30px #ffffff;
 }
 
-/* Responsive Zone */
+/* Thank you tactical02_ for the code block below! */
 
 @media (max-width: 768px) {
     .container,
@@ -425,14 +425,13 @@ body {
     }
 }
 
-/* Responsive for Laptop Screen */
 @media (min-width: 1024px) and (max-width: 1536px) {
-    /* Profile Zone Responsive */
     .profile-wrapper {
         display: flex;
         flex-direction: row-reverse;
         gap: 2rem;
         align-items: center;
+
         #profile-block {
             overflow: hidden;
             position: unset;
@@ -446,9 +445,7 @@ body {
         }
     }
 
-    /* Tooltips Responsive */
     .container {
-        /* I added this because the tooltips were oversized and created a scrollbar for smaller screen*/
         overflow: hidden;
     }
 
