@@ -92,6 +92,7 @@ blockquote {
     background-color: rgba(255, 255, 255, 0.04);
     border: 5px solid #aaaaaa20;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.04);
     padding: 0.75em;
     color: #e6e6fa;
     transition:
@@ -141,7 +142,7 @@ a {
     text-decoration: none;
     display: inline-block;
     background: linear-gradient(120deg, #6f3aff, #385de2);
-    text-shadow: 0 10px 25px #7142ff;
+    text-shadow: 0 5px 20px #7142ff;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -176,7 +177,7 @@ code {
 hr {
     border-radius: 5px;
     height: 7.5px;
-    background: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
     border: none;
 }
 
