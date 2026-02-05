@@ -1,5 +1,5 @@
 * {
-    font-family: 'JetBrains Mono';
+    font-family: 'Fira Code';
 
     margin: 0;
     padding: 0;
@@ -19,38 +19,48 @@
         url('./assets/fonts/JetBrainsMono-Italic.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-display: swap;
+
+    src: url('/profile/assets/fonts/FiraCode-Regular.woff2') format('woff2');
+}
+
 body {
     display: grid;
     position: relative;
 
     font-size: 22.5px;
 
-    padding: 2rem;
+    padding: 4rem;
     margin: auto;
     min-height: 100svh;
     min-height: 100dvh;
     line-height: 1.75;
     place-items: center;
 
-    background: linear-gradient(135deg, #120536 0%, #380d96 100%);
+    /* background: linear-gradient(135deg, #120536 0%, #380d96 100%); */
+    background: url('/profile/assets/background.png') no-repeat center center fixed;
+    background-size: cover;
     color: #ffffff;
 }
 
 .container {
     position: relative;
-    width: max(95vw, 75rem);
+    width: max(90vw, 70rem);
     padding: 3rem;
 
-    background: rgba(15, 15, 35, 0.95);
+    background: rgba(0, 0, 0, 0.3);
     color: #ffffff;
     border: 2px solid transparent;
     border-radius: 20px;
     box-shadow:
-        0 0 0 2px rgba(138, 43, 226, 0.6),
+        0 0 0 4px rgba(138, 43, 226, 0.6),
         0 0 0 4px rgba(138, 43, 226, 0.3),
-        0 25px 50px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
+        0 25px 50px rgba(0, 0, 0, 0.75),
+        inset 0 5px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
 
     background-clip: padding-box;
     overflow: hidden;
@@ -59,6 +69,7 @@ body {
 h1,
 h2,
 h3 {
+    font-family: 'JetBrains Mono';
     font-weight: bold;
 }
 
@@ -93,7 +104,8 @@ ol {
     padding-left: 1.5em;
     margin: 1em 0;
 
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
     color: #e6e6fa;
     border-radius: 0.2em;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
@@ -104,11 +116,11 @@ blockquote {
     padding-left: 1.5em;
     margin: 1em 0;
 
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: rgba(255, 255, 255, 0.08);
     color: #e6e6fa;
     border: 5px solid #aaaaaa20;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.04);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
     transition:
         background-color 0.2s ease,
         box-shadow 0.2s ease,
@@ -116,7 +128,7 @@ blockquote {
 }
 
 blockquote:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.16);
     border: 5px solid #aaaaaa75;
     box-shadow: 0 10px 25px #aaaaaa75;
 }
@@ -134,6 +146,9 @@ ol ol {
 }
 
 .container p {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
     color: #ffffff;
     margin-bottom: 1rem;
 }
@@ -181,6 +196,8 @@ a:hover {
 }
 
 code {
+    font-family: 'JetBrains Mono';
+
     background-color: rgb(35, 35, 55);
     color: rgb(170, 190, 220);
     border: 1px solid rgb(181, 186, 255);
@@ -317,6 +334,11 @@ hr {
     margin-bottom: 1em;
 
     box-shadow: 0 0 20px rgba(100, 105, 130, 0.5);
+    border: 4px solid rgb(100, 105, 130);
+}
+
+#connections-table td {
+    background-color: rgba(100, 105, 130, 0.1);
 }
 
 #connections-table th {
@@ -370,7 +392,7 @@ hr {
 
     font-weight: bold;
 
-    text-shadow: 0 0 10px rgb(80, 238, 255) !important;
+    text-shadow: 0 0 25px rgb(116, 51, 255) !important;
     vertical-align: 0em;
 }
 
@@ -412,11 +434,13 @@ hr {
 }
 
 #section-bottom {
-    background: #240a7c;
+    background: #240a7c75;
 
     box-shadow:
         0 0 25px #5309ff,
         inset 0 0 25px #9465ff;
+
+    backdrop-filter: blur(10px);
 
     left: 0;
     right: 0;
@@ -437,7 +461,7 @@ hr {
 }
 
 #section-bottom:hover {
-    background: #2e0c9c;
+    background: #2e0c9cbb;
 
     box-shadow:
         0 0 25px #996dff,
@@ -485,7 +509,7 @@ hr {
     margin-top: 1em;
     margin-bottom: 1em;
 
-    background: linear-gradient(120deg, #222, #555);
+    background: linear-gradient(120deg, #222222aa, #555555aa);
     border: 2px solid #aaa;
     box-shadow:
         0 0 20px #aaa,
@@ -508,11 +532,17 @@ hr {
     display: none;
 }
 
+#ripple-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
 /* The Responsive Zone */
 
 @media (max-width: 768px) {
     .container {
-        width: calc(768px - 4rem);
+        width: calc(768px - 8rem);
     }
 
     #section-bottom {
@@ -522,7 +552,7 @@ hr {
 
 @media (max-width: 1024px) {
     .container {
-        width: calc(1024px - 4rem);
+        width: calc(1024px - 8rem);
     }
 
     #section-bottom {
@@ -532,7 +562,7 @@ hr {
 
 @media (max-width: 1536px) {
     .container {
-        width: calc(1536px - 4rem);
+        width: calc(1536px - 8rem);
     }
 
     #section-bottom {
