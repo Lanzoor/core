@@ -1,0 +1,23 @@
+{
+    "name": "profile",
+    "version": "26.2.1",
+    "description": "A project for Lanzoor's profile.",
+    "homepage": "https://github.com/Lanzoor/profile#readme",
+    "bugs": {
+        "url": "https://github.com/Lanzoor/profile/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Lanzoor/profile.git"
+    },
+    "license": "ISC",
+    "author": "Lanzoor",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"info: ready to run!\"",
+        "dev": "npx tsc && echo \"info: successfully compiled the TypeScript files!\""
+    },
+    "devDependencies": {
+        "typescript": "^5.9.3"
+    }
+}

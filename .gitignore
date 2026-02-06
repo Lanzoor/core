@@ -1,1 +1,3 @@
 **/.prettierignore
+**/.ropeproject
+**/node_modules
