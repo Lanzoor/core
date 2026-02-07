@@ -1,9 +1,9 @@
 /* ---------- Variables ---------- */
 
 :root {
-    --large-space: min(2vw, 4rem);
-    --medium-space: min(1vw, 2rem);
-    --small-space: min(0.5vw, 1rem);
+    --large-space: min(2vw, 6rem);
+    --medium-space: min(1vw, 3rem);
+    --small-space: min(0.5vw, 1.5rem);
 }
 
 * {
@@ -161,6 +161,8 @@ code {
 h1,
 h2,
 h3 {
+    margin-top: var(--medium-space);
+    margin-bottom: var(--medium-space);
     font-family: 'JetBrains Mono';
     font-weight: bold;
 }
@@ -194,8 +196,6 @@ h2 {
     font-size: 40px;
     line-height: 1.3;
 
-    margin-bottom: var(--medium-space);
-
     color: #ab87ff;
     text-shadow: 0 0 20px rgb(115, 60, 226);
 }
@@ -205,8 +205,6 @@ h3 {
 
     margin: 0.1em 0;
     line-height: 1.4;
-
-    margin-bottom: var(--small-space);
 
     color: #f5d0f5;
     text-shadow: 0 0 20px rgb(115, 60, 226);
@@ -294,7 +292,6 @@ ol h3 {
 
     min-width: 40vw;
     max-width: 60vw;
-    max-height: 30vw;
 }
 
 #navigation {
@@ -576,4 +573,22 @@ ol h3 {
     box-shadow:
         0 20px 20px #aaa,
         inset 0 0 30px #ffffff;
+}
+
+/* ---------- The Responsive Zone ---------- */
+
+@media (max-width: 1024px) and (max-width: 1536px) {
+    #page-2 ul {
+        max-height: 50vw;
+    }
+
+    #about-me-picture-block {
+        max-width: 40vw;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 10px;
+    }
 }
