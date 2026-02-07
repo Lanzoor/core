@@ -7,8 +7,6 @@
 }
 
 * {
-    font-family: 'Fira Code';
-
     margin: 0;
     padding: 0;
 
@@ -20,27 +18,92 @@
 @font-face {
     font-family: 'JetBrains Mono';
     font-style: normal;
+    font-weight: 400;
     font-display: swap;
-
     src:
-        url('./assets/fonts/JetBrainsMono-Regular.woff2') format('woff2'),
-        url('./assets/fonts/JetBrainsMono-Bold.woff2') format('woff2'),
-        url('./assets/fonts/JetBrainsMono-BoldItalic.woff2') format('woff2'),
-        url('./assets/fonts/JetBrainsMono-Italic.woff2') format('woff2');
+        url('/profile/assets/fonts/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+        url('/profile/assets/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        url('/profile/assets/fonts/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
+        url('/profile/assets/fonts/ttf/JetBrainsMono-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url('/profile/assets/fonts/woff2/JetBrainsMono-Italic.woff2') format('woff2'),
+        url('/profile/assets/fonts/ttf/JetBrainsMono-Italic.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Fira Code';
     font-style: normal;
+    font-weight: 400;
     font-display: swap;
+    src:
+        url('/profile/assets/fonts/woff2/FiraCode-Regular.woff2') format('woff2'),
+        url('/profile/assets/fonts/ttf/FiraCode-Regular.ttf') format('truetype');
+}
 
-    src: url('/profile/assets/fonts/FiraCode-Regular.woff2') format('woff2');
+@font-face {
+    font-family: 'Fira Code';
+    font-style: bold;
+    font-weight: 700;
+
+    font-display: swap;
+    src:
+        url('/profile/assets/fonts/woff2/FiraCode-Bold.woff2') format('woff2'),
+        url('/profile/assets/fonts/ttf/FiraCode-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Brass Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url('/profile/assets/fonts/woff2/BrassMonoCode-Regular.woff2') format('woff2'),
+        url('/profile/assets/fonts/ttf/BrassMonoCode-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Brass Mono';
+    font-style: bold;
+    font-weight: 700;
+
+    font-display: swap;
+    src:
+        url('/profile/assets/fonts/woff2/BrassMonoCode-Bold.woff2') format('woff2'),
+        url('/profile/assets/fonts/ttf/BrassMonoCode-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Brass Mono';
+    font-style: italic;
+    font-weight: 400;
+
+    font-display: swap;
+    src:
+        url('/profile/assets/fonts/woff2/BrassMonoCode-Italic.woff2') format('woff2'),
+        url('/profile/assets/fonts/ttf/BrassMonoCode-Italic.ttf') format('truetype');
 }
 
 /* ---------- Container Definitions ---------- */
 
 body {
-    font-size: 22.5px;
+    font-family: 'Brass Mono';
+
+    font-size: 25px;
     line-height: 1.5;
     color: #eeeeee;
     background: linear-gradient(120deg, black, #38076f);
@@ -116,10 +179,11 @@ em {
 }
 
 a {
+    font-family: 'Fira Code';
     display: inline-block;
 
     text-decoration: none;
-    background: linear-gradient(120deg, #8051ff, #5852ff);
+    background: linear-gradient(120deg, #8051ff, #433cff);
     color: transparent;
     text-shadow: 0 5px 20px #7142ff;
 
@@ -142,7 +206,7 @@ a:hover {
 }
 
 code {
-    font-family: 'JetBrains Mono';
+    font-family: 'Fira Code';
 
     background-color: rgb(35, 35, 55);
     color: rgb(170, 190, 220);
@@ -161,10 +225,11 @@ code {
 h1,
 h2,
 h3 {
-    margin-top: var(--medium-space);
-    margin-bottom: var(--medium-space);
     font-family: 'JetBrains Mono';
     font-weight: bold;
+
+    margin-top: var(--medium-space);
+    margin-bottom: var(--medium-space);
 }
 
 h1 {
@@ -274,7 +339,7 @@ ol:hover {
 
 ul h3,
 ol h3 {
-    font-family: 'Fira Code';
+    font-family: 'JetBrains Mono';
     font-size: 30px;
 
     margin: 0.75em 0.25em;
@@ -288,27 +353,28 @@ ol h3 {
     margin-bottom: var(--large-space);
     right: var(--large-space);
 
-    text-align: left;
-
     min-width: 40vw;
     max-width: 60vw;
     min-height: 30vh;
 }
 
 #navigation {
-    font-size: min(1vw, 20px);
-
     position: fixed;
     bottom: var(--small-space);
 
     left: 50%;
     transform: translateX(-50%);
 
-    text-align: center;
     user-select: none;
 }
 
+#page-description {
+    font-family: 'Fira Code' !important;
+    font-size: min(1vw, 20px);
+}
+
 #navigation button {
+    font-family: 'Fira Code';
     font-size: min(4vw, 80px);
 
     color: #777;
@@ -355,6 +421,7 @@ ol h3 {
 }
 
 .tooltip-text {
+    font-family: 'Fira Code';
     font-size: 17.5px;
     user-select: none;
     display: block;
@@ -440,37 +507,6 @@ ol h3 {
     transition: none !important;
 }
 
-.font-display {
-    display: inline-block;
-    position: relative;
-
-    padding: 1em;
-    margin: 0.5em;
-
-    background: rgba(255, 255, 255, 0.25);
-    border: 2px solid white;
-    border-radius: 10px;
-
-    box-shadow:
-        0 0 10px white,
-        inset 0 0 10px white;
-
-    user-select: none;
-
-    transition: box-shadow 0.2s ease;
-}
-
-.font-display:hover {
-    box-shadow:
-        0 10px 25px white,
-        inset 0 0 25px white;
-}
-
-.font-display a {
-    color: white;
-    text-shadow: none;
-}
-
 /* ---------- Picture Blocks ---------- */
 
 .picture-block {
@@ -544,6 +580,18 @@ ol h3 {
 
 /* ---------- Other Miscellaneous Effects ---------- */
 
+.aligned-left {
+    text-align: left;
+}
+
+.aligned-center {
+    text-align: center;
+}
+
+.aligned-right {
+    text-align: right;
+}
+
 #ripple-container {
     position: fixed;
     inset: 0;
@@ -577,6 +625,55 @@ ol h3 {
     box-shadow:
         0 20px 20px #aaa,
         inset 0 0 30px #ffffff;
+}
+
+.font-display {
+    display: inline-block;
+    position: relative;
+
+    max-width: 15vw;
+    max-height: 7.5vw;
+    padding: 1em;
+    margin: 0.5em;
+
+    background: rgba(255, 255, 255, 0.25);
+    border: 2px solid white;
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 10px white,
+        inset 0 0 15px white;
+
+    user-select: none;
+
+    transition: box-shadow 0.2s ease;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.font-display:hover {
+    box-shadow:
+        0 10px 25px white,
+        inset 0 0 25px white;
+}
+
+.font-display a {
+    font-size: 20px;
+    color: white;
+    text-shadow: none;
+}
+
+.font-display #brass-mono {
+    font-family: 'Brass Mono';
+}
+
+.font-display #fira-code {
+    font-family: 'Fira Code';
+}
+
+.font-display #jetbrains-mono {
+    font-family: 'JetBrains Mono';
 }
 
 /* ---------- The Responsive Zone ---------- */
@@ -642,16 +739,7 @@ ol h3 {
         height: 5px;
     }
 
-    p,
-    blockquote {
-        text-align: left;
-    }
-
-    #page-4 blockquote {
-        text-align: center;
-    }
-
-    #navigation {
+    #page-description {
         font-size: 10px;
     }
 
