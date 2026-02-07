@@ -493,7 +493,7 @@ ol h3 {
 }
 
 .picture-block p {
-    max-height: 20vw;
+    max-height: min(20vw, 100px);
 
     min-width: 10vw;
 
@@ -531,7 +531,7 @@ ol h3 {
 #profile-picture p,
 #iris-picture p {
     width: 20vw;
-    max-height: 5vw;
+    max-height: 5vh;
     font-size: 20px;
 
     overflow-y: auto;
@@ -579,7 +579,7 @@ ol h3 {
 
 @media (max-width: 1024px) and (max-width: 1536px) {
     #page-2 ul {
-        max-height: 50vw;
+        max-height: 50vh;
     }
 
     #about-me-picture-block {
@@ -587,7 +587,7 @@ ol h3 {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (max-width: 1024px) {
     body {
         font-size: 10px;
     }
