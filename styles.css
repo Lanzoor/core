@@ -1,4 +1,4 @@
-/* ---------- Variables ---------- */
+/* ==================== Variables ==================== */
 
 :root {
     --large-space: min(2vw, 6rem);
@@ -13,7 +13,7 @@
     box-sizing: border-box;
 }
 
-/* ---------- Fonts ---------- */
+/* ==================== Fonts ==================== */
 
 @font-face {
     font-family: 'JetBrains Mono';
@@ -98,7 +98,7 @@
         url('/profile/assets/fonts/ttf/BrassMonoCode-Italic.ttf') format('truetype');
 }
 
-/* ---------- Container Definitions ---------- */
+/* ==================== Container Definitions ==================== */
 
 body {
     font-family: 'Brass Mono';
@@ -112,8 +112,11 @@ body {
 }
 
 .container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    position: absolute;
     isolation: isolate;
     overflow: hidden;
 
@@ -134,19 +137,14 @@ body {
         0 25px 50px rgba(255, 255, 255, 0.25),
         inset 0 0 10px rgba(255, 255, 255, 0.25);
 
+    text-align: center;
+    align-items: center;
+
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-#page-1 .container {
-    width: 75vw;
-    height: 80vh;
-
-    margin-left: 12.5vw;
-    margin-top: 5vh;
-}
-
-/* ---------- Text Elements ---------- */
+/* ==================== Text Elements ==================== */
 
 .container p {
     background-color: rgba(255, 255, 255, 0.1);
@@ -220,7 +218,7 @@ code {
     opacity: 0.6;
 }
 
-/* ---------- Titles ---------- */
+/* ==================== Titles ==================== */
 
 h1,
 h2,
@@ -236,7 +234,7 @@ h1 {
     font-size: 50px;
     line-height: 1.2;
 
-    margin-bottom: var(--large-space);
+    margin-bottom: var(--medium-space);
 
     color: #d4c1ff;
     text-shadow: 0 0 20px rgb(115, 60, 226);
@@ -275,7 +273,7 @@ h3 {
     text-shadow: 0 0 20px rgb(115, 60, 226);
 }
 
-/* ---------- Other Elements ---------- */
+/* ==================== Other Elements ==================== */
 
 blockquote {
     padding: 0.75em;
@@ -345,19 +343,6 @@ ol h3 {
     margin: 0.75em 0.25em;
 }
 
-#page-2 ul {
-    position: absolute;
-    align-self: flex-end;
-
-    top: auto;
-    margin-bottom: var(--large-space);
-    right: var(--large-space);
-
-    min-width: 40vw;
-    max-width: 60vw;
-    min-height: 30vh;
-}
-
 #navigation {
     position: fixed;
     bottom: var(--small-space);
@@ -373,6 +358,10 @@ ol h3 {
     font-size: min(1vw, 20px);
 }
 
+#navigation p {
+    width: 100%;
+}
+
 #navigation button {
     font-family: 'Fira Code';
     font-size: min(4vw, 80px);
@@ -380,6 +369,7 @@ ol h3 {
     color: #777;
     background: none;
     border: none;
+    margin: 0;
 
     transition:
         text-shadow 0.2s ease,
@@ -458,7 +448,7 @@ ol h3 {
     transition: all 0.1s ease-in;
 }
 
-/* ---------- Pages and Page Animation States ---------- */
+/* ==================== Pages and Page Animation States ==================== */
 
 #pages {
     position: relative;
@@ -467,7 +457,6 @@ ol h3 {
 
 .page {
     position: fixed;
-    text-align: center;
     inset: 0;
 
     transform: translateY(100vh);
@@ -507,7 +496,7 @@ ol h3 {
     transition: none !important;
 }
 
-/* ---------- Picture Blocks ---------- */
+/* ==================== Picture Blocks ==================== */
 
 .picture-block {
     display: flex;
@@ -519,14 +508,6 @@ ol h3 {
     align-items: center;
 
     overflow: hidden;
-}
-
-#about-me-picture-block {
-    position: fixed;
-    align-self: flex-start;
-
-    margin-bottom: var(--large-space);
-    top: auto;
 }
 
 .picture-block p {
@@ -558,27 +539,7 @@ ol h3 {
     cursor: pointer;
 }
 
-#profile-picture {
-    width: clamp(80px, 7.5vw, min(12.5vw, 225px));
-    top: var(--large-space);
-}
-
-#iris-picture {
-    width: clamp(80px, 12.5vw, min(20vw, 400px));
-    left: var(--large-space);
-}
-
-#profile-picture p,
-#iris-picture p {
-    width: 20vw;
-    max-height: 5vh;
-    font-size: 20px;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-/* ---------- Other Miscellaneous Effects ---------- */
+/* ==================== Other Miscellaneous Effects ==================== */
 
 .aligned-left {
     text-align: left;
@@ -599,16 +560,78 @@ ol h3 {
     z-index: 2147483647;
 }
 
-#favorite-color {
-    background: linear-gradient(90deg, #4b9cff, #4d56ff, #6f36ff, #8c3aff);
-    color: transparent;
-    text-shadow: 0 0 20px #6f43ff;
+/* ==================== Page 1 ==================== */
 
-    -webkit-background-clip: text;
-    background-clip: text;
+#page-1 .container {
+    width: 75vw;
+    height: 80vh;
+
+    margin-left: 12.5vw;
+    margin-top: 5vh;
+}
+
+/* ==================== Page 2 ==================== */
+
+#page-2 .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#about-me-header {
+    width: 100%;
+    margin-bottom: var(--large-space);
+}
+
+#about-me-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#about-me-pictures,
+#about-me-ul {
+    position: fixed;
+    flex: 1;
+    margin: 0 var(--medium-space);
+}
+
+#about-me-pictures {
+    left: var(--medium-space);
+
+    min-width: 15vw;
+}
+
+#about-me-ul {
+    right: var(--medium-space);
+
+    min-width: 50vw;
+    max-width: 60vw;
+    max-height: 80vh;
+}
+
+#profile-picture {
+    width: clamp(80px, 7.5vw, min(12.5vw, 225px));
+    top: var(--large-space);
+}
+
+#iris-picture {
+    width: clamp(80px, 12.5vw, min(20vw, 400px));
+    left: var(--large-space);
+}
+
+#profile-picture p,
+#iris-picture p {
+    width: 20vw;
+    max-height: 5vh;
+    font-size: 20px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #status-bar {
+    width: 90%;
     padding: 1em 2em;
     margin: 2em 0.5em;
 
@@ -627,13 +650,30 @@ ol h3 {
         inset 0 0 30px #ffffff;
 }
 
+#favorite-color {
+    background: linear-gradient(90deg, #4b9cff, #4d56ff, #6f36ff, #8c3aff);
+    color: transparent;
+    text-shadow: 0 0 20px #6f43ff;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* ==================== Page 4 ==================== */
+
+.font-credits {
+    display: flex;
+    flex-direction: row;
+}
 .font-display {
     display: inline-block;
     position: relative;
 
-    max-width: 15vw;
-    max-height: 7.5vw;
-    padding: 1em;
+    font-size: 15px;
+
+    max-width: 25vw;
+    max-height: 20vw;
+    padding: 1em 2em;
     margin: 0.5em;
 
     background: rgba(255, 255, 255, 0.25);
@@ -676,37 +716,52 @@ ol h3 {
     font-family: 'JetBrains Mono';
 }
 
-/* ---------- The Responsive Zone ---------- */
+/* ==================== Debug (COMMENT OUT WHEN PRODUCTION) ==================== */
 
-@media (max-width: 1024px) and (max-width: 1536px) {
-    #page-2 ul {
-        max-height: 50vh;
-    }
-
-    #about-me-picture-block {
-        max-width: 40vw;
-    }
+/* * {
+    border: 1px solid red !important;
+    border-radius: 10px !important;
 }
 
-@media (max-width: 768px) and (max-width: 1024px) {
+*:hover {
+    background: #aa000010;
+} */
+
+/* ==================== The Responsive Zone ==================== */
+
+/* ==================== Phones / Mobile ==================== */
+
+@media (max-width: 480px) {
     body {
-        font-size: 10px;
+        font-size: 7.5px;
     }
 
-    #about-me-picture-block,
-    #page-2 ul {
-        position: relative;
+    .container {
+        height: 70vh;
+    }
 
+    #about-me-content {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about-me-ul,
+    #about-me-pictures {
         left: 0;
         right: 0;
-        top: 0;
-        bottom: 0;
 
-        width: 100%;
+        margin: 0 var(--large-space);
+        min-width: 80vw;
+        position: relative;
     }
 
-    #about-me-picture-block p {
-        width: 80%;
+    #about-me-pictures {
+        min-width: 75vw;
+    }
+
+    #iris-picture {
+        width: clamp(80px, 12.5vw, 30vw);
     }
 
     h1 {
@@ -728,11 +783,12 @@ ol h3 {
 
     ul h3,
     ol h3 {
-        font-size: 20px;
+        font-size: 10px;
     }
 
-    #page-2 ul {
-        width: 80%;
+    blockquote,
+    p {
+        width: 75%;
     }
 
     hr {
@@ -740,10 +796,30 @@ ol h3 {
     }
 
     #page-description {
-        font-size: 10px;
+        font-size: 7.5px;
     }
 
     #navigation button {
         font-size: 40px;
+    }
+
+    .tooltip-text {
+        padding: var(--large-space);
+        font-size: 5px;
+    }
+
+    .font-credits {
+        flex-direction: column;
+    }
+
+    .font-display {
+        padding: 10px 20px;
+
+        max-width: 80%;
+        max-height: 30vw;
+    }
+
+    .font-display a {
+        font-size: 10px;
     }
 }

@@ -32,7 +32,7 @@ if (savedPage !== null) {
 
 let leftButton = document.getElementById('left-button')!;
 let rightButton = document.getElementById('right-button')!;
-let pageDescription = document.getElementById('page-description')!;
+let pageDescription = document.getElementById('page-text')!;
 
 let backgrounds = [
     //
