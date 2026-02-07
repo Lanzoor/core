@@ -608,6 +608,10 @@ ol h3 {
         width: 100%;
     }
 
+    #about-me-picture-block p {
+        width: 80%;
+    }
+
     h1 {
         font-size: 20px;
     }
@@ -625,17 +629,33 @@ ol h3 {
         font-size: 15px;
     }
 
-    #page-1,
-    #page-2,
-    #page-3 {
-        text-align: left;
-    }
-
-    #navigation {
+    ul h3,
+    ol h3 {
         font-size: 20px;
     }
 
+    #page-2 ul {
+        width: 80%;
+    }
+
+    hr {
+        height: 5px;
+    }
+
+    p,
+    blockquote {
+        text-align: left;
+    }
+
+    #page-4 blockquote {
+        text-align: center;
+    }
+
+    #navigation {
+        font-size: 10px;
+    }
+
     #navigation button {
-        font-size: 30px;
+        font-size: 40px;
     }
 }
