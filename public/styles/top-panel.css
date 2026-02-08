@@ -1,0 +1,12 @@
+#top-panel {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    height: 15vh;
+    width: 100vw;
+
+    background: #ffffff75;
+    backdrop-filter: blur(10px);
+}
