@@ -1,174 +1,15 @@
-/* ==================== Fonts ==================== */
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
-        url('/assets/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: bold;
-    font-weight: 700;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
-        url('/assets/fonts/ttf/JetBrainsMono-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/JetBrainsMono-Italic.woff2') format('woff2'),
-        url('/assets/fonts/ttf/JetBrainsMono-Italic.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Fira Code';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/FiraCode-Regular.woff2') format('woff2'),
-        url('/assets/fonts/ttf/FiraCode-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Fira Code';
-    font-style: bold;
-    font-weight: 700;
-
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/FiraCode-Bold.woff2') format('woff2'),
-        url('/assets/fonts/ttf/FiraCode-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Brass Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/BrassMonoCode-Regular.woff2') format('woff2'),
-        url('/assets/fonts/ttf/BrassMonoCode-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Brass Mono';
-    font-style: bold;
-    font-weight: 700;
-
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/BrassMonoCode-Bold.woff2') format('woff2'),
-        url('/assets/fonts/ttf/BrassMonoCode-Bold.ttf') format('truetype');
-}
-
 body {
-    font-family: 'JetBrains Mono';
-
-    font-size: 25px;
-    line-height: 1.5;
-    color: #eeeeee;
-
     background-image: url('/assets/iris.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 
-    transition: background 1s ease;
-
     overflow-y: hidden;
-    overflow-x: hidden;
 }
 
 body.active {
     overflow-y: auto;
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'JetBrains Mono';
-    font-weight: bold;
-
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 75px;
-    line-height: 1.2;
-
-    color: #d4c1ff;
-    text-shadow: 0 0 20px rgb(115, 60, 226);
-}
-
-h2 {
-    font-size: 40px;
-    line-height: 1.3;
-
-    color: #ab87ff;
-    text-shadow: 0 0 20px rgb(115, 60, 226);
-}
-
-ul,
-ol {
-    padding: 2rem 4rem;
-    margin: 4rem 0;
-
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: #e6e6fa;
-    border-radius: min(0.5vw, 0.2em);
-    box-shadow:
-        0 0 20px rgba(255, 255, 255, 0.4),
-        inset 0 0 20px rgba(255, 255, 255, 0.04);
-
-    transition: background-color 0.2s ease;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-ul:hover,
-ol:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-a {
-    display: inline-block;
-
-    text-decoration: none;
-    background: linear-gradient(120deg, #8051ff, #433cff);
-    color: transparent;
-    text-shadow: 0 5px 20px #7142ff;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    transition:
-        transform 0.1s ease-out,
-        text-shadow 0.2s ease;
-}
-
-a:hover {
-    background: linear-gradient(120deg, #8f66ff, #6284ff);
-    color: transparent;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    transform: translateY(-2px);
 }
 
 hr {
@@ -178,16 +19,6 @@ hr {
 
     background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.section {
-    padding-top: 15vh;
-    width: 100%;
-    height: 85vh;
-
-    display: flex;
-    flex-direction: column;
-    text-align: center;
 }
 
 #connections {
@@ -206,7 +37,22 @@ hr {
     border-top: 10px solid #000000;
 }
 
-#aligned-center {
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+#welcome {
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -233,7 +79,13 @@ hr {
     margin-bottom: 2rem;
 }
 
+#welcome-buttons {
+    user-select: none;
+}
+
 #welcome-buttons button {
+    font-family: 'Fira Code';
+
     border: none;
     border-radius: 2em;
 
@@ -279,7 +131,13 @@ hr {
 
 #welcome-down {
     position: absolute;
-    bottom: 2.5vh;
+    bottom: 1vh;
+}
+
+#welcome-down p {
+    user-select: none;
+    margin: 0;
+    padding: 0;
 }
 
 #welcome-down button {
@@ -288,7 +146,7 @@ hr {
 }
 
 #welcome-down button:hover {
-    filter: drop-shadow(0 0 25px white);
+    filter: drop-shadow(0 0 20px white);
     cursor: pointer;
 }
 
@@ -296,45 +154,45 @@ hr {
     margin-top: 10vw;
 }
 
-#down-arrow-icon {
-    margin: 0;
+#frequently-asked-questions {
+    background: rgba(255, 255, 255, 0.25);
+
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: left;
+}
+
+#connections {
+    text-align: left;
+    padding: 2.5%;
+    color: #aaa;
+}
+
+#connections h2 {
+    color: #ddd;
+    text-shadow: 0 0 10px #aaa;
+}
+
+#connections h3 {
+    color: #aaa;
+    text-shadow: 0 0 10px #777;
 }
 
 /* ==================== The Responsive Zone ==================== */
 
-/* ==================== Phones / Mobile ==================== */
-
 @media (max-width: 480px) {
-    body {
-        font-size: 10px;
-    }
-
-    h1 {
-        font-size: 25px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    hr {
-        height: 5px;
-    }
-
-    .container {
-        min-width: 150vh;
+    #welcome-down p {
+        display: none;
     }
 
     #welcome-buttons button {
+        margin: 0;
         padding: 20px 30px;
         font-size: 15px;
     }
 
     #welcome-buttons button:active {
         transform: translateY(10px);
-    }
-
-    #down-arrow-icon {
-        display: none;
     }
 }

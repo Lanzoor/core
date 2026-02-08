@@ -3,26 +3,6 @@ body {
     font-size: 25px;
 }
 
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
-        url('/assets/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: bold;
-    font-weight: 700;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
-        url('/assets/fonts/ttf/JetBrainsMono-Bold.ttf') format('truetype');
-}
-
 * {
     font-family: 'JetBrains Mono';
 }

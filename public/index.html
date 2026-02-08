@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome! | lanzoor.dev</title>
 
-    <link rel="stylesheet" href="/styles/top-panel.css"/>
+    <link rel="stylesheet" href="/styles/fonts.css"/>
+    <link rel="stylesheet" href="/styles/subdirectories.css"/>
     <link rel="stylesheet" href="/styles/welcome.css"/>
+    <link rel="stylesheet" href="/styles/panels/top-panel.css"/>
 </head>
 <body>
     <div id="top-panel">This is the top panel</div>
 
-    <div class="section" id="aligned-center">
+    <div class="section" id="welcome">
         <span id="welcome-header">
             <h2>lanzoor.dev</h2>
             <h1>- Welcome to my website! -</h1>
@@ -24,10 +26,10 @@
 
         <div id="welcome-down">
             <p><b>You can keep going down!</b></p>
-            <button id="down-arrow-icon">
-                <svg width="150" height="100" viewBox="0 0 24 24"
-                fill="none" stroke="white" stroke-width="3" xmlns="http://www.w3.org/2000/svg">
-                    <polyline points="4 9 12 17 20 9" />
+            <button id="down-arrow">
+                <svg width="100" height="100" viewBox="0 0 24 17"
+                fill="none" stroke="white" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="2 12 12 17 22 12" />
                 </svg>
             </button>
         </div>
@@ -44,11 +46,34 @@
             This website, as well as the websites included below, is meant to be supported for modern browsers on PC.<br>
             If you see any issues on your device, please <a href="#connections">contact me</a> with your device
             information and let me know!<br>
+
+            <div id="frequently-asked-questions">
+                <li>
+                    <h3>What is this website, and why?</h3>
+
+                    <hr>
+
+                    This website is for hosting my webpages, projects and server functions, <b>so that it's accessible for everyone</b>. I wanted everyone to be able to access my projects and documents without having to consume any time distributing, installing, and setting it up.
+                </li>
+
+                <li>
+                    <h3>What fonts did you use for this website?</h3>
+
+                    <hr>
+
+                    Check the <a href="./credits.html">Special Thanks & Credits</a> section of this website!<br> Not only you'll find the font information and their sources, but you will also find <b>amazing contributors who helped create this project!</b>
+                </li>
+            </div>
         </ul>
     </div>
 
     <div class="section" id="connections">
         <h2>Connections</h2>
+
+        <p>
+            ⚠ Please do not spam or try to scam me, you <i>will</i> get <b>ignored, blocked and reported without any warnings.</b><br>
+            I will try to respond to your inquiry as soon as possible, but <b>I do recommend using Discord for most inquiries!</b>
+        </p>
     </div>
 
     <script type="module" src="/out/welcome.js"></script>

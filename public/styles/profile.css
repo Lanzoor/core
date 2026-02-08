@@ -1,11 +1,3 @@
-/* ==================== Variables ==================== */
-
-:root {
-    --large-space: min(2vw, 6rem);
-    --medium-space: min(1vw, 3rem);
-    --small-space: min(0.5vw, 1.5rem);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -13,114 +5,13 @@
     box-sizing: border-box;
 }
 
-/* ==================== Fonts ==================== */
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
-        url('/assets/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: bold;
-    font-weight: 700;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
-        url('/assets/fonts/ttf/JetBrainsMono-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/JetBrainsMono-Italic.woff2') format('woff2'),
-        url('/assets/fonts/ttf/JetBrainsMono-Italic.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Fira Code';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/FiraCode-Regular.woff2') format('woff2'),
-        url('/assets/fonts/ttf/FiraCode-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Fira Code';
-    font-style: bold;
-    font-weight: 700;
-
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/FiraCode-Bold.woff2') format('woff2'),
-        url('/assets/fonts/ttf/FiraCode-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Brass Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/BrassMonoCode-Regular.woff2') format('woff2'),
-        url('/assets/fonts/ttf/BrassMonoCode-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Brass Mono';
-    font-style: bold;
-    font-weight: 700;
-
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/BrassMonoCode-Bold.woff2') format('woff2'),
-        url('/assets/fonts/ttf/BrassMonoCode-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Brass Mono';
-    font-style: italic;
-    font-weight: 400;
-
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/BrassMonoCode-Italic.woff2') format('woff2'),
-        url('/assets/fonts/ttf/BrassMonoCode-Italic.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Fairfax HD';
-    font-style: normal;
-    font-weight: 400;
-
-    font-display: swap;
-    src:
-        url('/assets/fonts/woff2/FairfaxHD.woff2') format('woff2'),
-        url('/assets/fonts/ttf/FairfaxHD.ttf') format('truetype');
-}
-
 /* ==================== Container Definitions ==================== */
 
 body {
-    font-family: 'Brass Mono';
-
-    font-size: 25px;
-    line-height: 1.5;
-    color: #eeeeee;
     background: linear-gradient(120deg, black, #38076f);
-
-    transition: background 1s ease;
 }
+
+/* ==================== Containers ==================== */
 
 .container {
     display: flex;
@@ -155,8 +46,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ==================== Text Elements ==================== */
-
 .container p {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -171,187 +60,52 @@ body {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-b,
-strong {
-    font-style: bold;
+/* ==================== Pages and Page Animation States ==================== */
 
-    color: #e6e6fa;
-    text-shadow: 0 0 25px currentColor;
+#pages {
+    position: relative;
+    min-height: 100vh;
 }
 
-i,
-em {
-    font-style: italic;
+.page {
+    position: fixed;
+    inset: 0;
 
-    color: #ffe4ff;
-    text-shadow: 0 0 20px rgb(115, 60, 226);
-}
-
-a {
-    font-family: 'Fira Code';
-    display: inline-block;
-
-    text-decoration: none;
-    background: linear-gradient(120deg, #8051ff, #433cff);
-    color: transparent;
-    text-shadow: 0 5px 20px #7142ff;
-
-    -webkit-background-clip: text;
-    background-clip: text;
+    transform: translateY(100vh);
+    opacity: 0;
+    display: none;
 
     transition:
-        transform 0.1s ease-out,
-        text-shadow 0.2s ease;
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.75s ease;
 }
 
-a:hover {
-    background: linear-gradient(120deg, #8f66ff, #6284ff);
-    color: transparent;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    transform: translateY(-2px);
+.page.active {
+    transform: translateY(0);
+    opacity: 1;
+    display: block;
 }
 
-code {
-    font-family: 'Fira Code';
-
-    background-color: rgb(35, 35, 55);
-    color: rgb(170, 190, 220);
-    border: 1px solid rgb(181, 186, 255);
-    padding: 0.1em 0.2em;
-    border-radius: 6px;
-    white-space: normal;
+.page.off-up {
+    transform: translateY(-100vh);
+    opacity: 0;
+}
+.page.off-down {
+    transform: translateY(100vh);
+    opacity: 0;
 }
 
-.dim {
-    opacity: 0.6;
+.page.exit-up {
+    transform: translateY(-100vh);
+    opacity: 0;
+}
+.page.exit-down {
+    transform: translateY(100vh);
+    opacity: 0;
 }
 
-/* ==================== Titles ==================== */
-
-h1,
-h2,
-h3 {
-    font-family: 'JetBrains Mono';
-    font-weight: bold;
-
-    margin-top: var(--medium-space);
-    margin-bottom: var(--medium-space);
-}
-
-h1 {
-    font-size: 50px;
-    line-height: 1.2;
-
-    margin-bottom: var(--medium-space);
-
-    color: #d4c1ff;
-    text-shadow: 0 0 20px rgb(115, 60, 226);
-}
-
-h1 b,
-h1 strong {
-    font-size: 75px;
-}
-
-h1 b,
-h1 strong,
-h2 b,
-h2 strong,
-h3 b,
-h3 strong {
-    color: #9872ff;
-    text-shadow: 0 0 20px #4800ff;
-}
-
-h2 {
-    font-size: 40px;
-    line-height: 1.3;
-
-    color: #ab87ff;
-    text-shadow: 0 0 20px rgb(115, 60, 226);
-}
-
-h3 {
-    font-size: 35px;
-
-    margin: 0.1em 0;
-    line-height: 1.4;
-
-    color: #f5d0f5;
-    text-shadow: 0 0 20px rgb(115, 60, 226);
-}
-
-/* ==================== Other Elements ==================== */
-
-blockquote {
-    padding: 0.75em;
-    padding-left: 1.5em;
-    margin: 1em 0;
-
-    color: #e6e6fa;
-    background-color: rgba(255, 255, 255, 0.08);
-
-    border: 5px solid #aaaaaa20;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
-
-    transition:
-        background-color 0.2s ease,
-        box-shadow 0.2s ease,
-        border 0.2s ease;
-}
-
-blockquote:hover {
-    background-color: rgba(255, 255, 255, 0.16);
-    border: 5px solid #aaaaaa75;
-    box-shadow: 0 10px 25px #aaaaaa75;
-}
-
-hr {
-    margin-left: 0.5em;
-    margin-bottom: 2em;
-
-    width: auto;
-    height: 10px;
-
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.25));
-    border: none;
-    border-radius: 20px;
-}
-
-ul,
-ol {
-    padding: var(--medium-space) var(--large-space);
-    margin: var(--large-space) 0;
-
-    background-color: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(10px);
-    color: #e6e6fa;
-    border-radius: min(0.5vw, 0.2em);
-    box-shadow:
-        0 0 20px rgba(255, 255, 255, 0.4),
-        inset 0 0 20px rgba(255, 255, 255, 0.04);
-
-    transition: background-color 0.2s ease;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-ul:hover,
-ol:hover {
-    background-color: rgba(255, 255, 255, 0.04);
-}
-
-ul h3,
-ol h3 {
-    font-family: 'JetBrains Mono';
-    font-size: 30px;
-
-    margin: 0.75em 0.25em;
+.page.no-transition {
+    transition: none !important;
 }
 
 #navigation {
@@ -402,109 +156,6 @@ ol h3 {
     color: white;
     text-shadow: 0 0 50px white;
     cursor: pointer;
-}
-
-.tooltip {
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.tooltip-label {
-    display: inline-block;
-    position: relative;
-
-    font-weight: bold;
-
-    color: #ffffff;
-    text-shadow: 0 0 25px rgb(116, 51, 255) !important;
-    vertical-align: 0em;
-}
-
-.tooltip-text {
-    font-family: 'Fira Code';
-    font-size: 17.5px;
-    user-select: none;
-    display: block;
-
-    visibility: hidden;
-    opacity: 0;
-
-    position: absolute;
-    bottom: 130%;
-    left: 50%;
-    padding: 16px 20px;
-    transform: translate(-50%, -25px);
-
-    background: rgba(50, 4, 111, 0.75);
-    backdrop-filter: blur(4px);
-
-    border: 2px solid rgb(168, 121, 255);
-    box-shadow: inset 0 0 10px rgb(168, 121, 255);
-    border-radius: 12px;
-
-    white-space: nowrap;
-    max-width: calc(100vw - 40px);
-    overflow-wrap: break-word;
-    pointer-events: none;
-
-    transition: all 0.5s ease-in;
-}
-
-.tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(-50%, 0);
-
-    transition: all 0.1s ease-in;
-}
-
-/* ==================== Pages and Page Animation States ==================== */
-
-#pages {
-    position: relative;
-    min-height: 100vh;
-}
-
-.page {
-    position: fixed;
-    inset: 0;
-
-    transform: translateY(100vh);
-    opacity: 0;
-    display: none;
-
-    transition:
-        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.75s ease;
-}
-
-.page.active {
-    transform: translateY(0);
-    opacity: 1;
-    display: block;
-}
-
-.page.off-up {
-    transform: translateY(-100vh);
-    opacity: 0;
-}
-.page.off-down {
-    transform: translateY(100vh);
-    opacity: 0;
-}
-
-.page.exit-up {
-    transform: translateY(-100vh);
-    opacity: 0;
-}
-.page.exit-down {
-    transform: translateY(100vh);
-    opacity: 0;
-}
-
-.page.no-transition {
-    transition: none !important;
 }
 
 /* ==================== Picture Blocks ==================== */
@@ -562,22 +213,6 @@ ol h3 {
 
 .aligned-right {
     text-align: right;
-}
-
-.brass-mono {
-    font-family: 'Brass Mono';
-}
-
-.fira-code {
-    font-family: 'Fira Code';
-}
-
-.jetbrains-mono {
-    font-family: 'JetBrains Mono';
-}
-
-.fairfax-hd {
-    font-family: 'Fairfax HD';
 }
 
 #ripple-container {
@@ -685,69 +320,36 @@ ol h3 {
     background-clip: text;
 }
 
-/* ==================== Page 4 ==================== */
-
-.font-credits {
-    display: flex;
-    flex-direction: row;
-}
-.font-display {
-    display: inline-block;
-    position: relative;
-
-    font-size: 15px;
-
-    max-width: 25vw;
-    max-height: 20vw;
-    padding: 1em 2em;
-    margin: 0.5em;
-
-    background: rgba(255, 255, 255, 0.25);
-    border: 2px solid white;
-    border-radius: 10px;
-
-    box-shadow:
-        0 0 10px white,
-        inset 0 0 15px white;
-
-    user-select: none;
-
-    transition: box-shadow 0.2s ease;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.font-display:hover {
-    box-shadow:
-        0 10px 25px white,
-        inset 0 0 25px white;
-}
-
-.font-display a {
-    font-size: 20px;
-    color: white;
-    text-shadow: none;
-}
-
-/* ==================== Debug (COMMENT OUT WHEN PRODUCTION) ==================== */
-
-/* * {
-    border: 1px solid red !important;
-    border-radius: 10px !important;
-} */
-
-/* *:hover {
-    background: #aa000010;
-} */
-
 /* ==================== The Responsive Zone ==================== */
 
 /* ==================== Phones / Mobile ==================== */
 
-@media (max-width: 480px) and (max-height: 500px) {
-    body {
+@media (max-width: 480px) {
+    #page-description,
+    p,
+    blockquote,
+    ul,
+    ol {
         font-size: 7.5px;
+    }
+
+    #navigation button {
+        font-size: 40px;
+    }
+
+    .tooltip-text {
+        padding: var(--large-space);
+        font-size: 5px;
+    }
+
+    #navigation p {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
     }
 
     .container,
@@ -764,16 +366,25 @@ ol h3 {
         flex-direction: column;
     }
 
+    #status-bar {
+        font-size: 10px;
+        max-height: 25vh;
+
+        overflow-y: auto;
+    }
+
     #about-me-ul,
     #about-me-pictures {
         left: 0;
         right: 0;
 
         margin: 0 var(--large-space);
-        min-width: 80vw;
         position: relative;
     }
 
+    #about-me-ul {
+        max-width: 80%;
+    }
     #about-me-pictures {
         min-width: 75vw;
     }
@@ -783,58 +394,13 @@ ol h3 {
         padding: var(--medium-space);
     }
 
-    #iris-picture {
-        width: clamp(80px, 15vw, 30vw);
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-    h1 b,
-    h1 strong {
-        font-size: 30px;
-    }
-    h2 {
-        font-size: 17.5px;
-    }
-    h3 {
-        font-size: 15px;
-    }
-    ul h3,
-    ol h3 {
-        font-size: 10px;
-    }
-    hr {
-        height: 5px;
-    }
-    code {
-        border-radius: 2.5px;
-        border: 0.25px solid rgb(181, 186, 255);
-    }
-
-    #page-description {
-        font-size: 7.5px;
-    }
-
     #navigation button {
         font-size: 40px;
+        height: 40px;
     }
 
-    .tooltip-text {
-        padding: var(--large-space);
-        font-size: 5px;
-    }
-
-    .font-credits {
-        flex-direction: column;
-    }
-    .font-display {
-        padding: 10px 15px;
-
-        min-width: 80%;
-        max-height: 30vw;
-    }
-    .font-display a {
-        font-size: 10px;
+    #navigation p {
+        background: none;
+        padding: 0;
     }
 }

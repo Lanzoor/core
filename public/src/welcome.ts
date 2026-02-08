@@ -5,6 +5,7 @@ let profileButton = document.getElementById('profile-button')!;
 let navigationButton = document.getElementById('navigation-button')!;
 
 let welcomeDown = document.getElementById('welcome-down')!;
+let downArrow = document.getElementById('down-arrow')!;
 
 document.addEventListener('DOMContentLoaded', () => {
     welcomeHeader.classList.add('active');
@@ -16,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             welcomeDown.classList.add('active');
+            downArrow.style.animation = '2s floatAnimation ease-in-out infinite';
+
             document.body.classList.add('active');
         }, 1000);
     }, 1000);
