@@ -1,0 +1,16 @@
+{
+    "name": "core",
+    "private": true,
+    "version": "26.0.1",
+    "description": "",
+    "license": "ISC",
+    "author": "Lanzoor",
+    "main": "main.ts",
+    "scripts": {
+        "test": "echo \"info: ready to run!\""
+    },
+    "devDependencies": {
+        "@vercel/node": "^5.5.33",
+        "typescript": "^5.9.3"
+    }
+}
