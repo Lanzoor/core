@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "out",
+
+        "target": "ES2020",
+        "module": "ESNext",
+
+        "lib": ["esnext", "dom"],
+
+        "declaration": false,
+        "sourceMap": false,
+        "removeComments": true,
+
+        "strict": true,
+        "skipLibCheck": true
+    },
+
+    "exclude": ["api"]
+}

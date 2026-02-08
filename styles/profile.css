@@ -1,0 +1,825 @@
+/* ==================== Variables ==================== */
+
+:root {
+    --large-space: min(2vw, 6rem);
+    --medium-space: min(1vw, 3rem);
+    --small-space: min(0.5vw, 1.5rem);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+/* ==================== Fonts ==================== */
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url('/core/assets/fonts/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+        url('/core/assets/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        url('/core/assets/fonts/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
+        url('/core/assets/fonts/ttf/JetBrainsMono-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url('/core/assets/fonts/woff2/JetBrainsMono-Italic.woff2') format('woff2'),
+        url('/core/assets/fonts/ttf/JetBrainsMono-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url('/core/assets/fonts/woff2/FiraCode-Regular.woff2') format('woff2'),
+        url('/core/assets/fonts/ttf/FiraCode-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    font-style: bold;
+    font-weight: 700;
+
+    font-display: swap;
+    src:
+        url('/core/assets/fonts/woff2/FiraCode-Bold.woff2') format('woff2'),
+        url('/core/assets/fonts/ttf/FiraCode-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Brass Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url('/core/assets/fonts/woff2/BrassMonoCode-Regular.woff2') format('woff2'),
+        url('/core/assets/fonts/ttf/BrassMonoCode-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Brass Mono';
+    font-style: bold;
+    font-weight: 700;
+
+    font-display: swap;
+    src:
+        url('/core/assets/fonts/woff2/BrassMonoCode-Bold.woff2') format('woff2'),
+        url('/core/assets/fonts/ttf/BrassMonoCode-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Brass Mono';
+    font-style: italic;
+    font-weight: 400;
+
+    font-display: swap;
+    src:
+        url('/core/assets/fonts/woff2/BrassMonoCode-Italic.woff2') format('woff2'),
+        url('/core/assets/fonts/ttf/BrassMonoCode-Italic.ttf') format('truetype');
+}
+
+/* ==================== Container Definitions ==================== */
+
+body {
+    font-family: 'Brass Mono';
+
+    font-size: 25px;
+    line-height: 1.5;
+    color: #eeeeee;
+    background: linear-gradient(120deg, black, #38076f);
+
+    transition: background 1s ease;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    isolation: isolate;
+    overflow: hidden;
+
+    width: 90vw;
+    height: 80vh;
+
+    margin-left: 5vw;
+    margin-top: 5vh;
+
+    padding: 2vw;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow:
+        0 25px 50px rgba(255, 255, 255, 0.25),
+        inset 0 0 10px rgba(255, 255, 255, 0.25);
+
+    text-align: center;
+    align-items: center;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ==================== Text Elements ==================== */
+
+.container p {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+
+    padding: 15px;
+    margin-bottom: 1rem;
+
+    transition: background-color 0.2s ease;
+}
+
+.container p:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+b,
+strong {
+    font-style: bold;
+
+    color: #e6e6fa;
+    text-shadow: 0 0 25px currentColor;
+}
+
+i,
+em {
+    font-style: italic;
+
+    color: #ffe4ff;
+    text-shadow: 0 0 20px rgb(115, 60, 226);
+}
+
+a {
+    font-family: 'Fira Code';
+    display: inline-block;
+
+    text-decoration: none;
+    background: linear-gradient(120deg, #8051ff, #433cff);
+    color: transparent;
+    text-shadow: 0 5px 20px #7142ff;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    transition:
+        transform 0.1s ease-out,
+        text-shadow 0.2s ease;
+}
+
+a:hover {
+    background: linear-gradient(120deg, #8f66ff, #6284ff);
+    color: transparent;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    transform: translateY(-2px);
+}
+
+code {
+    font-family: 'Fira Code';
+
+    background-color: rgb(35, 35, 55);
+    color: rgb(170, 190, 220);
+    border: 1px solid rgb(181, 186, 255);
+    padding: 0.1em 0.2em;
+    border-radius: 6px;
+    white-space: normal;
+}
+
+.dim {
+    opacity: 0.6;
+}
+
+/* ==================== Titles ==================== */
+
+h1,
+h2,
+h3 {
+    font-family: 'JetBrains Mono';
+    font-weight: bold;
+
+    margin-top: var(--medium-space);
+    margin-bottom: var(--medium-space);
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 1.2;
+
+    margin-bottom: var(--medium-space);
+
+    color: #d4c1ff;
+    text-shadow: 0 0 20px rgb(115, 60, 226);
+}
+
+h1 b,
+h1 strong {
+    font-size: 75px;
+}
+
+h1 b,
+h1 strong,
+h2 b,
+h2 strong,
+h3 b,
+h3 strong {
+    color: #9872ff;
+    text-shadow: 0 0 20px #4800ff;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 1.3;
+
+    color: #ab87ff;
+    text-shadow: 0 0 20px rgb(115, 60, 226);
+}
+
+h3 {
+    font-size: 35px;
+
+    margin: 0.1em 0;
+    line-height: 1.4;
+
+    color: #f5d0f5;
+    text-shadow: 0 0 20px rgb(115, 60, 226);
+}
+
+/* ==================== Other Elements ==================== */
+
+blockquote {
+    padding: 0.75em;
+    padding-left: 1.5em;
+    margin: 1em 0;
+
+    color: #e6e6fa;
+    background-color: rgba(255, 255, 255, 0.08);
+
+    border: 5px solid #aaaaaa20;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        border 0.2s ease;
+}
+
+blockquote:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+    border: 5px solid #aaaaaa75;
+    box-shadow: 0 10px 25px #aaaaaa75;
+}
+
+hr {
+    margin-left: 0.5em;
+    margin-bottom: 2em;
+
+    width: auto;
+    height: 10px;
+
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.25));
+    border: none;
+    border-radius: 20px;
+}
+
+ul,
+ol {
+    padding: var(--medium-space) var(--large-space);
+    margin: var(--large-space) 0;
+
+    background-color: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(10px);
+    color: #e6e6fa;
+    border-radius: min(0.5vw, 0.2em);
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.4),
+        inset 0 0 20px rgba(255, 255, 255, 0.04);
+
+    transition: background-color 0.2s ease;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+ul:hover,
+ol:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+ul h3,
+ol h3 {
+    font-family: 'JetBrains Mono';
+    font-size: 30px;
+
+    margin: 0.75em 0.25em;
+}
+
+#navigation {
+    position: fixed;
+    bottom: var(--small-space);
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    user-select: none;
+}
+
+#page-description {
+    font-family: 'Fira Code' !important;
+    font-size: min(1vw, 20px);
+}
+
+#navigation p {
+    width: 100%;
+}
+
+#navigation button {
+    font-family: 'Fira Code';
+    font-size: min(4vw, 80px);
+
+    color: #777;
+    background: none;
+    border: none;
+    margin: 0;
+
+    transition:
+        text-shadow 0.2s ease,
+        color 0.2s ease;
+}
+
+#navigation button:hover {
+    text-shadow: 0 0 25px #777;
+    cursor: default;
+}
+
+#navigation button.active {
+    color: #ddd;
+    background: none;
+    border: none;
+}
+
+#navigation button.active:hover {
+    color: white;
+    text-shadow: 0 0 50px white;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.tooltip-label {
+    display: inline-block;
+    position: relative;
+
+    font-weight: bold;
+
+    color: #ffffff;
+    text-shadow: 0 0 25px rgb(116, 51, 255) !important;
+    vertical-align: 0em;
+}
+
+.tooltip-text {
+    font-family: 'Fira Code';
+    font-size: 17.5px;
+    user-select: none;
+    display: block;
+
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    padding: 16px 20px;
+    transform: translate(-50%, -25px);
+
+    background: rgba(50, 4, 111, 0.75);
+    backdrop-filter: blur(4px);
+
+    border: 2px solid rgb(168, 121, 255);
+    box-shadow: inset 0 0 10px rgb(168, 121, 255);
+    border-radius: 12px;
+
+    white-space: nowrap;
+    max-width: calc(100vw - 40px);
+    overflow-wrap: break-word;
+    pointer-events: none;
+
+    transition: all 0.5s ease-in;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0);
+
+    transition: all 0.1s ease-in;
+}
+
+/* ==================== Pages and Page Animation States ==================== */
+
+#pages {
+    position: relative;
+    min-height: 100vh;
+}
+
+.page {
+    position: fixed;
+    inset: 0;
+
+    transform: translateY(100vh);
+    opacity: 0;
+    display: none;
+
+    transition:
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.75s ease;
+}
+
+.page.active {
+    transform: translateY(0);
+    opacity: 1;
+    display: block;
+}
+
+.page.off-up {
+    transform: translateY(-100vh);
+    opacity: 0;
+}
+.page.off-down {
+    transform: translateY(100vh);
+    opacity: 0;
+}
+
+.page.exit-up {
+    transform: translateY(-100vh);
+    opacity: 0;
+}
+.page.exit-down {
+    transform: translateY(100vh);
+    opacity: 0;
+}
+
+.page.no-transition {
+    transition: none !important;
+}
+
+/* ==================== Picture Blocks ==================== */
+
+.picture-block {
+    display: flex;
+    position: absolute;
+
+    max-width: 20vw;
+
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.picture-block p {
+    max-height: 20vw;
+
+    min-width: 10vw;
+
+    text-align: center;
+    margin-top: 20px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.picture {
+    height: auto;
+    margin-top: 20px;
+
+    border-radius: min(1vw, 1em);
+    border: min(0.1vw, 0.2em) solid white;
+    box-shadow: 0 0 20px white;
+
+    user-select: none;
+    transition: box-shadow 0.2s ease;
+}
+
+.picture:hover {
+    box-shadow: 0 25px 25px #aaa;
+    cursor: pointer;
+}
+
+/* ==================== Other Miscellaneous Effects ==================== */
+
+.aligned-left {
+    text-align: left;
+}
+
+.aligned-center {
+    text-align: center;
+}
+
+.aligned-right {
+    text-align: right;
+}
+
+.brass-mono {
+    font-family: 'Brass Mono';
+}
+
+.fira-code {
+    font-family: 'Fira Code';
+}
+
+.jetbrains-mono {
+    font-family: 'JetBrains Mono';
+}
+
+#ripple-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2147483647;
+}
+
+/* ==================== Page 1 ==================== */
+
+#page-1 .container {
+    width: 75vw;
+    height: 80vh;
+
+    margin-left: 12.5vw;
+    margin-top: 5vh;
+}
+
+/* ==================== Page 2 ==================== */
+
+#page-2 .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#about-me-header {
+    width: 100%;
+    margin-bottom: var(--large-space);
+}
+
+#about-me-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#about-me-pictures,
+#about-me-ul {
+    position: fixed;
+    flex: 1;
+    margin: 0 var(--medium-space);
+}
+
+#about-me-pictures {
+    left: var(--medium-space);
+
+    min-width: 15vw;
+}
+
+#about-me-ul {
+    right: var(--medium-space);
+
+    min-width: 50vw;
+    max-width: 60vw;
+    max-height: 80vh;
+}
+
+#profile-picture {
+    width: clamp(80px, 7.5vw, min(12.5vw, 225px));
+    top: var(--large-space);
+}
+
+#iris-picture {
+    width: clamp(80px, 12.5vw, min(20vw, 400px));
+    left: var(--large-space);
+}
+
+#profile-picture p,
+#iris-picture p {
+    width: 20vw;
+    max-height: 5vh;
+    font-size: 20px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#status-bar {
+    width: 90%;
+    padding: 1em 2em;
+    margin: 2em 0.5em;
+
+    background: linear-gradient(120deg, #222222aa, #555555aa);
+    border: 2px solid #aaa;
+    box-shadow:
+        0 0 20px #aaa,
+        inset 0 0 20px #aaa;
+
+    transition: all 0.2s ease;
+}
+
+#status-bar:hover {
+    box-shadow:
+        0 20px 20px #aaa,
+        inset 0 0 30px #ffffff;
+}
+
+#favorite-color {
+    background: linear-gradient(90deg, #4b9cff, #4d56ff, #6f36ff, #8c3aff);
+    color: transparent;
+    text-shadow: 0 0 20px #6f43ff;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* ==================== Page 4 ==================== */
+
+.font-credits {
+    display: flex;
+    flex-direction: row;
+}
+.font-display {
+    display: inline-block;
+    position: relative;
+
+    font-size: 15px;
+
+    max-width: 25vw;
+    max-height: 20vw;
+    padding: 1em 2em;
+    margin: 0.5em;
+
+    background: rgba(255, 255, 255, 0.25);
+    border: 2px solid white;
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 10px white,
+        inset 0 0 15px white;
+
+    user-select: none;
+
+    transition: box-shadow 0.2s ease;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.font-display:hover {
+    box-shadow:
+        0 10px 25px white,
+        inset 0 0 25px white;
+}
+
+.font-display a {
+    font-size: 20px;
+    color: white;
+    text-shadow: none;
+}
+
+/* ==================== Debug (COMMENT OUT WHEN PRODUCTION) ==================== */
+
+/* * {
+    border: 1px solid red !important;
+    border-radius: 10px !important;
+}
+
+*:hover {
+    background: #aa000010;
+} */
+
+/* ==================== The Responsive Zone ==================== */
+
+/* ==================== Phones / Mobile ==================== */
+
+@media (max-width: 480px) {
+    body {
+        font-size: 7.5px;
+    }
+
+    .container {
+        height: 70vh;
+    }
+
+    #about-me-content {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about-me-ul,
+    #about-me-pictures {
+        left: 0;
+        right: 0;
+
+        margin: 0 var(--large-space);
+        min-width: 80vw;
+        position: relative;
+    }
+
+    #about-me-pictures {
+        min-width: 75vw;
+    }
+
+    #iris-picture {
+        width: clamp(80px, 12.5vw, 30vw);
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h1 b,
+    h1 strong {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 17.5px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    ul h3,
+    ol h3 {
+        font-size: 10px;
+    }
+
+    blockquote,
+    p {
+        width: 75%;
+    }
+
+    hr {
+        height: 5px;
+    }
+
+    #page-description {
+        font-size: 7.5px;
+    }
+
+    #navigation button {
+        font-size: 40px;
+    }
+
+    .tooltip-text {
+        padding: var(--large-space);
+        font-size: 5px;
+    }
+
+    .font-credits {
+        flex-direction: column;
+    }
+
+    .font-display {
+        padding: 10px 20px;
+
+        max-width: 80%;
+        max-height: 30vw;
+    }
+
+    .font-display a {
+        font-size: 10px;
+    }
+}

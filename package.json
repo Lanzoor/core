@@ -1,13 +1,15 @@
 {
     "name": "core",
     "private": true,
-    "version": "26.0.1",
-    "description": "",
+    "version": "26.1.2",
+    "description": "The ultimate repository for all of Lanzoor's webpages, documents, and profiles.",
     "license": "ISC",
     "author": "Lanzoor",
     "main": "main.ts",
     "scripts": {
-        "test": "echo \"info: ready to run!\""
+        "test": "echo \"info: ready to run!\"",
+        "dev": "npx tsc && echo \"info: compiled typescript files.\"",
+        "deploy": "npm install && git push"
     },
     "devDependencies": {
         "@vercel/node": "^5.5.33",

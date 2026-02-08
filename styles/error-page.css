@@ -1,0 +1,104 @@
+#container {
+    text-align: center;
+    margin: auto;
+    width: max(95vw, 75rem);
+    min-height: 75vh;
+
+    background: rgba(8, 16, 32, 0.96);
+    backdrop-filter: blur(24px);
+
+    border-radius: 22px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+
+    box-shadow:
+        0 0 0 2px rgba(80, 140, 255, 0.35),
+        0 0 0 4px rgba(40, 80, 180, 0.25),
+        0 30px 60px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(180, 220, 255, 0.08);
+
+    color: #e6f0ff;
+    font-size: 30px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+
+    background: radial-gradient(circle at top, #0c1f3a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url('/core/assets/fonts/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+        url('/core/assets/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        url('/core/assets/fonts/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
+        url('/core/assets/fonts/ttf/JetBrainsMono-Bold.ttf') format('truetype');
+}
+
+* {
+    font-family: 'JetBrains Mono';
+}
+
+h1 {
+    background: linear-gradient(90deg, #8fd3ff, #1159be);
+    text-shadow: 0 0 20px rgba(120, 200, 255, 0.7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+h2 {
+    background: linear-gradient(90deg, #6bffe2, #167979);
+    text-shadow: 0 0 20px rgba(100, 255, 220, 0.5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+h3 {
+    background: linear-gradient(90deg, #956bff, #2a1679);
+    text-shadow: 0 0 20px rgba(119, 65, 255, 0.5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+p {
+    color: #cfe0ff;
+}
+
+a {
+    display: inline-block;
+    background: linear-gradient(120deg, #4da6ff, #00e0ff);
+    text-shadow: 0 0 18px rgba(0, 200, 255, 0.8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: transform 0.1s ease-out;
+}
+
+a:hover {
+    background: linear-gradient(120deg, #7bb8ff, #6affff);
+    text-shadow: 0 0 25px rgba(120, 240, 255, 1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: translateY(-2.5px);
+}
