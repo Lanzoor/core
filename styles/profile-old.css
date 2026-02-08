@@ -41,7 +41,7 @@ body {
     place-items: center;
 
     /* background: linear-gradient(135deg, #120536 0%, #380d96 100%); */
-    background: url('/profile/assets/iris.jpg') no-repeat center center fixed;
+    background: url('/core/assets/iris.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #ffffff;
 }
