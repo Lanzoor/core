@@ -98,6 +98,17 @@
         url('/assets/fonts/ttf/BrassMonoCode-Italic.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Fairfax HD';
+    font-style: normal;
+    font-weight: 400;
+
+    font-display: swap;
+    src:
+        url('/assets/fonts/woff2/FairfaxHD.woff2') format('woff2'),
+        url('/assets/fonts/ttf/FairfaxHD.ttf') format('truetype');
+}
+
 /* ==================== Container Definitions ==================== */
 
 body {
@@ -563,6 +574,10 @@ ol h3 {
 
 .jetbrains-mono {
     font-family: 'JetBrains Mono';
+}
+
+.fairfax-hd {
+    font-family: 'Fairfax HD';
 }
 
 #ripple-container {

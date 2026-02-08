@@ -5,8 +5,18 @@
     left: 0;
 
     height: 15vh;
-    width: 100vw;
+    min-width: 100vw;
 
-    background: #ffffff75;
+    background: #ffffffaa;
+    color: black;
     backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    overflow-x: auto;
+
+    z-index: 2147483646;
 }
