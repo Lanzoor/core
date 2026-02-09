@@ -13,7 +13,7 @@ body {
 
 /* ==================== Containers ==================== */
 
-.container {
+.profile-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +46,7 @@ body {
     overflow-x: hidden;
 }
 
-.container p {
+.profile-container p {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
 
@@ -56,18 +56,18 @@ body {
     transition: background-color 0.2s ease;
 }
 
-.container p:hover {
+.profile-container p:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* ==================== Pages and Page Animation States ==================== */
 
-#pages {
+#profile-pages {
     position: relative;
     min-height: 100vh;
 }
 
-.page {
+.profile-page {
     position: fixed;
     inset: 0;
 
@@ -80,31 +80,31 @@ body {
         opacity 0.75s ease;
 }
 
-.page.active {
+.profile-page.active {
     transform: translateY(0);
     opacity: 1;
     display: block;
 }
 
-.page.off-up {
+.profile-page.off-up {
     transform: translateY(-100vh);
     opacity: 0;
 }
-.page.off-down {
+.profile-page.off-down {
     transform: translateY(100vh);
     opacity: 0;
 }
 
-.page.exit-up {
+.profile-page.exit-up {
     transform: translateY(-100vh);
     opacity: 0;
 }
-.page.exit-down {
+.profile-page.exit-down {
     transform: translateY(100vh);
     opacity: 0;
 }
 
-.page.no-transition {
+.profile-page.no-transition {
     transition: none !important;
 }
 
@@ -248,7 +248,7 @@ body {
 
 /* ==================== Page 1 ==================== */
 
-#page-1 .container {
+#profile-page-1 .profile-container {
     width: 75vw;
     height: 80vh;
 
@@ -258,7 +258,7 @@ body {
 
 /* ==================== Page 2 ==================== */
 
-#page-2 .container {
+#profile-page-2 .profile-container {
     display: flex;
     flex-direction: column;
 }
@@ -376,7 +376,7 @@ body {
     }
 
     .container,
-    #page-1 .container {
+    #profile-page-1 .container {
         width: 90vw;
         height: 80vh;
 

@@ -20,10 +20,10 @@ class Page {
 
 let pages = [
     //
-    new Page(1, 'Welcome!', document.getElementById('page-1')!),
-    new Page(2, 'About me', document.getElementById('page-2')!),
-    new Page(3, 'Interests (1)', document.getElementById('page-3')!),
-    new Page(4, 'Special Thanks', document.getElementById('page-4')!),
+    new Page(1, 'Welcome!', document.getElementById('profile-page-1')!),
+    new Page(2, 'About me', document.getElementById('profile-page-2')!),
+    new Page(3, 'Interests (1)', document.getElementById('profile-page-3')!),
+    new Page(4, 'Special Thanks', document.getElementById('profile-page-4')!),
 ];
 
 const savedPage = sessionStorage.getItem('currentPage');
@@ -38,7 +38,7 @@ let rightButton = document.getElementById('right-button')!;
 let leftestButton = document.getElementById('leftest-button')!;
 let rightestButton = document.getElementById('rightest-button')!;
 
-let pageDescription = document.getElementById('page-text')!;
+let pageDescription = document.getElementById('profile-page-text')!;
 
 let backgrounds = [
     //

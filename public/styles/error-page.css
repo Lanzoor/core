@@ -1,6 +1,7 @@
-#container {
+.error-container {
     text-align: center;
-    margin: auto;
+    margin: 15vh 0;
+    padding: 5vh 0;
     width: max(95vw, 75rem);
     min-height: 75vh;
 
@@ -19,13 +20,13 @@
         inset 0 1px 0 rgba(180, 220, 255, 0.08);
 
     color: #e6f0ff;
-    font-size: 30px;
 }
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
     margin: 0;
 
@@ -34,6 +35,12 @@ body {
 
 * {
     font-family: 'JetBrains Mono';
+}
+
+h1,
+h2,
+h3 {
+    margin: 4rem;
 }
 
 h1 {

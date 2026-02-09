@@ -4,12 +4,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
-    overflow-y: hidden;
-}
-
-body.active {
-    overflow-y: auto;
 }
 
 hr {
@@ -160,7 +154,7 @@ hr {
 }
 
 #frequently-asked-questions {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.1);
 
     margin-top: 20px;
     padding: 30px;

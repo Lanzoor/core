@@ -9,7 +9,7 @@
 }
 
 body {
-    background: radial-gradient(circle at top, #153664 0%, transparent 55%), linear-gradient(140deg, #0a561e, #10051e 45%, #2b0a63);
+    background: radial-gradient(circle at center, #153664 0%, transparent 55%), linear-gradient(140deg, #0a561e, #10051e 45%, #2b0a63);
 }
 
 .font-credits {
@@ -25,7 +25,7 @@ body {
 
     min-width: 50vw;
     max-height: 30vw;
-    padding: 1em 2em;
+    padding: 2em 2em;
 
     margin: 0.5em;
 

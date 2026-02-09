@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             welcomeDown.classList.add('active');
             downArrow.style.animation = '2s floatAnimation ease-in-out infinite';
-
-            document.body.classList.add('active');
         }, 1000);
     }, 1000);
 });
