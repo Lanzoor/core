@@ -102,6 +102,8 @@ function movePage(direction: Direction) {
         }
     });
 
+    pageDescription.style.transition = 'none';
+    pageDescription.style.opacity = '0';
     next.pageEl.style.display = 'block';
     next.pageEl.offsetHeight;
 
@@ -112,6 +114,9 @@ function movePage(direction: Direction) {
 
     requestAnimationFrame(() => {
         next.pageEl.classList.remove('no-transition');
+
+        pageDescription.style.transition = 'opacity 1s ease';
+        pageDescription.style.opacity = '1';
 
         current.pageEl.classList.add(moveDirection === 'right' ? 'exit-up' : 'exit-down');
         current.pageEl.classList.remove('active');
