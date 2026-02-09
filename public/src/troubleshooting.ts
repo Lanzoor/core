@@ -29,28 +29,28 @@ let lastUpdated: number | undefined;
 async function updateServerStatus() {
     const fetchResult = await fetchPingAPI();
     if (fetchResult) {
-        lastUpdated = fetchResult.time;
         serverStatus.textContent = '🟢 Online';
     } else {
         serverStatus.textContent = '🔴 Troublesome';
     }
+
+    lastUpdated = Date.now();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     updateServerStatus();
-    setInterval(updateServerStatus, 20000);
+    setInterval(updateServerStatus, 30000);
 });
 
 function updateLastUpdatedDisplay() {
     if (lastUpdated) {
         const currentTime = Date.now();
         const differenceMs = currentTime - lastUpdated;
-
         const differenceSec = Math.floor(differenceMs / 1000);
 
         lastUpdatedDisplay.textContent = `${differenceSec} seconds ago`;
     } else {
-        lastUpdatedDisplay.textContent = 'none yet';
+        lastUpdatedDisplay.textContent = 'not pinged yet';
     }
 
     requestAnimationFrame(updateLastUpdatedDisplay);
