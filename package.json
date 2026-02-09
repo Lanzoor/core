@@ -5,7 +5,7 @@
     "description": "The ultimate repository for all of Lanzoor's webpages, documents, and profiles.",
     "license": "ISC",
     "author": "Lanzoor",
-    "main": "main.ts",
+    "type": "module",
     "scripts": {
         "test": "echo \"info: ready to run!\"",
         "dev": "npx tsc && echo \"info: compiled typescript files\"",
