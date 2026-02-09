@@ -1,3 +1,4 @@
 **/node_modules
 **/.prettierignore
 **/public/out
+**/public/out/*.js
