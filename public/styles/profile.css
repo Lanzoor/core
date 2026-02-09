@@ -118,18 +118,20 @@ body {
     user-select: none;
 }
 
-#page-description {
+#navigation p {
     font-family: 'Fira Code' !important;
     font-size: min(1vw, 20px);
-}
 
-#navigation p {
+    padding: 0;
+    margin: 0;
+
+    background: none;
     width: 100%;
 }
 
-#navigation button {
+#navigation button,
+#absolute-navigation button {
     font-family: 'Fira Code';
-    font-size: min(4vw, 80px);
 
     color: #777;
     background: none;
@@ -141,21 +143,43 @@ body {
         color 0.2s ease;
 }
 
-#navigation button:hover {
+#navigation button {
+    font-size: min(4vw, 80px);
+}
+
+#navigation button:hover,
+#absolute-navigation button:hover {
     text-shadow: 0 0 25px #777;
     cursor: default;
 }
 
-#navigation button.active {
+#navigation button.active,
+#absolute-navigation button.active {
     color: #ddd;
     background: none;
     border: none;
 }
 
-#navigation button.active:hover {
+#navigation button.active:hover,
+#absolute-navigation button.active:hover {
     color: white;
     text-shadow: 0 0 50px white;
     cursor: pointer;
+}
+
+#absolute-navigation button {
+    font-size: min(2vw, 40px);
+
+    position: fixed;
+    bottom: var(--small-space);
+}
+
+#leftest-button {
+    left: var(--small-space);
+}
+
+#rightest-button {
+    right: var(--small-space);
 }
 
 /* ==================== Picture Blocks ==================== */
@@ -292,7 +316,6 @@ body {
 }
 
 #status-bar {
-    width: 90%;
     padding: 1em 2em;
     margin: 2em 0.5em;
 
@@ -367,8 +390,8 @@ body {
     }
 
     #status-bar {
-        font-size: 10px;
-        max-height: 25vh;
+        font-size: 7.5px;
+        max-height: 20vh;
 
         overflow-y: auto;
     }
@@ -399,8 +422,8 @@ body {
         height: 40px;
     }
 
-    #navigation p {
-        background: none;
-        padding: 0;
+    #absolute-navigation button {
+        font-size: 20px;
+        height: 20px;
     }
 }

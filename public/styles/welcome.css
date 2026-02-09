@@ -52,6 +52,8 @@ hr {
 }
 
 #welcome {
+    padding-top: 15vh;
+
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -136,8 +138,11 @@ hr {
 
 #welcome-down p {
     user-select: none;
+
     margin: 0;
     padding: 0;
+
+    background: none;
 }
 
 #welcome-down button {

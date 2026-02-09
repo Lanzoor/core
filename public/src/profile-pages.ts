@@ -21,8 +21,8 @@ class Page {
 let pages = [
     //
     new Page(1, 'Welcome!', document.getElementById('page-1')!),
-    new Page(2, 'About me (1)', document.getElementById('page-2')!),
-    new Page(3, 'About me (2)', document.getElementById('page-3')!),
+    new Page(2, 'About me', document.getElementById('page-2')!),
+    new Page(3, 'Interests (1)', document.getElementById('page-3')!),
     new Page(4, 'Special Thanks', document.getElementById('page-4')!),
 ];
 
@@ -34,6 +34,10 @@ if (savedPage !== null) {
 
 let leftButton = document.getElementById('left-button')!;
 let rightButton = document.getElementById('right-button')!;
+
+let leftestButton = document.getElementById('leftest-button')!;
+let rightestButton = document.getElementById('rightest-button')!;
+
 let pageDescription = document.getElementById('page-text')!;
 
 let backgrounds = [
@@ -49,7 +53,10 @@ function updateBackgroundAndUI() {
     pageDescription.innerHTML = pages[currentPage - 1].format();
 
     leftButton.classList.toggle('active', currentPage > 1);
+    leftestButton.classList.toggle('active', currentPage > 1);
+
     rightButton.classList.toggle('active', currentPage < pages.length);
+    rightestButton.classList.toggle('active', currentPage < pages.length);
 }
 
 function updatePagesVisibility() {
@@ -68,10 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
     updatePagesVisibility();
 });
 
-type Direction = 'left' | 'right';
+type Direction = 'left' | 'leftest' | 'right' | 'rightest';
 
 function movePage(direction: Direction) {
-    const targetPageIndex = direction === 'right' ? currentPage + 1 : currentPage - 1;
+    const moveDirection = direction.replace('est', '');
+    const absolute: boolean = direction.endsWith('est');
+
+    let targetPageIndex: number = 0;
+
+    if (absolute) {
+        targetPageIndex = moveDirection === 'left' ? 1 : pages.length;
+    } else {
+        targetPageIndex = moveDirection === 'right' ? currentPage + 1 : currentPage - 1;
+    }
+
+    if (targetPageIndex === currentPage) return;
 
     if (targetPageIndex < 1 || targetPageIndex > pages.length) return;
 
@@ -88,14 +106,14 @@ function movePage(direction: Direction) {
     next.pageEl.offsetHeight;
 
     next.pageEl.classList.add('no-transition');
-    next.pageEl.classList.add(direction === 'right' ? 'off-down' : 'off-up');
+    next.pageEl.classList.add(moveDirection === 'right' ? 'off-down' : 'off-up');
     next.pageEl.classList.remove('active', 'exit-up', 'exit-down');
     next.pageEl.offsetHeight;
 
     requestAnimationFrame(() => {
         next.pageEl.classList.remove('no-transition');
 
-        current.pageEl.classList.add(direction === 'right' ? 'exit-up' : 'exit-down');
+        current.pageEl.classList.add(moveDirection === 'right' ? 'exit-up' : 'exit-down');
         current.pageEl.classList.remove('active');
 
         next.pageEl.classList.add('active');
@@ -119,7 +137,23 @@ function movePage(direction: Direction) {
 leftButton.addEventListener('click', () => movePage('left'));
 rightButton.addEventListener('click', () => movePage('right'));
 
+leftestButton.addEventListener('click', () => movePage('leftest'));
+rightestButton.addEventListener('click', () => movePage('rightest'));
+
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') movePage('left');
-    if (event.key === 'ArrowRight') movePage('right');
+    if (event.key === 'ArrowLeft') {
+        if (event.shiftKey) {
+            movePage('leftest');
+        } else {
+            movePage('left');
+        }
+    }
+
+    if (event.key === 'ArrowRight') {
+        if (event.shiftKey) {
+            movePage('rightest');
+        } else {
+            movePage('right');
+        }
+    }
 });
