@@ -1,13 +1,44 @@
-let topPanel = document.createElement('div');
+const topPanel = document.createElement('div');
 topPanel.id = 'top-panel';
-
 document.body.appendChild(topPanel);
 
-topPanel.innerHTML = `
-<a href="/index.html">lanzoor.dev</a>
-<a href="/index.html">Welcome!</a>
-<a href="/profile/index.html">Profile</a>
-<a href="/credits.html">Credits</a>
-<a href="/docs/index.html">Documents</a>
-<a href="/docs/announcements/index.html">Announcements</a>
+class TopPanelDestination {
+    public displayName: string;
+    public link: string;
+    public colspan: number;
+    public identifier?: string;
+
+    constructor(displayName: string, link: string, colspan: number = 1, identifier?: string) {
+        this.displayName = displayName;
+        this.link = link;
+        this.colspan = colspan;
+        this.identifier = identifier;
+    }
+
+    format() {
+        const idAttr = this.identifier ? `id="${this.identifier}" ` : '';
+        return `<td colspan="${this.colspan}">
+    <a ${idAttr}href="${this.link}">${this.displayName}</a>
+</td>`;
+    }
+}
+
+const destinations: TopPanelDestination[] = [
+    //
+    new TopPanelDestination('lanzoor.dev', '/index.html', 2, 'lanzoor-dev'),
+    new TopPanelDestination('Welcome', '/index.html'),
+    new TopPanelDestination('Profile', '/profile/index.html'),
+    new TopPanelDestination('Credits', '/credits.html'),
+    new TopPanelDestination('Documents', '/docs/index.html'),
+    new TopPanelDestination('Announcements', '/docs/announcements/index.html'),
+];
+
+const tableHTML = `
+    <table>
+        <tr>
+            ${destinations.map((dest) => dest.format()).join('')}
+        </tr>
+    </table>
 `;
+
+topPanel.innerHTML = tableHTML;
