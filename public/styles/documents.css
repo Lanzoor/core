@@ -89,33 +89,6 @@ th:hover {
         inset 0 0 7.5px rgba(255, 255, 255, 0.75);
 }
 
-#inverted {
-    background-color: rgba(75, 80, 105, 0.5);
-    color: rgb(160, 165, 180);
-}
-
-#inverted:hover {
-    background-color: rgb(85, 90, 115);
-    box-shadow: 0 0 8px 8px rgba(70, 75, 100, 0.6);
-    color: rgb(220, 225, 240);
-    transition:
-        background-color 0.2s,
-        box-shadow 0.2s;
-}
-
-#inverted i,
-#inverted b {
-    color: rgb(120, 125, 140);
-    font-style: normal;
-}
-
-#inverted:hover i,
-#inverted:hover b {
-    color: rgb(180, 185, 200);
-    font-style: normal;
-    transition: all 0.2s;
-}
-
 h1 {
     color: rgb(90, 110, 160);
     text-shadow: 0 0 10px rgb(90, 110, 160);

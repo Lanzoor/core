@@ -5,12 +5,14 @@
     box-sizing: border-box;
 }
 
-/* ==================== Container Definitions ==================== */
-
 body {
     font-size: 20px;
     background: linear-gradient(120deg, black, #38076f);
     overflow-y: hidden;
+}
+
+hr {
+    margin-bottom: var(--small-space);
 }
 
 /* ==================== Containers ==================== */
@@ -288,7 +290,8 @@ body {
     flex-direction: column;
 }
 
-#about-me-header {
+#about-me-header,
+#interests-header {
     width: 100%;
     margin-bottom: var(--large-space);
 }
@@ -369,6 +372,78 @@ body {
     background-clip: text;
 }
 
+/* ==================== Page 3 ==================== */
+
+#interests-header p {
+    background: none;
+}
+
+#interests-main h2 {
+    padding: 0;
+    margin: 0;
+}
+
+#languages-table {
+    width: 75vw;
+}
+
+#languages-table thead th {
+    font-size: 20px;
+}
+
+#languages-table tbody th,
+#languages-table tbody td {
+    height: 100px;
+}
+
+#languages-table tbody th:nth-child(1) {
+    width: min(300px, 15vw);
+    color: rgba(255, 255, 255, 0.25);
+    font-size: min(2rem, 2vw);
+}
+
+#languages-table td:nth-child(2) {
+    width: min(300px, 15vw);
+    font-size: 40px;
+}
+
+#languages-table tbody td:nth-child(3),
+#languages-table tbody th:nth-child(3) {
+    width: auto;
+    text-align: left;
+    font-size: 20px;
+}
+
+#fluency-native {
+    color: #21fffb;
+    text-shadow: 0 0 10px #0e6b84;
+}
+
+#fluency-green {
+    color: #21ff67;
+    text-shadow: 0 0 10px #0e841a;
+}
+
+#fluency-yellow {
+    color: #ecff21;
+    text-shadow: 0 0 10px #84820e;
+}
+
+#fluency-orange {
+    color: #ff9f21;
+    text-shadow: 0 0 10px #84490e;
+}
+
+#fluency-red {
+    color: #ff2121;
+    text-shadow: 0 0 10px #840e0e;
+}
+
+#languages-table tbody i {
+    color: #7d5aff;
+    text-shadow: 0 0 20px #8a4ffe;
+}
+
 /* ==================== The Responsive Zone ==================== */
 
 /* ==================== Phones / Mobile ==================== */
@@ -400,10 +475,11 @@ body {
     #profile-page-text {
         font-size: 10px;
     }
+
     .container,
     #profile-page-1 .container {
         width: 90vw;
-        height: 80vh;
+        height: 75vh;
 
         margin-left: 5vw;
     }
@@ -442,13 +518,20 @@ body {
         padding: var(--medium-space);
     }
 
-    #left-navigation button {
+    #left-button,
+    #right-button {
         font-size: 40px;
         height: 40px;
     }
 
-    #right-navigation button {
+    #leftest-button,
+    #rightest-button {
         font-size: 20px;
         height: 20px;
+    }
+
+    #interests-main,
+    #interests-main table {
+        width: 75%;
     }
 }
