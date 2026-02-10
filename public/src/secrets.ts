@@ -16,12 +16,12 @@ async function checkSecret() {
 
     const data = await res.json();
 
-    const requiredHashes: string[] = ['yourStoredHashHere'];
+    const requiredHashes: string[] = ['b8d68e5a18b0672595b5b7e5e7176aca4381f3e3ac3ec3ed44d629994c740a96'];
 
     if (requiredHashes.includes(data.result)) {
-        secretContainer.innerHTML = '<p><b>Secret HTML</b> with <code>tags</code></p>';
+        secretContainer.innerHTML = '<p>Correct code. No content for now. Sorry.</p>';
         wrongAttempts = 0;
-        penaltyTime = 30000;
+        penaltyTime = 10000;
     } else {
         wrongAttempts++;
         secretContainer.innerHTML = `<p>Invalid code, try again later. <b>Input locked for ${penaltyTime / 1000} seconds.</b></p>`;
