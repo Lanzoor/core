@@ -1,32 +1,23 @@
-import type { IncomingMessage, ServerResponse } from 'http';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { createHash } from 'crypto';
 
-export default async function handler(req: IncomingMessage, res: ServerResponse) {
-    console.log('Ping invoked', { method: req.method, url: req.url });
-
-    let bodyData = '';
-    for await (const chunk of req) {
-        bodyData += chunk;
+export default function handler(req: VercelRequest, res: VercelResponse) {
+    if (req.method !== 'POST') {
+        return res.status(405).json({ ok: false, error: 'method not allowed' });
     }
 
-    let result: string | null = null;
-    try {
-        const parsed = JSON.parse(bodyData);
-        if (parsed.text && typeof parsed.text === 'string') {
-            result = createHash('sha256').update(parsed.text).digest('hex');
-        }
-    } catch (err) {
-        console.error('Failed to parse body:', err);
+    const text = req.body?.text;
+    if (typeof text !== 'string') {
+        return res.status(400).json({ ok: false, error: 'invalid input type' });
     }
 
-    const responseBody = JSON.stringify({
+    const result = createHash('sha256').update(text).digest('hex');
+
+    const body = {
         ok: true,
-        message: 'pong!',
         time: Date.now(),
         result,
-    });
+    };
 
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(responseBody);
+    res.status(200).json(body);
 }

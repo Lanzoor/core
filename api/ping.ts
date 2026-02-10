@@ -1,6 +1,6 @@
-import type { IncomingMessage, ServerResponse } from 'http';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-export default function handler(req: IncomingMessage, res: ServerResponse) {
+export default function handler(req: VercelRequest, res: VercelResponse) {
     console.log('Ping invoked', { method: req.method, url: req.url });
 
     const body = JSON.stringify({
@@ -9,7 +9,5 @@ export default function handler(req: IncomingMessage, res: ServerResponse) {
         time: Date.now(),
     });
 
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(body);
+    res.status(200).json(body);
 }
