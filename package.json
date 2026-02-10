@@ -12,6 +12,7 @@
         "build": "tsc"
     },
     "dependencies": {
+        "@upstash/redis": "^1.36.2",
         "@vercel/node": "^5.5.33"
     },
     "devDependencies": {
