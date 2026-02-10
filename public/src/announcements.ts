@@ -1,5 +1,6 @@
 let announcementSearchQuery = '';
 let currentAnnouncementPage = 1;
+const removedMessage = '- Removed by owner -';
 
 class Announcement {
     id: string;
@@ -7,11 +8,15 @@ class Announcement {
     title: string;
     private lastModified: Date;
 
-    constructor(id: string, link: string, title: string, lastModified: Date) {
+    constructor(id: string, link: string, title: string = removedMessage, lastModified: Date = new Date()) {
         this.id = id;
         this.link = link;
         this.title = title;
         this.lastModified = lastModified;
+
+        if (title == removedMessage) {
+            this.link = '/docs/announcements/removed.html';
+        }
     }
 
     formatDate(): string {
@@ -26,7 +31,7 @@ class Announcement {
 
 let announcements = [
     // keep this comment cuz prettier more like shittier
-    new Announcement('0001', '/docs/announcements/0001.html', 'Hiatus Announcement', new Date('2026-01-19')),
+    new Announcement('0001', '/docs/announcements/0001.html'),
     new Announcement('0002', '/docs/announcements/0002.html', '<code>periodica</code> Retirement', new Date('2026-01-28')),
     new Announcement('0003', '/docs/announcements/0003.html', 'Vacation Announcement / Diary', new Date('2026-02-04')),
     new Announcement('0004', '/docs/announcements/0004.html', 'Retirement of the Old Profile Website', new Date('2026-02-07')),
@@ -49,7 +54,7 @@ function updateAnnouncements() {
     let foundAny = false;
 
     announcements.forEach((announcement) => {
-        if (announcement.title.toLowerCase().includes(announcementSearchQuery.toLowerCase())) {
+        if (announcement.title.toLowerCase().includes(announcementSearchQuery.toLowerCase()) && announcement.title != 'Removed by owner') {
             foundAny = true;
 
             let currentRow = document.createElement('tr');
@@ -61,14 +66,22 @@ function updateAnnouncements() {
             currentLinkTD.appendChild(currentLink);
 
             let currentTitleTD = document.createElement('td');
-            currentTitleTD.innerHTML = announcement.title;
 
-            let currentModTd = document.createElement('td');
-            currentModTd.innerHTML = `<b>${announcement.formatDate()}</b>`;
+            if (announcement.title == removedMessage) {
+                currentTitleTD.id = 'removed';
+                currentTitleTD.colSpan = 2;
+            }
+
+            currentTitleTD.innerHTML = announcement.title;
 
             currentRow.appendChild(currentLinkTD);
             currentRow.appendChild(currentTitleTD);
-            currentRow.appendChild(currentModTd);
+
+            if (announcement.title != removedMessage) {
+                let currentModTd = document.createElement('td');
+                currentModTd.innerHTML = `<b>${announcement.formatDate()}</b>`;
+                currentRow.appendChild(currentModTd);
+            }
 
             announcementsTable.appendChild(currentRow);
         }
@@ -85,7 +98,9 @@ function updateAnnouncements() {
     }
 }
 
-setInterval(updateAnnouncements, 1000);
+document.addEventListener('DOMContentLoaded', () => {
+    updateAnnouncements();
+});
 
 const sortButton = document.getElementById('sort-button')!;
 

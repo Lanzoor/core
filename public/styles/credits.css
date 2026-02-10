@@ -56,6 +56,24 @@ body {
     text-shadow: none;
 }
 
+h1 {
+    background: linear-gradient(100deg, #5cff82, #179a52);
+    color: transparent;
+    text-shadow: none;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+h2 {
+    background: linear-gradient(100deg, #5ebfff, #6929ff);
+    color: transparent;
+    text-shadow: 0 0 10px #5117ff;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
 @media (max-width: 480px) {
     .font-display {
         padding: 10px 15px;

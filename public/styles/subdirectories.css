@@ -131,8 +131,8 @@ a {
     color: transparent;
     text-shadow: 0 10px 20px #5117ff;
 
-    -webkit-background-clip: text;
     background-clip: text;
+    -webkit-background-clip: text;
 
     transition:
         transform 0.1s ease-out,

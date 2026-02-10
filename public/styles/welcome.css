@@ -70,19 +70,20 @@ hr {
 }
 
 #welcome-header {
-    margin-bottom: 2rem;
+    margin: 2em 0 4em 0;
 }
 
 #welcome-buttons {
+    margin: 2em 1em 2em 0;
     user-select: none;
 }
 
 #welcome-buttons button {
     font-family: 'Fira Code';
+    font-size: min(4rem, 4vw);
 
     border: none;
     border-radius: 2em;
-
     margin: 1em;
 
     color: white;
@@ -96,9 +97,8 @@ hr {
 }
 
 #profile-button {
-    font-size: 40px;
-    padding: min(50px, 2vw) min(100px, 2vw);
-    border-radius: 25em;
+    padding: min(5rem, 5vw) min(10rem, 5vw);
+    border-radius: 50%;
 
     background: linear-gradient(120deg, #6a30ffaa, #3532ffaa);
     box-shadow:
@@ -114,7 +114,6 @@ hr {
 }
 
 #navigation-button {
-    font-size: 40px;
     background: none;
 }
 
@@ -124,11 +123,12 @@ hr {
 }
 
 #welcome-down {
-    position: absolute;
+    position: relative;
     bottom: 1vh;
 }
 
 #welcome-down p {
+    font-size: min(2rem, 1.5vw);
     user-select: none;
 
     margin: 0;
@@ -163,6 +163,7 @@ hr {
 #connections {
     text-align: left;
     padding: 2.5%;
+    max-width: 95vw;
     color: #aaa;
 }
 
@@ -174,6 +175,12 @@ hr {
 #connections h3 {
     color: #aaa;
     text-shadow: 0 0 10px #777;
+}
+
+#statistics {
+    width: 100%;
+    text-align: center;
+    background: none;
 }
 
 /* ==================== The Responsive Zone ==================== */
