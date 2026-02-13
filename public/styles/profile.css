@@ -396,22 +396,45 @@ hr {
     height: 100px;
 }
 
+.language-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.language-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    filter: drop-shadow(0 0 5px rgb(130, 130, 130));
+
+    transition: filter 0.2s ease;
+}
+
+.language-icon:hover {
+    filter: drop-shadow(0 5px 10px rgb(130, 130, 130));
+}
+
 #languages-table tbody th:nth-child(1) {
     font-weight: normal;
     font-family: 'Fira Code';
-    width: min(300px, 15vw);
-    color: rgba(255, 255, 255, 0.75);
     font-size: min(2rem, 2vw);
+
+    width: min(300px, 15vw);
+    padding-left: min(30px, 1.5vw);
+
+    color: rgba(255, 255, 255, 0.75);
 }
 
 #languages-table td:nth-child(2) {
-    font-family: 'Fira Code';
     width: min(300px, 15vw);
-    font-size: 40px;
+
+    font-family: 'Fira Code';
+    font-size: min(2rem, 2vw);
 }
 
 #languages-table td:nth-child(2) i {
-    font-size: 30px;
+    font-size: min(1.5rem, 1.5vw);
 }
 
 #languages-table tbody td:nth-child(3),
@@ -426,27 +449,27 @@ hr {
     text-shadow: 0 0 20px #8a4ffe;
 }
 
-#fluency-native {
+.fluency-native {
     color: #21fffb;
     text-shadow: 0 0 10px #0e6b84;
 }
 
-#fluency-green {
+.fluency-green {
     color: #21ff67;
     text-shadow: 0 0 10px #0e841a;
 }
 
-#fluency-yellow {
+.fluency-yellow {
     color: #ecff21;
     text-shadow: 0 0 10px #84820e;
 }
 
-#fluency-orange {
+.fluency-orange {
     color: #ff9f21;
     text-shadow: 0 0 10px #84490e;
 }
 
-#fluency-red {
+.fluency-red {
     color: #ff2121;
     text-shadow: 0 0 10px #840e0e;
 }
@@ -555,5 +578,12 @@ hr {
     #languages-table tbody td,
     #languages-table tbody th {
         height: 200px;
+        font-size: 15px;
+    }
+
+    .language-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
     }
 }

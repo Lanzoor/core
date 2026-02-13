@@ -244,6 +244,7 @@ td {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    vertical-align: middle;
     border: 2px solid rgb(100, 105, 130);
     border-collapse: collapse;
     padding: 10px;
