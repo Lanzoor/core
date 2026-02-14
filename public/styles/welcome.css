@@ -19,9 +19,6 @@ body {
 #welcome {
     min-height: 90vh;
     padding: 5vh 0 20vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
 
     background-image: url('/assets/iris.jpg');
     background-position: center center;
@@ -165,6 +162,20 @@ body {
     width: 100%;
     text-align: center;
     background: none;
+}
+
+.social-icon {
+    display: inline-block;
+
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 0 5px rgb(130, 130, 130));
+
+    transition: filter 0.2s ease;
+}
+
+.social-icon:hover {
+    filter: drop-shadow(0 5px 10px rgb(130, 130, 130));
 }
 
 /* ==================== The Responsive Zone ==================== */

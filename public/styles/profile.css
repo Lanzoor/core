@@ -255,18 +255,6 @@ hr {
 
 /* ==================== Other Miscellaneous Effects ==================== */
 
-.aligned-left {
-    text-align: left;
-}
-
-.aligned-center {
-    text-align: center;
-}
-
-.aligned-right {
-    text-align: right;
-}
-
 #ripple-container {
     position: fixed;
     inset: 0;

@@ -26,7 +26,7 @@ class TopPanelDestination {
 const destinations: TopPanelDestination[] = [
     //
     new TopPanelDestination('lanzoor.dev', '/index.html', 2, 'lanzoor-dev'),
-    new TopPanelDestination('Welcome', '/index.html'),
+    new TopPanelDestination('Welcome!', '/index.html'),
     new TopPanelDestination('Profile', '/profile/index.html'),
     new TopPanelDestination('Credits', '/credits.html'),
     new TopPanelDestination('Documents', '/docs/index.html'),
