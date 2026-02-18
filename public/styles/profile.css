@@ -155,7 +155,6 @@ hr {
 #right-navigation {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 #left-navigation {
@@ -455,8 +454,6 @@ hr {
 
 /* ==================== The Responsive Zone ==================== */
 
-/* ==================== Phones / Mobile ==================== */
-
 @media (max-width: 480px) {
     #page-description,
     p,
@@ -497,6 +494,8 @@ hr {
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
+        padding: 0;
     }
 
     #status-bar {
@@ -515,9 +514,20 @@ hr {
         position: relative;
     }
 
+    #profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    #iris-picture {
+        width: auto;
+        height: 100px;
+    }
+
     #about-me-ul {
         min-width: 85%;
     }
+
     #about-me-pictures {
         min-width: 75vw;
     }

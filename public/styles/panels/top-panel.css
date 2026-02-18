@@ -164,7 +164,3 @@ body {
     height: 100px;
     max-height: 10vh;
 }
-
-* {
-    border: 1px solid red !important;
-}
