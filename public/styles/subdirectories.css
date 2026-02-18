@@ -390,9 +390,9 @@ th:hover {
 
 /* ==================== Debug (COMMENT OUT WHEN PRODUCTION) ==================== */
 
-* {
+/* * {
     outline: 1px solid red !important;
-}
+} */
 
 /* ==================== The Responsive Zone ==================== */
 
