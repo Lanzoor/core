@@ -323,8 +323,6 @@ input[type='checkbox']:hover {
 }
 
 input[type='text'] {
-    width: 60%;
-    max-width: 400px;
     padding: 10px 14px;
     margin: 12px 0;
     border: 1px solid #7155ff;

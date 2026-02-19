@@ -133,7 +133,7 @@ em {
 }
 
 a {
-    font-family: 'Fira Code';
+    font-family: 'JetBrains Mono';
     font-size: 20px;
 
     display: inline-block;
@@ -163,7 +163,7 @@ a:hover {
 
 code,
 kbd {
-    font-family: 'Fira Code';
+    font-family: 'JetBrains Mono';
 
     padding: 0.1em 0.2em;
     border-radius: 6px;

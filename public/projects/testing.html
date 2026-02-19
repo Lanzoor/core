@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Testing</title>
+
+    <link rel="stylesheet" href="/styles/fonts.css"/>
+    <link rel="stylesheet" href="/styles/documents.css">
+
+    <style>
+        .long-input {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Testing</h1>
+
+    <div id="test" style="transition: all 0.2s ease;"></div>
+
+    <h2>Control Panel</h2>
+
+    <h3>Size & Positioning</h3>
+
+    <p>
+        Size: <input type="text" id="width" placeholder="Width"> x <input type="text" id="height" placeholder="Height"><br>
+        Positioning: <input type="text" id="padding" placeholder="Padding"> | <input type="text" id="margin" placeholder="Margin"><br>
+    </p>
+
+    <h3>Styles and Colors</h3>
+
+    <p>
+        Color picker: <input type="color" id="color-select" value="#ffffff"> - <code id="color-result">#ffffff</code><br>
+
+        Background: <input type="text" id="background" class="long-input" placeholder="Background"><br>
+        Borders: <input type="text" id="border" placeholder="Border"> | <input type="text" id="border-radius" placeholder="Border radius"> | <input type="text" id="box-shadow" class="long-input" placeholder="Box shadow"><br>
+        Text: <input type="text" id="text-content" placeholder="Text content"> | <input type="text" id="color" placeholder="Text color"> | <input type="text" id="text-shadow" class="long-input" placeholder="Text shadow">
+    </p>
+
+    <script src="testing.js"></script>
+</body>
+</html>

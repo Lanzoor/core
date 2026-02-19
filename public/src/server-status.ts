@@ -1,6 +1,6 @@
-async function fetchPingAPI(): Promise<any | undefined> {
+async function pingServer(): Promise<any | undefined> {
     try {
-        const res = await fetch('/api/ping');
+        const res = await fetch('/api/status');
 
         if (!res.ok) {
             console.error('Ping API failed:', res.status, res.statusText);
@@ -23,12 +23,14 @@ async function fetchPingAPI(): Promise<any | undefined> {
 
 const serverStatus = document.getElementById('server-status')!;
 const lastUpdatedDisplay = document.getElementById('last-updated')!;
+const uptimeDisplay = document.getElementById('uptime-display')!;
 
 let lastUpdated: number | undefined;
 
 async function updateServerStatus() {
-    const fetchResult = await fetchPingAPI();
+    const fetchResult = await pingServer();
     if (fetchResult) {
+        uptimeDisplay.textContent = fetchResult.createdAt.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
         serverStatus.textContent = '🟢 Online';
     } else {
         serverStatus.textContent = '🔴 Troublesome';

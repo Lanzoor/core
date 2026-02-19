@@ -15,19 +15,17 @@
         <h1>- Server Status -</h1>
 
         <blockquote>
-            Current server status (<code>/api/ping</code>): <b id="server-status">🟡 Unknown</b><br>
-            The server is pinged every 30 seconds to prevent spamming.
-            Last pinged: <code><span id="last-updated">not pinged yet</span></code>.<br><br>
+            Current server status (<code>/api/status</code>): <b id="server-status">🟡 Unknown</b> | Last pinged <code><span id="last-updated">not pinged yet</span></code><br><br>
 
             If the online status says <b>🟡 Unknown</b> even after waiting a while, it is most likely a JavaScript link error.<br>
-            <b>Please check our <a href="/troubleshooting/javascript-error.html">JavaScript troubleshooting page</a></b>.
+            <b>Please check our <a href="/troubleshooting/javascript-error.html">JavaScript troubleshooting page</a></b>. Otherwise, please follow the steps below.
         </blockquote>
 
         <h1>- Server Error -</h1>
         <h3>We apologize for the inconvenience.</h3>
     </div>
 
-    <script type="module" src="/out/troubleshooting.js"></script>
+    <script type="module" src="/out/server-status.js"></script>
     <script type="module" src="/out/top-panel.js"></script>
 </body>
 </html>

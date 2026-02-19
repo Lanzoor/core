@@ -3,4 +3,4 @@
 **/public/out
 **/public/out/*.js
 .vercel
-.env*.local
+**/.env*.local
