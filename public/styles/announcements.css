@@ -6,16 +6,3 @@ td:nth-child(2) {
 #announcements-title {
     width: 50vw;
 }
-
-#removed {
-    text-align: center;
-
-    color: #fff;
-    text-shadow: 0 0 10px #fff;
-
-    background: rgba(255, 0, 0, 0.25);
-}
-
-#removed:hover {
-    background: rgba(255, 0, 0, 0.75);
-}

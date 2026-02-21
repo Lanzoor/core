@@ -22,17 +22,22 @@ async function pingServer(): Promise<any | undefined> {
 }
 
 const serverStatus = document.getElementById('server-status')!;
-const lastUpdatedDisplay = document.getElementById('last-updated')!;
-const uptimeDisplay = document.getElementById('uptime-display')!;
+const pingDisplay = document.getElementById('ping-display')!;
+const updateDisplay = document.getElementById('update-display')!;
+
+let defaultUptimeDisplay = updateDisplay.textContent;
 
 let lastUpdated: number | undefined;
 
 async function updateServerStatus() {
     const fetchResult = await pingServer();
     if (fetchResult) {
-        uptimeDisplay.textContent = new Date(fetchResult.createdAt).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        updateDisplay.textContent = new Date(fetchResult.createdAt).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric' });
+
         serverStatus.textContent = '🟢 Online';
     } else {
+        updateDisplay.textContent = defaultUptimeDisplay;
+
         serverStatus.textContent = '🔴 Troublesome';
     }
 
@@ -50,9 +55,9 @@ function updateLastUpdatedDisplay() {
         const differenceMs = currentTime - lastUpdated;
         const differenceSec = Math.floor(differenceMs / 1000);
 
-        lastUpdatedDisplay.textContent = `${differenceSec} seconds ago`;
+        pingDisplay.textContent = `${differenceSec} seconds ago`;
     } else {
-        lastUpdatedDisplay.textContent = 'not pinged yet';
+        pingDisplay.textContent = 'not pinged yet';
     }
 
     requestAnimationFrame(updateLastUpdatedDisplay);

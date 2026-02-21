@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navigationOverlay = document.createElement('div');
     navigationOverlay.id = 'navigation-overlay';
 
+    document.body.appendChild(navigationOverlay);
+
     navigationOverlay.innerHTML = `
 <div id="navigation-panel">
     <div id="close-navigation" class="navigation-toggle">
@@ -32,8 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 </div>
 `;
-    document.body.appendChild(navigationOverlay);
-
     const navigationToggles = document.getElementsByClassName('navigation-toggle');
     Array.from(navigationToggles).forEach((button) => {
         button.addEventListener('click', () => {

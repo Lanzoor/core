@@ -94,6 +94,16 @@ body {
     text-shadow: 0 0 10px #ccc;
 }
 
+#welcome-down {
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    position: absolute;
+
+    bottom: 0;
+}
+
 #welcome-down p {
     font-size: min(2rem, 1.5vw);
     user-select: none;
@@ -107,6 +117,8 @@ body {
 #welcome-down button {
     border: none;
     background: none;
+
+    margin: 1.5vw 0;
 }
 
 #welcome-down button:hover {

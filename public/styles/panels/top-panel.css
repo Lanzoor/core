@@ -10,7 +10,7 @@
 
     inset: 0 0 auto 0;
 
-    height: 100px;
+    height: 150px;
     max-height: 10vh;
 
     background: linear-gradient(120deg, #222, #444);
@@ -23,7 +23,7 @@
 }
 
 body {
-    padding-top: min(100px, 10vh);
+    padding-top: min(150px, 10vh);
 }
 
 #panel-logo,
@@ -35,7 +35,7 @@ body {
     align-items: center;
     gap: min(10px, 1vh);
 
-    padding: min(20px, 2vh);
+    padding: 0 min(20px, 2vh);
 
     height: 100%;
 }
@@ -44,6 +44,12 @@ body {
 #top-panel div *,
 #close-navigation div,
 #close-navigation * {
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-decoration: none;
+
     transition:
         text-shadow 0.2s ease,
         background 0.2s ease,
@@ -63,8 +69,6 @@ body {
 }
 
 #panel-logo a {
-    background: none;
-
     color: white;
     text-shadow: none;
     font-size: min(45px, 4.5vh);
@@ -80,9 +84,8 @@ body {
 
 #open-navigation p,
 #close-navigation p {
-    padding: 0;
     margin: 0;
-    background: none;
+    padding: 0;
 
     font-size: min(30px, 3vh);
     font-family: 'Fira Code';
@@ -98,11 +101,15 @@ body {
 
 #open-navigation button,
 #close-navigation button {
-    background: none;
-    border: none;
+    margin: 0;
+    padding: 0;
 
     width: min(45px, 4.5vh);
     height: min(45px, 4.5vh);
+
+    color: black;
+
+    font-size: min(30px, 3vh);
 }
 
 #open-navigation img,
@@ -161,6 +168,11 @@ body {
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 
     width: 100%;
-    height: 100px;
+    height: 150px;
     max-height: 10vh;
+}
+
+#close-navigation p,
+#close-navigation button {
+    color: black;
 }

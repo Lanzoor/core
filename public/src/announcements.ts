@@ -68,7 +68,7 @@ function updateAnnouncements() {
             let currentTitleTD = document.createElement('td');
 
             if (announcement.title == removedMessage) {
-                currentTitleTD.id = 'removed';
+                currentTitleTD.id = 'inverted';
                 currentTitleTD.colSpan = 2;
             }
 
