@@ -95,27 +95,27 @@ body {
     filter: drop-shadow(0 0 10px #bbb);
 }
 
-#panel-logo a {
-    color: white;
-    text-shadow: none;
-    font-size: min(45px, 4.5vh);
-}
-
-#panel-logo a:hover {
-    transform: none;
-}
-
 #open-navigation {
     align-self: flex-end;
 }
 
+#panel-logo p,
 #open-navigation p,
 #close-navigation p {
     margin: 0;
     padding: 0;
+    color: white;
 
     font-size: min(30px, 3vh);
     font-family: 'Fira Code';
+}
+
+#panel-logo p {
+    padding: 0;
+
+    text-shadow: none;
+    font-size: min(45px, 4.5vh);
+    font-family: 'JetBrains Mono';
 }
 
 #close-navigation p,
@@ -128,33 +128,26 @@ body {
 
     top: 0;
 
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 
-    width: 100%;
     height: 150px;
     max-height: 10vh;
 
     cursor: pointer;
 }
 
-#open-navigation button,
-#close-navigation button {
+#open-navigation img,
+#close-navigation img,
+.chevron {
     margin: 0;
     padding: 0;
 
     width: min(45px, 4.5vh);
     height: min(45px, 4.5vh);
 
-    font-size: min(30px, 3vh);
     box-shadow: none;
     border-radius: 0;
-}
-
-#open-navigation img,
-#close-navigation img {
-    width: 100%;
-    height: 100%;
 }
 
 #navigation-panel {
@@ -168,23 +161,36 @@ body {
     right: 0;
 
     overflow-y: auto;
+    user-select: none;
 }
 
 #navigation-panel nav ul {
+    border-radius: 10px;
+    margin: 10px;
     line-height: 1;
 
     background: rgba(0, 0, 0, 0.05);
     box-shadow: 0 10px 10px black;
-    margin: 0;
 
     color: gray;
+}
+
+#navigation-panel nav li {
+    position: relative;
+
+    padding: 0;
+    margin: 0.5rem 0;
+    width: 90%;
 }
 
 #navigation-panel nav ul a {
     font-size: 25px;
 
     background: none;
-    padding: 1rem 0;
+    padding: 0.5rem 0.5rem;
+    margin: 0;
+
+    height: 100%;
 
     color: #ccc;
     text-shadow: 0 0 10px black;
@@ -196,11 +202,16 @@ body {
         color 0.2s ease;
 }
 
+#navigation-panel nav ul ul a {
+    font-size: 20px;
+}
+
 #navigation-panel nav ul a:hover {
+    transform: none;
     text-decoration: underline;
 
-    color: #4df0ff;
-    text-shadow: 0 0 10px #3ab6fe;
+    color: #1ad8ea;
+    text-shadow: 0 0 10px #0b6aa1;
 
     cursor: pointer;
 }
@@ -209,7 +220,7 @@ body {
 #navigation-overlay * {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease !important;
 }
 
 #navigation-overlay {
@@ -232,4 +243,58 @@ body {
 #navigation-overlay.active * {
     opacity: 1;
     pointer-events: auto;
+}
+
+.dropdown {
+    display: none;
+}
+
+.dropdown.open {
+    display: block;
+}
+
+.chevron {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    color: #bbb;
+
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0;
+
+    position: absolute;
+    top: 50%;
+    animation: arrowFloat 1.5s ease infinite;
+
+    pointer-events: auto;
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.chevron:hover {
+    box-shadow: 0;
+    filter: drop-shadow(0 0 10px #ffffff);
+}
+
+.chevron.open {
+    animation: none;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+@keyframes arrowFloat {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(-40%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
 }
