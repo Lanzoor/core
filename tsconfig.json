@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "rootDir": "public/src",
         "outDir": "public/out",
 
         "target": "ES2020",

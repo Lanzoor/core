@@ -1,8 +1,0 @@
-th:nth-child(2),
-td:nth-child(2) {
-    text-align: left;
-}
-
-#announcements-title {
-    width: 50vw;
-}

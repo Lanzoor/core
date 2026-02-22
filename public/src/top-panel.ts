@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <p>Navigation</p>
 
     <button>
-        <img src="/assets/icons/hamburger.svg" alt="">
+        <img src="/assets/icons/hamburger.svg" alt="☰">
     </button>
 </div>
 `;
@@ -29,9 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>Close</p>
 
         <button>
-            x
+            <img src="/assets/icons/close.svg" alt="x">
         </button>
     </div>
+    <nav>
+        <ul>
+            <li><a href="/">Welcome!</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/credits">Credits</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/docs">Documents</a></li>
+            <li><a href="/troubleshooting">Troubleshooting</a></li>
+        </ul>
+    </nav>
+
 </div>
 `;
     const navigationToggles = document.getElementsByClassName('navigation-toggle');

@@ -26,8 +26,18 @@ body {
 #welcome-header.inactive,
 #welcome-buttons.inactive,
 #welcome-down.inactive {
+    position: fixed;
     opacity: 0;
     transform: translateY(40px);
+}
+
+#welcome-header.active,
+#welcome-buttons.active {
+    position: relative;
+}
+
+#welcome-down.active {
+    position: absolute;
 }
 
 #welcome-header.active,

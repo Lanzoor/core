@@ -1,9 +1,9 @@
 .error-container {
     text-align: center;
-    margin: 5vh 0;
-    padding: 5vh 0;
+    margin-left: 5vw;
+    margin-top: 5vh;
 
-    width: max(95vw, 75rem);
+    width: 90vw;
     min-height: 75vh;
 
     background: rgba(8, 16, 32, 0.96);
@@ -12,7 +12,7 @@
     border-radius: 22px;
     border: 2px solid transparent;
     background-clip: padding-box;
-    position: relative;
+    position: absolute;
 
     box-shadow:
         0 0 0 2px rgba(80, 140, 255, 0.35),
@@ -24,10 +24,6 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     min-height: 100vh;
     margin: 0;
 
@@ -41,7 +37,8 @@ body {
 h1,
 h2,
 h3 {
-    margin: 4rem;
+    width: 100%;
+    margin: 2rem 0;
 }
 
 h1 {

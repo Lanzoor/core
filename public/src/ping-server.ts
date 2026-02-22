@@ -1,6 +1,6 @@
-async function pingServer(): Promise<any | undefined> {
+async function pingServer(route: string): Promise<any | undefined> {
     try {
-        const res = await fetch('/api/status');
+        const res = await fetch(route);
 
         if (!res.ok) {
             console.error('Ping API failed:', res.status, res.statusText);
@@ -30,7 +30,7 @@ let defaultUptimeDisplay = updateDisplay.textContent;
 let lastUpdated: number | undefined;
 
 async function updateServerStatus() {
-    const fetchResult = await pingServer();
+    const fetchResult = await pingServer('https://lanzoor.dev/api/status/');
     if (fetchResult) {
         updateDisplay.textContent = new Date(fetchResult.createdAt).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric' });
 
