@@ -1,7 +1,7 @@
 **/node_modules
 **/.prettierignore
 
-**/out/*.js
+**/out
 
 .vercel
 **/.env*.local
