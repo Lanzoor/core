@@ -58,14 +58,17 @@ body {
 #open-navigation,
 #open-navigation *,
 #close-navigation,
-#close-navigation * {
+#close-navigation *,
+#navigation-panel,
+#navigation-panel * {
     user-select: none;
     transition:
         background 0.2s ease,
         box-shadow 0.2s ease,
         text-shadow 0.2s ease,
         transform 0.2s ease,
-        filter 0.2s ease;
+        filter 0.2s ease,
+        color 0.2s ease !important;
 }
 
 #top-panel div p,
@@ -183,7 +186,7 @@ body {
     width: 90%;
 }
 
-#navigation-panel nav ul a {
+#navigation-panel a {
     font-size: 25px;
 
     background: none;
@@ -195,18 +198,13 @@ body {
     color: #ccc;
     text-shadow: 0 0 10px black;
     text-decoration: none;
-
-    transition:
-        transform 0.2s ease,
-        text-shadow 0.2s ease,
-        color 0.2s ease;
 }
 
 #navigation-panel nav ul ul a {
     font-size: 20px;
 }
 
-#navigation-panel nav ul a:hover {
+#navigation-panel a:hover {
     transform: none;
     text-decoration: underline;
 
@@ -220,7 +218,7 @@ body {
 #navigation-overlay * {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s ease !important;
+    transition: opacity 0.5s ease;
 }
 
 #navigation-overlay {
@@ -267,12 +265,12 @@ body {
 
     position: absolute;
     top: 50%;
-    animation: arrowFloat 1.5s ease infinite;
+    transform: translateY(-50%) rotate(0deg);
 
     pointer-events: auto;
     transition:
-        transform 0.3s ease,
-        filter 0.3s ease;
+        transform 0.6s ease,
+        filter 0.6s ease;
 }
 
 .chevron:hover {
@@ -281,20 +279,5 @@ body {
 }
 
 .chevron.open {
-    animation: none;
     transform: translateY(-50%) rotate(180deg);
-}
-
-@keyframes arrowFloat {
-    0% {
-        transform: translateY(-50%);
-    }
-
-    50% {
-        transform: translateY(-40%);
-    }
-
-    100% {
-        transform: translateY(-50%);
-    }
 }

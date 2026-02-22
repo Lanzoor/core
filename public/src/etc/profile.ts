@@ -1,4 +1,4 @@
-function getUTC9Time() {
+function getLocalTime() {
     const date = new Date();
     const utc9 = new Date(date.getTime() + 9 * 60 * 60 * 1000);
 
@@ -19,16 +19,18 @@ function getUTC9Time() {
 
 const localTimeText = document.getElementById('local-time')!;
 
-function updateTime() {
-    localTimeText.textContent = getUTC9Time();
+function updateLocalTime() {
+    localTimeText.textContent = getLocalTime();
 
-    requestAnimationFrame(updateTime);
+    requestAnimationFrame(updateLocalTime);
 }
 
-updateTime();
+updateLocalTime();
 let currentPage: number = 1;
 
-document.getElementById('javascript-indicator')!.classList.remove('active');
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('javascript-indicator')!.classList.remove('active');
+});
 
 class Page {
     pageNumber: number;
