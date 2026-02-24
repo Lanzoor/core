@@ -107,31 +107,43 @@ body {
 #welcome-down {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     width: 100vw;
+    height: min(20vw, 200px);
+    margin-top: 10vh;
+
     position: absolute;
 
     bottom: 0;
 }
 
 #welcome-down p {
-    font-size: min(2rem, 1.5vw);
+    font-size: 20px;
     user-select: none;
 
     margin: 0;
     padding: 0;
+    border-radius: 0;
 
     background: none;
 }
 
-#welcome-down button {
+#welcome-down svg {
     border: none;
     background: none;
 
     margin: 1.5vw 0;
+
+    min-width: 100px;
+    min-height: 75px;
+
+    width: max(10vh);
+    height: max(7.5vh);
 }
 
-#welcome-down button:hover {
+#welcome-down svg:hover {
     filter: drop-shadow(0 0 20px white);
     cursor: pointer;
 }

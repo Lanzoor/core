@@ -24,12 +24,9 @@
 
         <div id="welcome-down">
             <p><b>You can keep going down!</b></p>
-            <button id="down-arrow">
-                <svg width="100" height="75" viewBox="0 0 24 12"
-                fill="none" stroke="white" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-                    <polyline points="2 2 12 10 22 2" />
-                </svg>
-            </button>
+            <svg viewBox="0 0 24 12" fill="none" stroke="white" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2 2 12 10 22 2" />
+            </svg>
         </div>
 
         <hr id="section-hr">
@@ -130,11 +127,34 @@
 
         <p id="statistics">
             Website made with <b>HTML, CSS, JavaScript / Typescript and love</b> by <code>lanzoor</code>!<br>
-            <span class="dim">Last updated @ <code id="uptime-display">February 22nd</code> | version <code>v26.8.2</code></span>
+            <span class="dim">Last updated @ <code id="update-display">February 24th</code> | version <code>v26.8.3</code></span>
         </p>
     </div>
 
     <script src="/out/ping-server.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const updateDisplay = document.getElementById('update-display');
+
+            let defaultUptimeDisplay = updateDisplay.textContent;
+
+            try {
+                const fetchResult = await pingServer('https://lanzoor.dev/api/status/');
+                if (fetchResult) {
+                    updateDisplay.textContent = new Date(fetchResult.createdAt).toLocaleString(
+                        'en-US',
+                        { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric' }
+                    );
+                } else {
+                    updateDisplay.textContent = defaultUptimeDisplay;
+                }
+            } catch (err) {
+                console.error(err);
+                updateDisplay.textContent = defaultUptimeDisplay;
+            }
+        });
+    </script>
+
     <script src="/out/top-panel.js"></script>
     <script src="/out/etc/welcome.js"></script>
 </body>

@@ -1,6 +1,9 @@
 const topPanel = document.createElement('div');
 topPanel.id = 'top-panel';
 
+const topPanelNav = document.createElement('nav');
+topPanelNav.id = 'top-panel-navigation';
+
 const panelLogo = document.createElement('div');
 panelLogo.id = 'panel-logo';
 
@@ -39,54 +42,72 @@ const navigationPanelNav = document.createElement('nav');
 const navigationPanelList = document.createElement('ul');
 
 class NavigationDestination {
-    private listItemEl: HTMLLIElement;
-    private linkEl: HTMLAnchorElement;
-
-    private arrowEl: HTMLImageElement | undefined;
-    private childElements: NavigationDestination[] | undefined;
+    private link: string;
+    private name: string;
+    private childElements?: NavigationDestination[];
 
     constructor(link: string, name: string, childElements?: NavigationDestination[]) {
-        this.listItemEl = document.createElement('li');
+        this.link = link;
+        this.name = name;
+        this.childElements = childElements;
+    }
 
-        this.linkEl = document.createElement('a');
-        this.linkEl.href = link;
-        this.linkEl.textContent = name;
+    appendTo(parent: HTMLElement) {
+        const linkEl = document.createElement('a');
+        linkEl.href = this.link;
+        linkEl.textContent = this.name;
 
-        if (childElements) {
-            this.arrowEl = document.createElement('img');
-            this.arrowEl.src = '/assets/icons/caret-down.svg';
-            this.arrowEl.alt = '▼';
-            this.arrowEl.classList.add('chevron');
+        if (parent instanceof HTMLUListElement) {
+            const listItemEl = document.createElement('li');
+            listItemEl.appendChild(linkEl);
+            parent.appendChild(listItemEl);
 
-            this.childElements = childElements;
+            if (this.childElements) {
+                this.createArrow(listItemEl);
+
+                const childListEl = document.createElement('ul');
+                childListEl.classList.add('dropdown');
+
+                for (const child of this.childElements) {
+                    child.appendTo(childListEl);
+                }
+
+                listItemEl.appendChild(childListEl);
+            }
+        } else if (parent instanceof HTMLElement) {
+            parent.appendChild(linkEl);
+
+            if (this.childElements) {
+                this.createArrow(parent);
+
+                const childDivEl = document.createElement('div');
+                childDivEl.classList.add('inline-dropdown');
+
+                for (const child of this.childElements) {
+                    child.appendTo(childDivEl);
+                }
+
+                parent.appendChild(childDivEl);
+            }
         }
     }
 
-    appendTo(parentUListEl: HTMLUListElement) {
-        this.listItemEl.appendChild(this.linkEl);
+    private createArrow(container: HTMLElement) {
+        const arrowEl = document.createElement('img');
+        arrowEl.src = '/assets/icons/caret-down.svg';
+        arrowEl.alt = '▼';
+        arrowEl.classList.add('chevron');
+        arrowEl.setAttribute('aria-expanded', 'false');
 
-        parentUListEl.appendChild(this.listItemEl);
+        arrowEl.addEventListener('click', () => {
+            const expanded = arrowEl.getAttribute('aria-expanded') === 'true';
+            arrowEl.setAttribute('aria-expanded', String(!expanded));
+            const childList = container.querySelector('ul.dropdown');
+            childList?.classList.toggle('open');
+            arrowEl.classList.toggle('open');
+        });
 
-        if (this.arrowEl && this.childElements) {
-            this.listItemEl.appendChild(this.arrowEl);
-
-            const childListEl = document.createElement('ul');
-            childListEl.classList.add('dropdown');
-
-            for (const childElement of this.childElements) {
-                childElement.appendTo(childListEl);
-            }
-
-            this.arrowEl.setAttribute('aria-expanded', 'false');
-            this.arrowEl.addEventListener('click', () => {
-                const expanded = this.arrowEl?.getAttribute('aria-expanded') === 'true';
-                this.arrowEl?.setAttribute('aria-expanded', String(!expanded));
-                childListEl.classList.toggle('open');
-                this.arrowEl?.classList.toggle('open');
-            });
-
-            parentUListEl.appendChild(childListEl);
-        }
+        container.appendChild(arrowEl);
     }
 }
 
@@ -102,6 +123,12 @@ let destinations = [
 
 document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(topPanel);
+
+    topPanel.appendChild(topPanelNav);
+
+    for (let destination of destinations) {
+        destination.appendTo(topPanelNav);
+    }
 
     panelLogo.appendChild(panelLogoText);
 

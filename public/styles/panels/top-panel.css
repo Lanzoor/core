@@ -61,6 +61,8 @@ body {
 #close-navigation *,
 #navigation-panel,
 #navigation-panel * {
+    border-radius: 0;
+
     user-select: none;
     transition:
         background 0.2s ease,
@@ -183,14 +185,13 @@ body {
 
     padding: 0;
     margin: 0.5rem 0;
-    width: 90%;
 }
 
 #navigation-panel a {
-    font-size: 25px;
+    font-size: min(25px, 5vh);
 
     background: none;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem;
     margin: 0;
 
     height: 100%;
@@ -243,6 +244,31 @@ body {
     pointer-events: auto;
 }
 
+#top-panel-navigation {
+    position: absolute;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+
+    width: 100vw;
+    height: 100%;
+}
+
+#top-panel-navigation a {
+    padding: 2.5px;
+    font-size: 15px;
+    color: white;
+    text-shadow: none;
+}
+
+#top-panel-navigation a:hover {
+    text-decoration: underline;
+    transform: translateY(-2px);
+}
+
 .dropdown {
     display: none;
 }
@@ -251,6 +277,13 @@ body {
     display: block;
 }
 
+.inline-dropdown {
+    display: none;
+}
+
+.dropdown.open {
+    display: block;
+}
 .chevron {
     width: 30px;
     height: 30px;
@@ -280,4 +313,20 @@ body {
 
 .chevron.open {
     transform: translateY(-50%) rotate(180deg);
+}
+
+/* Only reveal navigation panels when appropriate */
+
+#open-navigation {
+    display: none;
+}
+
+@media (max-width: 1080px) {
+    #open-navigation {
+        display: flex;
+    }
+
+    #top-panel-navigation {
+        display: none;
+    }
 }
