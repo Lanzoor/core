@@ -26,9 +26,9 @@ body {
     overflow-y: hidden;
 }
 
-#panel-logo,
-#open-navigation,
-#close-navigation {
+#top-panel--logo,
+#top-panel--navigation,
+#navigation--close {
     display: flex;
     position: relative;
 
@@ -53,12 +53,12 @@ body {
     border: none;
 }
 
-#panel-logo,
-#panel-logo *,
-#open-navigation,
-#open-navigation *,
-#close-navigation,
-#close-navigation *,
+#top-panel--logo,
+#top-panel--logo *,
+#top-panel--navigation,
+#top-panel--navigation *,
+#navigation--close,
+#navigation--close *,
 #navigation-panel,
 #navigation-panel * {
     border-radius: 0;
@@ -85,28 +85,28 @@ body {
     box-shadow: 0 0 20px #333;
 }
 
-#panel-logo {
+#top-panel--logo {
     align-self: flex-start;
 }
 
-#panel-logo:hover *,
-#open-navigation:hover *,
-#close-navigation:hover * {
+#top-panel--logo:hover *,
+#top-panel--navigation:hover *,
+#navigation--close:hover * {
     text-shadow: 0 0 10px #bbb;
 }
 
-#open-navigation:hover img,
-#close-navigation:hover img {
+#top-panel--navigation:hover img,
+#navigation--close:hover img {
     filter: drop-shadow(0 0 10px #bbb);
 }
 
-#open-navigation {
+#top-panel--navigation {
     align-self: flex-end;
 }
 
-#panel-logo p,
-#open-navigation p,
-#close-navigation p {
+#top-panel--logo p,
+#top-panel--navigation p,
+#navigation--close p {
     margin: 0;
     padding: 0;
     color: white;
@@ -115,7 +115,7 @@ body {
     font-family: 'Fira Code';
 }
 
-#panel-logo p {
+#top-panel--logo p {
     padding: 0;
 
     text-shadow: none;
@@ -123,12 +123,12 @@ body {
     font-family: 'JetBrains Mono';
 }
 
-#close-navigation p,
-#close-navigation button {
+#navigation--close p,
+#navigation--close button {
     color: white;
 }
 
-#close-navigation {
+#navigation--close {
     justify-content: right;
 
     top: 0;
@@ -142,8 +142,8 @@ body {
     cursor: pointer;
 }
 
-#open-navigation img,
-#close-navigation img,
+#top-panel--navigation img,
+#navigation--close img,
 .chevron {
     margin: 0;
     padding: 0;
@@ -153,6 +153,35 @@ body {
 
     box-shadow: none;
     border-radius: 0;
+}
+
+#navigation-overlay,
+#navigation-overlay * {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+#navigation-overlay {
+    display: block;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0 0 5vw black;
+
+    z-index: 2147483647;
+}
+
+#navigation-overlay.active,
+#navigation-overlay.active * {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 #navigation-panel {
@@ -187,64 +216,43 @@ body {
     margin: 0.5rem 0;
 }
 
-#navigation-panel a {
+#navigation-panel nav div {
+    display: flex;
+    gap: 5px;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navigation-panel nav a {
     font-size: min(25px, 5vh);
+    color: #ccc;
+    text-shadow: 0 0 10px black;
+    text-decoration: none;
 
     background: none;
     padding: 0.5rem;
     margin: 0;
 
     height: 100%;
-
-    color: #ccc;
-    text-shadow: 0 0 10px black;
-    text-decoration: none;
 }
 
 #navigation-panel nav ul ul a {
     font-size: 20px;
 }
 
-#navigation-panel a:hover {
+#navigation-panel nav a:hover {
     transform: none;
     text-decoration: underline;
 
-    color: #1ad8ea;
-    text-shadow: 0 0 10px #0b6aa1;
+    color: #777;
+    text-shadow: 0 0 10px black;
 
     cursor: pointer;
 }
 
-#navigation-overlay,
-#navigation-overlay * {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-}
-
-#navigation-overlay {
-    display: block;
-    position: fixed;
-
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-
-    background: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(4px);
-    box-shadow: inset 0 0 5vw black;
-
-    z-index: 2147483647;
-}
-
-#navigation-overlay.active,
-#navigation-overlay.active * {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-#top-panel-navigation {
+#top-panel--links {
     position: absolute;
     display: flex;
 
@@ -257,14 +265,14 @@ body {
     height: 100%;
 }
 
-#top-panel-navigation a {
+#top-panel--links a {
     padding: 2.5px;
     font-size: 15px;
     color: white;
     text-shadow: none;
 }
 
-#top-panel-navigation a:hover {
+#top-panel--links a:hover {
     text-decoration: underline;
     transform: translateY(-2px);
 }
@@ -284,11 +292,11 @@ body {
 .dropdown.open {
     display: block;
 }
+
 .chevron {
     width: 30px;
     height: 30px;
     font-size: 30px;
-    color: #bbb;
 
     padding: 0;
     margin: 0;
@@ -296,9 +304,7 @@ body {
     border-radius: 0;
     box-shadow: 0;
 
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%) rotate(0deg);
+    transform: rotate(-90deg);
 
     pointer-events: auto;
     transition:
@@ -312,21 +318,29 @@ body {
 }
 
 .chevron.open {
-    transform: translateY(-50%) rotate(180deg);
+    transform: rotate(0deg);
 }
 
-/* Only reveal navigation panels when appropriate */
+@media (max-width: 768px) {
+    #navigation-panel {
+        width: 80vw;
+    }
 
-#open-navigation {
-    display: none;
+    #navigation-panel nav ul a {
+        font-size: 15px;
+    }
+
+    #navigation-panel nav ul ul a {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 1080px) {
-    #open-navigation {
+    #top-panel--navigation {
         display: flex;
     }
 
-    #top-panel-navigation {
+    #top-panel--links {
         display: none;
     }
 }

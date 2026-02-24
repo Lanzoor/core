@@ -1,25 +1,25 @@
 const topPanel = document.createElement('div');
 topPanel.id = 'top-panel';
 
-const topPanelNav = document.createElement('nav');
-topPanelNav.id = 'top-panel-navigation';
+const topPanelLinks = document.createElement('nav');
+topPanelLinks.id = 'top-panel--links';
 
-const panelLogo = document.createElement('div');
-panelLogo.id = 'panel-logo';
+const topPanelLogo = document.createElement('div');
+topPanelLogo.id = 'top-panel--logo';
 
-const panelLogoText = document.createElement('p');
-panelLogoText.textContent = 'lanzoor.dev';
+const topPanelLogoText = document.createElement('p');
+topPanelLogoText.textContent = 'lanzoor.dev';
 
-const openNavigation = document.createElement('div');
-openNavigation.id = 'open-navigation';
-openNavigation.classList.add('navigation-toggle');
+const topPanelNavigation = document.createElement('div');
+topPanelNavigation.id = 'top-panel--navigation';
+topPanelNavigation.classList.add('navigation-toggle');
 
-const openNavigationText = document.createElement('p');
-openNavigationText.textContent = 'Navigation';
+const topPanelNavigationText = document.createElement('p');
+topPanelNavigationText.textContent = 'Navigation';
 
-const openNavigationIcon = document.createElement('img');
-openNavigationIcon.src = '/assets/icons/hamburger.svg';
-openNavigationIcon.alt = '☰';
+const topPanelNavigationIcon = document.createElement('img');
+topPanelNavigationIcon.src = '/assets/icons/hamburger.svg';
+topPanelNavigationIcon.alt = '☰';
 
 const navigationOverlay = document.createElement('div');
 navigationOverlay.id = 'navigation-overlay';
@@ -27,16 +27,16 @@ navigationOverlay.id = 'navigation-overlay';
 const navigationPanel = document.createElement('div');
 navigationPanel.id = 'navigation-panel';
 
-const closeNavigation = document.createElement('div');
-closeNavigation.id = 'close-navigation';
-closeNavigation.classList.add('navigation-toggle');
+const navigationClose = document.createElement('div');
+navigationClose.id = 'navigation--close';
+navigationClose.classList.add('navigation-toggle');
 
-const closeNavigationText = document.createElement('p');
-closeNavigationText.textContent = 'Close';
+const navigationCloseText = document.createElement('p');
+navigationCloseText.textContent = 'Close';
 
-const closeNavigationIcon = document.createElement('img');
-closeNavigationIcon.src = '/assets/icons/close.svg';
-closeNavigationIcon.alt = '☰';
+const navigationCloseIcon = document.createElement('img');
+navigationCloseIcon.src = '/assets/icons/close.svg';
+navigationCloseIcon.alt = '☰';
 
 const navigationPanelNav = document.createElement('nav');
 const navigationPanelList = document.createElement('ul');
@@ -53,17 +53,40 @@ class NavigationDestination {
     }
 
     appendTo(parent: HTMLElement) {
+        const textEl = document.createElement('div');
         const linkEl = document.createElement('a');
-        linkEl.href = this.link;
+
+        if (!this.childElements) {
+            linkEl.href = this.link;
+        } else {
+            linkEl.classList.add('disabled');
+        }
+
         linkEl.textContent = this.name;
 
         if (parent instanceof HTMLUListElement) {
             const listItemEl = document.createElement('li');
-            listItemEl.appendChild(linkEl);
             parent.appendChild(listItemEl);
 
+            textEl.appendChild(linkEl);
+            listItemEl.appendChild(textEl);
+
             if (this.childElements) {
-                this.createArrow(listItemEl);
+                const arrowEl = document.createElement('img');
+                arrowEl.src = '/assets/icons/caret-down.svg';
+                arrowEl.alt = '▼';
+                arrowEl.classList.add('chevron');
+                arrowEl.setAttribute('aria-expanded', 'false');
+
+                textEl.appendChild(arrowEl);
+
+                textEl.addEventListener('click', () => {
+                    const expanded = arrowEl.getAttribute('aria-expanded') === 'true';
+                    arrowEl.setAttribute('aria-expanded', String(!expanded));
+                    const childList = parent.querySelector('ul.dropdown');
+                    childList?.classList.toggle('open');
+                    arrowEl.classList.toggle('open');
+                });
 
                 const childListEl = document.createElement('ul');
                 childListEl.classList.add('dropdown');
@@ -72,14 +95,13 @@ class NavigationDestination {
                     child.appendTo(childListEl);
                 }
 
-                listItemEl.appendChild(childListEl);
+                parent.appendChild(childListEl);
             }
         } else if (parent instanceof HTMLElement) {
             parent.appendChild(linkEl);
+            linkEl.href = this.link;
 
             if (this.childElements) {
-                this.createArrow(parent);
-
                 const childDivEl = document.createElement('div');
                 childDivEl.classList.add('inline-dropdown');
 
@@ -91,24 +113,6 @@ class NavigationDestination {
             }
         }
     }
-
-    private createArrow(container: HTMLElement) {
-        const arrowEl = document.createElement('img');
-        arrowEl.src = '/assets/icons/caret-down.svg';
-        arrowEl.alt = '▼';
-        arrowEl.classList.add('chevron');
-        arrowEl.setAttribute('aria-expanded', 'false');
-
-        arrowEl.addEventListener('click', () => {
-            const expanded = arrowEl.getAttribute('aria-expanded') === 'true';
-            arrowEl.setAttribute('aria-expanded', String(!expanded));
-            const childList = container.querySelector('ul.dropdown');
-            childList?.classList.toggle('open');
-            arrowEl.classList.toggle('open');
-        });
-
-        container.appendChild(arrowEl);
-    }
 }
 
 let destinations = [
@@ -116,7 +120,12 @@ let destinations = [
     new NavigationDestination('/', 'Welcome!'),
     new NavigationDestination('/profile', 'Profile'),
     new NavigationDestination('/projects', 'Projects'),
-    new NavigationDestination('/docs', 'Documents', [new NavigationDestination('/docs/announcements', 'Announcements')]),
+    new NavigationDestination('/docs', 'Documents', [
+        //
+        new NavigationDestination('/docs', 'Document Portal'),
+        new NavigationDestination('/docs/announcements', 'Announcements'),
+        new NavigationDestination('/api/docs', 'API Docs'),
+    ]),
     new NavigationDestination('/credits', 'Credits'),
     new NavigationDestination('/troubleshooting', 'Troubleshooting'),
 ];
@@ -124,21 +133,21 @@ let destinations = [
 document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(topPanel);
 
-    topPanel.appendChild(topPanelNav);
+    topPanel.appendChild(topPanelLinks);
 
     for (let destination of destinations) {
-        destination.appendTo(topPanelNav);
+        destination.appendTo(topPanelLinks);
     }
 
-    panelLogo.appendChild(panelLogoText);
+    topPanelLogo.appendChild(topPanelLogoText);
 
-    openNavigation.appendChild(openNavigationText);
-    openNavigation.appendChild(openNavigationIcon);
+    topPanelNavigation.appendChild(topPanelNavigationText);
+    topPanelNavigation.appendChild(topPanelNavigationIcon);
 
-    topPanel.appendChild(panelLogo);
-    topPanel.appendChild(openNavigation);
+    topPanel.appendChild(topPanelLogo);
+    topPanel.appendChild(topPanelNavigation);
 
-    panelLogo.addEventListener('click', () => {
+    topPanelLogo.addEventListener('click', () => {
         window.location.href = '/';
     });
 
@@ -146,9 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navigationOverlay.appendChild(navigationPanel);
 
-    closeNavigation.appendChild(closeNavigationText);
-    closeNavigation.appendChild(closeNavigationIcon);
-    navigationPanel.appendChild(closeNavigation);
+    navigationClose.appendChild(navigationCloseText);
+    navigationClose.appendChild(navigationCloseIcon);
+    navigationPanel.appendChild(navigationClose);
 
     navigationPanelNav.appendChild(navigationPanelList);
     for (let destination of destinations) {
