@@ -28,7 +28,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         const body = {
             ok: true,
             time: Date.now(),
-            data,
+            data: data.data,
         };
 
         res.status(200).json(body);

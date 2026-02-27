@@ -210,6 +210,17 @@ body {
     filter: drop-shadow(0 5px 10px rgb(130, 130, 130));
 }
 
+#discord-status {
+    min-width: 60vw;
+    min-height: 10vw;
+    background: linear-gradient(120deg, #1f0353, #170460);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* ==================== The Responsive Zone ==================== */
 
 @media (max-width: 768px) {

@@ -116,6 +116,10 @@
             </a>
         </div>
 
+        <div id="discord-status">
+            <div id="discord-status--profile-picture"></div>
+            <img id="discord-status--nameplate"></img>
+        </div>
         <ul>
             <li>
                 <b>Discord</b> - username <code>lanzoor</code>
@@ -135,18 +139,24 @@
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             const updateDisplay = document.getElementById('update-display');
+            const discordProfilePicture = document.getElementById('discord-status--profile-picture');
 
             let defaultUptimeDisplay = updateDisplay.textContent;
 
             try {
-                const fetchResult = await pingServer('https://lanzoor.dev/api/status/');
-                if (fetchResult) {
-                    updateDisplay.textContent = new Date(fetchResult.createdAt).toLocaleString(
+                const statusResult = await pingServer('https://lanzoor.dev/api/status/');
+                if (statusResult) {
+                    updateDisplay.textContent = new Date(statusResult.createdAt).toLocaleString(
                         'en-US',
                         { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric' }
                     );
                 } else {
                     updateDisplay.textContent = defaultUptimeDisplay;
+                }
+
+                const discordStatusResult = await pingServer('https://www.lanzoor.dev/api/discord-status')
+                if (discordStatusResult) {
+                    const discordAvatarURL = `https://cdn.discordapp.com/avatars/${discordStatusResult.}.png?size=256`
                 }
             } catch (err) {
                 console.error(err);
