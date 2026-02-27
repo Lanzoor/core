@@ -13,20 +13,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     try {
         console.log('Ping invoked!', { method: req.method, url: req.url });
 
-        const projectId = process.env.VERCEL_PROJECT_ID;
-        const token = process.env.VERCEL_TOKEN;
-
-        const response = await fetch(`https://api.vercel.com/v6/deployments?projectId=${projectId}&limit=1`, { headers: { Authorization: `Bearer ${token}` } });
+        const userId = process.env.DISCORD_USER_ID;
+        const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
 
         const data = await response.json();
-        const latest = data.deployments[0];
 
         const body = {
             ok: true,
-            message: 'Servers online! Pong 🏓',
             time: Date.now(),
-            createdAt: latest.createdAt,
-            url: latest.url,
+            data,
         };
 
         res.status(200).json(body);
