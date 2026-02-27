@@ -14,9 +14,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         console.log('Ping invoked!', { method: req.method, url: req.url });
 
         const userId = process.env.DISCORD_USER_ID;
-        const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+        const lanyardURL = `https://api.lanyard.rest/v1/users/${userId}`;
+        console.log(`Fetching from URL ${lanyardURL}`);
+
+        const response = await fetch(lanyardURL);
 
         const data = await response.json();
+
+        if (data.success == false && data.error) {
+            throw new Error(`Lanyard API Error: ${data.error.message}`);
+        }
 
         const body = {
             ok: true,
