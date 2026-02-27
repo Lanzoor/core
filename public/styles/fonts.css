@@ -93,3 +93,25 @@
         url('/assets/fonts/woff2/FairfaxHD.woff2') format('woff2'),
         url('/assets/fonts/ttf/FairfaxHD.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Satoshi';
+    font-style: normal;
+    font-weight: 400;
+
+    font-display: swap;
+    src:
+        url('/assets/fonts/woff2/Satoshi-Variable.woff2') format('woff2'),
+        url('/assets/fonts/ttf/Satoshi-Variable.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    font-style: italic;
+    font-weight: 400;
+
+    font-display: swap;
+    src:
+        url('/assets/fonts/woff2/Satoshi-VariableItalic.woff2') format('woff2'),
+        url('/assets/fonts/ttf/Satoshi-VariableItalic.ttf') format('truetype');
+}

@@ -116,14 +116,23 @@
             </a>
         </div>
 
+        <a href="https://discord.com/users/1360940628590072010" target="_blank" style="all: unset">
         <div id="discord-status">
-            <div id="discord-status--profile-picture"></div>
-            <img id="discord-status--nameplate"></img>
+            <img id="discord-status--avatar"></img>
+            <div id="discord-status--nameplate">
+                <span id="discord-status--display-name">
+                    lanzoor
+                </span>
+
+                <hr>
+
+                <b>Username</b>: <span id="discord-status--username">lanzoor</span> | <code id="discord-status--user-id">unknown</code><br>
+                <b>Status</b>: <span id="discord-status--status" class="status-offline">unknown</span>
+            </div>
         </div>
+        </a>
+
         <ul>
-            <li>
-                <b>Discord</b> - username <code>lanzoor</code>
-            </li>
             <li>
                 <b>Google | Gmail</b> - <code>lanzoorgaming@gmail.com</code>
             </li>
@@ -131,7 +140,7 @@
 
         <p id="statistics">
             Website made with <b>HTML, CSS, JavaScript / Typescript and love</b> by <code>lanzoor</code>!<br>
-            <span class="dim">Last updated @ <code id="update-display">February 26th</code> | version <code>v26.8.6</code></span>
+            <span class="dim">Last updated @ <code id="update-display">February 27th</code> | version <code>v26.9.0</code></span>
         </p>
     </div>
 
@@ -139,9 +148,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             const updateDisplay = document.getElementById('update-display');
-            const discordProfilePicture = document.getElementById('discord-status--profile-picture');
+            const avatarDisplay = document.getElementById('discord-status--avatar');
+            const displayNameDisplay = document.getElementById('discord-status--display-name');
+            const usernameDisplay = document.getElementById('discord-status--username');
+            const userIDDisplay = document.getElementById('discord-status--user-id');
+            const statusDisplay = document.getElementById('discord-status--status');
 
-            let defaultUptimeDisplay = updateDisplay.textContent;
+            let defaultLastUpdated = updateDisplay.textContent;
 
             try {
                 const statusResult = await pingServer('https://lanzoor.dev/api/status/');
@@ -151,16 +164,32 @@
                         { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric' }
                     );
                 } else {
-                    updateDisplay.textContent = defaultUptimeDisplay;
+                    updateDisplay.textContent = defaultLastUpdated;
                 }
 
-                const discordStatusResult = await pingServer('https://www.lanzoor.dev/api/discord-status')
+                const discordStatusResult = await pingServer('https://www.lanzoor.dev/api/discord-status');
                 if (discordStatusResult) {
-                    const discordAvatarURL = `https://cdn.discordapp.com/avatars/${discordStatusResult.}.png?size=256`
+                    const discordUserID = discordStatusResult.data.discord_user.id;
+
+                    const discordAvatar = discordStatusResult.data.discord_user.avatar;
+                    const discordAvatarURL = `https://cdn.discordapp.com/avatars/${discordUserID}/${discordAvatar}.png?size=512`;
+
+                    const discordDisplayName = discordStatusResult.data.discord_user.global_name;
+                    const discordUserName = discordStatusResult.data.discord_user.username;
+
+                    const discordStatus = discordStatusResult.data.discord_status;
+
+                    avatarDisplay.src = discordAvatarURL;
+                    displayNameDisplay.textContent = discordDisplayName;
+                    usernameDisplay.textContent = discordUserName;
+                    userIDDisplay.textContent = discordUserID;
+                    statusDisplay.className = '';
+                    statusDisplay.textContent = discordStatus;
+                    statusDisplay.classList.add(`status-${discordStatus}`)
                 }
             } catch (err) {
                 console.error(err);
-                updateDisplay.textContent = defaultUptimeDisplay;
+                updateDisplay.textContent = defaultLastUpdated;
             }
         });
     </script>

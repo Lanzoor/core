@@ -28,7 +28,7 @@ h1,
 h2,
 h3 {
     font-family: 'JetBrains Mono';
-    font-weight: bold;
+    font-weight: normal;
 
     margin-top: var(--medium-space);
     margin-bottom: var(--medium-space);
@@ -303,6 +303,10 @@ th:hover {
 
 .fairfax-hd {
     font-family: 'Fairfax HD';
+}
+
+.satoshi {
+    font-family: 'Satoshi';
 }
 
 .section {
