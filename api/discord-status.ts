@@ -13,7 +13,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     try {
         console.log('Ping invoked!', { method: req.method, url: req.url });
 
-        const userId = process.env.DISCORD_USER_ID;
+        const userId = process.env.NEXT_PUBLIC_USER_ID;
         const lanyardURL = `https://api.lanyard.rest/v1/users/${userId}`;
         console.log(`Fetching from URL ${lanyardURL}`);
 
