@@ -174,29 +174,37 @@ body {
     overflow-y: hidden;
 }
 
-#connections h2 {
-    color: #ddd;
-    text-shadow: 0 0 10px #aaa;
-}
-
-#connections h3 {
-    color: #aaa;
-    text-shadow: 0 0 10px #777;
-}
-
-#statistics {
+#connections--statistics {
     width: 100%;
     text-align: center;
     background: none;
 }
 
-#social-icons {
+#connections--div {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    flex-direction: row;
     gap: 15px;
 }
 
-.social-icon {
+#connections--socials {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#connections--social-icons {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    flex-direction: row;
+    gap: 15px;
+}
+
+#connections--social-icons img {
     display: inline-block;
 
     width: 60px;
@@ -206,8 +214,18 @@ body {
     transition: filter 0.2s ease;
 }
 
-.social-icon:hover {
+#connections--social-icons img:hover {
     filter: drop-shadow(0 5px 10px rgb(130, 130, 130));
+}
+
+#connections--support {
+    margin: 0;
+    padding: 0;
+
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 #discord-status {
@@ -221,13 +239,13 @@ body {
     border: 0.5rem solid #30078f;
     box-shadow: 0 0 10px #360ed8;
 
-    user-select: none;
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
+
+    text-align: left;
 
     color: #bca1ff;
     text-shadow: 0 0 10px #360ed8;
@@ -276,6 +294,12 @@ body {
     background-clip: border-box, padding-box;
 
     box-shadow: 0 8px 20px #6d0bc3;
+
+    transition: transform 0.2s ease;
+}
+
+#discord-status--avatar:hover {
+    transform: translateY(-3px);
 }
 
 #discord-status--nameplate {
@@ -334,8 +358,16 @@ body {
         gap: 5px;
     }
 
+    #connections--div {
+        flex-direction: column;
+    }
+
+    #connections--support {
+        align-self: flex-end;
+    }
+
     .social-icon {
-        width: 20px;
-        height: 20px;
+        width: 40px;
+        height: 40px;
     }
 }
