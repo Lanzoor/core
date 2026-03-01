@@ -100,10 +100,6 @@ body {
     filter: drop-shadow(0 0 10px #bbb);
 }
 
-#top-panel--navigation {
-    align-self: flex-end;
-}
-
 #top-panel--logo p,
 #top-panel--navigation p,
 #navigation--close p {
@@ -115,12 +111,16 @@ body {
     font-family: 'Fira Code';
 }
 
+#top-panel--navigation {
+    align-self: flex-end;
+}
+
 #top-panel--logo p {
     padding: 0;
 
     text-shadow: none;
     font-size: min(45px, 4.5vh);
-    font-family: 'JetBrains Mono';
+    font-family: 'Space Grotesk';
 }
 
 #navigation--close p,
@@ -227,6 +227,7 @@ body {
 
 #navigation-panel nav a {
     font-size: min(25px, 5vh);
+
     color: #ccc;
     text-shadow: 0 0 10px black;
     text-decoration: none;
@@ -266,14 +267,18 @@ body {
 }
 
 #top-panel--links a {
-    padding: 2.5px;
+    font-family: 'Space Grotesk';
     font-size: 15px;
+
+    padding: 2.5px;
     color: white;
     text-shadow: none;
 }
 
 #top-panel--links a:hover {
     text-decoration: underline;
+    text-shadow: 0 0 10px rgb(165, 165, 165);
+
     transform: translateY(-2px);
 }
 

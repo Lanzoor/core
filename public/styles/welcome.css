@@ -189,6 +189,25 @@ body {
     gap: 15px;
 }
 
+#connections--socials,
+#connections--support {
+    margin: 0;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid rgb(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(255, 255, 255, 0.5);
+
+    transition: box-shadow 0.2s ease;
+}
+
+#connections--socials:hover,
+#connections--support:hover {
+    box-shadow:
+        0 10px 20px rgb(255, 255, 255, 0.25),
+        inset 0 0 10px rgb(255, 255, 255, 0.5);
+}
+
 #connections--socials {
     display: flex;
     justify-content: center;
@@ -216,16 +235,6 @@ body {
 
 #connections--social-icons img:hover {
     filter: drop-shadow(0 5px 10px rgb(130, 130, 130));
-}
-
-#connections--support {
-    margin: 0;
-    padding: 0;
-
-    background: none;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
 }
 
 #discord-status {

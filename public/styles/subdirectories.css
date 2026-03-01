@@ -289,6 +289,10 @@ th:hover {
     text-align: right;
 }
 
+.all-unset {
+    all: unset;
+}
+
 .brass-mono {
     font-family: 'Brass Mono';
 }
@@ -305,8 +309,8 @@ th:hover {
     font-family: 'Fairfax HD';
 }
 
-.satoshi {
-    font-family: 'Satoshi';
+.space-grotesk {
+    font-family: 'Space Grotesk';
 }
 
 .section {
@@ -400,9 +404,7 @@ th:hover {
 
 /* ==================== The Responsive Zone ==================== */
 
-/* ==================== Phones / Mobile ==================== */
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     body,
     p,
     blockquote,
