@@ -36,6 +36,7 @@ let announcements = [
     new Announcement('0003', '/docs/announcements/0003.html', 'Vacation Announcement', new Date('2026-02-04')),
     new Announcement('0004', '/docs/announcements/0004.html', 'Retirement of the Old Profile Website', new Date('2026-02-07')),
     new Announcement('0005', '/docs/announcements/0005.html', 'Domain Registration Notice', new Date('2026-02-09')),
+    new Announcement('0006', '/docs/announcements/0006.html', 'Life Update', new Date('2026-03-02')),
 ];
 
 let descendingSort = true;

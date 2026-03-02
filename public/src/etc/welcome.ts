@@ -5,7 +5,6 @@ let profileButton = document.getElementById('welcome--profile-button')!;
 let welcomeNavigationButton = document.getElementById('welcome--navigation-button')!;
 
 let welcomeDown = document.getElementById('welcome--down')!;
-let downArrow = document.getElementById('down-arrow')!;
 
 welcomeHeader.classList.add('inactive');
 welcomeButtons.classList.add('inactive');
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 welcomeDown.classList.add('active');
-                downArrow.style.animation = '2s floatAnimation ease-in-out infinite';
+                welcomeDown.style.animation = '2s floatAnimation ease-in-out infinite';
             }, 1000);
         }, 1000);
     });
