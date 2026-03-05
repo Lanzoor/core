@@ -1,5 +1,9 @@
 body {
     background: radial-gradient(circle at center, #220974 0%, transparent 55%), linear-gradient(140deg, #041947, #10051e 45%, #2b0a63);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .projects--grid {

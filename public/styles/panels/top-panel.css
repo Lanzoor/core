@@ -124,6 +124,13 @@ body {
     font-family: 'Space Grotesk';
 }
 
+#top-panel--logo:hover p {
+    color: rgb(200, 200, 200);
+
+    text-shadow:
+        0 0 10px white,
+        4px 4px 1px rgb(100, 100, 100);
+}
 #navigation--close p,
 #navigation--close button {
     color: white;
@@ -276,13 +283,23 @@ body {
     padding: 2.5px;
     color: white;
     text-shadow: none;
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
 }
 
 #top-panel--links a:hover {
-    text-decoration: underline;
-    text-shadow: 0 0 10px rgb(165, 165, 165);
+    text-decoration: none;
 
-    transform: translateY(-2px);
+    color: rgb(213, 213, 213);
+    text-shadow:
+        4px 4px 1px rgb(165, 165, 165),
+        4px 4px 10px rgb(100, 100, 100),
+        -2px -2px 1px rgb(100, 100, 100),
+        -2px -2px 10px rgb(255, 255, 255);
+
+    transform: none;
 }
 
 .dropdown {
