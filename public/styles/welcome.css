@@ -180,7 +180,7 @@ body {
     overflow-y: hidden;
 }
 
-#connections--statistics {
+footer {
     font-family: 'Space Grotesk';
 
     width: 100%;
