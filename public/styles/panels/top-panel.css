@@ -195,7 +195,8 @@ body {
 #navigation-panel {
     position: fixed;
 
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
 
     width: 40vw;
     height: 100vh;
@@ -348,15 +349,15 @@ body {
 
 @media (max-width: 768px) {
     #navigation-panel {
-        width: 80vw;
+        width: 75vw;
     }
 
     #navigation-panel nav ul a {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     #navigation-panel nav ul ul a {
-        font-size: 10px;
+        font-size: 17.5px;
     }
 }
 

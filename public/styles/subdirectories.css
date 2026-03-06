@@ -30,15 +30,12 @@ h3 {
     font-family: 'JetBrains Mono';
     font-weight: normal;
 
-    margin-top: var(--medium-space);
-    margin-bottom: var(--medium-space);
+    margin: var(--medium-space) 0 var(--large-space) 0;
 }
 
 h1 {
     font-size: 50px;
     line-height: 1.2;
-
-    margin-bottom: var(--medium-space);
 
     color: #d4c1ff;
     text-shadow: 0 0 20px rgb(115, 60, 226);
@@ -190,7 +187,7 @@ hr {
     margin-left: 0.5em;
 
     width: auto;
-    height: 10px;
+    height: 5px;
 
     background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -411,35 +408,20 @@ th:hover {
     p,
     blockquote,
     a {
-        font-size: 7.5px;
+        font-size: 20px;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 40px;
     }
     h1 b,
     h1 strong {
-        font-size: 30px;
+        font-size: 50px;
     }
     h2 {
-        font-size: 17.5px;
+        font-size: 30px;
     }
     h3 {
-        font-size: 15px;
-    }
-
-    ul h3,
-    ol h3 {
-        font-size: 10px;
-    }
-
-    hr {
-        height: 5px;
-    }
-
-    code,
-    kbd {
-        border-radius: 2.5px;
-        border-width: 0.25px;
+        font-size: 30px;
     }
 }

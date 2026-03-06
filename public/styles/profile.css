@@ -474,12 +474,8 @@ hr {
 }
 
 @media (max-width: 768px) {
-    body {
-        font-size: 15px;
-    }
-
     #profile-page-text {
-        font-size: 10px;
+        font-size: 20px;
     }
 
     .container,
@@ -499,23 +495,10 @@ hr {
     }
 
     #status-bar {
-        font-size: 10px;
+        font-size: 20px;
         max-height: 20vh;
 
         overflow-y: auto;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-    h1 b {
-        font-size: 40px;
-    }
-    h2 {
-        font-size: 20px;
-    }
-    h3 {
-        font-size: 20px;
     }
 
     #about-me-ul,
@@ -523,18 +506,18 @@ hr {
         left: 0;
         right: 0;
 
-        margin: 0 5vh;
+        margin: 0;
         position: relative;
     }
 
     #profile-picture {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
     }
 
     #iris-picture {
         width: auto;
-        height: 100px;
+        height: 200px;
     }
 
     #about-me-ul {
