@@ -1,5 +1,5 @@
 #left-panel {
-    min-width: 450px;
+    min-width: 20vw;
     height: 100vh;
     position: fixed;
     inset: 0 auto 0 0;
@@ -14,7 +14,7 @@
 }
 
 body {
-    padding-left: 500px;
+    padding-left: 25vw;
 }
 
 .panel-header {
