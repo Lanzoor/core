@@ -1,0 +1,537 @@
+body {
+    margin-top: 0;
+}
+
+hr {
+    box-shadow: none;
+    padding: 0;
+    margin: 10px;
+    width: 100%;
+    height: 5px;
+    border-radius: 0;
+}
+
+p {
+    font-family: 'Space Grotesk';
+    background: none;
+    border-radius: 0;
+    font-size: 17.5px;
+    padding: 0;
+    margin: 0;
+}
+
+p:hover {
+    background: none;
+}
+
+.section {
+    padding: 100px 0;
+    background-position: initial !important;
+    background-repeat: initial !important;
+    background-size: initial !important;
+    background-attachment: initial !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#anti-jpa--hook {
+    background: linear-gradient(to bottom, rgb(142, 7, 117) 0%, black 30%, black 70%, rgb(98, 0, 0) 100%);
+}
+
+#anti-jpa--hook #welcome {
+    color: #ffcbed;
+    text-shadow: #ff2e8c;
+}
+
+#anti-jpa--hook #header h1 {
+    font-size: 20px;
+    animation: headerGlow 6s ease infinite;
+}
+
+#anti-jpa--hook #header h1 i {
+    display: inline-block;
+    animation: evilGlow 6s ease infinite;
+}
+
+#anti-jpa--hook #context {
+    background: rgb(20, 20, 20);
+    border: 5px solid rgb(236, 141, 255);
+    box-shadow:
+        0 0 25px rgb(208, 0, 255),
+        inset 0 0 10px rgb(195, 15, 255);
+
+    border-radius: 10px;
+
+    padding: 25px;
+    margin: 40px 60px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5vw;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#anti-jpa--hook #context:hover {
+    box-shadow:
+        0 20px 50px rgb(149, 13, 179),
+        inset 0 0 40px rgb(196, 19, 255);
+
+    transform: scale(1.02);
+}
+
+#anti-jpa--hook #jpa-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+#anti-jpa--hook #jpa-info img {
+    border: 5px solid rgb(255, 170, 170);
+    box-shadow: 0 0 10px rgb(255, 170, 170);
+    border-radius: 10px;
+
+    width: 150px;
+    height: 150px;
+
+    animation: ominousGlow 6s ease infinite;
+}
+
+#anti-jpa--warning {
+    background: linear-gradient(to bottom, rgb(98, 0, 0) 0%, transparent 10%, transparent 70%, rgb(98, 0, 0) 100%), radial-gradient(circle at center, rgb(71, 13, 13) 0%, black 50%, black 100%);
+}
+
+#anti-jpa--warning #header h1 {
+    font-family: 'Space Grotesk';
+    color: rgb(255, 59, 59);
+    text-shadow: 0 0 10px rgb(168, 4, 4);
+    margin: 0;
+    color: rgb(255, 98, 98);
+    text-shadow: 0 0 10px rgb(168, 4, 4);
+    transform: translateY(-80px);
+    animation: evilTextShadowVar2 4s ease infinite;
+}
+
+#anti-jpa--warning #header h1 i {
+    display: inline-block;
+    font-size: 80px;
+    animation: evilGlow 4s ease infinite;
+}
+
+#anti-jpa--warning #header h2 {
+    font-size: 30px;
+    font-family: 'Space Grotesk';
+    color: rgb(255, 183, 183);
+    text-shadow: none;
+}
+
+#anti-jpa--warning #header h2 b,
+#anti-jpa--warning #header h2 i {
+    display: inline-block;
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+#anti-jpa--warning #header h2 i {
+    color: rgb(255, 0, 0);
+    text-shadow: 0 0 10px rgb(255, 0, 0);
+}
+
+#anti-jpa--warning #header h2 b {
+    color: rgb(255, 197, 197);
+    text-shadow: 0 0 10px rgb(255, 0, 0);
+}
+
+#anti-jpa--warning #header h2 i:hover {
+    color: red;
+    transform: rotate(20deg) scale(1.1) scaleX(1.1);
+}
+
+#anti-jpa--warning #lets-go {
+    font-family: 'JetBrains Mono';
+    font-size: 30px;
+}
+
+#anti-jpa--warning #lets-go::after {
+    content: 'C’est parti.';
+    display: inline-block;
+    white-space: nowrap;
+    max-width: 0;
+    opacity: 0;
+    font-style: italic;
+    transition:
+        max-width 0.3s ease,
+        opacity 0.2s ease;
+}
+
+#anti-jpa--warning #lets-go:hover::after {
+    max-width: 200px;
+    opacity: 0.6;
+}
+
+#anti-jpa--explanation {
+    background: linear-gradient(120deg, rgb(47, 7, 115) 0%, transparent 40%, transparent 70%, rgb(2, 82, 81) 100%), radial-gradient(circle at center, rgb(3, 31, 100) 0%, black 50%, black 100%);
+}
+
+#anti-jpa--explanation ol {
+    font-family: 'Space Grotesk';
+    font-size: 17.5px;
+
+    width: 90%;
+    text-align: left;
+
+    padding: 2em 3em;
+
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 10px white,
+        inset 0 0 10px white;
+
+    overflow-y: hidden;
+}
+
+#anti-jpa--explanation ol li {
+    padding: 0.5em 0 1em 0;
+}
+
+#anti-jpa--explanation ol hr {
+    margin: 10px 0 20px 0;
+}
+
+#anti-jpa--explanation ol h3 {
+    font-size: 25px;
+    margin: 0 0 0 0.25em;
+    transition:
+        text-shadow 0.2s ease,
+        color 0.2s ease;
+}
+
+#anti-jpa--explanation ol h3 i {
+    display: inline-block;
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+#anti-jpa--explanation ol h3:hover {
+    color: rgb(114, 129, 255);
+
+    text-shadow:
+        0 0 10px rgb(114, 129, 255),
+        -10px -10px 2px rgba(109, 36, 255, 0.5),
+        -10px -10px 10px rgba(109, 36, 255, 0.75),
+        10px 10px 2px rgba(36, 255, 244, 0.5),
+        10px 10px 10px rgba(36, 255, 178, 0.75);
+}
+
+#anti-jpa--explanation ol h3:hover i {
+    color: rgb(255, 0, 0);
+
+    text-shadow:
+        0 0 10px rgb(255, 0, 0),
+        -20px -20px 2px rgba(255, 0, 0, 0.5),
+        -20px -20px 10px rgba(255, 0, 0, 0.75),
+        20px 20px 2px rgba(255, 0, 0, 0.5),
+        20px 20px 10px rgba(255, 0, 0, 0.75);
+    transform: scale(1.1) scaleX(1.1) rotate(20deg);
+}
+
+#anti-jpa--explanation ol ul {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 0 10px gray,
+        inset 0 0 10px gray;
+    overflow-y: hidden;
+}
+
+#anti-jpa--explanation ol ul hr {
+    opacity: 0;
+    margin: 0;
+
+    transition: all 0.3s ease;
+}
+
+#anti-jpa--explanation ol ul hr.open {
+    opacity: 1;
+    margin: 1em 0;
+}
+
+#anti-jpa--explanation ol ul li {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.anti-jpa--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.anti-jpa--header h3 {
+    font-size: 22.5px;
+    margin: 0;
+    transition: transform 0.5s ease;
+}
+
+.anti-jpa--header h3:hover {
+    cursor: pointer;
+}
+
+.anti-jpa--header img {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0;
+
+    transform: rotate(-90deg);
+
+    pointer-events: auto;
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.anti-jpa--header img:hover {
+    box-shadow: 0;
+    filter: drop-shadow(0 0 10px #ffffff);
+}
+
+.anti-jpa--header img.open {
+    transform: rotate(0deg);
+}
+
+.anti-jpa--content {
+    opacity: 0;
+    max-height: 0px;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.anti-jpa--content.open {
+    opacity: 1;
+    max-height: 750px;
+    padding: 20px;
+
+    overflow-y: auto;
+
+    background: linear-gradient(120deg, rgba(53, 7, 79), rgb(30, 2, 92));
+
+    border: 2px solid rgb(180, 109, 255);
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px rgb(140, 32, 255);
+}
+
+ol a,
+ul a {
+    text-decoration: underline;
+    font-family: 'Space Grotesk';
+    font-size: 17.5px;
+}
+
+.matthew-example {
+    background: linear-gradient(145deg, #130338, #27023d);
+    border: 1px solid rgba(170, 120, 255, 0.35);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 16px 0;
+
+    color: #e3dcff;
+    font-family: 'JetBrains Mono';
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    overflow-x: auto;
+
+    box-shadow:
+        0 0 14px rgba(170, 120, 255, 0.25),
+        inset 0 0 10px rgba(170, 120, 255, 0.12);
+}
+
+.matthew-example img {
+    margin: 20px 40px;
+    max-width: 150px;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.vertical-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.vertical-grid div {
+    max-width: 40%;
+}
+
+#fuck-you-anzu {
+    user-select: none;
+    line-height: 1;
+    text-shadow: none;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    margin: 20px;
+    animation: evilTextShadowVar1 4s ease infinite;
+}
+
+@keyframes headerGlow {
+    0% {
+        transform: scale(1) rotate(-2.5deg);
+    }
+
+    50% {
+        color: red;
+        text-shadow: 0 0 10px red;
+        transform: scale(1.5) rotate(4deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(-2.5deg);
+    }
+}
+
+@keyframes evilTextShadowVar1 {
+    0% {
+        text-shadow:
+            40px 40px 1px rgba(147, 46, 46, 0.5),
+            40px 40px 20px rgba(147, 46, 46, 0.75),
+            -40px -40px 1px rgba(255, 59, 59, 0.5),
+            -40px -40px 20px rgba(255, 59, 59, 0.75),
+            0 0 10px red;
+        color: rgb(255, 175, 175);
+    }
+
+    50% {
+        text-shadow:
+            -40px -40px 1px rgba(147, 46, 46, 0.5),
+            -40px -40px 20px rgba(147, 46, 46, 0.75),
+            40px 40px 1px rgba(255, 59, 59, 0.5),
+            40px 40px 20px rgba(255, 59, 59, 0.75),
+            -1px -1px 0 red,
+            1px -1px 0 red,
+            -1px 1px 0 red,
+            1px 1px 0 red,
+            5px 0px 10px red;
+
+        color: black;
+        transform: scale(1.5) rotate(90deg);
+    }
+
+    100% {
+        text-shadow:
+            40px 40px 1px rgba(147, 46, 46, 0.5),
+            40px 40px 20px rgba(147, 46, 46, 0.75),
+            -40px -40px 1px rgba(255, 59, 59, 0.5),
+            -40px -40px 20px rgba(255, 59, 59, 0.75),
+            0 0 10px red;
+        color: rgb(255, 175, 175);
+    }
+}
+
+@keyframes evilTextShadowVar2 {
+    0% {
+        text-shadow:
+            40px 40px 1px rgba(147, 46, 46, 0.5),
+            40px 40px 20px rgba(147, 46, 46, 0.75),
+            -40px -40px 1px rgba(255, 59, 59, 0.5),
+            -40px -40px 20px rgba(255, 59, 59, 0.75),
+            0 0 10px red;
+    }
+
+    50% {
+        text-shadow:
+            -40px -40px 1px rgba(147, 46, 46, 0.5),
+            -40px -40px 20px rgba(147, 46, 46, 0.75),
+            40px 40px 1px rgba(255, 59, 59, 0.5),
+            40px 40px 20px rgba(255, 59, 59, 0.75),
+            0 0 10px red;
+
+        transform: scale(1.1) translateY(-40px) rotate(5deg);
+    }
+
+    100% {
+        text-shadow:
+            40px 40px 1px rgba(147, 46, 46, 0.5),
+            40px 40px 20px rgba(147, 46, 46, 0.75),
+            -40px -40px 1px rgba(255, 59, 59, 0.5),
+            -40px -40px 20px rgba(255, 59, 59, 0.75),
+            0 0 10px red;
+    }
+}
+
+@keyframes evilGlow {
+    0% {
+        color: black;
+        text-shadow:
+            -1px -1px 0 gray,
+            1px -1px 0 gray,
+            -1px 1px 0 gray,
+            1px 1px 0 gray,
+            0 0 10px rgb(154, 154, 154);
+    }
+
+    50% {
+        color: rgb(100, 0, 0);
+        text-shadow:
+            -1px -1px 0 red,
+            1px -1px 0 red,
+            -1px 1px 0 red,
+            1px 1px 0 red,
+            0 5px 30px red;
+        transform: scale(1.1) rotate(10deg);
+    }
+
+    100% {
+        color: black;
+        text-shadow:
+            -1px -1px 0 gray,
+            1px -1px 0 gray,
+            -1px 1px 0 gray,
+            1px 1px 0 gray,
+            0 0 10px rgb(154, 154, 154);
+    }
+}
+
+@keyframes ominousGlow {
+    0% {
+        border-color: rgb(255, 170, 244);
+        box-shadow: 0 0 20px rgb(255, 0, 221);
+        border-radius: 10px;
+    }
+
+    50% {
+        border-color: rgb(255, 56, 56);
+        box-shadow: 0 0 30px rgb(255, 56, 56);
+        border-radius: 20px;
+    }
+
+    100% {
+        border-color: rgb(255, 170, 244);
+        box-shadow: 0 0 20px rgb(255, 0, 221);
+        border-radius: 10px;
+    }
+}
