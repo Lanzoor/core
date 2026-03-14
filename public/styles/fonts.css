@@ -1,55 +1,9 @@
 /* ==================== Fonts ==================== */
 
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/JetBrainsMono/JetBrainsMono-Regular.woff2') format('woff2'),
-        url('/assets/fonts/JetBrainsMono/JetBrainsMono-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: bold;
-    font-weight: 700;
-    font-display: swap;
-    src:
-        url('/assets/fonts/JetBrainsMono/JetBrainsMono-Bold.woff2') format('woff2'),
-        url('/assets/fonts/JetBrainsMono/JetBrainsMono-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2') format('woff2'),
-        url('/assets/fonts/JetBrainsMono/JetBrainsMono-Italic.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Fira Code';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url('/assets/fonts/FiraCode/FiraCode-Regular.woff2') format('woff2'),
-        url('/assets/fonts/FiraCode/FiraCode-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Fira Code';
-    font-style: bold;
-    font-weight: 700;
-
-    font-display: swap;
-    src:
-        url('/assets/fonts/FiraCode/FiraCode-Bold.woff2') format('woff2'),
-        url('/assets/fonts/FiraCode/FiraCode-Bold.ttf') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 @font-face {
     font-family: 'Brass Mono';
@@ -94,13 +48,32 @@
         url('/assets/fonts/FairfaxHD/FairfaxHD.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'Space Grotesk';
-    font-style: normal;
-    font-weight: 400;
+.brass-mono {
+    font-family: 'Brass Mono';
+    font-optical-sizing: auto;
+}
 
-    font-display: swap;
-    src:
-        url('/assets/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.woff2') format('woff2'),
-        url('/assets/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+.fira-code {
+    font-family: 'Fira Code', Consolas, monospace;
+    font-optical-sizing: auto;
+}
+
+.jetbrains-mono {
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-optical-sizing: auto;
+}
+
+.fairfax-hd {
+    font-family: 'Fairfax HD', Consolas, monospace;
+    font-optical-sizing: auto;
+}
+
+.space-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+    font-optical-sizing: auto;
+}
+
+.geist {
+    font-family: 'Geist', sans-serif;
+    font-optical-sizing: auto;
 }

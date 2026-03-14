@@ -6,7 +6,7 @@ const privateBlock = document.getElementById('private')!;
 const hidden = privateBlock.querySelector('.hidden')! as HTMLElement;
 const revealed = privateBlock.querySelector('.revealed')! as HTMLElement;
 
-let hoverTimer: NodeJS.Timeout | undefined = undefined;
+let hoverTimer: ReturnType<typeof setTimeout> | undefined = undefined;
 let activated = false;
 
 function activateHoverAnimation() {

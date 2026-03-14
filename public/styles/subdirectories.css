@@ -291,26 +291,6 @@ th:hover {
     all: unset;
 }
 
-.brass-mono {
-    font-family: 'Brass Mono';
-}
-
-.fira-code {
-    font-family: 'Fira Code';
-}
-
-.jetbrains-mono {
-    font-family: 'JetBrains Mono';
-}
-
-.fairfax-hd {
-    font-family: 'Fairfax HD';
-}
-
-.space-grotesk {
-    font-family: 'Space Grotesk';
-}
-
 .section {
     position: relative;
 
