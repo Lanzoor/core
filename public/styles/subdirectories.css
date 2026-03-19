@@ -177,12 +177,8 @@ kbd {
     border: 1px solid rgb(100, 100, 100);
 }
 
-.dim {
-    opacity: 0.6;
-}
-
 hr {
-    margin-left: 0.5em;
+    margin: 10px 0 20px 0;
 
     width: auto;
     height: 5px;
@@ -308,6 +304,10 @@ th:hover {
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-attachment: fixed !important;
+}
+
+.dim {
+    opacity: 0.6;
 }
 
 #section-hr {
