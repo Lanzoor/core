@@ -106,13 +106,6 @@ ol h3 {
     margin: 0.75em 0.25em;
 }
 
-ul hr,
-ol hr,
-blockquote hr,
-p hr {
-    margin: 0 0.5em 2em 0;
-}
-
 b,
 strong {
     font-weight: 500;
@@ -184,7 +177,6 @@ hr {
     height: 5px;
 
     background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     border: none;
     border-radius: 20px;
 }
@@ -207,7 +199,6 @@ p:hover {
 
 blockquote {
     padding: 0.75em;
-    padding-left: 1.5em;
     margin: 1em 0;
 
     color: #e6e6fa;
@@ -292,7 +283,6 @@ th:hover {
     min-height: 100vh;
     max-height: none;
 
-    text-align: center;
     flex: none;
 
     overflow-y: auto;
@@ -306,16 +296,16 @@ th:hover {
     background-attachment: fixed !important;
 }
 
-.dim {
-    opacity: 0.6;
+.section.centered.horizontally {
+    text-align: center;
 }
 
-#section-hr {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    width: 100%;
+.section.centered.vertically {
+    vertical-align: middle;
+}
+
+.dim {
+    opacity: 0.6;
 }
 
 .tooltip {

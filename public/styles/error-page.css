@@ -1,35 +1,11 @@
-.error-container {
-    text-align: center;
-    margin-left: 5vw;
-    margin-top: 5vh;
-
-    width: 90vw;
-    min-height: 75vh;
-
-    background: rgba(8, 16, 32, 0.96);
-    backdrop-filter: blur(24px);
-
-    border-radius: 22px;
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    position: absolute;
-
-    box-shadow:
-        0 0 0 2px rgba(80, 140, 255, 0.35),
-        0 0 0 4px rgba(40, 80, 180, 0.25),
-        0 30px 60px rgba(0, 0, 0, 0.7),
-        inset 0 1px 0 rgba(180, 220, 255, 0.08);
-
-    color: #e6f0ff;
-}
-
 body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Geist';
     font-weight: 300;
 
-    background: radial-gradient(circle at top, #0c1f3a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
+    background: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
+    color: #e6f0ff;
 }
 
 h1,
@@ -47,17 +23,11 @@ h1 {
     color: transparent;
 }
 
-h2 {
-    background: linear-gradient(90deg, #6bffe2, #167979);
-    text-shadow: 0 0 20px rgba(100, 255, 220, 0.5);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
 h3 {
-    background: linear-gradient(90deg, #956bff, #2a1679);
-    text-shadow: 0 0 20px rgba(119, 65, 255, 0.5);
+    font-family: 'Fira Code';
+
+    background: linear-gradient(175deg, #aef3ff, #2facff);
+    text-shadow: 0 2.5px 20px rgb(0, 98, 255);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -84,4 +54,34 @@ a:hover {
     background-clip: text;
     color: transparent;
     transform: translateY(-2.5px);
+}
+
+.solutions {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 75px;
+    gap: 20px;
+}
+
+.solution-left,
+.solution-right {
+    max-width: 75%;
+}
+
+.solution-left h2,
+.solution-right h2 {
+    font-family: 'Geist';
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.solution-left {
+    align-self: flex-start;
+    text-align: left;
+}
+
+.solution-right {
+    align-self: flex-end;
+    text-align: right;
 }
