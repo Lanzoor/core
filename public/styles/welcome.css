@@ -21,46 +21,78 @@ body {
 }
 
 #welcome {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     min-height: 90vh;
     padding: 5vh 0 20vh;
 }
 
-#welcome--header.inactive,
-#welcome--buttons.inactive,
-#welcome--down.inactive {
-    position: fixed;
+#welcome div.inactive {
     opacity: 0;
     transform: translateY(40px);
+    pointer-events: none;
 }
 
-#welcome--header.active,
-#welcome--buttons.active {
+#welcome div.active {
     position: relative;
-}
-
-#welcome--down.active {
-    position: absolute;
-}
-
-#welcome--header.active,
-#welcome--buttons.active,
-#welcome--down.active {
     opacity: 1;
     transform: translateY(0);
 
     transition:
         opacity 1s ease,
         transform 1s ease;
+    pointer-events: all;
+}
+
+#welcome--down.active {
+    animation: floatAnimation ease-in-out 2s infinite;
 }
 
 #welcome--header {
-    margin: 2em 0 4em 0;
+    margin: 1em 3em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome--message {
+    margin: 1em 3em;
+    padding: 1em;
+    width: 1000px;
+
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.75));
+    background-size: 150% 150%;
+    background-position: left top;
+
+    border-radius: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+}
+
+#welcome--message #emphasized {
+    font-size: 40px;
+}
+
+#welcome--message:hover {
+    border-color: rgba(255, 255, 255, 0.75);
+    background-position: right bottom;
+    box-shadow:
+        20px 40px 20px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#welcome--message h1 {
+    margin: 0;
 }
 
 #welcome--buttons {
-    margin: 2em 1em 2em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+
     user-select: none;
 }
 
@@ -72,10 +104,9 @@ body {
     border-radius: 100em;
     margin: 1em;
 
-    color: white;
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 #welcome--buttons button:active {
@@ -83,7 +114,8 @@ body {
 }
 
 #welcome--profile-button {
-    padding: min(5rem, 5vw) min(10rem, 5vw);
+    padding: min(2.5rem, 5vw) min(10rem, 5vw);
+    color: white;
 
     background: linear-gradient(120deg, #6a30ffaa, #3532ffaa);
     box-shadow:
@@ -101,11 +133,14 @@ body {
 #welcome--navigation-button {
     font-size: 30px;
     background: none;
+
+    color: #ccc;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 #welcome--navigation-button:hover {
-    color: #ccc;
-    text-shadow: 0 0 10px #ccc;
+    color: white;
+    text-shadow: 0 0 20px white;
 }
 
 #welcome--down {
@@ -116,15 +151,14 @@ body {
 
     gap: 20px;
 
+    margin: 40px;
     padding: 20px;
-    margin: 40px auto;
-
-    right: 40px;
-    bottom: 0;
 
     background: linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
     box-shadow: 5px 10px 20px black;
     border-radius: 20px;
+
+    max-width: 300px;
 }
 
 #welcome--down p {
@@ -365,10 +399,18 @@ footer {
 /* ==================== The Responsive Zone ==================== */
 
 @media (max-width: 768px) {
+    #welcome--message {
+        width: 500px;
+    }
+
+    #welcome--buttons {
+        margin: 2em;
+    }
+
     #welcome--buttons button {
         margin: 0;
         padding: 20px 30px;
-        font-size: 15px;
+        font-size: 30px;
     }
 
     #welcome--buttons button:active {

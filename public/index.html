@@ -10,15 +10,27 @@
     <link rel="stylesheet" href="/styles/panels/top-panel.css"/>
 </head>
 <body>
-    <div class="section fixed-bg centered horizontally" id="welcome">
-        <span id="welcome--header">
+    <div class="section fixed-bg centered" id="welcome">
+        <div id="welcome--header">
             <h2>lanzoor.dev</h2>
             <h1>- Welcome to my website! -</h1>
-        </span>
+        </div>
+
+        <div id="welcome--message">
+            <b id="emphasized">Hello there! 👋</b><br>
+            <hr>
+            I want to welcome you to my own website!<br>
+            Make yourself comfortable, and feel free to explore on your own.
+        </div>
 
         <div id="welcome--buttons">
-            <button id="welcome--profile-button"><s>-> Go to my profile</s></button>
-            <button id="welcome--navigation-button" class="navigation-toggle">Open navigation panel</button>
+            <a href="" class="all-unset">
+                <button id="welcome--profile-button">DUMMY BUTTON</button>
+            </a>
+
+            <button id="welcome--navigation-button" class="navigation-toggle">
+                Open navigation panel
+            </button>
         </div>
 
         <div id="welcome--down">
@@ -145,12 +157,16 @@
 
         <footer>
             Website made with <b>HTML, CSS, JavaScript / Typescript and love</b> by <code>lanzoor</code>!<br>
-            <span class="dim">Last updated @ <code id="update-display">March 20th</code> | version <code>v26.10.6</code></span>
+            <span class="dim">Last updated @ <code id="update-display">March 20th</code> | version <code>v26.11.0</code></span>
         </footer>
     </div>
 
-    <script src="/out/ping-server.js"></script>
-    <script>
+    <script src="/out/top-panel.js"></script>
+    <script src="/out/etc/welcome.js"></script>
+
+    <script type="module">
+        import { pingServer } from "/out/ping-server.js"
+
         document.addEventListener('DOMContentLoaded', async () => {
             const updateDisplay = document.getElementById('update-display');
             const avatarDisplay = document.getElementById('discord-status--avatar');
@@ -199,7 +215,5 @@
         });
     </script>
 
-    <script src="/out/top-panel.js"></script>
-    <script src="/out/etc/welcome.js"></script>
 </body>
 </html>

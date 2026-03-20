@@ -1,4 +1,4 @@
-async function pingServer(route: string): Promise<any | undefined> {
+export async function pingServer(route: string): Promise<any | undefined> {
     try {
         const res = await fetch(route);
 
