@@ -1,6 +1,7 @@
 import { pingServer } from '../ping-server.js';
 
 let enableAnimation = true;
+let enableOptimization = window.matchMedia('(max-width: 768px)').matches;
 
 async function sleep(timeMs: number): Promise<any> {
     return new Promise((p) => setTimeout(p, timeMs));
@@ -106,7 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
         star.dataset.speed = String(opacity * 0.3);
     }
 
-    for (let i = 0; i < 100; i++) {
+    let starLimit = enableOptimization ? 50 : 100;
+
+    for (let index = 0; index < starLimit; index++) {
         const star = document.createElement('div');
         star.classList.add('star');
 
@@ -116,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stars.push(star);
     }
 
-    function update() {
+    function updateStars() {
         if (enableAnimation) {
             for (const star of stars) {
                 let top = parseFloat(star.dataset.top!);
@@ -139,26 +142,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        requestAnimationFrame(update);
+        requestAnimationFrame(updateStars);
     }
 
-    update();
+    updateStars();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
     const lanzoorLetters = Array.from(document.querySelectorAll('#profile--name-display span')).map((span) => span as HTMLSpanElement);
-    const fonts = ['Geist', 'Space Grotesk', 'JetBrains Mono', 'Fira Code', 'Fairfax HD', 'Brass Mono'];
-    let index = 0;
+    const fonts = ['JetBrains Mono', 'Geist', 'Space Grotesk', 'Fira Code', 'Fairfax HD', 'Brass Mono'];
+    let fontIndex = 0;
+    let fontAnimationInterval = enableOptimization ? 1500 : 750;
 
     setInterval(() => {
         if (!enableAnimation) {
             return;
         }
 
-        let currentFont = fonts[index];
+        let currentFont = fonts[fontIndex];
         let currentFontWeight = pickRandom(['100', '200', '300', '400']);
         let currentFontStyle = pickRandom(['normal', 'italic']);
-        let currentFontSize = randInt(100, 150);
+        let currentFontSize = enableOptimization ? randInt(75, 100) : randInt(100, 150);
 
         for (const letter of lanzoorLetters) {
             letter.style.fontFamily = currentFont;
@@ -167,6 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
             letter.style.fontSize = String(currentFontSize) + 'px';
         }
 
-        index = (index + 1) % fonts.length;
-    }, 750);
+        fontIndex = (fontIndex + 1) % fonts.length;
+    }, fontAnimationInterval);
 });
