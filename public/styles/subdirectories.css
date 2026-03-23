@@ -307,6 +307,10 @@ th:hover {
     opacity: 0.6;
 }
 
+.dimmer {
+    opacity: 0.3;
+}
+
 .tooltip {
     position: relative;
     cursor: pointer;
