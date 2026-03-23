@@ -23,18 +23,16 @@ let starLimit = 100;
 let animationIntervalMs = 1000;
 let baseFontSizePx = 80;
 
+const optimizationInfo = document.querySelector('#profile--name-display #optimization-indicator')!;
+
 function updateOptimization() {
     enableOptimization = window.matchMedia('(max-width: 1080px)').matches || isMobileDevice();
-
-    const indicator = document.querySelector('#profile--name-display #optimization-indicator')!;
 
     starLimit = enableOptimization ? 50 : 100;
     animationIntervalMs = enableOptimization ? 2000 : 1000;
     baseFontSizePx = enableOptimization ? 40 : 80;
 
-    indicator.classList.toggle('active', enableOptimization);
-
-    startFontAnimation();
+    optimizationInfo.classList.toggle('active', enableOptimization);
 }
 
 document.addEventListener('DOMContentLoaded', updateOptimization);
@@ -171,58 +169,24 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStars();
 });
 
-let fontAnimationId: NodeJS.Timeout | any;
 let letters: HTMLSpanElement[] = [];
 let word: HTMLElement;
 let fonts: string[] = [];
 let fontIndex = 0;
 
-function startFontAnimation() {
-    clearInterval(fontAnimationId);
-    fontAnimationId = setInterval(runFontAnimation, animationIntervalMs);
-}
-
-function runFontAnimation() {
-    if (!enableAnimation) return;
-
-    const currentFont = fonts[fontIndex];
-    const currentFontWeight = pickRandom(['100', '200', '300', '400']);
-    const currentFontStyle = pickRandom(['normal', 'italic']);
-
-    const scale = enableOptimization ? randInt(75, 100) / baseFontSizePx : randInt(100, 150) / baseFontSizePx;
-
-    for (const letter of letters) {
-        letter.style.fontFamily = currentFont;
-        letter.style.fontWeight = currentFontWeight;
-        letter.style.fontStyle = currentFontStyle;
-    }
-
-    word.style.transform = `scale(${scale})`;
-
-    fontIndex = (fontIndex + 1) % fonts.length;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     word = document.getElementById('lanzoor-letters')!;
     letters = Array.from(document.querySelectorAll('#lanzoor-letters span')).map((element) => element as HTMLSpanElement);
 
-    fonts = ['JetBrains Mono', 'Geist', 'Space Grotesk', 'Fira Code', 'Fairfax HD', 'Brass Mono'];
+    fonts = ['JetBrains Mono', 'Space Grotesk', 'Fira Code', 'Fairfax HD', 'Brass Mono', 'Geist'];
 
     fontIndex = 0;
 
     for (const letter of letters) {
         letter.style.fontSize = baseFontSizePx + 'px';
-        letter.style.display = 'inline-block';
-        letter.style.transformOrigin = 'center';
     }
 
-    function startFontAnimation() {
-        clearInterval(fontAnimationId);
-
-        fontAnimationId = setInterval(runFontAnimation, animationIntervalMs);
-    }
-
-    function runFontAnimation() {
+    setInterval(() => {
         if (!enableAnimation) return;
 
         const currentFont = fonts[fontIndex];
@@ -240,6 +204,5 @@ document.addEventListener('DOMContentLoaded', () => {
         word.style.transform = `scale(${scale})`;
 
         fontIndex = (fontIndex + 1) % fonts.length;
-    }
-    startFontAnimation();
+    }, animationIntervalMs);
 });

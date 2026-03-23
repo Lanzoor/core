@@ -1,0 +1,87 @@
+body {
+    background: linear-gradient(120deg, rgb(56, 3, 3), black, rgb(56, 3, 3));
+}
+
+#ominous-countdown {
+    font-size: 50px;
+    font-family: 'Geist';
+    color: rgb(255, 114, 114);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: center;
+    gap: 20px;
+    height: 100vh;
+
+    margin: 100px 0;
+}
+
+i,
+b {
+    color: rgb(255, 30, 30);
+    text-shadow: 0 0 10px red;
+}
+
+#left {
+    font-family: 'JetBrains Mono';
+    font-size: 75px;
+    color: rgb(193, 10, 10);
+    text-shadow: 0 0 20px rgba(255, 49, 49, 0.75);
+}
+
+#left b {
+    text-shadow: 0 0 30px red;
+}
+
+#hidden {
+    font-size: 30px;
+    margin: 40px 0;
+    padding: 40px;
+
+    border-radius: 30px;
+    background: linear-gradient(to bottom, rgba(255, 40, 40, 0.05), rgba(255, 40, 40, 0.12));
+    border: 2px solid rgb(156, 7, 7);
+    box-shadow:
+        0 0 40px rgba(255, 0, 0, 0.15),
+        inset 0 0 30px rgba(255, 0, 0, 0.08);
+
+    display: none;
+}
+
+#hidden.active {
+    display: block;
+}
+
+#hidden button {
+    font-size: 20px;
+
+    background: rgba(102, 5, 5, 0.5);
+    border: none;
+    box-shadow:
+        0 0 10px red,
+        inset 0 0 10px red;
+
+    color: red;
+    text-shadow: 0 0 10px red;
+
+    padding: 20px 40px;
+    border-radius: 999px;
+    cursor: pointer;
+
+    transition: all 0.5s ease;
+}
+
+#hidden button:hover {
+    background: rgba(102, 5, 5, 0.25);
+    color: rgb(180, 15, 15);
+    box-shadow:
+        0 0 20px rgb(167, 20, 20),
+        inset 0 0 20px rgb(167, 20, 20);
+}
+
+#mock {
+    font-size: 20px;
+}
