@@ -30,8 +30,10 @@ function update() {
     if (diff <= 0 && !triggered) {
         triggered = true;
 
+        document.body.classList.add('active');
         document.getElementById('hidden').classList.add('active');
-        document.getElementById('mock').innerHTML = '<i>The apocalypse is starting...</i>';
+        document.getElementById('ominous-countdown').classList.add('active');
+        document.getElementById('mock').innerHTML = '<i>The apocalypse is starting...</i><br>THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE';
     }
 
     left.innerHTML = format(diff);
