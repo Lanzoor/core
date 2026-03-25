@@ -395,4 +395,8 @@ th:hover {
     h3 {
         font-size: 30px;
     }
+
+    .section.fixed-bg {
+        background-attachment: scroll !important;
+    }
 }

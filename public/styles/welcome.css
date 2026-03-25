@@ -495,10 +495,6 @@ footer {
 /* ==================== The Responsive Zone ==================== */
 
 @media (max-width: 768px) {
-    body {
-        background-attachment: scroll;
-    }
-
     #welcome {
         backdrop-filter: none;
     }

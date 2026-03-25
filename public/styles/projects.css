@@ -7,6 +7,8 @@ body {
 }
 
 .projects--grid {
+    user-select: none;
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     max-width: 1200px;
@@ -59,6 +61,18 @@ button.show-all.selected {
     background-position: center center;
 }
 
+.websites .projects--grid div,
+button.websites {
+    background: #ff000025;
+}
+.websites .projects--grid div:hover,
+button.websites:hover {
+    background: #ff000050;
+}
+button.websites.selected {
+    background: #ff000075;
+}
+
 .programs .projects--grid div,
 button.programs {
     background: #ff00bf25;
@@ -96,11 +110,13 @@ button.conlangs.selected {
 }
 
 #projects--filter-buttons {
-    margin: 40px auto;
-    padding: 20px;
-    border: 2px solid white;
-    background: #22222275;
-    max-width: 80vw;
+    user-select: none;
+
+    margin: 40px;
+    padding: 30px;
+    border: 5px solid rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.25);
+
     border-radius: 30px;
 }
 
