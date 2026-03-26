@@ -259,7 +259,7 @@ body {
     text-decoration: none;
 
     background: none;
-    padding: 0.5rem;
+    padding: 5px;
     margin: 0;
 
     height: 100%;
@@ -387,6 +387,14 @@ body {
     #navigation-overlay,
     #navigation-panel {
         backdrop-filter: none;
+    }
+
+    #navigation-overlay {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    #navigation-panel nav ul {
+        padding: 0 20px;
     }
 }
 

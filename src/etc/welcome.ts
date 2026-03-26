@@ -28,7 +28,7 @@ const optimizationInfo = document.querySelector('#profile--name-display #optimiz
 function updateOptimization() {
     enableOptimization = window.matchMedia('(max-width: 1080px)').matches || isMobileDevice();
 
-    starLimit = enableOptimization ? 50 : 100;
+    starLimit = enableOptimization ? 50 : 150;
     animationIntervalMs = enableOptimization ? 2000 : 1000;
     baseFontSizePx = enableOptimization ? 40 : 80;
 
@@ -106,67 +106,98 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+type Star = {
+    x: number;
+    y: number;
+    size: number;
+    speed: number;
+    opacity: number;
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('profile--name-display')!;
-    const animationToggle = container.querySelector('#profile--name-display button')!;
+    const animationToggle = container.querySelector('button')!;
+    const canvas = container.querySelector('canvas')!;
+    const ctx = canvas.getContext('2d')!;
+
+    let enableAnimation = true;
 
     animationToggle.addEventListener('click', () => {
         enableAnimation = !enableAnimation;
         animationToggle.textContent = enableAnimation ? '⏸ Pause animation' : '▶ Resume animation';
     });
 
-    const stars: HTMLElement[] = [];
+    function resizeCanvas() {
+        const rect = container.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
 
-    function randomizeStars(star: HTMLElement, initial = false) {
-        const size = Math.random() * 6;
-        const opacity = randInt(3, 10) / 10;
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
 
-        star.style.width = star.style.height = size + 'px';
-        star.style.left = Math.random() * 100 + '%';
-        star.dataset.top = initial ? String(Math.random() * 100) : String(100 + Math.random() * 20);
+        canvas.style.width = rect.width + 'px';
+        canvas.style.height = rect.height + 'px';
 
-        star.style.top = star.dataset.top + '%';
-        star.style.opacity = String(opacity);
-        star.dataset.speed = String(opacity * 0.3);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        const density = 0.00015;
+
+        const starCount = Math.min(200, Math.max(30, Math.floor(canvas.width * canvas.height * density)));
+
+        stars.length = 0;
+
+        for (let i = 0; i < starCount; i++) {
+            stars.push(createStar(true));
+        }
     }
 
-    for (let index = 0; index < starLimit; index++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+    });
 
-        randomizeStars(star, true);
-
-        container.appendChild(star);
-        stars.push(star);
+    function createStar(initial = false): Star {
+        let opacityPercent = Math.random() * 80 + 20;
+        return {
+            x: Math.random() * canvas.width,
+            y: initial ? Math.random() * canvas.height : canvas.height + Math.random() * 50,
+            size: (Math.random() + 0.5) * 3,
+            opacity: opacityPercent / 100,
+            speed: (opacityPercent / 50) ** 1.25,
+        };
     }
 
-    function updateStars() {
+    const stars: Star[] = [];
+
+    resizeCanvas();
+
+    function animateStars() {
         if (enableAnimation) {
-            for (const star of stars) {
-                let top = parseFloat(star.dataset.top!);
-                const speed = parseFloat(star.dataset.speed!);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                top -= speed;
+            for (let i = 0; i < stars.length; i++) {
+                const star = stars[i];
 
-                if (top < -10) {
-                    star.style.transition = 'none';
-                    randomizeStars(star);
+                star.y -= star.speed;
 
-                    star.getBoundingClientRect();
-
-                    star.style.transition = '';
+                if (star.y < -10) {
+                    stars[i] = createStar(false);
                     continue;
                 }
 
-                star.dataset.top = String(top);
-                star.style.top = top + '%';
+                ctx.globalAlpha = star.opacity;
+                ctx.fillStyle = 'white';
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = 'white';
+
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fill();
             }
         }
 
-        requestAnimationFrame(updateStars);
+        requestAnimationFrame(animateStars);
     }
 
-    updateStars();
+    animateStars();
 });
 
 let letters: HTMLSpanElement[] = [];

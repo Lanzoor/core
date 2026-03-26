@@ -9,23 +9,23 @@ function getLocalTime() {
     let hour = utc9.getUTCHours();
     const minute = String(utc9.getUTCMinutes()).padStart(2, '0');
     const second = String(utc9.getUTCSeconds()).padStart(2, '0');
-    const millisecond = String(utc9.getUTCMilliseconds()).padStart(3, '0');
 
     const determiner = hour < 12 ? 'AM' : 'PM';
     const displayHour = hour % 12 || 12;
 
-    return `${year}-${month}-${day} ${String(displayHour).padStart(2, '0')}:${minute}:${second}.${millisecond} ${determiner}`;
+    return `${year}-${month}-${day} ${String(displayHour).padStart(2, '0')}:${minute}:${second} ${determiner}`;
 }
 
-const localTimeText = document.getElementById('local-time')!;
+document.addEventListener('DOMContentLoaded', () => {
+    const localTimeText = document.getElementById('local-time')!;
 
-function updateLocalTime() {
-    localTimeText.textContent = getLocalTime();
+    function updateLocalTime() {
+        localTimeText.textContent = getLocalTime();
+    }
 
-    requestAnimationFrame(updateLocalTime);
-}
+    setInterval(updateLocalTime, 500);
+});
 
-updateLocalTime();
 let currentPage: number = 1;
 
 document.addEventListener('DOMContentLoaded', () => {
