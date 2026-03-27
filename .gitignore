@@ -9,6 +9,3 @@
 
 *.md
 !README.md
-
-public/projects/anti-JPA
-!public/projects/anti-JPA/countdown
