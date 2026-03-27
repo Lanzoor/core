@@ -66,7 +66,6 @@ function update() {
     }
 
     left.innerHTML = format(diff);
-    requestAnimationFrame(update);
 }
 
-requestAnimationFrame(update);
+setInterval(update, 500);
