@@ -1,5 +1,5 @@
 const left = document.querySelector('#left');
-const newYear = new Date('2026-03-27T20:06:25+09:00');
+const newYear = new Date('2026-03-27T21:00:00+09:00');
 let triggered = false;
 let audioUnlocked = false;
 
