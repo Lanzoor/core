@@ -1,0 +1,7 @@
+{
+    "imports": {
+        "react": "https://esm.sh/react",
+        "react-dom/client": "https://esm.sh/react-dom/client",
+        "react/jsx-runtime": "https://esm.sh/react/jsx-runtime"
+    }
+}

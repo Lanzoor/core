@@ -33,7 +33,7 @@ function update() {
         document.body.classList.add('active');
         document.getElementById('hidden').classList.add('active');
         document.getElementById('ominous-countdown').classList.add('active');
-        document.getElementById('mock').innerHTML = '<i>The apocalypse is starting...</i><br>THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE THE END IS HERE THE END IS NOW THE END IS INEVITABLE';
+        document.getElementById('mock').innerHTML = 'what';
     }
 
     left.innerHTML = format(diff);
