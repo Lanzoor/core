@@ -3,6 +3,9 @@ const left = document.querySelector('#left');
 const newYear = new Date('2026-03-27T21:00:00+09:00');
 let triggered = false;
 
+const audio = new Audio('your-audio-file.mp3');
+audio.preload = 'auto';
+
 function format(ms) {
     if (ms < 0) ms = 0;
 
@@ -29,6 +32,10 @@ function update() {
 
     if (diff <= 0 && !triggered) {
         triggered = true;
+
+        audio.play().catch((err) => {
+            console.log('ok there was supposed to be like a concrete scraping sound here but oh well i failed to play it so just imagine a concrete scraping sound effect playing idfk', err);
+        });
 
         document.body.classList.add('active');
         document.getElementById('hidden').classList.add('active');
