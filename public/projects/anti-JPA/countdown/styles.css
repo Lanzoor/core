@@ -40,6 +40,7 @@ body {
 
 body.active {
     background: linear-gradient(120deg, rgb(255, 0, 0), black, rgb(255, 0, 0));
+    overflow-x: hidden;
 }
 
 #ominous-countdown {
