@@ -3,7 +3,7 @@ const newYear = new Date('2026-03-27T21:00:00+09:00');
 let triggered = false;
 let audioUnlocked = false;
 
-const audio = new Audio('/projects/anti-JPA/assets/cona-crete.mp3');
+const audio = new Audio('../assets/cona-crete.mp3');
 audio.preload = 'auto';
 
 function unlockAudio() {
