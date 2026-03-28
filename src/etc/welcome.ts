@@ -23,7 +23,7 @@ let starLimit = 100;
 let animationIntervalMs = 1000;
 let baseFontSizePx = 80;
 
-const optimizationInfo = document.querySelector('#profile--name-display #optimization-indicator')!;
+const optimizationInfo = document.querySelector('#profile #name-display #optimization-indicator')!;
 
 function updateOptimization() {
     enableOptimization = window.matchMedia('(max-width: 1080px)').matches || isMobileDevice();
@@ -39,7 +39,13 @@ document.addEventListener('DOMContentLoaded', updateOptimization);
 window.addEventListener('resize', updateOptimization);
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const elements = ['#welcome--header', '#welcome--message', '#welcome--buttons', '#welcome--down'];
+    const elements = [
+        //
+        '#welcome--intro #header',
+        '#welcome--intro #message',
+        '#welcome--intro #buttons',
+        '#welcome--intro #down',
+    ];
 
     const htmlElements = elements
         .map((element) => {
@@ -64,11 +70,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 document.addEventListener('DOMContentLoaded', async () => {
     const updateDisplay = document.getElementById('update-display')!;
-    const avatarDisplay = document.getElementById('discord-status--avatar')! as HTMLImageElement;
-    const displayNameDisplay = document.getElementById('discord-status--display-name')!;
-    const usernameDisplay = document.getElementById('discord-status--username')!;
-    const userIDDisplay = document.getElementById('discord-status--user-id')!;
-    const statusDisplay = document.getElementById('discord-status--status')!;
+    const avatarDisplay = document.querySelector('#discord-status #avatar')! as HTMLImageElement;
+    const displayNameDisplay = document.querySelector('#discord-status #display-name')!;
+    const usernameDisplay = document.querySelector('#discord-status #username')!;
+    const userIDDisplay = document.querySelector('#discord-status #user-id')!;
+    const statusDisplay = document.querySelector('#discord-status #status')!;
 
     let defaultLastUpdated = updateDisplay.textContent;
 
@@ -115,7 +121,7 @@ type Star = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('profile--name-display')!;
+    const container = document.querySelector('#welcome--profile #name-display')!;
     const animationToggle = container.querySelector('button')!;
     const canvas = container.querySelector('canvas')!;
     const ctx = canvas.getContext('2d')!;
@@ -139,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        const density = 0.00015;
+        const density = 0.00005;
 
         const starCount = Math.min(200, Math.max(30, Math.floor(canvas.width * canvas.height * density)));
 

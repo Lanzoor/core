@@ -1,0 +1,84 @@
+body {
+    background: #111;
+}
+
+.credits-fonts.intro {
+    background: radial-gradient(circle at 50% 100%, #222, black);
+
+    padding: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+.credits-fonts.intro::before {
+    content: '';
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 6px;
+    height: 100%;
+
+    background: linear-gradient(to bottom, #111, #aaa);
+    box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
+
+    transform: translateX(-50%);
+
+    z-index: 1;
+}
+
+.credits-fonts.intro h1 {
+    font-family: 'Geist';
+    font-weight: 500;
+    font-style: italic;
+    font-size: 200px;
+    margin: 0;
+    color: white;
+
+    animation: subtleGlow 2s ease infinite;
+
+    z-index: 2;
+}
+
+@keyframes subtleGlow {
+    0% {
+        text-shadow: none;
+    }
+
+    50% {
+        text-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        text-shadow: none;
+    }
+}
+
+.credits-fonts.intro .description {
+    background: radial-gradient(circle at 50% -100%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.75));
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+
+    padding: 30px;
+    margin: 30px 0;
+    z-index: 2;
+}
+
+.credits-fonts.intro .description:nth-child(odd) {
+    align-self: flex-end;
+    text-align: left;
+}
+
+footer {
+    text-align: center;
+    opacity: 0.75;
+    z-index: 2;
+}

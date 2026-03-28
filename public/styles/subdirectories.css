@@ -111,7 +111,7 @@ strong {
     font-weight: 500;
 
     color: #e6e6fa;
-    text-shadow: 0 0 25px currentColor;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 i,
@@ -124,6 +124,8 @@ em {
 
 a {
     display: inline-block;
+
+    border-radius: 10px;
 
     text-decoration: none;
     background: linear-gradient(120deg, #895eff, #4d47ff);
@@ -284,8 +286,7 @@ th:hover {
 
     flex: none;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .section.fixed-bg {
@@ -293,6 +294,10 @@ th:hover {
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-attachment: fixed !important;
+}
+
+.section.stretched {
+    min-height: 100vh;
 }
 
 .section.centered.horizontally {
@@ -308,6 +313,10 @@ th:hover {
 }
 
 .dimmer {
+    opacity: 0.45;
+}
+
+.dimmest {
     opacity: 0.3;
 }
 

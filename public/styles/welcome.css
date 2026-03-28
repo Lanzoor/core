@@ -20,20 +20,20 @@ body {
     }
 }
 
-#welcome {
+#welcome--intro {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     min-height: 90vh;
     padding: 5vh 0 20vh;
 }
 
-#welcome div.inactive {
+#welcome--intro div.inactive {
     opacity: 0;
     transform: translateY(40px);
     pointer-events: none;
 }
 
-#welcome div.active {
+#welcome--intro div.active {
     position: relative;
     opacity: 1;
     transform: translateY(0);
@@ -42,18 +42,18 @@ body {
     pointer-events: all;
 }
 
-#welcome--down.active {
+#welcome--intro #down.active {
     animation: floatAnimation ease-in-out 2s infinite;
 }
 
-#welcome--header {
+#welcome--intro #header {
     margin: 1em 3em;
     text-align: left;
     display: flex;
     flex-direction: column;
 }
 
-#welcome--message {
+#welcome--intro #message {
     margin: 1em 3em;
     padding: 1em;
     width: 800px;
@@ -68,11 +68,11 @@ body {
     box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.5);
 }
 
-#welcome--message #emphasized {
+#welcome--intro #message #emphasized {
     font-size: 40px;
 }
 
-#welcome--message:hover {
+#welcome--intro #message:hover {
     border-color: rgba(255, 255, 255, 0.75);
     background-position: 100% 100%;
     box-shadow:
@@ -80,11 +80,11 @@ body {
         inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-#welcome--message h1 {
+#welcome--intro #message h1 {
     margin: 0;
 }
 
-#welcome--buttons {
+#welcome--intro #buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -94,7 +94,7 @@ body {
     user-select: none;
 }
 
-#welcome--buttons a button {
+#welcome--intro #buttons a button {
     font-family: 'Fira Code';
     font-size: 40px;
 
@@ -106,11 +106,11 @@ body {
     transition: all 0.5s ease;
 }
 
-#welcome--buttons a button:active {
+#welcome--intro #buttons a button:active {
     transform: translateY(20px);
 }
 
-#welcome--profile-button {
+#welcome--intro #profile-button {
     all: unset;
 
     padding: min(2.5rem, 5vw) min(10rem, 5vw);
@@ -122,14 +122,14 @@ body {
         inset 0 0 min(1rem, 1vw) white;
 }
 
-#welcome--profile-button:hover {
+#welcome--intro #profile-button:hover {
     background: linear-gradient(120deg, #3c09be, #360ed8);
     box-shadow:
         0 25px 50px rgb(87, 40, 255),
         inset 0 0 25px rgb(117, 67, 255);
 }
 
-#welcome--navigation-button {
+#welcome--intro #navigation-button {
     all: unset;
 
     font-size: 30px;
@@ -142,13 +142,13 @@ body {
     transition: all 0.5s ease;
 }
 
-#welcome--navigation-button:hover {
+#welcome--intro #navigation-button:hover {
     color: white;
     text-shadow: 0 0 20px white;
     cursor: pointer;
 }
 
-#welcome--down {
+#welcome--intro #down {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -166,7 +166,7 @@ body {
     max-width: 300px;
 }
 
-#welcome--down p {
+#welcome--intro #down p {
     font-size: 20px;
     user-select: none;
 
@@ -177,7 +177,7 @@ body {
     background: none;
 }
 
-#welcome--down svg {
+#welcome--intro #down svg {
     border: none;
     background: none;
 
@@ -190,7 +190,7 @@ body {
     transition: filter 0.5s ease;
 }
 
-#welcome--down svg:hover {
+#welcome--intro #down svg:hover {
     filter: drop-shadow(0 0 20px white);
     cursor: pointer;
 }
@@ -199,7 +199,7 @@ body {
     background: black;
 }
 
-#profile--name-display {
+#welcome--profile #name-display {
     user-select: none;
 
     width: 100%;
@@ -217,7 +217,7 @@ body {
     overflow: hidden;
 }
 
-#lanzoor-letters span {
+#welcome--profile #name-display #lanzoor-letters span {
     font-family: 'Geist';
     font-style: italic;
     font-weight: 200;
@@ -231,11 +231,11 @@ body {
     transform-origin: center;
 }
 
-#profile--name-display:hover {
+#welcome--profile #name-display:hover {
     box-shadow: inset 0 0 50px white;
 }
 
-#profile--name-display #optimization-indicator {
+#welcome--profile #name-display #optimization-indicator {
     position: absolute;
 
     left: 30px;
@@ -245,11 +245,11 @@ body {
     transition: opacity 0.5s ease;
 }
 
-#profile--name-display #optimization-indicator.active {
+#welcome--profile #name-display #optimization-indicator.active {
     opacity: 0.6;
 }
 
-#profile--name-display button {
+#welcome--profile #name-display button {
     position: absolute;
 
     padding: 20px 40px;
@@ -277,19 +277,19 @@ body {
     z-index: 101;
 }
 
-#profile--name-display button:hover {
+#welcome--profile #name-display button:hover {
     background-position: right center;
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
-#profile--name-display button:active {
+#welcome--profile #name-display button:active {
     transform: scale(0.8);
     box-shadow:
         0 0 10px rgba(123, 0, 255, 0.6),
         inset 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-#profile--name-display canvas {
+#welcome--profile #name-display canvas {
     position: absolute;
     top: 0;
     left: 0;
@@ -320,7 +320,7 @@ footer {
     background: none;
 }
 
-#connections--div {
+#connections #container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -329,8 +329,8 @@ footer {
     gap: 15px;
 }
 
-#connections--socials,
-#connections--support {
+#connections #socials,
+#connections #support {
     font-family: 'JetBrains Mono';
 
     margin: 0;
@@ -343,20 +343,20 @@ footer {
     transition: box-shadow 0.2s ease;
 }
 
-#connections--socials:hover,
-#connections--support:hover {
+#connections #socials:hover,
+#connections #support:hover {
     box-shadow:
         0 10px 20px rgb(255, 255, 255, 0.25),
         inset 0 0 10px rgb(255, 255, 255, 0.5);
 }
 
-#connections--socials {
+#connections #socials {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-#connections--social-icons {
+#connections #social-icons {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -365,7 +365,7 @@ footer {
     gap: 15px;
 }
 
-#connections--social-icons img {
+#connections #social-icons img {
     display: inline-block;
 
     width: 60px;
@@ -375,7 +375,7 @@ footer {
     transition: filter 0.2s ease;
 }
 
-#connections--social-icons img:hover {
+#connections #social-icons img:hover {
     filter: drop-shadow(0 5px 10px rgb(130, 130, 130));
 }
 
@@ -433,7 +433,7 @@ footer {
     cursor: pointer;
 }
 
-#discord-status--avatar {
+#discord-status #avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -449,15 +449,15 @@ footer {
     transition: transform 0.2s ease;
 }
 
-#discord-status--avatar:hover {
+#discord-status #avatar:hover {
     transform: translateY(-3px);
 }
 
-#discord-status--nameplate {
+#discord-status #nameplate {
     width: 100%;
 }
 
-#discord-status--display-name {
+#discord-status #display-name {
     text-decoration: none;
     background: linear-gradient(180deg, #ded3ff, #7c35ff);
     color: transparent;
@@ -467,7 +467,7 @@ footer {
     -webkit-background-clip: text;
 }
 
-#discord-status--nameplate hr {
+#discord-status #nameplate hr {
     margin: 1rem 0;
     height: 5px;
 }
@@ -495,16 +495,16 @@ footer {
 /* ==================== The Responsive Zone ==================== */
 
 @media (max-width: 768px) {
-    #welcome {
+    #welcome--intro {
         backdrop-filter: none;
     }
 
-    #welcome--buttons {
+    #welcome--intro #buttons {
         flex-direction: column;
         margin: 100px 0;
     }
 
-    #social-icons {
+    #connections #social-icons {
         gap: 5px;
     }
 
@@ -515,15 +515,15 @@ footer {
 }
 
 @media (max-width: 1080px) {
-    #profile--name-display {
+    #welcome--profile #name-display {
         height: 500px;
     }
 
-    #connections--div {
+    #connections #container {
         flex-direction: column;
     }
 
-    #connections--support {
+    #connections #support {
         align-self: flex-end;
     }
 }

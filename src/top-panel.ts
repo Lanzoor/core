@@ -150,6 +150,7 @@ let destinations = [
     new Destination('/credits', 'Credits', [
         //
         new Destination('/credits', 'Credits'),
+        new Destination('/credits/fonts', 'Font Credits'),
         new Destination('/credits/icons', 'Icon Credits'),
     ]),
     new Destination('/troubleshooting', 'Troubleshooting'),
