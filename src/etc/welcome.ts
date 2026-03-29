@@ -19,16 +19,14 @@ function randInt(min: number, max: number): number {
 let enableAnimation = true;
 let enableOptimization = false;
 
-let starLimit = 100;
 let animationIntervalMs = 1000;
 let baseFontSizePx = 80;
 
-const optimizationInfo = document.querySelector('#profile #name-display #optimization-indicator')!;
+const optimizationInfo = document.querySelector('#welcome--profile #name-display #optimization-indicator')!;
 
 function updateOptimization() {
     enableOptimization = window.matchMedia('(max-width: 1080px)').matches || isMobileDevice();
 
-    starLimit = enableOptimization ? 50 : 150;
     animationIntervalMs = enableOptimization ? 2000 : 1000;
     baseFontSizePx = enableOptimization ? 40 : 80;
 

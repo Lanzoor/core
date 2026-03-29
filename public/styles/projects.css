@@ -51,13 +51,16 @@ button.show-all {
     background: linear-gradient(120deg, rgba(170, 0, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(72, 0, 255, 0.75));
     background-size: 150% 150%;
     background-position: top left;
+    opacity: 0.5;
 
     transition: all 0.5s ease;
 }
 button.show-all:hover {
+    opacity: 1;
     background-position: bottom right;
 }
 button.show-all.selected {
+    opacity: 1;
     background-position: center center;
 }
 

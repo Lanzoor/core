@@ -2,53 +2,6 @@ body {
     background: radial-gradient(circle at center, #220974 0%, transparent 55%), linear-gradient(140deg, #041947, #10051e 45%, #2b0a63);
 }
 
-.font-credits {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
-
-.font-display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 15px;
-    height: 200px;
-
-    margin: 2rem;
-    width: 50%;
-
-    background: rgb(0, 0, 0);
-    border: 2px solid black;
-    border-radius: 10px;
-
-    box-shadow:
-        0 0 10px black,
-        inset 0 0 15px black;
-
-    user-select: none;
-
-    transition:
-        box-shadow 0.2s ease,
-        border 0.2s ease;
-}
-
-.font-display:hover {
-    border: 2px solid white;
-
-    box-shadow:
-        0 10px 25px white,
-        inset 0 0 25px white;
-}
-
-.font-display a {
-    font-size: 20px;
-    color: white;
-    text-shadow: none;
-}
-
 h1 {
     color: #8fe5ff;
     text-shadow: 0 0 10px #0084ff;
@@ -61,18 +14,4 @@ h2 {
 
 h3 {
     margin: 0.5em;
-}
-
-@media (max-width: 480px) {
-    .font-credits {
-        grid-template-columns: 1fr;
-    }
-
-    .font-display {
-        padding: 10px 15px;
-    }
-
-    .font-display a {
-        font-size: 10px;
-    }
 }

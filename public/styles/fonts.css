@@ -48,32 +48,38 @@
         url('/assets/fonts/FairfaxHD/FairfaxHD.ttf') format('truetype');
 }
 
-.brass-mono {
+.brass-mono,
+.brass-mono * {
     font-family: 'Brass Mono';
     font-optical-sizing: auto;
 }
 
-.fira-code {
+.fira-code,
+.fira-code * {
     font-family: 'Fira Code', Consolas, monospace;
     font-optical-sizing: auto;
 }
 
-.jetbrains-mono {
+.jetbrains-mono,
+.jetbrains-mono * {
     font-family: 'JetBrains Mono', Consolas, monospace;
     font-optical-sizing: auto;
 }
 
-.fairfax-hd {
+.fairfax-hd,
+.fairfax-hd * {
     font-family: 'Fairfax HD', Consolas, monospace;
     font-optical-sizing: auto;
 }
 
-.space-grotesk {
+.space-grotesk,
+.space-grotesk * {
     font-family: 'Space Grotesk', sans-serif;
     font-optical-sizing: auto;
 }
 
-.geist {
+.geist,
+.geist * {
     font-family: 'Geist', sans-serif;
     font-optical-sizing: auto;
 }

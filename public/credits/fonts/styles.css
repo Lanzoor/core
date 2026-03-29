@@ -5,8 +5,6 @@ body {
 #credits-fonts--intro {
     background: radial-gradient(circle at 50% 100%, #222, black);
 
-    padding: 100px;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -40,23 +38,9 @@ body {
     margin: 0;
     color: white;
 
-    animation: subtleGlow 2s ease infinite;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
 
     z-index: 2;
-}
-
-@keyframes subtleGlow {
-    0% {
-        text-shadow: none;
-    }
-
-    50% {
-        text-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
-    }
-
-    100% {
-        text-shadow: none;
-    }
 }
 
 #credits-fonts--intro .description {
@@ -77,6 +61,42 @@ body {
     text-align: left;
 }
 
+#credits-fonts--font-showcase {
+    background: radial-gradient(circle at left top, #222 0%, transparent 25%, transparent 100%), radial-gradient(circle at right bottom, #222 0%, transparent 25%, transparent 100%), #111;
+
+    padding: 100px 0;
+}
+
+#credits-fonts--font-showcase #font-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    min-width: 100vw;
+
+    overflow-x: auto;
+}
+
+.font-display {
+    border: 2px solid #444;
+    border-radius: 20px;
+
+    background: #111;
+
+    flex: 1 1 700px;
+    text-align: left;
+
+    padding: 50px;
+    margin: 50px 25px;
+}
+
+.font-display h1 {
+    color: white;
+    font-size: 75px;
+
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
 footer {
     text-align: center;
     opacity: 0.75;
@@ -87,4 +107,10 @@ footer {
     #credits-fonts--intro h1 {
         font-size: 100px;
     }
+
+    /*
+    .font-display {
+        flex: 1 1 100%;
+        margin: 25px 0;
+    } */
 }
