@@ -4,17 +4,6 @@ body {
 
     background-color: rgb(0, 0, 0);
     font-size: 25px;
-}
-
-p,
-sub,
-sup,
-td,
-ul,
-ol,
-blockquote,
-ul ul,
-ol ol {
     color: rgb(180, 185, 200);
 }
 
@@ -26,19 +15,12 @@ p {
 
 b,
 strong {
+    font-weight: 600;
+
     color: rgb(140, 145, 160);
     transition:
         text-shadow 0.2s,
         color 0.2s;
-    text-shadow: 0 0 10px currentColor;
-}
-
-i {
-    color: rgb(184, 189, 204);
-    transition:
-        text-shadow 0.2s,
-        color 0.2s;
-    text-shadow: 0 0 10px currentColor;
 }
 
 b:hover,
@@ -46,46 +28,24 @@ strong:hover {
     color: rgb(200, 205, 220);
 }
 
-i:hover {
-    color: rgb(201, 215, 255);
-}
-
 table,
 th,
 td {
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
-    border: 2px solid #ffffff75;
     border-collapse: collapse;
     padding: 10px;
     transition:
         background-color 0.2s,
         box-shadow 0.2s;
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 table {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    box-shadow: 0 0 20px rgba(100, 105, 130, 0.5);
-}
-
-td:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow:
-        0 0 4px 2px rgba(120, 125, 150, 0.5),
-        inset 0 0 5px rgba(255, 255, 255, 0.5);
+    margin: 1em 0;
 }
 
 th {
     background-color: rgba(255, 255, 255, 0.15);
-}
-
-th:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow:
-        0 0 4px 2px rgba(120, 125, 150, 0.6),
-        inset 0 0 7.5px rgba(255, 255, 255, 0.75);
 }
 
 #inverted {
@@ -164,67 +124,44 @@ a:hover {
     text-shadow: 0 0 10px rgb(123, 70, 255);
 }
 
-code {
-    color: rgb(166, 114, 255);
-    border: 1px solid rgba(140, 180, 140, 0.6);
-    text-shadow: 0 0 5px currentColor;
-    background-color: rgb(41, 35, 55);
+code,
+kbd {
+    font-family: 'JetBrains Mono';
     padding: 0.1em 0.2em;
     border-radius: 6px;
-    border: 1px solid rgba(139, 119, 178, 0.6);
-    transition:
-        box-shadow 0.2s,
-        padding 0.2s;
+    cursor: pointer;
 }
 
-code:hover {
-    padding: 0.15em 0.3em;
-    cursor: pointer;
-    box-shadow: 0 0 8px rgba(139, 119, 178, 0.6);
-    user-select: text;
+code {
+    background: rgb(35, 38, 55);
+    color: rgb(150, 170, 200);
+    border: 1px solid rgba(140, 180, 140, 0.6);
+}
+
+kbd {
+    background: rgb(29, 29, 29);
+    color: rgb(145, 145, 145);
+    border: 1px solid rgb(100, 100, 100);
 }
 
 code b,
 b code,
 code strong,
 strong code {
-    color: rgb(126, 51, 255);
-    text-shadow: 0 0 10px currentColor;
-}
-
-code i,
-i code {
-    color: rgb(147, 85, 255);
-    text-shadow: 0 0 10px currentColor;
-}
-
-code b:hover,
-code strong:hover {
-    color: rgb(200, 230, 200);
+    color: rgb(146, 171, 208);
 }
 
 pre {
-    background-color: rgb(40, 40, 60);
+    background: rgb(40, 40, 60);
     padding: 0.75em 0.35em;
     margin: 1rem 1rem;
     border-radius: 6px;
-    overflow-x: auto;
     box-shadow: 0 0 10px 5px rgba(120, 140, 180, 0.4);
     user-select: text;
     color: rgb(180, 185, 200);
-    transition:
-        box-shadow 0.2s,
-        padding 0.2s;
-}
 
-pre code {
-    color: rgb(150, 170, 200);
-}
-
-pre:hover {
-    padding: 0.8em 0.7em;
-    cursor: pointer;
-    box-shadow: 0 0 15px 10px rgba(120, 140, 180, 0.6);
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 blockquote {
@@ -246,33 +183,6 @@ ol ol:hover {
     transition:
         box-shadow 0.2s,
         padding 0.2s;
-}
-
-button {
-    background-color: rgb(80, 60, 130);
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow:
-        0 0 8px rgb(140, 120, 200),
-        0 0 16px rgb(140, 120, 200);
-    transition:
-        box-shadow 0.2s ease-in-out,
-        background-color 0.2s ease-in-out,
-        transform 0.2s;
-    margin-top: 0.4em;
-    margin-bottom: 0.4em;
-}
-
-button:hover {
-    box-shadow:
-        0 0 12px rgb(160, 140, 220),
-        0 0 24px rgb(160, 140, 220);
-    background-color: rgb(95, 75, 145);
-    transform: scale(1.05);
 }
 
 ul {
