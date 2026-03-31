@@ -67,7 +67,11 @@
 }
 
 .fairfax-hd,
-.fairfax-hd * {
+.fairfax-hd *,
+.ipa,
+.ipa *,
+.unicode,
+.unicode * {
     font-family: 'Fairfax HD', Consolas, monospace;
     font-optical-sizing: auto;
 }

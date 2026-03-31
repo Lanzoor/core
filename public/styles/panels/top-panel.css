@@ -297,6 +297,8 @@ body {
 }
 
 #top-panel--links a {
+    text-decoration: none;
+
     font-family: 'Geist';
     font-size: 15px;
 

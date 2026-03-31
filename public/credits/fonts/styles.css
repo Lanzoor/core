@@ -67,16 +67,6 @@ body {
     padding: 100px 0;
 }
 
-#credits-fonts--font-showcase #font-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    min-width: 100vw;
-
-    overflow-x: auto;
-}
-
 .font-display {
     border: 2px solid #444;
     border-radius: 20px;
