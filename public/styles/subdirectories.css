@@ -122,7 +122,7 @@ em {
     font-weight: 400;
     font-style: italic;
 
-    color: #e6e6fa;
+    color: #ccc;
 }
 
 a {
@@ -139,6 +139,12 @@ a {
 a:hover {
     color: #777;
     transform: translateY(-2px);
+}
+
+a.plain,
+a.plain:hover {
+    text-decoration: none;
+    color: white;
 }
 
 a.legacy {

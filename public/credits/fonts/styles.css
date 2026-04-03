@@ -43,7 +43,8 @@ body {
     z-index: 2;
 }
 
-#credits-fonts--intro .description {
+#credits-fonts--intro .description,
+#credits-fonts--font-testing p {
     background: radial-gradient(circle at 50% -100%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.75));
     border-radius: 30px;
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -62,7 +63,7 @@ body {
 }
 
 #credits-fonts--font-showcase {
-    background: radial-gradient(circle at left top, #222 0%, transparent 25%, transparent 100%), radial-gradient(circle at right bottom, #222 0%, transparent 25%, transparent 100%), #111;
+    background: radial-gradient(circle at left top, #333 0%, transparent 40%, transparent 100%), radial-gradient(circle at right bottom, #333 0%, transparent 40%, transparent 100%), #111;
 
     padding: 100px 0;
 }
@@ -72,6 +73,7 @@ body {
     border-radius: 20px;
 
     background: #111;
+    box-shadow: 0 10px 20px black;
 
     flex: 1 1 700px;
     text-align: left;

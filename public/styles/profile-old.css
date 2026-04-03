@@ -28,7 +28,7 @@ body {
 
 .container {
     position: relative;
-    width: max(90vw, 70rem);
+    width: 100%;
     padding: 3rem;
 
     background: rgba(0, 0, 0, 0.3);
@@ -531,36 +531,4 @@ hr {
     position: fixed;
     inset: 0;
     pointer-events: none;
-}
-
-/* The Responsive Zone */
-
-@media (max-width: 768px) {
-    .container {
-        width: calc(768px - 8rem);
-    }
-
-    #section-bottom {
-        width: 768px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .container {
-        width: calc(1024px - 8rem);
-    }
-
-    #section-bottom {
-        width: 1024px;
-    }
-}
-
-@media (max-width: 1536px) {
-    .container {
-        width: calc(1536px - 8rem);
-    }
-
-    #section-bottom {
-        width: 1536px;
-    }
 }

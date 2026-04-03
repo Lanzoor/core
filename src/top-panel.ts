@@ -4,22 +4,18 @@ topPanel.id = 'top-panel';
 const topPanelLinks = document.createElement('nav');
 topPanelLinks.id = 'top-panel--links';
 
-const topPanelLogo = document.createElement('div');
-topPanelLogo.id = 'top-panel--logo';
+const topPanelLeft = document.createElement('div');
 
-const topPanelLogoText = document.createElement('p');
-topPanelLogoText.textContent = 'lanzoor.dev';
+const topPanelLeftLink = document.createElement('a');
+topPanelLeftLink.textContent = 'lanzoor.dev';
 
-const topPanelNavigation = document.createElement('div');
-topPanelNavigation.id = 'top-panel--navigation';
-topPanelNavigation.classList.add('navigation-toggle');
+const topPanelRight = document.createElement('div');
+topPanelRight.id = 'top-panel--right';
+topPanelRight.classList.add('navigation-toggle');
 
-const topPanelNavigationText = document.createElement('p');
-topPanelNavigationText.textContent = 'Navigation';
-
-const topPanelNavigationIcon = document.createElement('img');
-topPanelNavigationIcon.src = '/assets/icons/hamburger.svg';
-topPanelNavigationIcon.alt = '☰';
+const topPanelRightIcon = document.createElement('img');
+topPanelRightIcon.src = '/assets/icons/hamburger.svg';
+topPanelRightIcon.alt = '☰';
 
 const navigationOverlay = document.createElement('div');
 navigationOverlay.id = 'navigation-overlay';
@@ -165,15 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
         destination.appendTo(topPanelLinks);
     }
 
-    topPanelLogo.appendChild(topPanelLogoText);
+    topPanelLeft.appendChild(topPanelLeftLink);
 
-    topPanelNavigation.appendChild(topPanelNavigationText);
-    topPanelNavigation.appendChild(topPanelNavigationIcon);
+    topPanelRight.appendChild(topPanelRightIcon);
 
-    topPanel.appendChild(topPanelLogo);
-    topPanel.appendChild(topPanelNavigation);
+    topPanel.appendChild(topPanelLeft);
+    topPanel.appendChild(topPanelRight);
 
-    topPanelLogo.addEventListener('click', () => {
+    topPanelLeft.addEventListener('click', () => {
         window.location.href = '/';
     });
 

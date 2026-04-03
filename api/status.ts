@@ -25,8 +25,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             ok: true,
             message: 'Servers online! Pong 🏓',
             time: Date.now(),
-            createdAt: latest.createdAt,
-            url: latest.url,
+            lastUpdated: latest.createdAt,
+            vercelUrl: latest.url,
         };
 
         res.status(200).json(body);
