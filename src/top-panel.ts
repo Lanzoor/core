@@ -1,3 +1,5 @@
+document.documentElement.setAttribute('data-theme', 'dark'); // remove later
+
 const topPanel = document.createElement('div');
 topPanel.id = 'top-panel';
 
@@ -5,9 +7,12 @@ const topPanelLinks = document.createElement('nav');
 topPanelLinks.id = 'top-panel--links';
 
 const topPanelLeft = document.createElement('div');
+topPanelLeft.id = 'top-panel--left';
 
 const topPanelLeftLink = document.createElement('a');
 topPanelLeftLink.textContent = 'lanzoor.dev';
+topPanelLeftLink.href = '/';
+topPanelLeftLink.classList.add('plain');
 
 const topPanelRight = document.createElement('div');
 topPanelRight.id = 'top-panel--right';
@@ -130,7 +135,6 @@ class Destination {
 let destinations = [
     //
     new Destination('/', 'Welcome!'),
-    new Destination('/profile', 'Profile'),
     new Destination('/projects', 'Projects', [
         //
         new Destination('/projects', 'Project Portal'),

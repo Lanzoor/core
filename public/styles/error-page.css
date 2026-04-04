@@ -1,27 +1,32 @@
-body {
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Geist';
-    font-weight: 300;
+:root {
+    --bg: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #d9f6ff, #4abbdd 45%, #1569f9);
 
-    background: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
-    color: #e6f0ff;
+    --h1-bg: linear-gradient(120deg, #47a5b6, #0a4e7c);
+    --h1-shadow: 0 2.5px 20px rgb(9, 55, 129);
 }
 
-b {
-    color: rgb(184, 213, 255);
+[data-theme='dark'] {
+    --bg: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
+
+    --h1-bg: linear-gradient(120deg, #aef3ff, #2facff);
+    --h1-shadow: 0 2.5px 20px rgb(0, 98, 255);
+}
+
+body {
+    background: var(--bg);
 }
 
 h1,
 h2,
 h3 {
-    width: 100%;
-    margin: 2rem 0;
+    font-family: 'Fira Code';
+    line-height: 1.1;
 }
 
 h1 {
-    background: linear-gradient(120deg, #aef3ff, #2facff);
-    text-shadow: 0 2.5px 20px rgb(0, 98, 255);
+    background: var(--h1-bg);
+    text-shadow: var(--h1-shadow);
+
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -36,8 +41,6 @@ h2 {
 }
 
 h3 {
-    font-family: 'Fira Code';
-
     background: linear-gradient(175deg, #aef3ff, #2facff);
     text-shadow: 0 2.5px 20px rgb(0, 98, 255);
     -webkit-background-clip: text;
@@ -45,18 +48,14 @@ h3 {
     color: transparent;
 }
 
-p {
-    color: #cfe0ff;
-}
-
 a {
     display: inline-block;
     background: linear-gradient(120deg, #4da6ff, #00e0ff);
-    text-shadow: 0 6px 18px rgba(0, 200, 255, 0.8);
+    text-shadow: 0 3px 18px rgba(0, 200, 255, 0.8);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    transition: transform 0.1s ease-out;
+    transition: all 0.2s ease;
 }
 
 a:hover {
@@ -65,7 +64,6 @@ a:hover {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    transform: translateY(-2.5px);
 }
 
 .solutions {
@@ -79,13 +77,6 @@ a:hover {
 .solution-left,
 .solution-right {
     max-width: 75%;
-}
-
-.solution-left h2,
-.solution-right h2 {
-    font-family: 'Geist';
-    margin-top: 10px;
-    margin-bottom: 0;
 }
 
 .solution-left {

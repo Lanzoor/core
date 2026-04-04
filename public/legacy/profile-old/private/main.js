@@ -2,11 +2,11 @@ if (localStorage.getItem('secret') !== null) {
     localStorage.setItem('secret', 'true');
 }
 
-const privateBlock = document.getElementById('private')!;
-const hidden = privateBlock.querySelector('.hidden')! as HTMLElement;
-const revealed = privateBlock.querySelector('.revealed')! as HTMLElement;
+const privateBlock = document.getElementById('private');
+const hidden = privateBlock.querySelector('.hidden');
+const revealed = privateBlock.querySelector('.revealed');
 
-let hoverTimer: ReturnType<typeof setTimeout> | undefined = undefined;
+let hoverTimer = undefined;
 let activated = false;
 
 function activateHoverAnimation() {
@@ -21,11 +21,9 @@ function deactivateHoverAnimation() {
 
 privateBlock.addEventListener('mouseenter', () => {
     hidden.textContent = '( - Keep hovering... - )';
-
     if (!activated) {
         activateHoverAnimation();
     }
-
     hoverTimer = setTimeout(() => {
         deactivateHoverAnimation();
         hidden.hidden = true;
@@ -36,10 +34,8 @@ privateBlock.addEventListener('mouseenter', () => {
 
 privateBlock.addEventListener('mouseleave', () => {
     deactivateHoverAnimation();
-
     clearTimeout(hoverTimer);
     hoverTimer = undefined;
-
     if (!activated) {
         hidden.textContent = '( - Hover to reveal - )';
         hidden.hidden = false;

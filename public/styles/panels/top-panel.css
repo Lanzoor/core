@@ -1,5 +1,17 @@
+:root {
+    --top-panel-height: min(75px, 10vh);
+
+    --top-panel-bg: rgba(255, 255, 255, 0.75);
+    --top-panel-text: black;
+}
+
+[data-theme='dark'] {
+    --top-panel-bg: rgba(0, 0, 0, 0.75);
+    --top-panel-text: white;
+}
+
 body {
-    margin-top: min(75px, 10vh);
+    margin-top: var(--top-panel-height);
 }
 
 #top-panel,
@@ -30,11 +42,10 @@ body {
 
     inset: 0 0 auto 0;
 
-    height: 75px;
-    max-height: 10vh;
+    height: var(--top-panel-height);
 
-    background: rgba(0, 0, 0, 0.75);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background: var(--top-panel-bg);
+    box-shadow: 0 5px 30px var(--top-panel-bg);
     backdrop-filter: blur(4px);
 
     z-index: 2147483647;
@@ -50,7 +61,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 1rem;
+    gap: 20px;
 
     width: 100vw;
     height: 100%;
@@ -60,11 +71,11 @@ body {
     text-decoration: none;
 
     font-family: 'Geist';
-    font-size: 15px;
+    font-size: 20px;
 
     padding: 2.5px;
-    color: white;
-    text-shadow: 0 0 10px white;
+    color: var(--top-panel-text);
+    text-shadow: 0 0 10px var(--top-panel-text);
 
     opacity: 0.7;
 
@@ -72,6 +83,20 @@ body {
         color 0.2s ease,
         text-shadow 0.2s ease,
         opacity 0.2s ease;
+}
+
+#top-panel--links a:hover {
+    text-decoration: none;
+
+    opacity: 1;
+
+    color: var(--top-panel-text);
+    text-shadow:
+        0 0 10px var(--top-panel-text),
+        4px 4px 1px rgb(165, 165, 165),
+        4px 4px 10px rgb(100, 100, 100);
+
+    transform: none;
 }
 
 #top-panel--left,
@@ -90,11 +115,6 @@ body {
     height: 100%;
 }
 
-#top-panel div p,
-#top-panel div button {
-    color: white;
-}
-
 #top-panel--right:hover img,
 #navigation--close:hover img {
     filter: drop-shadow(0 0 10px #bbb);
@@ -104,18 +124,17 @@ body {
 #navigation--close p {
     margin: 0;
     padding: 0;
-    color: white;
+    color: var(--top-panel-text);
 
     font-size: min(30px, 3vh);
     font-family: 'Space Grotesk';
 }
 
 #top-panel--left a {
-    all: unset;
     padding: 0;
 
     text-shadow: none;
-    color: white;
+    color: var(--top-panel-text);
     text-decoration: none;
 
     font-size: min(45px, 4.5vh);
@@ -126,7 +145,7 @@ body {
         text-shadow 0.5s ease;
 }
 
-#top-panel--left:hover p {
+#top-panel--left:hover a {
     color: rgb(200, 200, 200);
 
     text-shadow:
@@ -147,8 +166,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 
-    height: 75px;
-    max-height: 10vh;
+    height: var(--top-panel-height);
 
     cursor: pointer;
 }
@@ -273,20 +291,6 @@ body {
     text-shadow: 0 0 10px black;
 
     cursor: pointer;
-}
-
-#top-panel--links a:hover {
-    text-decoration: none;
-
-    opacity: 1;
-
-    color: rgb(213, 213, 213);
-    text-shadow:
-        0 0 10px white,
-        4px 4px 1px rgb(165, 165, 165),
-        4px 4px 10px rgb(100, 100, 100);
-
-    transform: none;
 }
 
 .dropdown {

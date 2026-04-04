@@ -4,6 +4,24 @@
     --large-space: min(2vw, 6rem);
     --medium-space: min(1vw, 3rem);
     --small-space: min(0.5vw, 1.5rem);
+
+    --text: #111;
+    --italic: #333;
+
+    --anchor: #555;
+    --anchor-hover: #777;
+
+    --bold: #050505;
+}
+
+[data-theme='dark'] {
+    --text: #eee;
+    --italic: #ccc;
+    
+    --anchor: #aaa;
+    --anchor-hover: #777;
+
+    --bold: #e5e5e5;
 }
 
 * {
@@ -18,7 +36,7 @@ body {
 
     font-size: 25px;
     line-height: 1.5;
-    color: #eeeeee;
+    color: var(--text);
 
     transition: background 1s ease;
 }
@@ -108,8 +126,8 @@ b,
 strong {
     font-weight: 500;
 
-    color: #e6e6fa;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    color: var(--bold);
+    text-shadow: 0 0 20px var(--bold);
 }
 
 b.plain,
@@ -122,7 +140,7 @@ em {
     font-weight: 400;
     font-style: italic;
 
-    color: #ccc;
+    color: var(--italic);
 }
 
 a {
@@ -130,21 +148,21 @@ a {
 
     border-radius: 10px;
 
-    color: #aaa;
+    color: var(--anchor);
     text-decoration: underline;
 
     transition: all 0.2s ease;
 }
 
 a:hover {
-    color: #777;
-    transform: translateY(-2px);
+    color: var(--anchor-hover);
 }
 
 a.plain,
 a.plain:hover {
+    text-shadow: none;
     text-decoration: none;
-    color: white;
+    color: var(--text);
 }
 
 a.legacy {
@@ -324,7 +342,7 @@ th:hover {
 }
 
 .section.stretched {
-    min-height: 100vh;
+    min-height: calc(100vh - var(--top-panel-height));
 }
 
 .section.centered.horizontally {
