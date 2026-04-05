@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
-document.documentElement.setAttribute('data-theme', 'dark'); // remove later
-
 type Destination = {
     link: string;
     name: string;
@@ -41,9 +39,10 @@ const destinations: Destination[] = [
     { link: '/troubleshooting', name: 'Troubleshooting' },
 ];
 
-function TopPanel() {
+function PanelRoot() {
     const [navOpen, setNavOpen] = useState(false);
     const [optOpen, setOptOpen] = useState(false);
+    const [theme, setTheme] = useState('dark');
 
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
@@ -57,17 +56,42 @@ function TopPanel() {
         return () => window.removeEventListener('keydown', handleKey);
     }, []);
 
-    Array.from(document.getElementsByClassName('navigation-toggle')).forEach((element) => {
-        element.addEventListener('click', () => {
-            setNavOpen(!navOpen);
-        });
-    });
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
 
-    Array.from(document.getElementsByClassName('option-toggle')).forEach((element) => {
-        element.addEventListener('click', () => {
-            setNavOpen(!optOpen);
-        });
-    });
+    function toggleNav(force: boolean = false) {
+        if (force) {
+            return setNavOpen(false);
+        }
+
+        setNavOpen((prev) => !prev);
+    }
+
+    function toggleOpt(force: boolean = false) {
+        if (force) {
+            return setOptOpen(false);
+        }
+
+        setOptOpen((prev) => !prev);
+    }
+
+    function toggleTheme() {
+        setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    }
+
+    useEffect(() => {
+        const navButtons = Array.from(document.getElementsByClassName('navigation-toggle'));
+        const optButtons = Array.from(document.getElementsByClassName('option-toggle'));
+
+        navButtons.forEach((el) => el.addEventListener('click', () => toggleNav()));
+        optButtons.forEach((el) => el.addEventListener('click', () => toggleOpt()));
+
+        return () => {
+            navButtons.forEach((el) => el.removeEventListener('click', () => toggleNav()));
+            optButtons.forEach((el) => el.removeEventListener('click', () => toggleOpt()));
+        };
+    }, []);
 
     return (
         <>
@@ -83,7 +107,7 @@ function TopPanel() {
 
                 <nav id="top-panel--links">
                     {destinations.map((d, i) => (
-                        <NavigationItem
+                        <Destination
                             key={i}
                             {...d}
                         />
@@ -93,13 +117,15 @@ function TopPanel() {
                 <div id="top-panel--right">
                     <img
                         src="/assets/icons/settings.svg"
-                        className="option-toggle"
                         alt="⚙"
+                        className="panel-icon"
+                        onClick={() => toggleOpt()}
                     />
                     <img
                         src="/assets/icons/hamburger.svg"
-                        className="navigation-toggle"
                         alt="☰"
+                        className="panel-icon"
+                        onClick={() => toggleNav()}
                     />
                 </div>
             </div>
@@ -111,19 +137,22 @@ function TopPanel() {
                 <div id="navigation-panel">
                     <div
                         id="navigation--close"
-                        onClick={() => setNavOpen(false)}
+                        onClick={() => {
+                            toggleNav(false);
+                        }}
                     >
                         <p>Close</p>
                         <img
                             src="/assets/icons/close.svg"
                             alt="×"
+                            className="panel-icon"
                         />
                     </div>
 
                     <nav>
                         <ul>
                             {destinations.map((d, i) => (
-                                <NavigationItem
+                                <Destination
                                     key={i}
                                     {...d}
                                     inline={false}
@@ -140,8 +169,36 @@ function TopPanel() {
             >
                 <div id="option-panel">
                     <div id="option-header">
-                        <h2>Options</h2>
-                        <button onClick={() => setOptOpen(false)}>✕</button>
+                        <p>Options</p>
+
+                        <img
+                            src="/assets/icons/close.svg"
+                            alt="×"
+                            className="panel-icon"
+                            onClick={() => toggleOpt(false)}
+                        />
+                    </div>
+
+                    <div id="options">
+                        <div className="option">
+                            <div>
+                                <img
+                                    src="/assets/icons/close.svg"
+                                    alt="×"
+                                    className="panel-icon"
+                                />
+                                <p>Theme</p>
+                            </div>
+
+                            <label className="switch">
+                                <input
+                                    type="checkbox"
+                                    checked={theme === 'dark'}
+                                    onChange={toggleTheme}
+                                />
+                                <span className="slider"></span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -149,7 +206,7 @@ function TopPanel() {
     );
 }
 
-function NavigationItem({ link, name, children, inline = true }: Destination & { inline?: boolean }) {
+function Destination({ link, name, children, inline = true }: Destination & { inline?: boolean }) {
     const [open, setOpen] = useState(false);
 
     if (inline) {
@@ -178,7 +235,7 @@ function NavigationItem({ link, name, children, inline = true }: Destination & {
                             <img
                                 src="/assets/icons/caret-down.svg"
                                 alt="▼"
-                                className={`chevron${open ? ' open' : ''}`}
+                                className={`panel-icon chevron${open ? ' open' : ''}`}
                             />
                         )}
                     </div>
@@ -187,7 +244,7 @@ function NavigationItem({ link, name, children, inline = true }: Destination & {
                 {children && open && (
                     <ul className={`dropdown${open ? ' open' : ''}`}>
                         {children.map((c, i) => (
-                            <NavigationItem
+                            <Destination
                                 key={i}
                                 {...c}
                                 inline={false}
@@ -204,5 +261,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = document.createElement('div');
     root.id = 'top-panel-root';
     document.body.appendChild(root);
-    createRoot(root).render(<TopPanel />);
+    createRoot(root).render(<PanelRoot />);
 });

@@ -29,9 +29,10 @@
 }
 
 body {
+    padding: 2%;
+
     background: var(--error-bg);
     color: var(--error-text);
-    padding: 2%;
 }
 
 .section {

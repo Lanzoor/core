@@ -87,3 +87,17 @@
     font-family: 'Geist', sans-serif;
     font-optical-sizing: auto;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Geist';
+    font-weight: 300;
+
+    font-size: 25px;
+    line-height: 1.5;
+}

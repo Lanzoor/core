@@ -12,6 +12,9 @@
     --anchor-hover: #777;
 
     --text-bold: #050505;
+
+    --blockquote-border: rgba(255, 255, 255, 0.25);
+    --blockquote-hover-border: rgba(255, 255, 255, 0.5);
 }
 
 [data-theme='dark'] {
@@ -22,23 +25,13 @@
     --anchor-hover: #777;
 
     --text-bold: #e5e5e5;
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --blockquote-border: rgba(170, 170, 170, 0.125);
+    --blockquote-hover-border: rgba(170, 170, 170, 0.5);
 }
 
 body {
-    font-family: 'Geist';
-    font-weight: 300;
-
-    font-size: 25px;
-    line-height: 1.5;
     color: var(--text);
-
-    transition: background 1s ease;
 }
 
 /* ==================== Titles ==================== */
@@ -244,12 +237,11 @@ blockquote {
     padding: 0.75em;
     margin: 1em 0;
 
-    color: #e6e6fa;
+    color: var(--text);
     background-color: rgba(255, 255, 255, 0.08);
 
-    border: 5px solid #aaaaaa20;
+    border: 5px solid var(--blockquote-border);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
 
     transition:
         background-color 0.2s ease,
@@ -259,8 +251,8 @@ blockquote {
 
 blockquote:hover {
     background-color: rgba(255, 255, 255, 0.16);
-    border: 5px solid #aaaaaa75;
-    box-shadow: 0 10px 25px #aaaaaa75;
+    border: 5px solid var(--blockquote-hover-border);
+    box-shadow: 10px 10px 25px var(--blockquote-border);
 }
 
 table,
