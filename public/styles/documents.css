@@ -1,23 +1,48 @@
+:root {
+    --document-bg: white;
+    --document-text: #111;
+
+    --document-text-bold: black;
+    --document-text-bold-hover: #333;
+
+    --document-p-bg: rgba(0, 0, 0, 0.02);
+
+    --document-h1: black;
+}
+
+[data-theme='dark'] {
+    --document-bg: black;
+    --document-text: #ccc;
+
+    --document-text-bold: #aaa;
+    --document-text-bold-hover: #777;
+
+    --document-h1: #ddd;
+
+    --document-p-bg: rgba(255, 255, 255, 0.02);
+}
+
 body {
     font-family: 'Geist';
     font-weight: 300;
 
-    background-color: rgb(0, 0, 0);
+    background: var(--document-bg);
     font-size: 25px;
-    color: rgb(180, 185, 200);
+    color: var(--document-text);
 }
 
 p {
+    border-radius: 20px;
     padding: 1em;
-    background-color: rgba(255, 255, 255, 0.01);
+    background: var(--document-p-bg);
     line-height: 1.75;
 }
 
 b,
 strong {
-    font-weight: 600;
+    font-weight: 500;
 
-    color: rgb(140, 145, 160);
+    color: var(--document-text-bold);
     transition:
         text-shadow 0.2s,
         color 0.2s;
@@ -25,7 +50,7 @@ strong {
 
 b:hover,
 strong:hover {
-    color: rgb(200, 205, 220);
+    color: var(--document-text-bold-hover);
 }
 
 table,
@@ -72,8 +97,10 @@ th {
 }
 
 h1 {
-    color: rgb(214, 180, 255);
-    text-shadow: 0 0 10px rgb(157, 66, 255);
+    /* color: rgb(214, 180, 255);
+    text-shadow: 0 0 10px rgb(157, 66, 255); */
+    color: var(--document-h1);
+
     font-size: 40px;
     padding-left: 10px;
 }

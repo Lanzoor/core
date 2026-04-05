@@ -22,7 +22,7 @@ body {
 
 #welcome--intro {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(2px);
     min-height: 90vh;
     padding: 5vh 0 20vh;
 }
@@ -304,7 +304,6 @@ body {
 
     text-align: left;
     padding: 2.5%;
-    color: #aaa;
 
     box-shadow: 0 -10px 50px #151515;
     border-top: 10px solid #000000;

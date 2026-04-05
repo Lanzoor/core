@@ -1,19 +1,30 @@
 :root {
-    --bg: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #d9f6ff, #4abbdd 45%, #1569f9);
+    --error-bg: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #6eddff, #11a2ce 45%, #1569f9);
 
-    --h1-bg: linear-gradient(120deg, #47a5b6, #0a4e7c);
-    --h1-shadow: 0 2.5px 20px rgb(9, 55, 129);
+    --error-h1-bg: linear-gradient(120deg, #47a5b6, #0a4e7c);
+    --error-h1-shadow: 0 2.5px 20px rgb(9, 55, 129);
+
+    --error-text: #d7f3ff;
+    --error-text-bold: #69d2ff;
 }
 
 [data-theme='dark'] {
-    --bg: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
+    --error-bg: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
 
-    --h1-bg: linear-gradient(120deg, #aef3ff, #2facff);
-    --h1-shadow: 0 2.5px 20px rgb(0, 98, 255);
+    --error-h1-bg: linear-gradient(120deg, #aef3ff, #2facff);
+    --error-h1-shadow: 0 2.5px 20px rgb(0, 98, 255);
+
+    --error-text-bold: #d3f9ff;
 }
 
 body {
-    background: var(--bg);
+    background: var(--error-bg);
+    color: var(--error-text);
+}
+
+b {
+    color: var(--error-text-bold);
+    text-shadow: 0 0 20px var(--error-text-bold);
 }
 
 h1,
@@ -24,8 +35,8 @@ h3 {
 }
 
 h1 {
-    background: var(--h1-bg);
-    text-shadow: var(--h1-shadow);
+    background: var(--error-h1-bg);
+    text-shadow: var(--error-h1-shadow);
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -66,7 +77,7 @@ a:hover {
     color: transparent;
 }
 
-.solutions {
+#solutions {
     display: flex;
     flex-direction: column;
 
@@ -74,17 +85,16 @@ a:hover {
     gap: 20px;
 }
 
-.solution-left,
-.solution-right {
+.solution {
     max-width: 75%;
 }
 
-.solution-left {
+.solution:nth-child(odd) {
     align-self: flex-start;
     text-align: left;
 }
 
-.solution-right {
+.solution:nth-child(even) {
     align-self: flex-end;
     text-align: right;
 }

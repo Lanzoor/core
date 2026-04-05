@@ -16,11 +16,15 @@ topPanelLeftLink.classList.add('plain');
 
 const topPanelRight = document.createElement('div');
 topPanelRight.id = 'top-panel--right';
-topPanelRight.classList.add('navigation-toggle');
 
 const topPanelRightIcon = document.createElement('img');
 topPanelRightIcon.src = '/assets/icons/hamburger.svg';
 topPanelRightIcon.alt = '☰';
+topPanelRightIcon.classList.add('navigation-toggle');
+
+const topPanelRightSettingsIcon = document.createElement('img');
+topPanelRightSettingsIcon.src = '/assets/icons/settings.svg';
+topPanelRightSettingsIcon.alt = '⚙';
 
 const navigationOverlay = document.createElement('div');
 navigationOverlay.id = 'navigation-overlay';
@@ -167,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     topPanelLeft.appendChild(topPanelLeftLink);
 
+    topPanelRight.appendChild(topPanelRightSettingsIcon);
     topPanelRight.appendChild(topPanelRightIcon);
 
     topPanel.appendChild(topPanelLeft);

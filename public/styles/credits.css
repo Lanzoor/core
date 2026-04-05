@@ -1,5 +1,13 @@
+:root {
+    --credits-bg: radial-gradient(circle at center, #5e2dff 0%, transparent 55%), linear-gradient(140deg, #1a62ff, #8332ed 45%, #7e39f3);
+}
+
+[data-theme='dark'] {
+    --credits-bg: radial-gradient(circle at center, #220974 0%, transparent 55%), linear-gradient(140deg, #041947, #10051e 45%, #2b0a63);
+}
+
 body {
-    background: radial-gradient(circle at center, #220974 0%, transparent 55%), linear-gradient(140deg, #041947, #10051e 45%, #2b0a63);
+    background: var(--credits-bg);
 }
 
 h1 {
