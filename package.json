@@ -7,8 +7,10 @@
     "author": "Lanzoor",
     "type": "module",
     "scripts": {
-        "dev": "tsc --watch",
-        "build": "tsc",
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "typecheck": "tsc --noEmit",
         "clean": "rm -rf public/out",
         "test": "echo \"info: ready to run!\""
     },
@@ -23,7 +25,9 @@
         "@types/node": "^25.5.0",
         "@types/react": "^19.2.14",
         "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^6.0.1",
         "typescript": "^5.9.3",
-        "undici-types": "^7.24.4"
+        "undici-types": "^7.24.4",
+        "vite": "^8.0.3"
     }
 }

@@ -4,12 +4,16 @@
     --top-panel-bg: rgba(200, 200, 200, 0.75);
     --top-panel-text: black;
 
+    --option-bg: rgba(255, 255, 255, 0.5);
+
     --svg-invert: invert(1) sepia(1) saturate(5) hue-rotate(200deg);
 }
 
 [data-theme='dark'] {
     --top-panel-bg: rgba(0, 0, 0, 0.75);
     --top-panel-text: white;
+
+    --option-bg: rgba(0, 0, 0, 0.5);
 
     --svg-invert: none;
 }
@@ -194,13 +198,16 @@ body {
 }
 
 #navigation-overlay,
-#navigation-overlay * {
+#navigation-overlay *,
+#option-overlay,
+#option-overlay * {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
 }
 
-#navigation-overlay {
+#navigation-overlay,
+#option-overlay {
     display: block;
     position: fixed;
 
@@ -219,7 +226,9 @@ body {
 }
 
 #navigation-overlay.active,
-#navigation-overlay.active * {
+#navigation-overlay.active *,
+#option-overlay.active,
+#option-overlay.active * {
     opacity: 1;
     pointer-events: auto;
 }
@@ -300,6 +309,29 @@ body {
     text-shadow: 0 0 10px black;
 
     cursor: pointer;
+}
+
+#option-overlay {
+    padding: 2%;
+}
+
+#option-panel {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    background: var(--option-bg);
+    border-radius: 30px;
+
+    overflow-y: auto;
+}
+
+#option-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .dropdown {

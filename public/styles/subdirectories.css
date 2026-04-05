@@ -6,22 +6,22 @@
     --small-space: min(0.5vw, 1.5rem);
 
     --text: #111;
-    --italic: #333;
+    --text-italic: #333;
 
     --anchor: #555;
     --anchor-hover: #777;
 
-    --bold: #050505;
+    --text-bold: #050505;
 }
 
 [data-theme='dark'] {
     --text: #eee;
-    --italic: #ccc;
-    
+    --text-italic: #ccc;
+
     --anchor: #aaa;
     --anchor-hover: #777;
 
-    --bold: #e5e5e5;
+    --text-bold: #e5e5e5;
 }
 
 * {
@@ -126,8 +126,8 @@ b,
 strong {
     font-weight: 500;
 
-    color: var(--bold);
-    text-shadow: 0 0 20px var(--bold);
+    color: var(--text-bold);
+    text-shadow: 0 0 20px var(--text-bold);
 }
 
 b.plain,
@@ -140,7 +140,7 @@ em {
     font-weight: 400;
     font-style: italic;
 
-    color: var(--italic);
+    color: var(--text-italic);
 }
 
 a {

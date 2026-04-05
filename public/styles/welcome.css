@@ -1,3 +1,11 @@
+:root {
+    --connections-bg: radial-gradient(circle at top, #d7bbff 0%, #9e59ff 55%, #3a0387 100%);
+}
+
+[data-theme='dark'] {
+    --connections-bg: linear-gradient(140deg, #3a0387 0%, #1b0346 25%, #1b0346 75%, #4307b1);
+}
+
 body {
     background-image: url('/assets/iris.jpg');
     background-position: center center;
@@ -222,6 +230,7 @@ body {
     font-style: italic;
     font-weight: 200;
     font-size: 100px;
+    color: white;
 
     text-shadow: 0 0 25px rgb(121, 168, 255);
 
@@ -300,7 +309,7 @@ body {
 }
 
 #connections {
-    background: linear-gradient(140deg, #3a0387 0%, #1b0346 25%, #1b0346 75%, #4307b1);
+    background: var(--connections-bg);
 
     text-align: left;
     padding: 2.5%;
