@@ -3,13 +3,11 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import fs from 'fs';
 
-function getEntries(dir: string) {
-    const entries: Record<string, string> = {};
+function getEntries(dir: any) {
+    const entries = {};
 
-    function scan(currentDir: string) {
-        const files = fs.readdirSync(currentDir);
-
-        for (const file of files) {
+    function scan(currentDir: any) {
+        for (const file of fs.readdirSync(currentDir)) {
             const fullPath = path.join(currentDir, file);
             const stat = fs.statSync(fullPath);
 
@@ -18,8 +16,7 @@ function getEntries(dir: string) {
             } else if (file.endsWith('.ts') || file.endsWith('.tsx')) {
                 const relative = path.relative(dir, fullPath);
                 const name = relative.replace(/\.tsx?$/, '').replace(/\\/g, '/');
-
-                entries[name] = fullPath;
+                (entries as any)[name] = fullPath;
             }
         }
     }
@@ -31,13 +28,11 @@ function getEntries(dir: string) {
 const entries = getEntries(path.resolve(__dirname, 'src'));
 
 export default defineConfig({
-    appType: 'custom',
     plugins: [react()],
 
     build: {
         outDir: 'public/out',
-        emptyOutDir: false,
-
+        emptyOutDir: true,
         rollupOptions: {
             input: entries,
             output: {
