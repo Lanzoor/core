@@ -1,12 +1,9 @@
 {
     "version": 2,
     "buildCommand": "pnpm run build",
-    "outputDirectory": "public/out",
-    "rewrites": [
-        { "source": "/out/(.*)", "destination": "/out/$1" },
-        { "source": "/(.*)", "destination": "/index.html" }
-    ],
+    "outputDirectory": "public",
     "framework": "vite",
+
     "github": {
         "silent": true
     }
