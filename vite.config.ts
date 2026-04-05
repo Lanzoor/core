@@ -3,26 +3,32 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import fs from 'fs';
 
-function getEntries(directory: string) {
+function getEntries(dir: string) {
     const entries: Record<string, string> = {};
 
-    for (const file of fs.readdirSync(directory)) {
-        const full = path.join(directory, file);
+    function scan(currentDir: string) {
+        const files = fs.readdirSync(currentDir);
 
-        if (fs.statSync(full).isDirectory()) {
-            Object.assign(entries, getEntries(full));
-        } else if (file.endsWith('.ts')) {
-            const name = full
-                .replace(directory + path.sep, '')
-                .replace(/\.ts$/, '')
-                .replace(/[\\/]/g, '/');
+        for (const file of files) {
+            const fullPath = path.join(currentDir, file);
+            const stat = fs.statSync(fullPath);
 
-            entries[name] = full;
+            if (stat.isDirectory()) {
+                scan(fullPath);
+            } else if (file.endsWith('.ts') || file.endsWith('.tsx')) {
+                const relative = path.relative(dir, fullPath);
+                const name = relative.replace(/\.tsx?$/, '').replace(/\\/g, '/');
+
+                entries[name] = fullPath;
+            }
         }
     }
 
+    scan(dir);
     return entries;
 }
+
+const entries = getEntries(path.resolve(__dirname, 'src'));
 
 export default defineConfig({
     appType: 'custom',
@@ -33,7 +39,7 @@ export default defineConfig({
         emptyOutDir: false,
 
         rollupOptions: {
-            input: getEntries(path.resolve(__dirname, 'src')),
+            input: entries,
             output: {
                 entryFileNames: '[name].js',
                 format: 'es',

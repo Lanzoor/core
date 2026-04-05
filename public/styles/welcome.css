@@ -229,7 +229,7 @@ body {
     font-family: 'Geist';
     font-style: italic;
     font-weight: 200;
-    font-size: 100px;
+    font-size: 2%;
     color: white;
 
     text-shadow: 0 0 25px rgb(121, 168, 255);
@@ -247,8 +247,8 @@ body {
 #welcome--profile #name-display #optimization-indicator {
     position: absolute;
 
-    left: 30px;
-    bottom: 30px;
+    left: 2%;
+    bottom: 2%;
     opacity: 0;
 
     transition: opacity 0.5s ease;
@@ -262,10 +262,10 @@ body {
     position: absolute;
 
     padding: 20px 40px;
-    border-radius: 30px;
+    border-radius: 999px;
 
-    right: 30px;
-    bottom: 30px;
+    right: 2%;
+    bottom: 2%;
 
     font-family: 'JetBrains Mono';
     font-size: 20px;

@@ -5,8 +5,6 @@
     --top-panel-text: black;
 
     --option-bg: rgba(255, 255, 255, 0.5);
-
-    --svg-invert: invert(1) sepia(1) saturate(5) hue-rotate(200deg);
 }
 
 [data-theme='dark'] {
@@ -14,8 +12,6 @@
     --top-panel-text: white;
 
     --option-bg: rgba(0, 0, 0, 0.5);
-
-    --svg-invert: none;
 }
 
 body {
@@ -136,13 +132,11 @@ body {
     border-radius: 0;
 
     transition: all 0.5s ease;
-
-    filter: var(--svg-invert);
 }
 
 #top-panel--right img:hover,
 #navigation--close img:hover {
-    filter: var(--svg-invert), drop-shadow(0 0 10px #bbb);
+    filter: drop-shadow(0 0 10px #bbb);
     cursor: pointer;
 }
 
@@ -171,7 +165,7 @@ body {
         text-shadow 0.5s ease;
 }
 
-#top-panel--left:hover a {
+#top-panel--left a:hover {
     color: rgb(200, 200, 200);
 
     text-shadow:
@@ -346,13 +340,10 @@ body {
     display: none;
 }
 
-.dropdown.open {
-    display: block;
-}
-
 .chevron {
     width: 30px;
     height: 30px;
+
     font-size: 30px;
 
     padding: 0;
@@ -364,9 +355,7 @@ body {
     transform: rotate(-90deg);
 
     pointer-events: auto;
-    transition:
-        transform 0.6s ease,
-        filter 0.6s ease;
+    transition: all 1s ease;
 }
 
 .chevron:hover {
@@ -407,10 +396,6 @@ body {
 }
 
 @media (max-width: 1080px) {
-    #top-panel--right {
-        display: flex;
-    }
-
     #top-panel--links {
         display: none;
     }
