@@ -42,7 +42,10 @@ const destinations: Destination[] = [
 function PanelRoot() {
     const [navOpen, setNavOpen] = useState(false);
     const [optOpen, setOptOpen] = useState(false);
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState(() => {
+        const stored = localStorage.getItem('theme');
+        return stored || 'dark';
+    });
 
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
@@ -57,6 +60,7 @@ function PanelRoot() {
     }, []);
 
     useEffect(() => {
+        localStorage.setItem('theme', theme);
         document.documentElement.setAttribute('data-theme', theme);
     }, [theme]);
 

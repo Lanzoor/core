@@ -1,124 +1,126 @@
-:root {
-    --error-bg: linear-gradient(140deg, #eef6ff 0%, #dbeeff 50%, #c7e3ff 100%);
+@layer structure {
+    :root {
+        --error-bg: linear-gradient(140deg, #eef6ff 0%, #dbeeff 50%, #c7e3ff 100%);
 
-    --error-h1-bg: linear-gradient(120deg, #3aa6c7, #1f6fb2);
-    --error-h1-shadow: 0 6px 18px rgba(31, 111, 178, 0.25);
+        --error-h1-bg: linear-gradient(120deg, #3aa6c7, #1f6fb2);
+        --error-h1-shadow: 0 6px 18px rgba(31, 111, 178, 0.25);
 
-    --error-h2-bg: linear-gradient(175deg, #5bc7de, #2f8fd1);
-    --error-h2-shadow: 0 6px 18px rgba(47, 143, 209, 0.2);
+        --error-h2-bg: linear-gradient(175deg, #5bc7de, #2f8fd1);
+        --error-h2-shadow: 0 6px 18px rgba(47, 143, 209, 0.2);
 
-    --error-text: #2a4a68;
-    --error-text-bold: #1f6fb2;
+        --error-text: #2a4a68;
+        --error-text-bold: #1f6fb2;
 
-    --error-section-bg: rgba(0, 0, 0, 0.05);
-}
+        --error-section-bg: rgba(0, 0, 0, 0.05);
+    }
 
-[data-theme='dark'] {
-    --error-bg: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
+    [data-theme='dark'] {
+        --error-bg: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
 
-    --error-h1-bg: linear-gradient(120deg, #aef3ff, #2facff);
-    --error-h1-shadow: 0 2.5px 20px rgb(0, 98, 255);
+        --error-h1-bg: linear-gradient(120deg, #aef3ff, #2facff);
+        --error-h1-shadow: 0 2.5px 20px rgb(0, 98, 255);
 
-    --error-h2-bg: linear-gradient(175deg, #50c9de, #0c72b6);
-    --error-h2-shadow: 0 2.5px 20px rgb(0, 98, 255);
+        --error-h2-bg: linear-gradient(175deg, #50c9de, #0c72b6);
+        --error-h2-shadow: 0 2.5px 20px rgb(0, 98, 255);
 
-    --error-text: #badeff;
-    --error-text-bold: #d3f9ff;
+        --error-text: #badeff;
+        --error-text-bold: #d3f9ff;
 
-    --error-section-bg: rgba(255, 255, 255, 0.1);
-}
+        --error-section-bg: rgba(255, 255, 255, 0.1);
+    }
 
-body {
-    padding: 2%;
+    body {
+        padding: 2%;
 
-    background: var(--error-bg);
-    color: var(--error-text);
-}
+        background: var(--error-bg);
+        color: var(--error-text);
+    }
 
-.section {
-    min-width: 0;
-    border-radius: 50px;
+    .section {
+        min-width: 0;
+        border-radius: 50px;
 
-    background: var(--error-section-bg);
-    backdrop-filter: blur(4px);
-}
+        background: var(--error-section-bg);
+        backdrop-filter: blur(4px);
+    }
 
-b {
-    color: var(--error-text-bold);
-    text-shadow: 0 0 20px var(--error-text-bold);
-}
+    b {
+        color: var(--error-text-bold);
+        text-shadow: 0 0 20px var(--error-text-bold);
+    }
 
-h1,
-h2,
-h3 {
-    font-family: 'Fira Code';
-    line-height: 1.1;
-}
+    h1,
+    h2,
+    h3 {
+        font-family: 'Fira Code';
+        line-height: 1.1;
+    }
 
-h1 {
-    background: var(--error-h1-bg);
-    text-shadow: var(--error-h1-shadow);
+    h1 {
+        background: var(--error-h1-bg);
+        text-shadow: var(--error-h1-shadow);
 
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
 
-h2 {
-    background: var(--error-h2-bg);
-    text-shadow: var(--error-h2-shadow);
+    h2 {
+        background: var(--error-h2-bg);
+        text-shadow: var(--error-h2-shadow);
 
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
 
-h3 {
-    background: linear-gradient(175deg, #aef3ff, #2facff);
-    text-shadow: 0 2.5px 20px rgb(0, 98, 255);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+    h3 {
+        background: linear-gradient(175deg, #aef3ff, #2facff);
+        text-shadow: 0 2.5px 20px rgb(0, 98, 255);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
 
-a {
-    display: inline-block;
-    background: linear-gradient(120deg, #4da6ff, #00e0ff);
-    text-shadow: 0 3px 18px rgba(0, 200, 255, 0.8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: all 0.2s ease;
-}
+    a {
+        display: inline-block;
+        background: linear-gradient(120deg, #4da6ff, #00e0ff);
+        text-shadow: 0 3px 18px rgba(0, 200, 255, 0.8);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        transition: all 0.2s ease;
+    }
 
-a:hover {
-    background: linear-gradient(120deg, #7bb8ff, #6affff);
-    text-shadow: 0 0 18px rgba(120, 240, 255, 1);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+    a:hover {
+        background: linear-gradient(120deg, #7bb8ff, #6affff);
+        text-shadow: 0 0 18px rgba(120, 240, 255, 1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
 
-#solutions {
-    display: flex;
-    flex-direction: column;
+    #solutions {
+        display: flex;
+        flex-direction: column;
 
-    margin: 0 75px;
-    gap: 20px;
-}
+        margin: 0 75px;
+        gap: 20px;
+    }
 
-.solution {
-    color: var(--error-text);
+    .solution {
+        color: var(--error-text);
 
-    max-width: 75%;
-}
+        max-width: 75%;
+    }
 
-.solution:nth-child(odd) {
-    align-self: flex-start;
-    text-align: left;
-}
+    .solution:nth-child(odd) {
+        align-self: flex-start;
+        text-align: left;
+    }
 
-.solution:nth-child(even) {
-    align-self: flex-end;
-    text-align: right;
+    .solution:nth-child(even) {
+        align-self: flex-end;
+        text-align: right;
+    }
 }

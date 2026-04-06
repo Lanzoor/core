@@ -1,25 +1,27 @@
-:root {
-    --credits-bg: radial-gradient(circle at center, #5e2dff 0%, transparent 55%), linear-gradient(140deg, #1a62ff, #8332ed 45%, #7e39f3);
-}
+@layer page {
+    :root {
+        --credits-bg: radial-gradient(circle at center, #5e2dff 0%, transparent 55%), linear-gradient(140deg, #1a62ff, #8332ed 45%, #7e39f3);
+    }
 
-[data-theme='dark'] {
-    --credits-bg: radial-gradient(circle at center, #220974 0%, transparent 55%), linear-gradient(140deg, #041947, #10051e 45%, #2b0a63);
-}
+    [data-theme='dark'] {
+        --credits-bg: radial-gradient(circle at center, #220974 0%, transparent 55%), linear-gradient(140deg, #041947, #10051e 45%, #2b0a63);
+    }
 
-body {
-    background: var(--credits-bg);
-}
+    body {
+        background: var(--credits-bg);
+    }
 
-h1 {
-    color: #8fe5ff;
-    text-shadow: 0 0 10px #0084ff;
-}
+    h1 {
+        color: #8fe5ff;
+        text-shadow: 0 0 10px #0084ff;
+    }
 
-h2 {
-    color: #a58fff;
-    text-shadow: 0 0 10px #5100ff;
-}
+    h2 {
+        color: #a58fff;
+        text-shadow: 0 0 10px #5100ff;
+    }
 
-h3 {
-    margin: 0.5em;
+    h3 {
+        margin: 0.5em;
+    }
 }

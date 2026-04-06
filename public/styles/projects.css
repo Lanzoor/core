@@ -1,147 +1,149 @@
-body {
-    background: radial-gradient(circle at center, #220974 0%, transparent 55%), linear-gradient(140deg, #041947, #10051e 45%, #2b0a63);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
+@layer page {
+    body {
+        background: radial-gradient(circle at center, #220974 0%, transparent 55%), linear-gradient(140deg, #041947, #10051e 45%, #2b0a63);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
 
-.projects--grid {
-    user-select: none;
+    .projects--grid {
+        user-select: none;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 1.5rem;
-    padding: 1rem;
-}
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
 
-.projects--grid div {
-    border-radius: 10px;
-    outline: 1px solid #ddd;
-    background: #222;
-    color: #fff;
-    padding: 2rem;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-}
+    .projects--grid div {
+        border-radius: 10px;
+        outline: 1px solid #ddd;
+        background: #222;
+        color: #fff;
+        padding: 2rem;
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            background 0.2s ease;
+    }
 
-.projects--grid div:hover {
-    cursor: pointer;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+    .projects--grid div:hover {
+        cursor: pointer;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
 
-.projects--div {
-    display: none;
-}
-.projects--div.visible {
-    display: block;
-}
+    .projects--div {
+        display: none;
+    }
+    .projects--div.visible {
+        display: block;
+    }
 
-.projects--grid h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
+    .projects--grid h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
 
-button.show-all {
-    background: linear-gradient(120deg, rgba(170, 0, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(72, 0, 255, 0.75));
-    background-size: 150% 150%;
-    background-position: top left;
-    opacity: 0.5;
+    button.show-all {
+        background: linear-gradient(120deg, rgba(170, 0, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(72, 0, 255, 0.75));
+        background-size: 150% 150%;
+        background-position: top left;
+        opacity: 0.5;
 
-    transition: all 0.5s ease;
-}
-button.show-all:hover {
-    opacity: 1;
-    background-position: bottom right;
-}
-button.show-all.selected {
-    opacity: 1;
-    background-position: center center;
-}
+        transition: all 0.5s ease;
+    }
+    button.show-all:hover {
+        opacity: 1;
+        background-position: bottom right;
+    }
+    button.show-all.selected {
+        opacity: 1;
+        background-position: center center;
+    }
 
-.websites .projects--grid div,
-button.websites {
-    background: #ff000025;
-}
-.websites .projects--grid div:hover,
-button.websites:hover {
-    background: #ff000050;
-}
-button.websites.selected {
-    background: #ff000075;
-}
+    .websites .projects--grid div,
+    button.websites {
+        background: #ff000025;
+    }
+    .websites .projects--grid div:hover,
+    button.websites:hover {
+        background: #ff000050;
+    }
+    button.websites.selected {
+        background: #ff000075;
+    }
 
-.programs .projects--grid div,
-button.programs {
-    background: #ff00bf25;
-}
-.programs .projects--grid div:hover,
-button.programs:hover {
-    background: #ff00bf50;
-}
-button.programs.selected {
-    background: #ff00bf75;
-}
+    .programs .projects--grid div,
+    button.programs {
+        background: #ff00bf25;
+    }
+    .programs .projects--grid div:hover,
+    button.programs:hover {
+        background: #ff00bf50;
+    }
+    button.programs.selected {
+        background: #ff00bf75;
+    }
 
-.videos .projects--grid div,
-button.videos {
-    background: #6f00ff25;
-}
-.videos .projects--grid div:hover,
-button.videos:hover {
-    background: #6f00ff50;
-}
-button.videos.selected {
-    background: #6f00ff75;
-}
+    .videos .projects--grid div,
+    button.videos {
+        background: #6f00ff25;
+    }
+    .videos .projects--grid div:hover,
+    button.videos:hover {
+        background: #6f00ff50;
+    }
+    button.videos.selected {
+        background: #6f00ff75;
+    }
 
-.conlangs .projects--grid div,
-button.conlangs {
-    background: #ffbb0025;
-}
-.conlangs .projects--grid div:hover,
-button.conlangs:hover {
-    background: #ffbb0050;
-}
-button.conlangs.selected {
-    background: #ffbb0075;
-}
+    .conlangs .projects--grid div,
+    button.conlangs {
+        background: #ffbb0025;
+    }
+    .conlangs .projects--grid div:hover,
+    button.conlangs:hover {
+        background: #ffbb0050;
+    }
+    button.conlangs.selected {
+        background: #ffbb0075;
+    }
 
-#projects--filter-buttons {
-    user-select: none;
+    #projects--filter-buttons {
+        user-select: none;
 
-    margin: 40px;
-    padding: 30px;
-    border: 5px solid rgba(255, 255, 255, 0.25);
-    background: rgba(0, 0, 0, 0.25);
+        margin: 40px;
+        padding: 30px;
+        border: 5px solid rgba(255, 255, 255, 0.25);
+        background: rgba(0, 0, 0, 0.25);
 
-    border-radius: 30px;
-}
+        border-radius: 30px;
+    }
 
-.projects--filter-button {
-    margin: 10px;
-    width: 200px;
-    height: 40px;
-    border: none;
-    border-radius: 20px;
+    .projects--filter-button {
+        margin: 10px;
+        width: 200px;
+        height: 40px;
+        border: none;
+        border-radius: 20px;
 
-    color: white;
+        color: white;
 
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
 
-.projects--filter-button.selected {
-    transform: scale(1.1);
-}
+    .projects--filter-button.selected {
+        transform: scale(1.1);
+    }
 
-.projects--filter-button:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+    .projects--filter-button:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
 }

@@ -91,6 +91,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             pm2_5,
         });
     } catch (err: any) {
-        res.status(400).json({ ok: false, error: err.message });
+        res.status(500).json({
+            ok: false,
+            error: err.message,
+        });
     }
 }
