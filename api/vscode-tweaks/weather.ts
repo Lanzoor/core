@@ -81,6 +81,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         const pm2_5 = airData?.current?.pm2_5 ?? 'N/A';
 
         res.status(200).json({
+            ok: true,
+
             coordinates: { latitude, longitude },
             temperature,
             weatherCode,

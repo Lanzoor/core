@@ -28,9 +28,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
         return res.status(200).json({
             ok: true,
-            time: new Date().toLocaleTimeString(),
-            status: 'on',
-
             githubPing,
             googlePing,
             selfPing,
