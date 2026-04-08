@@ -1,0 +1,12 @@
+.icon {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    filter: drop-shadow(0 0 5px rgb(130, 130, 130));
+    background: none;
+    transition: filter 0.2s ease;
+}
+
+.icon:hover {
+    filter: drop-shadow(0 5px 10px rgb(130, 130, 130));
+}

@@ -10,7 +10,7 @@
     #map--intro h1 {
         font-family: 'Geist';
         font-size: 100px;
-        margin: 0;
+        margin: 50px 0;
         color: white;
 
         text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
@@ -25,10 +25,14 @@
         margin: 2%;
         border-radius: 30px;
 
-        min-width: 20%;
+        padding: 40px;
+
+        min-width: 30%;
     }
 
     #map .map-section h1 {
         font-size: 50px;
+        margin: 0;
+        margin-bottom: 30px;
     }
 }

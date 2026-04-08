@@ -144,18 +144,101 @@
 
     <div class="section" id="credits-fonts--font-testing">
         <p>
-            You can try out these fonts for yourself below! <b>Select a font to get started.</b>
-        </p>
-    </div>
+            You can try out these fonts for yourself below! <b>Select a font via the buttons below to get
+                started.</b><br>
+            You can also select the font weight: <input type="text" class="styled" id="font-weight-input"
+                placeholder="ex) 300, 700, etc." autocomplete="off"><br>
 
-    <div class="section" id="credits-fonts--outro">
+            Italic: <label class="switch" id="font-style-input">
+                <input type="checkbox" />
+                <span class="slider"></span>
+            </label>
+        </p>
+
+        <div id="font-buttons">
+            <button class="font-button geist">Geist</button>
+            <button class="font-button space-grotesk">Space Grotesk</button>
+            <button class="font-button jetbrains-mono">JetBrains Mono</button>
+            <button class="font-button fira-code">Fira Code</button>
+            <button class="font-button fairfax-hd">Fairfax HD</button>
+            <button class="font-button brass-mono">Brass Mono</button>
+        </div>
+
+        <p id="demo">
+            The quick brown fox jumps over the lazy dogs.<br><br>
+
+            <span class="dim">latin alphabet</span><br>
+            A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+            a b c d e f g h i j k l m n o p q r s t u v w x y z<br><br>
+
+            <span class="dim">numbers</span><br>
+            0 1 2 3 4 5 6 7 8 9 ₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ½ ¼ ¾ ↋ ↊ ૪<br><br>
+
+            <span class="dim">monospace: ligatures</span><br>
+            -- --- == === != !== =!= =:= =/= &lt;= &gt;= &amp;&amp; &amp;&amp;&amp; &amp;= ++ +++ *** ;; !! ?? ??? ?: ?.
+            ?= &lt;: :&lt; :&gt; &gt;: &lt;:&lt; &lt;&gt; &lt;&lt;&lt; &gt;&gt;&gt; &lt;&lt; &gt;&gt; || -| _|_ |- ||-
+            |= ||= ## ### #### #{ #[ ]# #( #? #_ #_( #: #! #= ^= &lt;$&gt; &lt;$ $&gt; &lt;+&gt; &lt;+ +&gt; &lt;*&gt;
+            &lt;* *&gt; &lt;/ &lt;/&gt; /&gt; &lt;!-- &lt;#-- --&gt; -&gt; -&gt;&gt; &lt;&lt;- &lt;- &lt;=&lt; =&lt;&lt;
+            &lt;&lt;= &lt;== &lt;=&gt; &lt;==&gt; ==&gt; =&gt; =&gt;&gt; &gt;=&gt; &gt;&gt;= &gt;&gt;- &gt;- -&lt;
+            -&lt;&lt; &gt;-&gt; &lt;-&lt; &lt;-| &lt;=| |=&gt; |-&gt; &lt;-&gt; &lt;~~ &lt;~ &lt;~&gt; ~~ ~~&gt; ~&gt;
+            ~- -~ ~@ [||] |] [| |} {| [&lt; &gt;] |&gt; &lt;| ||&gt; &lt;|| |||&gt; &lt;||| &lt;|&gt; ... .. .= ..&lt;
+            .? :: ::: := ::= :? :?&gt; // /// /* */ /= //= /== @_ __ ??? &lt;:&lt; ;;;<br><br>
+
+            <span class="dim">punctuation</span><br>
+            . : ; &hellip; &excl; &iexcl; &quest; &iquest; &middot; &bull; &lowast; &lsqb;
+            &rsqb; &num; &period; &oline; &sol; &bsol; &hyphen; &ndash; &mdash; &dash; &lowbar; &sbquo; &bdquo; &ldquo;
+            &rdquo; &lsquo; &rsquo; &laquo; &raquo; &lsaquo; &rsaquo; &prime; &quot; &apos;<br><br>
+
+            <span class="dim">greek</span><br>
+            Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω Ά Έ Ή Ί Ό Ύ Ώ Ϊ Ϋ Ϗ α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ ς σ τ
+            υ φ χ ψ ω ί ϊ ΐ ύ ϋ ΰ ό ώ ά έ ή ϗ ϕ ϖ<br><br>
+
+            <span class="dim">cyrillic</span><br>
+            А Б В Г Ѓ Ґ Д Е Ё Ж З И Й К Ќ Л М Н О П Р С Т У Ў Ф Х Ч Ц Ш Щ Џ Ь Ъ Ы Љ Њ Ѕ Є Э І Ї Ј Ћ Ю Я Ђ Ғ Қ Ң Ү Ұ Ҷ Һ
+            Ә Ө Ӝ Ӟ Ӥ Ӧ Ө Ӵ а б в г ѓ ґ д е ё ж з и й к ќ л м н о п р с т у ў ф х ч ц ш щ џ ь ъ ы љ њ ѕ є э і ї ј ћ ю я
+            ђ ғ қ ң ү ұ ҷ һ ә ө ӝ ӟ ӥ ӧ ө ӵ<br><br>
+
+            <span class="dim">japanese kana</span><br>
+            あ い う え お 　 ア イ ウ エ オ 　 ぁ ぃ ぅ ぇ ぉ 　 ァ ィ ゥ ェ ォ 　 ゔ ヴ<br>
+            か き く け こ 　 カ キ ク ケ コ 　 が ぎ ぐ げ ご 　 ガ ギ グ ゲ ゴ 　 ヵ ヶ<br>
+            さ し す せ そ 　 サ シ ス セ ソ 　 ざ じ ず ぜ ぞ 　 ザ ジ ズ ゼ ゾ<br>
+            た ち つ て と 　 タ チ ツ テ ト 　 だ ぢ づ で ど 　 ダ ヂ ヅ デ ド 　 っ ッ<br>
+            な に ぬ ね の 　 ナ ニ ヌ ネ ノ<br>
+            は ひ ふ へ ほ 　 ハ ヒ フ エ ホ 　 ば び ぶ べ ぼ 　 バ ビ ブ ベ ポ 　 ぱ ぴ ぷ ぺ ぽ 　 パ ピ プ ペ ポ<br>
+            ま み む め も 　 マ ミ ム メ モ<br>
+            や 　 ゆ 　 よ 　 ヤ 　 ユ 　 ヨ<br>
+            ら り る れ ろ 　 ラ リ ル レ ロ<br>
+            わ ゐ 　 ゑ を 　 ワ ヰ 　 ヱ ヲ<br>
+            　 　 ん 　 　 　 　 　 ン 　 　<br><br>
+
+            <span class="dim">basic kanji</span><br>
+            一 二 三 四 五 六 七 八 九 十 百 千 万 億 兆<br>
+            月 火 水 木 金 土 日 山 川 天 空 海 花 春 夏 秋 冬<br>
+            週 年 時 間 分 秒<br>
+            上 下 左 右 前 後 東 西 南 北 裏 表 以 内 外 入 出<br>
+            大 太 多 小 少 古 新 高 低 短 長 暑 熱 寒 冷<br>
+            人 手 鼻 足 耳 目 口 男 女 子 母 父<br><br>
+
+            <span class="dim">korean hangul</span><br>
+            가 나 다 라 마 바 사 아 자 차 카 타 파 하 　 까 따 빠 싸 짜<br>
+            갸 냐 댜 랴 먀 뱌 샤 야 쟈 캬 캬 탸 퍄 햐 　 꺄 땨 뺘 쌰 쨔<br>
+            거 너 더 러 머 버 서 어 저 처 커 터 퍼 허 　 꺼 떠 뻐 써 쩌<br>
+            겨 녀 뎌 려 며 벼 셔 여 져 쳐 켜 텨 펴 혀 　 껴 뗘 뼈 쎠 쪄<br>
+            고 노 도 로 모 보 소 오 조 초 코 토 포 호 　 꼬 또 뽀 쏘 쪼<br>
+            교 뇨 됴 료 묘 뵤 쇼 요 죠 쵸 쿄 토 표 효 　 꾜 뚀 뾰 쇼 쬬<br>
+            구 누 두 루 무 부 수 우 주 추 쿠 투 푸 후 　 꾸 뚜 뿌 쑤 쭈<br>
+            규 뉴 듀 류 뮤 뷰 슈 유 쥬 츄 큐 튜 퓨 휴 　 뀨 뜌 쀼 쓔 쮸<br>
+            그 느 드 르 머 브 스 으 즈 츠 크 트 프 흐 　 끄 뜨 뿌 쓰 쯔<br>
+            기 니 디 리 미 비 시 이 지 치 키 티 피 히 　 끼 띠 삐 씨 찌<br>
+        </p>
+
         <footer>
             - Thank you font designers for creating these amazing fonts! -
         </footer>
     </div>
 
     <script type="module" src="/out/top-panel.js"></script>
-    <script src="/credits/fonts/main.js"></script>
+    <script type="module" src="/out/etc/font-credits.js"></script>
 </body>
 
 </html>

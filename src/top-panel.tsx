@@ -35,8 +35,8 @@ const destinations: Destination[] = [
         name: 'Credits',
         children: [
             { link: '/credits', name: 'Credits' },
-            { link: '/credits/icons', name: 'Icon Credits' },
             { link: '/credits/fonts', name: 'Font Credits' },
+            { link: '/credits/assets', name: 'Asset Credits' },
         ],
     },
     { link: '/troubleshooting', name: 'Troubleshooting' },

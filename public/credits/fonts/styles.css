@@ -1,108 +1,165 @@
-body {
-    background: #111;
-}
-
-#credits-fonts--intro {
-    background: radial-gradient(circle at 50% 100%, #222, black);
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 20px;
-}
-
-#credits-fonts--intro::before {
-    content: '';
-    position: absolute;
-
-    left: 50%;
-    top: 0;
-
-    width: 6px;
-    height: 100%;
-
-    background: linear-gradient(to bottom, #111, #aaa);
-    box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
-
-    transform: translateX(-50%);
-
-    z-index: 1;
-}
-
-#credits-fonts--intro h1 {
-    font-family: 'Geist';
-    font-weight: 500;
-    font-style: italic;
-    font-size: 200px;
-    margin: 0;
-    color: white;
-
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
-
-    z-index: 2;
-}
-
-#credits-fonts--intro .description,
-#credits-fonts--font-testing p {
-    background: radial-gradient(circle at 50% -100%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.75));
-    border-radius: 30px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px);
-
-    padding: 30px;
-    margin: 30px 0;
-    z-index: 2;
-}
-
-#credits-fonts--intro .description:nth-child(odd) {
-    align-self: flex-end;
-    text-align: left;
-}
-
-#credits-fonts--font-showcase {
-    background: radial-gradient(circle at left top, #333 0%, transparent 40%, transparent 100%), radial-gradient(circle at right bottom, #333 0%, transparent 40%, transparent 100%), #111;
-
-    padding: 100px 0;
-}
-
-.font-display {
-    border: 2px solid #444;
-    border-radius: 20px;
-
-    background: #111;
-    box-shadow: 0 10px 20px black;
-
-    flex: 1 1 700px;
-    text-align: left;
-
-    padding: 50px;
-    margin: 50px 25px;
-}
-
-.font-display h1 {
-    color: white;
-    font-size: 75px;
-
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
-}
-
-footer {
-    text-align: center;
-    opacity: 0.75;
-    z-index: 2;
-}
-
-@media (max-width: 768px) {
-    #credits-fonts--intro h1 {
-        font-size: 100px;
+@layer page {
+    body {
+        background: #111;
     }
 
-    /*
+    #credits-fonts--intro {
+        background: radial-gradient(circle at 50% 100%, #222, black);
+
+        display: flex;
+        position: relative;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    #credits-fonts--intro::before {
+        content: '';
+        position: absolute;
+
+        left: 50%;
+        top: 0;
+
+        width: 6px;
+        height: 100%;
+
+        background: linear-gradient(to bottom, #111, #aaa);
+        box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
+
+        transform: translateX(-50%);
+
+        z-index: 1;
+    }
+
+    #credits-fonts--intro h1 {
+        font-family: 'Geist';
+        font-weight: 500;
+        font-style: italic;
+        font-size: 200px;
+        margin: 0;
+        color: white;
+
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+
+        z-index: 2;
+    }
+
+    #credits-fonts--intro .description,
+    #credits-fonts--font-testing p {
+        background: radial-gradient(circle at 50% -100%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.75));
+        border-radius: 30px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(4px);
+
+        padding: 30px;
+        margin: 30px 0;
+        z-index: 2;
+    }
+
+    #credits-fonts--intro .description:nth-child(odd) {
+        align-self: flex-end;
+        text-align: left;
+    }
+
+    #credits-fonts--font-showcase {
+        background: radial-gradient(circle at left top, #333 0%, transparent 40%, transparent 100%), radial-gradient(circle at right bottom, #333 0%, transparent 40%, transparent 100%), #111;
+
+        padding: 100px 0;
+    }
+
     .font-display {
-        flex: 1 1 100%;
-        margin: 25px 0;
-    } */
+        border: 2px solid #444;
+        border-radius: 20px;
+
+        background: #111;
+        box-shadow: 0 10px 20px black;
+
+        flex: 1 1 700px;
+        text-align: left;
+
+        padding: 50px;
+        margin: 50px 25px;
+    }
+
+    .font-display h1 {
+        color: white;
+        font-size: 75px;
+
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    }
+
+    #font-buttons {
+        background: #222;
+        border-radius: 30px;
+        border: 2px solid #777;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 2%;
+        padding: 2%;
+    }
+
+    #font-buttons .font-button {
+        border: none;
+        background: #222;
+        color: white;
+
+        font-size: 30px;
+        border-radius: 30px;
+
+        padding: 10px 30px;
+        margin: 10px 0;
+
+        transition: all 0.2s ease;
+    }
+
+    #font-buttons .font-button:hover {
+        background: #444;
+        text-shadow: 0 0 10px white;
+        box-shadow:
+            0 0 10px #777,
+            inset 0 0 10px #777;
+        transform: scale(1.05);
+    }
+
+    #font-buttons .font-button.selected {
+        background: #777;
+        text-shadow: 0 0 10px white;
+        box-shadow: 0 0 10px #777;
+        transform: scale(1.1);
+    }
+
+    #demo {
+        --x: 50%;
+        --y: 50%;
+
+        background: radial-gradient(circle at var(--x) var(--y), #333 0%, #111 55%, black 100%) !important;
+
+        font-size: 30px;
+        user-select: none;
+    }
+
+    footer {
+        text-align: center;
+        opacity: 0.75;
+        margin: 4% 0;
+    }
+
+    @media (max-width: 1024px) {
+        #credits-fonts--intro h1 {
+            font-size: 100px;
+        }
+
+        #font-buttons .font-button {
+            border: 1px solid #999;
+        }
+    }
 }
