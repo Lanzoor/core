@@ -1,0 +1,34 @@
+@layer page {
+    body {
+        background: #111;
+    }
+
+    #map--intro {
+        background: #111;
+    }
+
+    #map--intro h1 {
+        font-family: 'Geist';
+        font-size: 100px;
+        margin: 0;
+        color: white;
+
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    }
+
+    #map .map-section {
+        background: radial-gradient(circle at top, #333 0%, #222 55%, #222 100%);
+        border: 2px solid #777;
+
+        text-align: center;
+        box-shadow: none;
+        margin: 2%;
+        border-radius: 30px;
+
+        min-width: 20%;
+    }
+
+    #map .map-section h1 {
+        font-size: 50px;
+    }
+}

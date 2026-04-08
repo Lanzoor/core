@@ -9,6 +9,9 @@
         --document-p-bg: rgba(0, 0, 0, 0.02);
 
         --document-h1: black;
+
+        --document-table-border: rgba(0, 0, 0, 0.5);
+        --document-th-bg: rgba(0, 0, 0, 0.075);
     }
 
     [data-theme='dark'] {
@@ -21,6 +24,9 @@
         --document-h1: #ddd;
 
         --document-p-bg: rgba(255, 255, 255, 0.02);
+
+        --document-table-border: rgba(255, 255, 255, 0.5);
+        --document-th-bg: rgba(255, 255, 255, 0.15);
     }
 
     body {
@@ -61,7 +67,7 @@
         transition:
             background-color 0.2s,
             box-shadow 0.2s;
-        border: 2px solid rgba(255, 255, 255, 0.5);
+        border: 2px solid var(--document-table-border);
     }
 
     table {
@@ -69,7 +75,8 @@
     }
 
     th {
-        background-color: rgba(255, 255, 255, 0.15);
+        background: var(--document-th-bg);
+        color: var(--document-text-bold);
     }
 
     #inverted {
@@ -111,7 +118,6 @@
         padding-left: 10px;
     }
 
-    th,
     h3 {
         color: rgb(122, 99, 203);
         text-shadow: 0 0 5px rgb(140, 53, 255);

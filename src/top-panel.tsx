@@ -7,8 +7,11 @@ type Destination = {
     children?: Destination[];
 };
 
+const themes: string[] = ['dark', 'light'];
+
 const destinations: Destination[] = [
     { link: '/', name: 'Welcome!' },
+    { link: '/map', name: 'Site Map' },
     {
         link: '/projects',
         name: 'Projects',
@@ -48,6 +51,15 @@ function PanelRoot() {
     });
 
     useEffect(() => {
+        if (!themes.includes(theme)) {
+            setTheme('dark');
+        }
+
+        localStorage.setItem('theme', theme);
+        document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
+
+    useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
                 setNavOpen(false);
@@ -58,11 +70,6 @@ function PanelRoot() {
         window.addEventListener('keydown', handleKey);
         return () => window.removeEventListener('keydown', handleKey);
     }, []);
-
-    useEffect(() => {
-        localStorage.setItem('theme', theme);
-        document.documentElement.setAttribute('data-theme', theme);
-    }, [theme]);
 
     function toggleNav(force: boolean = false) {
         if (force) {

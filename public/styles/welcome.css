@@ -1,10 +1,18 @@
 @layer page {
     :root {
-        --connections-bg: radial-gradient(circle at top, #d7bbff 0%, #9e59ff 55%, #3a0387 100%);
+        --welcome--intro-bg: rgba(255, 255, 255, 0.25);
+
+        --welcome--connections-bg: radial-gradient(circle at top, #d7bbff 0%, #9e59ff 55%, #3a0387 100%);
+        --welcome--connections-text: #f0d3ff;
+        --welcome--connections-text-bold: #efd0ff;
     }
 
     [data-theme='dark'] {
-        --connections-bg: linear-gradient(140deg, #3a0387 0%, #1b0346 25%, #1b0346 75%, #4307b1);
+        --welcome--intro-bg: rgba(255, 255, 255, 0.05);
+
+        --welcome--connections-bg: linear-gradient(140deg, #3a0387 0%, #1b0346 25%, #1b0346 75%, #4307b1);
+        --welcome--connections-text: var(--text);
+        --welcome--connections-text-bold: var(--text-bold);
     }
 
     body {
@@ -30,7 +38,7 @@
     }
 
     #welcome--intro {
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--welcome--intro-bg);
         backdrop-filter: blur(2px);
         min-height: 90vh;
         padding: 5vh 0 20vh;
@@ -310,7 +318,8 @@
     }
 
     #connections {
-        background: var(--connections-bg);
+        background: var(--welcome--connections-bg);
+        color: var(--welcome--connections-text);
 
         text-align: left;
         padding: 2.5%;
@@ -319,6 +328,11 @@
         border-top: 10px solid #000000;
 
         overflow-y: hidden;
+    }
+
+    #connections b {
+        color: var(--welcome--connections-text-bold);
+        text-shadow: none;
     }
 
     footer {

@@ -12,6 +12,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(418).json({
         ok: true,
         time: Date.now(),
-        message: "I'm permanently a teapot, I refuse to brew coffee.",
+        message: "I'm permanently a teapot. I refuse to brew coffee.",
     });
 }
