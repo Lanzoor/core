@@ -224,23 +224,25 @@ document.addEventListener('DOMContentLoaded', () => {
         letter.style.fontSize = baseFontSizePx + 'px';
     }
 
-    setInterval(() => {
-        if (!enableAnimation) return;
+    function animateFont() {
+        if (enableAnimation) {
+            const currentFont = fonts[fontIndex];
+            const currentFontWeight = pickRandom(['100', '200', '300', '400']);
+            const currentFontStyle = pickRandom(['normal', 'italic']);
 
-        const currentFont = fonts[fontIndex];
-        const currentFontWeight = pickRandom(['100', '200', '300', '400']);
-        const currentFontStyle = pickRandom(['normal', 'italic']);
+            const scale = enableOptimization ? randInt(75, 100) / baseFontSizePx : randInt(100, 150) / baseFontSizePx;
 
-        const scale = enableOptimization ? randInt(75, 100) / baseFontSizePx : randInt(100, 150) / baseFontSizePx;
+            for (const letter of letters) {
+                letter.style.fontFamily = currentFont;
+                letter.style.fontWeight = currentFontWeight;
+                letter.style.fontStyle = currentFontStyle;
+            }
 
-        for (const letter of letters) {
-            letter.style.fontFamily = currentFont;
-            letter.style.fontWeight = currentFontWeight;
-            letter.style.fontStyle = currentFontStyle;
+            word.style.transform = `scale(${scale})`;
+
+            fontIndex = (fontIndex + 1) % fonts.length;
         }
+    }
 
-        word.style.transform = `scale(${scale})`;
-
-        fontIndex = (fontIndex + 1) % fonts.length;
-    }, animationIntervalMs);
+    setInterval(animateFont, animationIntervalMs);
 });

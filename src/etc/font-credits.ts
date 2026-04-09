@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (targetFont) {
                 fontDemo.className = '';
+                fontDemo.classList.add('active');
                 fontDemo.classList.add(targetFont);
             }
         });
@@ -36,15 +37,5 @@ document.addEventListener('DOMContentLoaded', () => {
         const checked = (event.target as HTMLInputElement).checked;
 
         fontDemo.style.fontStyle = checked ? 'italic' : 'normal';
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        const rect = fontDemo.getBoundingClientRect();
-
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-        fontDemo.style.setProperty('--x', `${x}%`);
-        fontDemo.style.setProperty('--y', `${y}%`);
     });
 });

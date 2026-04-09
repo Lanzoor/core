@@ -53,6 +53,38 @@
 @layer base, structure, page, component;
 
 @layer base {
+    :root {
+        --mono: black;
+        --mono-75: rgba(0, 0, 0, 0.75);
+        --mono-50: rgba(0, 0, 0, 0.5);
+        --mono-25: rgba(0, 0, 0, 0.25);
+        --mono-10: rgba(0, 0, 0, 0.1);
+        --mono-05: rgba(0, 0, 0, 0.05);
+
+        --inv: white;
+        --inv-75: rgba(255, 255, 255, 0.75);
+        --inv-50: rgba(255, 255, 255, 0.5);
+        --inv-25: rgba(255, 255, 255, 0.25);
+        --inv-10: rgba(255, 255, 255, 0.1);
+        --inv-05: rgba(255, 255, 255, 0.05);
+    }
+
+    [data-theme='dark'] {
+        --mono: white;
+        --mono-75: rgba(255, 255, 255, 0.75);
+        --mono-50: rgba(255, 255, 255, 0.5);
+        --mono-25: rgba(255, 255, 255, 0.25);
+        --mono-10: rgba(255, 255, 255, 0.1);
+        --mono-05: rgba(255, 255, 255, 0.05);
+
+        --inv: black;
+        --inv-75: rgba(0, 0, 0, 0.75);
+        --inv-50: rgba(0, 0, 0, 0.5);
+        --inv-25: rgba(0, 0, 0, 0.25);
+        --inv-10: rgba(0, 0, 0, 0.1);
+        --inv-05: rgba(0, 0, 0, 0.05);
+    }
+
     .brass-mono,
     .brass-mono * {
         font-family: 'Brass Mono';

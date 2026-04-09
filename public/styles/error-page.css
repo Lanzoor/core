@@ -10,8 +10,6 @@
 
         --error-text: #2a4a68;
         --error-text-bold: #1f6fb2;
-
-        --error-section-bg: rgba(0, 0, 0, 0.05);
     }
 
     [data-theme='dark'] {
@@ -25,8 +23,6 @@
 
         --error-text: #badeff;
         --error-text-bold: #d3f9ff;
-
-        --error-section-bg: rgba(255, 255, 255, 0.1);
     }
 
     body {
@@ -40,7 +36,7 @@
         min-width: 0;
         border-radius: 50px;
 
-        background: var(--error-section-bg);
+        background: var(--inv-10);
         backdrop-filter: blur(4px);
     }
 

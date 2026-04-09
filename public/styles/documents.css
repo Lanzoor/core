@@ -10,7 +10,6 @@
 
         --document-h1: black;
 
-        --document-table-border: rgba(0, 0, 0, 0.5);
         --document-th-bg: rgba(0, 0, 0, 0.075);
     }
 
@@ -25,7 +24,6 @@
 
         --document-p-bg: rgba(255, 255, 255, 0.02);
 
-        --document-table-border: rgba(255, 255, 255, 0.5);
         --document-th-bg: rgba(255, 255, 255, 0.15);
     }
 
@@ -67,7 +65,7 @@
         transition:
             background-color 0.2s,
             box-shadow 0.2s;
-        border: 2px solid var(--document-table-border);
+        border: 2px solid var(--mono-25);
     }
 
     table {

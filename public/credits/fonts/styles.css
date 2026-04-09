@@ -1,10 +1,20 @@
 @layer page {
+    :root {
+        --font-credits--intro-bg: radial-gradient(circle at 50% 100%, #ccc, #fff);
+        --font-credits--testing-demo-bg: radial-gradient(circle at top left, #fff 0%, #bbb 55%, transparent 100%), radial-gradient(circle at bottom right, #fff 0%, #bbb 55%, transparent 100%);
+    }
+
+    [data-theme='dark'] {
+        --font-credits--intro-bg: radial-gradient(circle at 50% 100%, #222, black);
+        --font-credits--testing-demo-bg: radial-gradient(circle at top left, #333 0%, #111 55%, transparent 100%), radial-gradient(circle at bottom right, #333 0%, #111 55%, transparent 100%);
+    }
+
     body {
         background: #111;
     }
 
     #credits-fonts--intro {
-        background: radial-gradient(circle at 50% 100%, #222, black);
+        background: var(--font-credits--intro-bg);
 
         display: flex;
         position: relative;
@@ -39,9 +49,9 @@
         font-style: italic;
         font-size: 200px;
         margin: 0;
-        color: white;
+        color: var(--mono);
 
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+        text-shadow: 0 0 20px var(--mono-25);
 
         z-index: 2;
     }
@@ -50,7 +60,7 @@
     #credits-fonts--font-testing p {
         background: radial-gradient(circle at 50% -100%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.75));
         border-radius: 30px;
-        border: 2px solid rgba(255, 255, 255, 0.5);
+        border: 2px solid var(--mono-50);
 
         box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(4px);
@@ -127,24 +137,29 @@
         box-shadow:
             0 0 10px #777,
             inset 0 0 10px #777;
-        transform: scale(1.05);
     }
 
     #font-buttons .font-button.selected {
         background: #777;
         text-shadow: 0 0 10px white;
         box-shadow: 0 0 10px #777;
-        transform: scale(1.1);
     }
 
     #demo {
-        --x: 50%;
-        --y: 50%;
-
-        background: radial-gradient(circle at var(--x) var(--y), #333 0%, #111 55%, black 100%) !important;
+        background: var(--font-credits--testing-demo-bg) !important;
 
         font-size: 30px;
         user-select: none;
+
+        display: none;
+    }
+
+    #demo.active {
+        display: block;
+    }
+
+    #demo .dim {
+        font-weight: 200 !important;
     }
 
     footer {
@@ -160,6 +175,16 @@
 
         #font-buttons .font-button {
             border: 1px solid #999;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #demo {
+            font-size: 15px;
+        }
+
+        .font-display h1 {
+            font-size: 40px;
         }
     }
 }

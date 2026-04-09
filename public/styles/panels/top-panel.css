@@ -4,15 +4,11 @@
 
         --top-panel-bg: rgba(200, 200, 200, 0.75);
         --top-panel-text: black;
-
-        --option-bg: rgba(255, 255, 255, 0.5);
     }
 
     [data-theme='dark'] {
         --top-panel-bg: rgba(0, 0, 0, 0.75);
         --top-panel-text: white;
-
-        --option-bg: rgba(0, 0, 0, 0.5);
     }
 
     body {
@@ -316,7 +312,7 @@
 
         padding: 2%;
 
-        background: var(--option-bg);
+        background: var(--inv-50);
         border-radius: 30px;
 
         overflow-y: auto;
@@ -412,6 +408,11 @@
 
         #navigation-panel nav ul {
             padding: 0 20px;
+        }
+
+        .panel-icon {
+            width: 30px;
+            height: 30px;
         }
     }
 

@@ -1,11 +1,9 @@
 @layer component {
     :root {
-        --left-panel-bg: rgba(0, 0, 0, 0.1);
         --left-panel-text: #222;
     }
 
     [data-theme='dark'] {
-        --left-panel-bg: rgba(255, 255, 255, 0.1);
         --left-panel-text: #eee;
     }
 
@@ -18,7 +16,7 @@
 
         padding: 100px 20px 0 20px;
 
-        background: var(--left-panel-bg);
+        background: var(--mono-05);
 
         box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
     }
