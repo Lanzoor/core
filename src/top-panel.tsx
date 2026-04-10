@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
+const isLoaded = Array.from(document.styleSheets).some((sheet) => {
+    return sheet.href && sheet.href.includes('main.css');
+});
+
+if (!isLoaded) {
+    console.warn('The top panel script was invoked, but required styles were not loaded.');
+}
+
 type Destination = {
     link: string;
     name: string;

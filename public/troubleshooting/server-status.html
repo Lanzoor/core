@@ -32,46 +32,8 @@
         <h3>We apologize for the inconvenience.</h3>
     </div>
 
-    <script src="/out/ping-server.js"></script>
-    <script>
-        const serverStatus = document.getElementById('server-status');
-        const pingDisplay = document.getElementById('ping-display');
-
-        let lastUpdated;
-
-        async function updateServerStatus() {
-            const fetchResult = await pingServer('https://lanzoor.dev/api/status/');
-            if (fetchResult) {
-                serverStatus.textContent = '🟢 Online';
-            } else {
-                serverStatus.textContent = '🔴 Troublesome';
-            }
-
-            lastUpdated = Date.now();
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            updateServerStatus();
-            setInterval(updateServerStatus, 30000);
-        });
-
-        function updateLastUpdatedDisplay() {
-            if (lastUpdated) {
-                const currentTime = Date.now();
-                const differenceMs = currentTime - lastUpdated;
-                const differenceSec = Math.floor(differenceMs / 1000);
-
-                pingDisplay.textContent = `${differenceSec} seconds ago`;
-            } else {
-                pingDisplay.textContent = 'not pinged yet';
-            }
-
-            requestAnimationFrame(updateLastUpdatedDisplay);
-        }
-
-        updateLastUpdatedDisplay();
-    </script>
-
+    <script type="module" src="/out/ping-server.js"></script>
+    <script type="module" src="/out/etc/troubleshooting-server.js"></script>
     <script type="module" src="/out/top-panel.js"></script>
 </body>
 

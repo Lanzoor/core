@@ -1,4 +1,4 @@
-import { pingServer } from '../ping-server.js';
+import { pingServer } from '../ping-server';
 
 function isMobileDevice() {
     return (navigator as any).userAgentData?.mobile || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || ('ontouchstart' in window && navigator.maxTouchPoints > 0);
