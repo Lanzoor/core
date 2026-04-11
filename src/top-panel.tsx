@@ -43,6 +43,7 @@ const destinations: Destination[] = [
         name: 'Credits',
         children: [
             { link: '/credits', name: 'Credits' },
+            { link: '/credits/contributors', name: 'Contributors' },
             { link: '/credits/fonts', name: 'Font Credits' },
             { link: '/credits/assets', name: 'Asset Credits' },
         ],

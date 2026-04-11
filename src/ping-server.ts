@@ -4,14 +4,14 @@
  * @returns {Promise<any | undefined>}
  */
 
-export async function pingServer(route: string): Promise<any | undefined> {
+export async function pingServer(route: string, options?: RequestInit): Promise<any | undefined> {
     try {
         const fetchRegex = /^https:\/\/www\.[^\/]+(\/[^\/]+)*$/;
         if (!fetchRegex.test(route)) {
             console.warn(`Route ${route} did not match the recommended fetch API structure. This may cause unexpected behavior.`);
         }
 
-        const result = await fetch(route);
+        const result = await fetch(route, options);
 
         console.log(result);
         if (!result.ok) {

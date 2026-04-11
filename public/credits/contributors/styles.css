@@ -1,0 +1,76 @@
+@layer page {
+    body {
+        background: #111;
+    }
+
+    #credits-contributors--intro {
+        background: #111;
+    }
+
+    #credits-contributors--intro h1 {
+        font-family: 'Geist';
+        margin: 50px 0;
+        color: white;
+
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    }
+
+    #contributors .contributor {
+        background: radial-gradient(circle at top, #333 0%, #222 55%, #222 100%);
+        border: 2px solid #777;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        box-shadow: none;
+        margin: 2%;
+        border-radius: 30px;
+
+        padding: 40px;
+        max-width: 35%;
+    }
+
+    #contributors .contributor h1 {
+        font-size: 25px;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    .contributor-icon {
+        user-select: none;
+
+        max-width: 200px;
+        max-height: auto;
+
+        margin: 1% 0 2% 0;
+
+        border-radius: 99999px;
+        filter: drop-shadow(0 0 10px #111);
+    }
+
+    .contributor .quote {
+        margin: 1%;
+        opacity: 0.7;
+    }
+
+    .contributor .quote::before {
+        content: '“';
+    }
+
+    .contributor .quote::after {
+        content: '”';
+    }
+
+    @media (max-width: 1024px) {
+        #contributors .contributor {
+            max-width: none;
+        }
+
+        .contributor-icon {
+            max-width: 100px;
+            max-height: auto;
+        }
+    }
+}

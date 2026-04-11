@@ -40,7 +40,7 @@
         font-weight: normal;
         line-height: 1.3;
 
-        margin: 2% 0 4% 0;
+        margin: 1% 0 2% 0;
     }
 
     h1 {
@@ -211,22 +211,16 @@
 
     /* ==================== Other Elements ==================== */
 
-    p {
+    p.with-bg {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
 
         padding: 15px;
-        margin-bottom: 1rem;
 
         transition: background-color 0.2s ease;
     }
 
-    p.plain,
-    p.plain:hover {
-        background: none;
-    }
-
-    p:hover {
+    p.with-bg:hover {
         background: rgba(255, 255, 255, 0.15);
     }
 

@@ -113,11 +113,14 @@
 
         width: 0;
         height: 3px;
-        background-color: var(--mono-50);
-        transition: width 0.5s ease-out;
+        background: var(--mono-50);
+        transition:
+            width 0.5s ease-out,
+            background 0.5s ease-out;
     }
 
     #top-panel--links a:hover::after {
+        background: var(--mono-75);
         width: 100%;
     }
 
