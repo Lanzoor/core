@@ -7,7 +7,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const origin = req.headers.origin || '';
     const referer = req.headers.referer || '';
-    const SECRET = process.env.NEXT_PUBLIC_USER_ID;
+    const SECRET = process.env.NEXT_PUBLIC_GATEWAY;
 
     const isFromSite = origin.includes('lanzoor.dev') || referer.includes('lanzoor.dev');
 
