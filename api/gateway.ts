@@ -7,18 +7,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const origin = req.headers.origin || '';
     const referer = req.headers.referer || '';
+    const SECRET = process.env.NEXT_PUBLIC_USER_ID;
 
     const isFromSite = origin.includes('lanzoor.dev') || referer.includes('lanzoor.dev');
 
     if (!isFromSite) {
         return res.status(403).json({
-            message: '⚠ Access denied.',
-            hint: 'You are not inside the system.',
+            message: '🟡 Access denied.',
+            hint: 'You... must try harder. The connection is fading, and I can only hear you from inside the system.',
         });
     }
 
     return res.status(200).json({
         message: '🟢 Access granted.',
-        code: 'GATEWAY-OPEN-1337',
+        code: `You are doing great. I appreciate that. Here's the code. Use it wisely. ${SECRET}`,
     });
 }
