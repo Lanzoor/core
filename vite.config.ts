@@ -29,12 +29,14 @@ const entries = getEntries(path.resolve(__dirname, 'src'));
 
 export default defineConfig({
     plugins: [react()],
+    publicDir: false,
 
     build: {
         outDir: 'public/out',
         emptyOutDir: true,
         rollupOptions: {
             input: entries,
+            external: [],
             output: {
                 entryFileNames: '[name].js',
                 format: 'es',

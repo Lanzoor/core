@@ -80,4 +80,14 @@
     #left-panel::-webkit-scrollbar-thumb:hover {
         background: rgba(255, 255, 255, 0.25);
     }
+
+    @media (max-width: 768px) {
+        #left-panel {
+            display: none;
+        }
+
+        body {
+            padding-left: 0;
+        }
+    }
 }

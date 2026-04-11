@@ -17,5 +17,5 @@
 
         "noEmit": true
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx", "public/**/*.ts", "public/**/*.ts", "public/legacy/profile-old/profile-old.ts"]
+    "include": ["src/**/*.ts", "src/**/*.tsx", "public/**/*.ts", "public/**/*.ts"]
 }
