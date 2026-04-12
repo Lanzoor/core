@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', (mc) => {
-    let a = document.getElementById('block'),
+    let a = document.querySelector('#block'),
         b = document.querySelector('#input input'),
         c = document.querySelector('#check');
 
@@ -17,15 +17,16 @@ document.addEventListener('DOMContentLoaded', (mc) => {
             .then(async (j) => {
                 let f = await j.json();
                 a.style.display = 'none';
-                element.style.backgroundImage = `url('${f.message}')`;
 
                 let m = document.createElement('div');
                 m.id = 'normal';
                 m.innerHTML = `${f.content}`;
+                m.style.backgroundImage = `url('${f.message}')`;
 
-                document.appendChild(m);
+                document.body.appendChild(m);
             })
-            .catch(() => {
+            .catch((e) => {
+                console.error(e);
                 d();
             });
     });
