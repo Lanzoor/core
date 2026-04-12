@@ -13,11 +13,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (code === process.env.NEXT_PUBLIC_GATEWAY) {
         return res.status(200).json({
-            message: 'Correct. Go on.',
+            message: process.env.NEXT_PUBLIC_BACKGROUND_URL,
+            content: process.env.NEXT_PUBLIC_NOTICE_SECOND_CONTENT,
         });
     } else {
-        return res.status(403).json({
-            message: 'Incorrect. Try again.',
-        });
+        return res.status(403);
     }
 }
