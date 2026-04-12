@@ -16,9 +16,13 @@ document.addEventListener('DOMContentLoaded', (mc) => {
         await fetch('https://www.lanzoor.dev/api/gateway_internal', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: e }) })
             .then(async (j) => {
                 let f = await j.json();
-                a.style.display = 'none';
+
+                if (!f.ok || !j.ok) {
+                    throw new Error();
+                }
 
                 let m = document.createElement('div');
+                a.style.display = 'none';
                 m.id = 'normal';
                 m.innerHTML = `${f.content}`;
                 m.style.backgroundImage = `url('${f.message}')`;
