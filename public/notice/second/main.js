@@ -1,9 +1,7 @@
-let cf = [document, document.addEventListener, document.querySelector];
-
-cf[1]('DOMContentLoaded', (mc) => {
+document.addEventListener('DOMContentLoaded', (mc) => {
     let a = document.getElementById('block'),
-        b = cf[2]('#input input'),
-        c = cf[2]('#check');
+        b = document.querySelector('#input input'),
+        c = document.querySelector('#check');
 
     const d = () => {
         c.disabled = b.disabled = !0;
@@ -21,11 +19,11 @@ cf[1]('DOMContentLoaded', (mc) => {
                 a.style.display = 'none';
                 element.style.backgroundImage = `url('${f.message}')`;
 
-                let m = cf[0].createElement('div');
+                let m = document.createElement('div');
                 m.id = 'normal';
                 m.innerHTML = `${f.content}`;
 
-                cf[0].appendChild(m);
+                document.appendChild(m);
             })
             .catch(() => {
                 d();
