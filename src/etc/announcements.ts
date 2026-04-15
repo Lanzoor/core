@@ -1,125 +1,189 @@
-let announcementSearchQuery = '';
-let currentAnnouncementPage = 1;
-const removedMessage = '- Removed by owner -';
+// let announcementSearchQuery = '';
+// let currentAnnouncementPage = 1;
+// const removedMessage = '- Removed by owner -';
 
-class Announcement {
-    id: string;
-    link: string;
-    title: string;
-    private lastModified: Date;
+// class Announcement {
+//     id: string;
+//     link: string;
+//     title: string;
+//     private lastModified: Date;
 
-    constructor(id: string, link: string, title: string = removedMessage, lastModified: Date = new Date()) {
-        this.id = id;
-        this.link = link;
-        this.title = title;
-        this.lastModified = lastModified;
+//     constructor(id: string, link: string, title: string = removedMessage, lastModified: Date = new Date()) {
+//         this.id = id;
+//         this.link = link;
+//         this.title = title;
+//         this.lastModified = lastModified;
 
-        if (title == removedMessage) {
-            this.link = '/docs/removed.html';
-        }
-    }
+//         if (title == removedMessage) {
+//             this.link = '/docs/removed.html';
+//         }
+//     }
 
-    formatDate(): string {
-        return this.lastModified.toLocaleDateString('en-US', {
-            // prettier, pls...
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-        });
-    }
-}
+//     formatDate(): string {
+//         return this.lastModified.toLocaleDateString('en-US', {
+//             // prettier, pls...
+//             year: 'numeric',
+//             month: 'short',
+//             day: 'numeric',
+//         });
+//     }
+// }
 
-let announcements = [
-    //
-    new Announcement('0001', '/docs/announcements/0001.html', 'Hiatus Announcement', new Date('2026-01-19')),
-    new Announcement('0002', '/docs/announcements/0002.html', '<code>periodica</code> Retirement', new Date('2026-01-28')),
-    new Announcement('0003', '/docs/announcements/0003.html', 'Vacation Announcement', new Date('2026-02-04')),
-    new Announcement('0004', '/docs/announcements/0004.html', 'Retirement of the Old Profile Website', new Date('2026-02-07')),
-    new Announcement('0005', '/docs/announcements/0005.html', 'Domain Registration Notice', new Date('2026-02-09')),
-    new Announcement('0006', '/docs/announcements/0006.html', 'Life Update', new Date('2026-03-02')),
-    new Announcement('0007', '/docs/announcements/0007.html', "Why haven't I been making updates recently?", new Date('2026-03-12')),
-];
+// let announcements = [
+//     //
+//     new Announcement('0001', '/docs/announcements/0001.html', 'Hiatus Announcement', new Date('2026-01-19')),
+//     new Announcement('0002', '/docs/announcements/0002.html', '<code>periodica</code> Retirement', new Date('2026-01-28')),
+//     new Announcement('0003', '/docs/announcements/0003.html', 'Vacation Announcement', new Date('2026-02-04')),
+//     new Announcement('0004', '/docs/announcements/0004.html', 'Retirement of the Old Profile Website', new Date('2026-02-07')),
+//     new Announcement('0005', '/docs/announcements/0005.html', 'Domain Registration Notice', new Date('2026-02-09')),
+//     new Announcement('0006', '/docs/announcements/0006.html', 'Life Update', new Date('2026-03-02')),
+//     new Announcement('0007', '/docs/announcements/0007.html', "Why haven't I been making updates recently?", new Date('2026-03-12')),
+// ];
 
-let descendingSort = true;
-announcements.reverse();
+// let descendingSort = true;
+// announcements.reverse();
 
-let announcementsTable = document.getElementById('announcements-table')!;
+// let announcementsTable = document.getElementById('announcements-table')!;
 
-function updateAnnouncements() {
-    announcementsTable.innerHTML = `
-<tr>
-    <th>Link</th>
-    <th id="announcements-title">Title</th>
-    <th>Last Modified</th>
-</tr>`;
+// function updateAnnouncements() {
+//     announcementsTable.innerHTML = `
+// <tr>
+//     <th>Link</th>
+//     <th id="announcements-title">Title</th>
+//     <th>Last Modified</th>
+// </tr>`;
 
-    let foundAny = false;
+//     let foundAny = false;
 
-    announcements.forEach((announcement) => {
-        if (announcement.title.toLowerCase().includes(announcementSearchQuery.toLowerCase()) && announcement.title != 'Removed by owner') {
-            foundAny = true;
+//     announcements.forEach((announcement) => {
+//         if (announcement.title.toLowerCase().includes(announcementSearchQuery.toLowerCase()) && announcement.title != 'Removed by owner') {
+//             foundAny = true;
 
-            let currentRow = document.createElement('tr');
+//             let currentRow = document.createElement('tr');
 
-            let currentLinkTD = document.createElement('td');
-            let currentLink = document.createElement('a');
-            currentLink.textContent = announcement.id;
-            currentLink.href = announcement.link;
-            currentLinkTD.appendChild(currentLink);
+//             let currentLinkTD = document.createElement('td');
+//             let currentLink = document.createElement('a');
+//             currentLink.textContent = announcement.id;
+//             currentLink.href = announcement.link;
+//             currentLinkTD.appendChild(currentLink);
 
-            let currentTitleTD = document.createElement('td');
+//             let currentTitleTD = document.createElement('td');
 
-            if (announcement.title == removedMessage) {
-                currentTitleTD.id = 'inverted';
-                currentTitleTD.colSpan = 2;
-            }
+//             if (announcement.title == removedMessage) {
+//                 currentTitleTD.id = 'inverted';
+//                 currentTitleTD.colSpan = 2;
+//             }
 
-            currentTitleTD.innerHTML = announcement.title;
+//             currentTitleTD.innerHTML = announcement.title;
 
-            currentRow.appendChild(currentLinkTD);
-            currentRow.appendChild(currentTitleTD);
+//             currentRow.appendChild(currentLinkTD);
+//             currentRow.appendChild(currentTitleTD);
 
-            if (announcement.title != removedMessage) {
-                let currentModTd = document.createElement('td');
-                currentModTd.innerHTML = `<b>${announcement.formatDate()}</b>`;
-                currentRow.appendChild(currentModTd);
-            }
+//             if (announcement.title != removedMessage) {
+//                 let currentModTd = document.createElement('td');
+//                 currentModTd.innerHTML = `<b>${announcement.formatDate()}</b>`;
+//                 currentRow.appendChild(currentModTd);
+//             }
 
-            announcementsTable.appendChild(currentRow);
-        }
-    });
+//             announcementsTable.appendChild(currentRow);
+//         }
+//     });
 
-    if (!foundAny) {
-        let emptyRow = document.createElement('tr');
-        let emptyCell = document.createElement('td');
-        emptyCell.colSpan = 3;
-        emptyCell.textContent = `No announcement found containing your search query. :C`;
-        emptyCell.style.textAlign = 'center';
-        emptyRow.appendChild(emptyCell);
-        announcementsTable.appendChild(emptyRow);
-    }
-}
+//     if (!foundAny) {
+//         let emptyRow = document.createElement('tr');
+//         let emptyCell = document.createElement('td');
+//         emptyCell.colSpan = 3;
+//         emptyCell.textContent = `No announcement found containing your search query. :C`;
+//         emptyCell.style.textAlign = 'center';
+//         emptyRow.appendChild(emptyCell);
+//         announcementsTable.appendChild(emptyRow);
+//     }
+// }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     updateAnnouncements();
+// });
+
+// const sortButton = document.getElementById('sort-button')!;
+
+// sortButton.addEventListener('click', () => {
+//     descendingSort = !descendingSort;
+//     if (descendingSort) {
+//         sortButton.textContent = 'Sort: Descending';
+//     } else {
+//         sortButton.textContent = 'Sort: Ascending';
+//     }
+
+//     announcements.reverse();
+//     updateAnnouncements();
+// });
+
+// document.getElementById('announcements-search')!.addEventListener('input', (event) => {
+//     const rawQuery = event.target as HTMLInputElement;
+//     announcementSearchQuery = rawQuery.value;
+//     updateAnnouncements();
+// });
+
+import DOMPurify from 'dompurify';
+import slugify from 'slugify';
 
 document.addEventListener('DOMContentLoaded', () => {
-    updateAnnouncements();
-});
+    const params = new URLSearchParams(window.location.search);
+    const view = params.get('view');
 
-const sortButton = document.getElementById('sort-button')!;
+    const loader = document.getElementById('loader')!;
+    const viewer = document.getElementById('viewer')!;
+    const container = document.querySelector('#viewer #announcement')! as HTMLElement;
 
-sortButton.addEventListener('click', () => {
-    descendingSort = !descendingSort;
-    if (descendingSort) {
-        sortButton.textContent = 'Sort: Descending';
-    } else {
-        sortButton.textContent = 'Sort: Ascending';
+    async function loadAnnouncement(slug: string) {
+        const safeSlug = slugify(slug, {
+            lower: true,
+            strict: true,
+            trim: true,
+            replacement: '-',
+        });
+
+        if (!safeSlug) {
+            viewer.style.display = 'none';
+            return;
+        }
+
+        try {
+            const res = await fetch(`/docs/announcements/${safeSlug}.html`);
+
+            if (!res.ok) {
+                throw new Error('File not found');
+            }
+
+            const html = await res.text();
+
+            const cleanHTML = DOMPurify.sanitize(html, {
+                ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'blockquote', 'img', 'br', 'hr'],
+                ALLOWED_ATTR: ['href', 'target', 'src', 'alt', 'class'],
+                FORBID_TAGS: ['script', 'style', 'iframe', 'object', 'embed'],
+                FORBID_ATTR: ['onerror', 'onload', 'onclick'],
+            });
+
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = cleanHTML;
+
+            const title = tempDiv.querySelector('title')?.textContent;
+            if (title) {
+                document.title = `${title} | Announcements`;
+            }
+
+            loader.style.display = 'none';
+            viewer.style.display = 'block';
+            container.innerHTML = cleanHTML;
+        } catch (err) {
+            console.error(err);
+            container.innerHTML = `<p>Failed to load announcement.</p>`;
+        }
     }
 
-    announcements.reverse();
-    updateAnnouncements();
-});
-
-document.getElementById('announcements-search')!.addEventListener('input', (event) => {
-    const rawQuery = event.target as HTMLInputElement;
-    announcementSearchQuery = rawQuery.value;
-    updateAnnouncements();
+    if (view) {
+        loadAnnouncement(view);
+    } else {
+        viewer.style.display = 'none';
+    }
 });

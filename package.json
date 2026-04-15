@@ -1,7 +1,7 @@
 {
     "name": "core",
     "private": true,
-    "version": "26.14.8",
+    "version": "26.15.0",
     "description": "The ultimate repository for all of Lanzoor's webpages, documents, and profiles.",
     "license": "ISC",
     "author": "Lanzoor",
@@ -18,8 +18,10 @@
         "@upstash/redis": "^1.36.2",
         "@vercel/analytics": "^1.6.1",
         "@vercel/node": "^5.5.33",
+        "dompurify": "^3.4.0",
         "react": "^19.2.4",
-        "react-dom": "^19.2.4"
+        "react-dom": "^19.2.4",
+        "slugify": "^1.6.9"
     },
     "devDependencies": {
         "@types/node": "^25.5.0",

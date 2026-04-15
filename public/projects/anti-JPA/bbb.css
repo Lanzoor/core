@@ -1,0 +1,1170 @@
+body {
+    font-size: 25px;
+    margin-top: 0;
+}
+
+p {
+    font-family: 'Geist';
+    line-height: 1.6;
+
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+p:hover {
+    background: none;
+}
+
+.anti-jpa--intro {
+    background: linear-gradient(to bottom, #630266 0%, #0a000c 30%, #0a000c 75%, #4e011d 100%);
+    padding: 200px 100px;
+}
+
+.anti-jpa--intro #introduction {
+    text-align: left;
+}
+
+.anti-jpa--intro #introduction h1 {
+    color: #ffd6ff;
+    text-shadow: 0 0 12px #ff4fd8;
+}
+
+.anti-jpa--intro #ominous-header h1 {
+    text-align: center;
+    font-family: 'JetBrains Mono';
+    font-size: 30px;
+    margin: 60px 0;
+    animation: headerGlow 6s ease infinite;
+}
+
+.anti-jpa--intro #ominous-header h1 i {
+    display: inline-block;
+    animation: evilGlow 6s ease infinite;
+}
+
+.anti-jpa--intro #context {
+    background: radial-gradient(circle at bottom right, #4c0f66 0%, #120018 70%);
+    border: 2px solid #b85cff;
+    box-shadow: inset 0 0 25px black;
+    border-radius: 30px;
+
+    margin: 50px 0;
+    padding: 40px 30px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    justify-content: flex-end;
+    align-self: flex-end;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.anti-jpa--intro #context:hover {
+    box-shadow: inset 0 0 50px rgb(211, 86, 236);
+}
+
+.anti-jpa--intro #jpa-gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    margin: 0;
+}
+
+.anti-jpa--intro #jpa-gallery img {
+    border: 5px solid rgb(255, 170, 170);
+    box-shadow: 0 0 10px rgb(255, 170, 170);
+    border-radius: 10px;
+
+    width: 150px;
+    height: 150px;
+
+    animation: ominousGlow 6s ease infinite;
+}
+
+.anti-jpa--intro #jpa-info {
+    margin: 0;
+    text-align: right;
+}
+
+.anti-jpa--intro #jpa-info h1 {
+    margin: 20px 0;
+}
+
+.anti-jpa--intro #jpa-info p {
+    max-width: none;
+}
+
+.anti-jpa--truth {
+    background: linear-gradient(to bottom, black 0%, black 50%, rgb(54, 1, 1) 75%, rgb(55, 1, 1) 100%);
+    padding: 200px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.anti-jpa--truth #header h1 {
+    font-family: 'Space Grotesk';
+    margin: 0;
+    color: rgb(255, 98, 98);
+    text-shadow: 0 0 10px rgb(168, 4, 4);
+    animation: evilTextShadowVar2 4s ease infinite;
+}
+
+.anti-jpa--truth #header h1 i {
+    font-family: 'Geist';
+    display: inline-block;
+    font-size: 80px;
+    animation: evilGlow 4s ease infinite;
+}
+
+.anti-jpa--truth #header h2 {
+    font-size: 30px;
+    font-family: 'Geist';
+    color: rgb(255, 183, 183);
+    text-shadow: none;
+}
+
+.anti-jpa--truth #header h2 b,
+.anti-jpa--truth #header h2 i {
+    display: inline-block;
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.anti-jpa--truth #header h2 i {
+    color: rgb(255, 0, 0);
+    text-shadow: 0 0 10px rgb(255, 0, 0);
+}
+
+.anti-jpa--truth #header h2 b {
+    color: rgb(255, 197, 197);
+    text-shadow: 0 0 10px rgb(255, 0, 0);
+}
+
+.anti-jpa--truth #header h2 i:hover {
+    color: red;
+    transform: rotate(20deg) scale(1.1) scaleX(1.1);
+}
+
+.anti-jpa--truth #lets-go {
+    font-family: 'JetBrains Mono';
+}
+
+.anti-jpa--truth #warning-separator {
+    display: flex;
+    flex-direction: column;
+
+    width: 90vw;
+    padding: 5%;
+
+    border-radius: 30px;
+    background: linear-gradient(to bottom, rgba(255, 40, 40, 0.05), rgba(255, 40, 40, 0.12));
+    border: 2px solid rgb(156, 7, 7);
+    box-shadow:
+        0 0 40px rgba(255, 0, 0, 0.15),
+        inset 0 0 30px rgba(255, 0, 0, 0.08);
+}
+
+#warning-separator #header {
+    align-self: center;
+}
+
+#warning-separator #identity-crisis {
+    align-self: flex-end;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.anti-jpa--truth #lets-go::after {
+    content: 'C’est parti.';
+    display: inline-block;
+    white-space: nowrap;
+    max-width: 0;
+    opacity: 0;
+    font-style: italic;
+    transition:
+        max-width 0.3s ease,
+        opacity 0.2s ease;
+}
+
+.anti-jpa--truth #lets-go:hover::after {
+    max-width: 200px;
+    opacity: 0.6;
+}
+
+.anti-jpa--explanation.intro {
+    background: linear-gradient(120deg, rgb(47, 7, 115) 0%, transparent 40%, transparent 70%, rgb(2, 82, 81) 100%), radial-gradient(circle at center, rgb(3, 31, 100) 0%, black 50%, black 100%);
+
+    padding: 200px 50px;
+}
+
+.anti-jpa--explanation.learning {
+    background: linear-gradient(to bottom, black 0%, rgb(98, 3, 49) 75%, rgb(164, 2, 67) 100%);
+    padding: 100px;
+}
+
+.anti-jpa--explanation.learning h1 {
+    color: rgb(255, 157, 214);
+    text-shadow: none;
+}
+
+.anti-jpa--explanation.learning h2 {
+    color: rgb(255, 147, 210);
+}
+
+.anti-jpa--explanation.learning h1 i,
+.anti-jpa--explanation.learning h2 i {
+    color: red;
+    text-shadow: 0 0 10px red;
+}
+
+.anti-jpa--explanation.learning #learning-sections {
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+}
+
+.anti-jpa--explanation.learning #learning-sections .learning-section {
+    padding: 30px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 5px solid rgba(255, 255, 255, 0.25);
+    max-width: 75%;
+}
+
+.anti-jpa--explanation.learning #learning-sections .learning-section:nth-child(even) {
+    align-self: flex-end;
+}
+
+.anti-jpa--explanation.welcoming {
+    background: linear-gradient(to bottom, black 0%, rgb(35, 3, 98) 75%, rgb(76, 6, 174) 100%);
+    padding: 100px;
+}
+
+.anti-jpa--explanation.welcoming h1 {
+    color: rgb(139, 89, 255);
+    text-shadow: none;
+}
+
+.anti-jpa--explanation.welcoming h2 {
+    color: rgb(255, 147, 210);
+}
+
+.anti-jpa--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.anti-jpa--header h3 {
+    font-size: 22.5px;
+    margin: 0;
+    transition: transform 0.5s ease;
+}
+
+.anti-jpa--header h3:hover {
+    cursor: pointer;
+}
+
+.anti-jpa--header img {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0;
+
+    transform: rotate(-90deg);
+
+    pointer-events: auto;
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.anti-jpa--header img:hover {
+    box-shadow: 0;
+    filter: drop-shadow(0 0 10px #ffffff);
+}
+
+.anti-jpa--header img.open {
+    transform: rotate(0deg);
+}
+
+.anti-jpa--content {
+    opacity: 0;
+    max-height: 0px;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.anti-jpa--content.open {
+    opacity: 1;
+    max-height: 750px;
+    padding: 20px;
+
+    overflow-y: auto;
+
+    background: linear-gradient(120deg, rgba(53, 7, 79), rgb(30, 2, 92));
+
+    border: 2px solid rgb(180, 109, 255);
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px rgb(140, 32, 255);
+}
+
+ol a,
+ul a {
+    text-decoration: underline;
+    font-family: 'Space Grotesk';
+    font-size: 17.5px;
+}
+
+.matthew-example {
+    background: linear-gradient(145deg, #130338, #27023d);
+    border: 1px solid rgba(170, 120, 255, 0.35);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 16px 0;
+
+    color: #e3dcff;
+    font-family: 'JetBrains Mono';
+    font-size: 10px;
+    line-height: 1.5;
+
+    overflow-x: auto;
+
+    box-shadow:
+        0 0 14px rgba(170, 120, 255, 0.25),
+        inset 0 0 10px rgba(170, 120, 255, 0.12);
+}
+
+.matthew-example img {
+    margin: 20px 40px;
+    max-width: 150px;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.vertical-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.vertical-grid div {
+    max-width: 40%;
+}
+
+.anti-jpa--explanation.moderation {
+    background: linear-gradient(to bottom, rgb(53, 3, 115) 0%, rgb(25, 4, 60) 60%, rgb(3, 3, 98) 75%, rgb(2, 64, 164) 100%);
+
+    padding: 100px;
+}
+
+.anti-jpa--explanation.moderation .header h2 {
+    font-family: 'Geist';
+    font-size: 50px;
+}
+
+.anti-jpa--explanation.moderation .header {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.anti-jpa--explanation.moderation .fuck-you-an {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.anti-jpa--explanation.moderation .social-experiment {
+    padding: 30px;
+    border-radius: 30px;
+
+    background: rgba(0, 0, 0, 0.25);
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+}
+
+#fuck-you-anzu {
+    display: inline-block;
+
+    margin: 50px;
+    padding: 50px;
+
+    background: rgba(0, 0, 0, 0.25);
+    border: 4px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 30px;
+    user-select: none;
+    line-height: 1;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+
+    animation: evilTextShadowVar1 4s ease infinite;
+}
+
+#timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    padding: 60px 0;
+}
+
+#timeline::before {
+    content: '';
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 6px;
+    height: 100%;
+    border-radius: 999px;
+
+    margin: 20px 0;
+
+    background: linear-gradient(to bottom, #6a00ff, #00d4ff);
+    transform: translateX(-50%);
+
+    z-index: 99;
+}
+
+#timeline .segment {
+    position: relative;
+    width: 100%;
+    margin: 60px 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 101;
+}
+
+#timeline .segment img,
+.tenor-gif-embed {
+    width: 45%;
+    border-radius: 30px;
+}
+
+#timeline .segment .content {
+    width: 45%;
+    text-align: left;
+}
+
+#timeline .content {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 25px;
+    border-radius: 15px;
+
+    backdrop-filter: blur(4px);
+
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+
+    transition: box-shadow 0.5s ease;
+}
+
+#timeline .content:hover {
+    box-shadow:
+        0 0 30px rgba(106, 0, 255, 0.6),
+        0 0 50px rgba(0, 212, 255, 0.4),
+        inset 0 0 10px white;
+}
+
+#timeline .content h2 {
+    font-size: 30px;
+    font-family: 'Geist';
+}
+
+#timeline .segment::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 16px;
+    height: 16px;
+
+    background: white;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    animation: nodeGlow 4s ease infinite;
+    z-index: 100;
+}
+
+#timeline .segment::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 80px;
+    height: 4px;
+
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 999px;
+
+    box-shadow: 0 0 10px white;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 99;
+}
+
+#b1-img {
+    box-shadow: 10px 10px 10px black;
+}
+
+#a1-img,
+#a2-img,
+#b5-img,
+#a3-img {
+    border: 5px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+#b2-img,
+#a5-img {
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.5);
+}
+
+#flip {
+    display: inline-block;
+    animation: rotatetationDevice 1s infinite linear;
+}
+
+.anti-jpa--explanation.moderation #bing-chilling {
+    text-align: left;
+    margin-top: 50px;
+}
+
+.anti-jpa--actions {
+    background: linear-gradient(to bottom, black 0%, rgb(44, 3, 98) 75%, rgb(72, 2, 164) 100%);
+    padding: 100px;
+}
+
+.anti-jpa--actions #tragedy {
+    text-align: left;
+}
+
+.anti-jpa--actions #actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+
+    margin: 0;
+
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.anti-jpa--actions #actions::before {
+    content: '';
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 6px;
+    height: 100%;
+
+    background: linear-gradient(to bottom, black, #a574ff);
+    transform: translateX(-50%);
+}
+
+.anti-jpa--actions .action {
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.12),
+        inset 0 0 20px rgba(255, 255, 255, 0.06);
+
+    border-radius: 30px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.06));
+    border: 2px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(6px);
+
+    margin: 50px 0;
+    padding: 30px;
+
+    transition: all 0.5s ease;
+}
+
+.anti-jpa--actions .action:hover {
+    box-shadow:
+        0 10px 30px rgba(255, 255, 255, 0.18),
+        inset 0 0 25px rgba(255, 255, 255, 0.12);
+
+    border: 2px solid rgba(255, 255, 255, 0.5);
+
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.6));
+}
+
+.anti-jpa--actions .action:nth-child(odd) {
+    text-align: left;
+    align-self: flex-start;
+}
+
+.anti-jpa--actions .action:nth-child(even) {
+    text-align: right;
+    align-self: flex-end;
+}
+
+.anti-jpa--actions .action ol {
+    background: radial-gradient(circle at top, #222, black);
+
+    border: 2px solid white;
+    border-radius: 30px;
+
+    padding: 30px 50px;
+}
+
+.anti-jpa--actions .action ol li {
+    margin: 30px 0;
+}
+
+#copy-url {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+
+    background: radial-gradient(circle at 20% 30%, #000333, #000814 70%);
+
+    box-shadow: inset 0 0 15px rgba(0, 200, 255, 0.2);
+}
+
+#copy-url div {
+    padding: 20px;
+    font-family: 'Fira Code';
+    color: #bde0ff;
+    width: 100%;
+
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), transparent);
+
+    text-shadow: 0 0 6px rgba(0, 200, 255, 0.6);
+}
+
+#copy-url button {
+    padding: 20px 40px;
+    border: none;
+    cursor: pointer;
+
+    font-family: 'Fira Code';
+    color: white;
+    font-weight: bold;
+
+    background: linear-gradient(135deg, #7b00ff, #008cff);
+    background-size: 200% 200%;
+
+    box-shadow:
+        0 0 10px rgba(123, 0, 255, 0.6),
+        0 0 20px rgba(0, 212, 255, 0.5);
+
+    transition: all 0.5s ease;
+}
+
+#copy-url button:hover {
+    background-position: right center;
+}
+
+#copy-url button:active {
+    box-shadow:
+        0 0 10px rgba(123, 0, 255, 0.6),
+        inset 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.server-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 40px;
+
+    user-select: none;
+
+    margin: 10px 0;
+    padding: 30px;
+
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.server-display .profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 40px;
+}
+
+.server-display .profile img {
+    border-radius: 30px;
+    width: 120px;
+    height: 120px;
+}
+
+.server-display a {
+    all: unset;
+}
+
+.server-display a:not(:has(button)) {
+    margin-left: auto;
+
+    font-family: 'Fira Code';
+    font-size: 20px;
+
+    color: #aaa;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+    transition: all 0.2s ease;
+}
+
+.server-display a:hover {
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 0 10px white;
+}
+
+.server-display .profile a button {
+    font-family: 'JetBrains Mono';
+    padding: 20px 30px;
+    border-radius: 100px;
+    border: none;
+
+    position: relative;
+    overflow: hidden;
+
+    font-size: 30px;
+    transition: all 0.5s ease;
+}
+
+.server-display .profile a button:hover {
+    transform: translateY(-2px) scale(1.03);
+    cursor: pointer;
+}
+
+#join-jeis {
+    background: linear-gradient(145deg, #ffd36a, #c78b1a);
+    color: #2b2b2b;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.35),
+        inset 0 1px 2px rgba(255, 255, 255, 0.6),
+        0 0 12px rgba(255, 215, 120, 0.6);
+}
+
+#join-jeis:hover {
+    background: linear-gradient(145deg, #ffe08a, #d49a1f);
+    border-color: black;
+    box-shadow:
+        0 12px 20px black,
+        inset 0 0 20px black;
+}
+
+#join-nhgs {
+    border: 3px solid pink;
+    background: rgba(0, 0, 0, 0.75);
+    box-shadow:
+        0 0 10px pink,
+        inset 0 0 10px pink;
+    color: pink;
+    text-shadow: 0 0 10px pink;
+}
+
+#join-nhgs:hover {
+    box-shadow:
+        0 10px 10px magenta,
+        inset 0 0 10px magenta;
+    border-color: magenta;
+    color: magenta;
+    text-shadow: 0 0 10px magenta;
+}
+
+#recharge {
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#join-recharge {
+    background: rgb(55, 6, 112);
+    border: 3px solid rgb(110, 53, 255);
+}
+
+#join-recharge,
+#join-recharge i {
+    color: rgb(255, 197, 255);
+    text-shadow: 0 0 10px rgb(211, 86, 236);
+}
+
+#join-recharge:hover {
+    box-shadow:
+        0 0 30px rgb(110, 53, 255),
+        inset 0 0 10px rgb(110, 53, 255),
+        40px 60px 10px rgb(192, 1, 255, 0.75),
+        -40px -60px 10px rgb(211, 86, 236, 0.75);
+}
+
+.anti-jpa--ending {
+    background: linear-gradient(to bottom, black 0%, rgb(98, 3, 93) 80%, rgb(164, 2, 164) 100%);
+    padding: 100px;
+}
+
+.anti-jpa--ending #quotes {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 100px;
+}
+
+#quotes .quote {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#quotes .quote .content,
+#quotes .quote .content i {
+    color: white;
+    opacity: 0.6;
+}
+
+#quotes .quote:nth-child(odd) {
+    align-self: flex-start;
+}
+
+#quotes .quote:nth-child(odd) img {
+    margin-right: 40px;
+}
+
+#quotes .quote:nth-child(even) {
+    align-self: flex-end;
+}
+
+#quotes .quote:nth-child(even) img {
+    margin-left: 40px;
+}
+
+#quotes .quote img {
+    width: 75px;
+    height: 75px;
+    border-radius: 999px;
+}
+
+#cest-fini {
+    border-radius: 30px;
+    margin: 40px;
+    padding: 40px;
+
+    background: #0b0b0b;
+    box-shadow: 20px 20px 20px black;
+
+    border: 3px solid #2a2a2a;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.25);
+    border: 5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+
+    padding: 30px;
+    margin: 60px 0;
+
+    opacity: 0.8;
+    text-align: right;
+}
+
+@keyframes headerGlow {
+    0% {
+        transform: scale(1) rotate(-2.5deg);
+    }
+
+    50% {
+        color: rgb(255, 121, 121);
+        text-shadow: 0 0 10px red;
+        transform: scale(1.5) rotate(4deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(-2.5deg);
+    }
+}
+
+@keyframes evilTextShadowVar1 {
+    0% {
+        text-shadow:
+            40px 40px 1px rgba(147, 46, 46, 0.5),
+            40px 40px 20px rgba(147, 46, 46, 0.75),
+            -40px -40px 1px rgba(255, 59, 59, 0.5),
+            -40px -40px 20px rgba(255, 59, 59, 0.75),
+            0 0 10px red;
+        color: rgb(255, 175, 175);
+    }
+
+    50% {
+        text-shadow:
+            -40px -40px 1px rgba(147, 46, 46, 0.5),
+            -40px -40px 20px rgba(147, 46, 46, 0.75),
+            40px 40px 1px rgba(255, 59, 59, 0.5),
+            40px 40px 20px rgba(255, 59, 59, 0.75),
+            -1px -1px 0 red,
+            1px -1px 0 red,
+            -1px 1px 0 red,
+            1px 1px 0 red,
+            5px 0px 10px red;
+
+        color: black;
+        transform: scale(1.5) rotate(90deg);
+    }
+
+    100% {
+        text-shadow:
+            40px 40px 1px rgba(147, 46, 46, 0.5),
+            40px 40px 20px rgba(147, 46, 46, 0.75),
+            -40px -40px 1px rgba(255, 59, 59, 0.5),
+            -40px -40px 20px rgba(255, 59, 59, 0.75),
+            0 0 10px red;
+        color: rgb(255, 175, 175);
+    }
+}
+
+@keyframes evilTextShadowVar2 {
+    0% {
+        text-shadow:
+            40px 40px 1px rgba(147, 46, 46, 0.5),
+            40px 40px 20px rgba(147, 46, 46, 0.75),
+            -40px -40px 1px rgba(255, 59, 59, 0.5),
+            -40px -40px 20px rgba(255, 59, 59, 0.75),
+            0 0 10px red;
+    }
+
+    50% {
+        text-shadow:
+            -40px -40px 1px rgba(147, 46, 46, 0.5),
+            -40px -40px 20px rgba(147, 46, 46, 0.75),
+            40px 40px 1px rgba(255, 59, 59, 0.5),
+            40px 40px 20px rgba(255, 59, 59, 0.75),
+            0 0 10px red;
+
+        transform: scale(1.1) translateY(-40px) rotate(5deg);
+    }
+
+    100% {
+        text-shadow:
+            40px 40px 1px rgba(147, 46, 46, 0.5),
+            40px 40px 20px rgba(147, 46, 46, 0.75),
+            -40px -40px 1px rgba(255, 59, 59, 0.5),
+            -40px -40px 20px rgba(255, 59, 59, 0.75),
+            0 0 10px red;
+    }
+}
+
+@keyframes evilGlow {
+    0% {
+        color: black;
+        text-shadow:
+            -1px -1px 0 gray,
+            1px -1px 0 gray,
+            -1px 1px 0 gray,
+            1px 1px 0 gray,
+            0 0 10px rgb(154, 154, 154);
+    }
+
+    50% {
+        color: rgb(100, 0, 0);
+        text-shadow:
+            -1px -1px 0 red,
+            1px -1px 0 red,
+            -1px 1px 0 red,
+            1px 1px 0 red,
+            0 5px 30px red;
+        transform: scale(1.1) rotate(10deg);
+    }
+
+    100% {
+        color: black;
+        text-shadow:
+            -1px -1px 0 gray,
+            1px -1px 0 gray,
+            -1px 1px 0 gray,
+            1px 1px 0 gray,
+            0 0 10px rgb(154, 154, 154);
+    }
+}
+
+@keyframes ominousGlow {
+    0% {
+        border-color: rgb(255, 170, 244);
+        box-shadow: 0 0 20px rgb(255, 0, 221);
+        border-radius: 10px;
+    }
+
+    50% {
+        border-color: rgb(255, 56, 56);
+        box-shadow: 0 0 30px rgb(255, 56, 56);
+        border-radius: 20px;
+    }
+
+    100% {
+        border-color: rgb(255, 170, 244);
+        box-shadow: 0 0 20px rgb(255, 0, 221);
+        border-radius: 10px;
+    }
+}
+
+@keyframes nodeGlow {
+    0% {
+        box-shadow: 0 0 10px white;
+    }
+
+    50% {
+        box-shadow: 0 0 20px white;
+    }
+
+    100% {
+        box-shadow: 0 0 10px white;
+    }
+}
+
+@keyframes rotatetationDevice {
+    0% {
+        transform: 0;
+    }
+
+    50% {
+        transform: rotate(180deg) scaleX(-2);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1080px) {
+    body {
+        font-size: 20px;
+    }
+
+    .anti-jpa--explanation {
+        padding: 50px;
+    }
+
+    .anti-jpa--intro #ominous-header h1 {
+        font-size: 15px;
+    }
+
+    .anti-jpa--truth #header h1 {
+        font-size: 30px;
+    }
+
+    .actions-left,
+    .actions-right {
+        max-width: 80vw;
+        font-size: 15px;
+    }
+
+    .server-display .profile a button {
+        font-size: 15px;
+    }
+
+    .server-display a {
+        font-size: 15px;
+    }
+
+    #timeline .segment {
+        flex-direction: column;
+    }
+
+    #timeline .segment::before {
+        display: none;
+    }
+
+    #timeline .segment .content {
+        width: 95%;
+    }
+
+    #timeline .segment img {
+        width: 80%;
+    }
+
+    #timeline .segment .content {
+        margin: 60px 0;
+    }
+
+    #timeline .segment:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+    #quotes .quote {
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .anti-jpa--ending #quotes {
+        margin: 50px 0;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #666, #333);
+    border-radius: 999px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #aaa, #555);
+}
