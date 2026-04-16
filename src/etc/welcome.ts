@@ -124,15 +124,17 @@ type Star = {
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('#welcome--profile #name-display')!;
     const animationToggle = container.querySelector('button')!;
-    const canvas = container.querySelector('canvas')!;
-    const ctx = canvas.getContext('2d')!;
-
-    let enableAnimation = true;
 
     animationToggle.addEventListener('click', () => {
         enableAnimation = !enableAnimation;
         animationToggle.textContent = enableAnimation ? '⏸ Pause animation' : '▶ Resume animation';
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('#welcome--profile #name-display')!;
+    const canvas = container.querySelector('canvas')!;
+    const ctx = canvas.getContext('2d')!;
 
     function resizeCanvas() {
         const rect = container.getBoundingClientRect();
@@ -177,28 +179,28 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeCanvas();
 
     function animateStars() {
-        if (enableAnimation) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if (!enableAnimation) return;
 
-            for (let i = 0; i < stars.length; i++) {
-                const star = stars[i];
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                star.y -= star.speed;
+        for (let i = 0; i < stars.length; i++) {
+            const star = stars[i];
 
-                if (star.y < -10) {
-                    stars[i] = createStar(false);
-                    continue;
-                }
+            star.y -= star.speed;
 
-                ctx.globalAlpha = star.opacity;
-                ctx.fillStyle = 'white';
-                ctx.shadowBlur = 20;
-                ctx.shadowColor = 'white';
-
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-                ctx.fill();
+            if (star.y < -10) {
+                stars[i] = createStar(false);
+                continue;
             }
+
+            ctx.globalAlpha = star.opacity;
+            ctx.fillStyle = 'white';
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = 'white';
+
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+            ctx.fill();
         }
 
         requestAnimationFrame(animateStars);
@@ -225,23 +227,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function animateFont() {
-        if (enableAnimation) {
-            const currentFont = fonts[fontIndex];
-            const currentFontWeight = pickRandom(['100', '200', '300', '400']);
-            const currentFontStyle = pickRandom(['normal', 'italic']);
+        if (!enableAnimation) return;
 
-            const scale = enableOptimization ? randInt(75, 100) / baseFontSizePx : randInt(100, 150) / baseFontSizePx;
+        const currentFont = fonts[fontIndex];
+        const currentFontWeight = pickRandom(['100', '200', '300', '400']);
+        const currentFontStyle = pickRandom(['normal', 'italic']);
 
-            for (const letter of letters) {
-                letter.style.fontFamily = currentFont;
-                letter.style.fontWeight = currentFontWeight;
-                letter.style.fontStyle = currentFontStyle;
-            }
+        const scale = enableOptimization ? randInt(75, 100) / baseFontSizePx : randInt(100, 150) / baseFontSizePx;
 
-            word.style.transform = `scale(${scale})`;
-
-            fontIndex = (fontIndex + 1) % fonts.length;
+        for (const letter of letters) {
+            letter.style.fontFamily = currentFont;
+            letter.style.fontWeight = currentFontWeight;
+            letter.style.fontStyle = currentFontStyle;
         }
+
+        word.style.transform = `scale(${scale})`;
+
+        fontIndex = (fontIndex + 1) % fonts.length;
     }
 
     setInterval(animateFont, animationIntervalMs);
