@@ -1,6 +1,6 @@
-type FontIdentifier = 'geist' | 'space-grotesk' | 'jetbrains-mono' | 'fira-code' | 'fairfax-hd' | 'brass-mono';
+type FontIdentifier = 'geist' | 'space-grotesk' | 'jetbrains-mono' | 'fira-code' | 'fairfax-hd' | 'noto-sans' | 'brass-mono';
 
-const fonts: FontIdentifier[] = ['geist', 'space-grotesk', 'jetbrains-mono', 'fira-code', 'fairfax-hd', 'brass-mono'];
+const fonts: FontIdentifier[] = ['geist', 'space-grotesk', 'jetbrains-mono', 'fira-code', 'fairfax-hd', 'noto-sans', 'brass-mono'];
 const currentFont: FontIdentifier = 'geist';
 
 document.addEventListener('DOMContentLoaded', () => {
