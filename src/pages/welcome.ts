@@ -1,4 +1,4 @@
-import { pingServer } from '../ping-server';
+import { pingServer } from '../ping-server.js';
 
 function isMobileDevice() {
     return (navigator as any).userAgentData?.mobile || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || ('ontouchstart' in window && navigator.maxTouchPoints > 0);
@@ -39,10 +39,8 @@ window.addEventListener('resize', updateOptimization);
 document.addEventListener('DOMContentLoaded', async () => {
     const elements = [
         //
-        '#welcome--intro #header',
-        '#welcome--intro #message',
+        '#welcome--intro #introduction',
         '#welcome--intro #buttons',
-        '#welcome--intro #down',
     ];
 
     const htmlElements = elements

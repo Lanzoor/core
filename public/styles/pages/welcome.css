@@ -41,7 +41,6 @@
         background: var(--welcome--intro-bg);
         backdrop-filter: blur(2px);
         min-height: 90vh;
-        padding: 5vh 0 20vh;
     }
 
     #welcome--intro div.inactive {
@@ -59,46 +58,24 @@
         pointer-events: all;
     }
 
-    #welcome--intro #down.active {
-        animation: floatAnimation ease-in-out 2s infinite;
-    }
+    #welcome--intro #introduction {
+        background: #111;
+        box-shadow: 0 20px 20px var(--inv-50);
 
-    #welcome--intro #header {
-        margin: 1em 3em;
-        text-align: left;
         display: flex;
-        flex-direction: column;
-    }
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
 
-    #welcome--intro #message {
-        margin: 1em 3em;
-        padding: 1em;
-        width: 800px;
-        max-width: 80vw;
-
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.75));
-        background-size: 150% 150%;
-        background-position: 0% 0%;
-
+        margin: 2%;
+        padding: 4%;
         border-radius: 30px;
-        border: 3px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.5);
     }
 
-    #welcome--intro #message #emphasized {
-        font-size: 40px;
-    }
-
-    #welcome--intro #message:hover {
-        border-color: rgba(255, 255, 255, 0.75);
-        background-position: 100% 100%;
-        box-shadow:
-            20px 40px 20px rgba(0, 0, 0, 0.5),
-            inset 0 0 20px rgba(0, 0, 0, 0.5);
-    }
-
-    #welcome--intro #message h1 {
-        margin: 0;
+    #welcome--intro #introduction img {
+        max-width: 20%;
+        max-height: auto;
+        border-radius: 10px;
     }
 
     #welcome--intro #buttons {

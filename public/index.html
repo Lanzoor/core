@@ -14,23 +14,34 @@
     <meta name="theme-color" content="#6f27f5">
 
     <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/subdirectories.css" />
-    <link rel="stylesheet" href="/styles/welcome.css" />
-    <link rel="stylesheet" href="/styles/panels/top-panel.css" />
+    <link rel="stylesheet" href="/styles/structure/subdirectories.css" />
+    <link rel="stylesheet" href="/styles/pages/welcome.css" />
+    <link rel="stylesheet" href="/styles/components/top-panel.css" />
 </head>
 
 <body>
     <div class="section fixed-bg centered" id="welcome--intro">
-        <div id="header">
-            <h2>lanzoor.dev</h2>
-            <h1>- Welcome to my website! -</h1>
-        </div>
+        <div id="introduction">
+            <div id="header">
+                <h1>lanzoor.dev</h1>
 
-        <div id="message">
-            <b id="emphasized">Hello there! 👋</b><br>
-            <hr>
-            I want to welcome you to my own website!<br>
-            Make yourself comfortable, and feel free to explore on your own.
+                <b>Welcome to my website! 👋</b><br>
+                I'm <i>Lanzoor</i>, a student who somehow ended up collecting languages,
+                programming projects, strange ideas, and probably too many unfinished experiments.
+                If you want to know who I am,
+                keep scrolling down.<br>
+                This site is part portfolio, part archive, part
+                laboratory, and part digital attic.<br>
+                You'll find projects, language experiments, tools, and whatever else that managed to escape my
+                brain.<br><br>
+
+                <b>Otherwise, make yourself at home, explore things at your own pace and have fun! ♥</b><br>
+                <span class="dim">This site is still under construction, so you will often stumble upon incomplete or
+                    broken pages / features.
+                    Thank you for your understanding!</span>
+            </div>
+
+            <img src="/assets/iris-modern.png">
         </div>
 
         <div id="buttons">
@@ -41,14 +52,6 @@
             <button id="navigation-button" class="navigation-toggle">
                 Open navigation panel
             </button>
-        </div>
-
-        <div id="down">
-            <p><b>You can keep going down!</b></p>
-            <svg id="down-arrow" viewBox="0 0 24 12" fill="none" stroke="white" stroke-width="2"
-                xmlns="http://www.w3.org/2000/svg">
-                <polyline points="2 2 12 10 22 2" />
-            </svg>
         </div>
     </div>
 
@@ -129,12 +132,12 @@
         <footer>
             Website made with <b>HTML, CSS, JavaScript / Typescript and love</b> by <code>lanzoor</code>!<br>
             <span class="dim">Last updated @ <code id="update-display">failed to load</code> | version
-                <code>v26.15.2</code></span>
+                <code>v26.16.0</code></span>
         </footer>
     </div>
 
-    <script type="module" src="/out/top-panel.js"></script>
-    <script type="module" src="/out/etc/welcome.js"></script>
+    <script type="module" src="/out/components/top-panel/TopPanel.js"></script>
+    <script type="module" src="/out/pages/welcome.js"></script>
 </body>
 
 </html>

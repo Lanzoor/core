@@ -3,21 +3,29 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import fs from 'fs';
 
-function getEntries(dir: any) {
-    const entries = {};
+function getEntries(dir: string) {
+    const entries: Record<string, string> = {};
 
-    function scan(currentDir: any) {
+    function scan(currentDir: string) {
         for (const file of fs.readdirSync(currentDir)) {
             const fullPath = path.join(currentDir, file);
             const stat = fs.statSync(fullPath);
 
             if (stat.isDirectory()) {
                 scan(fullPath);
-            } else if (file.endsWith('.ts') || file.endsWith('.tsx')) {
-                const relative = path.relative(dir, fullPath);
-                const name = relative.replace(/\.tsx?$/, '').replace(/\\/g, '/');
-                (entries as any)[name] = fullPath;
+                continue;
             }
+
+            if (!file.endsWith('.ts') && !file.endsWith('.tsx')) {
+                continue;
+            }
+
+            const relative = path
+                .relative(dir, fullPath)
+                .replace(/\.tsx?$/, '')
+                .replace(/\\/g, '/');
+
+            entries[relative] = fullPath;
         }
     }
 
@@ -25,21 +33,31 @@ function getEntries(dir: any) {
     return entries;
 }
 
-const entries = getEntries(path.resolve(__dirname, 'src'));
+const componentsDir = path.resolve(__dirname, 'src/components');
 
 export default defineConfig({
     plugins: [react()],
     publicDir: false,
 
     build: {
-        outDir: 'public/out',
-        emptyOutDir: true,
+        outDir: 'public/out/components',
+        emptyOutDir: false,
         rollupOptions: {
-            input: entries,
-            external: [],
+            input: getEntries(componentsDir),
+
             output: {
-                entryFileNames: '[name].js',
                 format: 'es',
+                entryFileNames: '[name].js',
+
+                assetFileNames: (assetInfo) => {
+                    const name = assetInfo.name ?? '';
+
+                    if (name.endsWith('.css')) {
+                        return '[name][extname]';
+                    }
+
+                    return 'assets/[name][extname]';
+                },
             },
         },
     },

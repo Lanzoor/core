@@ -1,18 +1,18 @@
 {
     "name": "core",
     "private": true,
-    "version": "26.15.2",
+    "version": "26.16.0",
     "description": "The ultimate repository for all of Lanzoor's webpages, documents, and profiles.",
     "license": "ISC",
     "author": "Lanzoor",
     "type": "module",
     "scripts": {
+        "test": "echo \"info: ready to run!\"",
         "dev": "vite",
-        "build": "vite build",
         "preview": "vite preview",
-        "typecheck": "tsc --noEmit",
         "clean": "rm -rf public/out",
-        "test": "echo \"info: ready to run!\""
+        "build": "rm -rf public/out && tsc && vite build",
+        "typecheck": "tsc --noEmit"
     },
     "dependencies": {
         "@upstash/redis": "^1.36.2",

@@ -1,4 +1,4 @@
-import { pingServer } from '../ping-server';
+import { pingServer } from '../../ping-server.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const serverStatus = document.getElementById('server-status')!;
