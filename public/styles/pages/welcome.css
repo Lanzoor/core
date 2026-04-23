@@ -75,7 +75,7 @@
     #welcome--intro #introduction img {
         max-width: 20%;
         max-height: auto;
-        border-radius: 10px;
+        border-radius: 30px;
     }
 
     #welcome--intro #buttons {
@@ -142,53 +142,6 @@
         cursor: pointer;
     }
 
-    #welcome--intro #down {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        gap: 20px;
-
-        margin: 40px;
-        padding: 20px;
-
-        background: linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
-        box-shadow: 5px 10px 20px black;
-        border-radius: 20px;
-
-        max-width: 300px;
-    }
-
-    #welcome--intro #down p {
-        font-size: 20px;
-        user-select: none;
-
-        margin: 0;
-        padding: 0;
-        border-radius: 0;
-
-        background: none;
-    }
-
-    #welcome--intro #down svg {
-        border: none;
-        background: none;
-
-        min-width: 100px;
-        min-height: 75px;
-
-        width: max(10vh);
-        height: max(7.5vh);
-
-        transition: filter 0.5s ease;
-    }
-
-    #welcome--intro #down svg:hover {
-        filter: drop-shadow(0 0 20px white);
-        cursor: pointer;
-    }
-
     #welcome--profile {
         background: black;
     }
@@ -196,7 +149,6 @@
     #welcome--profile #name-display {
         user-select: none;
 
-        width: 100%;
         height: 750px;
 
         display: flex;
@@ -292,6 +244,24 @@
         height: 100%;
         pointer-events: none;
         z-index: 0;
+    }
+
+    #welcome--profile #name-description {
+        background: linear-gradient(135deg, #30055e, #043863);
+    }
+
+    #welcome--profile #nationality-description {
+        background: linear-gradient(135deg, #30055e, #043863);
+    }
+
+    #welcome--profile #nationality-description img {
+        width: 120px;
+        height: 120px;
+        transition: filter 0.5s ease;
+    }
+
+    #welcome--profile #nationality-description img:hover {
+        filter: drop-shadow(0 10px 10px black);
     }
 
     #connections {

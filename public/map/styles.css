@@ -16,7 +16,7 @@
         text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
     }
 
-    #map .map-section {
+    #map .flex-child {
         background: radial-gradient(circle at top, #333 0%, #222 55%, #222 100%);
         border: 2px solid #777;
 
@@ -27,10 +27,10 @@
 
         padding: 40px;
 
-        min-width: 30%;
+        min-width: 40%;
     }
 
-    #map .map-section h1 {
+    #map .flex-child h1 {
         font-size: 50px;
         margin: 0;
         margin-bottom: 30px;

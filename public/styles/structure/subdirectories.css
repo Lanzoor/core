@@ -285,22 +285,6 @@
             inset 0 0 7.5px rgba(255, 255, 255, 0.75);
     }
 
-    .aligned-left {
-        text-align: left;
-    }
-
-    .aligned-center {
-        text-align: center;
-    }
-
-    .aligned-right {
-        text-align: right;
-    }
-
-    .all-unset {
-        all: unset;
-    }
-
     .section {
         position: relative;
 
@@ -334,18 +318,6 @@
 
     .section.centered.vertically {
         vertical-align: middle;
-    }
-
-    .dim {
-        opacity: 0.6;
-    }
-
-    .dimmer {
-        opacity: 0.45;
-    }
-
-    .dimmest {
-        opacity: 0.3;
     }
 
     .tooltip {
@@ -401,16 +373,6 @@
         transform: translate(-50%, 0);
 
         transition: all 0.1s ease-in;
-    }
-
-    .flex-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        width: 100%;
-
-        overflow-x: auto;
     }
 
     input[type='text'].styled {

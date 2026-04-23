@@ -134,7 +134,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = container.querySelector('canvas')!;
     const ctx = canvas.getContext('2d')!;
 
-    function resizeCanvas() {
+    function createStar(initial = false): Star {
+        let opacityPercent = Math.random() * 80 + 20;
+        return {
+            x: Math.random() * canvas.width,
+            y: initial ? Math.random() * canvas.height : canvas.height + Math.random() * 50,
+            size: (Math.random() + 0.5) * 3,
+            opacity: opacityPercent / 100,
+            speed: (opacityPercent / 50) ** 1.25,
+        };
+    }
+
+    const stars: Star[] = [];
+
+    function drawStars() {
         const rect = container.getBoundingClientRect();
         const dpr = window.devicePixelRatio || 1;
 
@@ -155,42 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < starCount; i++) {
             stars.push(createStar(true));
         }
-    }
-
-    window.addEventListener('resize', () => {
-        resizeCanvas();
-    });
-
-    function createStar(initial = false): Star {
-        let opacityPercent = Math.random() * 80 + 20;
-        return {
-            x: Math.random() * canvas.width,
-            y: initial ? Math.random() * canvas.height : canvas.height + Math.random() * 50,
-            size: (Math.random() + 0.5) * 3,
-            opacity: opacityPercent / 100,
-            speed: (opacityPercent / 50) ** 1.25,
-        };
-    }
-
-    const stars: Star[] = [];
-
-    resizeCanvas();
-
-    function animateStars() {
-        if (!enableAnimation) return;
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        for (let i = 0; i < stars.length; i++) {
-            const star = stars[i];
-
-            star.y -= star.speed;
-
-            if (star.y < -10) {
-                stars[i] = createStar(false);
-                continue;
-            }
-
+        for (const star of stars) {
             ctx.globalAlpha = star.opacity;
             ctx.fillStyle = 'white';
             ctx.shadowBlur = 20;
@@ -200,11 +181,41 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
             ctx.fill();
         }
-
-        requestAnimationFrame(animateStars);
     }
 
-    animateStars();
+    window.addEventListener('resize', () => {
+        drawStars();
+    });
+
+    drawStars();
+
+    // function animateStars() {
+    //     if (!enableAnimation) return;
+
+    //     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    //     for (let i = 0; i < stars.length; i++) {
+    //         const star = stars[i];
+
+    //         star.y -= star.speed;
+
+    //         if (star.y < -10) {
+    //             stars[i] = createStar(false);
+    //             continue;
+    //         }
+
+    //         ctx.globalAlpha = star.opacity;
+    //         ctx.fillStyle = 'white';
+    //         ctx.shadowBlur = 20;
+    //         ctx.shadowColor = 'white';
+
+    //         ctx.beginPath();
+    //         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+    //         ctx.fill();
+    //     }
+    // }
+
+    // setInterval(animateStars, animationIntervalMs);
 });
 
 let letters: HTMLSpanElement[] = [];
@@ -216,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     word = document.getElementById('lanzoor-letters')!;
     letters = Array.from(document.querySelectorAll('#lanzoor-letters span')).map((element) => element as HTMLSpanElement);
 
-    fonts = ['JetBrains Mono', 'Space Grotesk', 'Fira Code', 'Fairfax HD', 'Brass Mono', 'Geist'];
+    fonts = ['JetBrains Mono', 'Space Grotesk', 'Fira Code', 'Fairfax HD', 'Brass Mono', 'Noto Sans', 'Geist'];
 
     fontIndex = 0;
 
@@ -228,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!enableAnimation) return;
 
         const currentFont = fonts[fontIndex];
-        const currentFontWeight = pickRandom(['100', '200', '300', '400']);
+        const currentFontWeight = pickRandom(['100', '200', '300']);
         const currentFontStyle = pickRandom(['normal', 'italic']);
 
         const scale = enableOptimization ? randInt(75, 100) / baseFontSizePx : randInt(100, 150) / baseFontSizePx;
