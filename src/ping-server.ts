@@ -6,7 +6,7 @@
 
 export async function pingServer(route: string, options?: RequestInit): Promise<any | undefined> {
     try {
-        const fetchRegex = /^https:\/\/www\.[^\/]+(\/[^\/]+)*$/;
+        const fetchRegex = /^https:\/\/(www|api)\.[^/]+(\/.*)?$/;
         if (!fetchRegex.test(route)) {
             console.warn(`Route ${route} did not match the recommended fetch API structure. This may cause unexpected behavior.`);
         }

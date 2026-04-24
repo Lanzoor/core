@@ -1,7 +1,7 @@
 {
     "name": "core",
     "private": true,
-    "version": "26.16.1",
+    "version": "26.17.0",
     "description": "Repository for my domain lanzoor.dev",
     "license": "ISC",
     "author": "Lanzoor",
@@ -10,9 +10,9 @@
         "test": "echo \"info: ready to run!\"",
         "dev": "vite",
         "preview": "vite preview",
-        "clean": "rm -rf public/out",
-        "build": "rm -rf public/out && tsc && vite build",
-        "typecheck": "tsc --noEmit"
+        "build": "vite build",
+        "check": "tsc --noEmit",
+        "clean": "rm -rf public/out"
     },
     "dependencies": {
         "@upstash/redis": "^1.36.2",

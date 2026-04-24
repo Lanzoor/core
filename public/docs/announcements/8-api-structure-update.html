@@ -1,0 +1,39 @@
+<title>API Structure Update Notice</title>
+
+<h1>API Structure Update Notice</h1>
+
+<p>
+    This announcement serves as a notice regarding several important changes to the API structure of this website.
+</p>
+
+<h2>Complete Separation</h2>
+
+<p>
+    The API directories have been fully moved from <code>core</code> to <code>core-api</code>, a completely separate git
+    repository.<br>
+    <b>
+        This change was made to ensure that all API routes are now hosted on
+        <code>api.lanzoor.dev</code> instead of
+        <code>lanzoor.dev/api</code>.
+    </b><br>
+    A redirect from <code>lanzoor.dev/api/*</code> to
+    <code>api.lanzoor.dev/*</code> has already been implemented for compatibility.<br>
+    However, starting on <i>June 1st, 2026</i>,
+    <b><code>lanzoor.dev/api/*</code> will be officially deprecated and will no longer be supported.</b><br>
+    If you are currently using any of my API services, please make sure to update your routes before the deadline.
+</p>
+
+<h2>Route Changes</h2>
+
+<p>
+    The following routes have been updated.
+    <b>
+        Previous routes will still remain functional until <i>June 1st, 2026</i>.
+    </b>
+</p>
+
+<ul>
+    <li>
+        <code>discord-status</code> → <code>status/discord</code>
+    </li>
+</ul>

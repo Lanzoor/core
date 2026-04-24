@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const userIDDisplay = document.querySelector('#discord-status #user-id')!;
     const statusDisplay = document.querySelector('#discord-status #status')!;
 
-    const discordStatusResult = await pingServer('https://www.lanzoor.dev/api/discord-status');
+    const discordStatusResult = await pingServer('https://api.lanzoor.dev/status/discord');
     if (discordStatusResult) {
         const discordUserID = discordStatusResult.data.discord_user.id;
 

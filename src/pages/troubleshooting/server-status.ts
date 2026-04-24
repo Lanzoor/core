@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function updateServerStatus() {
         try {
-            const fetchResult = await pingServer('https://www.lanzoor.dev/api/status');
+            const fetchResult = await pingServer('https://api.lanzoor.dev/status');
             if (fetchResult) {
                 serverStatus.textContent = '🟢 Online';
             } else {

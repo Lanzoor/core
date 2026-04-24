@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const html = await res.text();
 
             const cleanHTML = DOMPurify.sanitize(html, {
-                ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'blockquote', 'img', 'br', 'hr'],
-                ALLOWED_ATTR: ['href', 'target', 'src', 'alt', 'class'],
+                ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'blockquote', 'img', 'br', 'hr', 'code', 'pre'],
+                ALLOWED_ATTR: ['href', 'target', 'src', 'alt', 'class', 'id'],
                 FORBID_TAGS: ['script', 'style', 'iframe', 'object', 'embed'],
                 FORBID_ATTR: ['onerror', 'onload', 'onclick'],
             });
@@ -177,7 +177,11 @@ document.addEventListener('DOMContentLoaded', () => {
             container.innerHTML = cleanHTML;
         } catch (err) {
             console.error(err);
-            container.innerHTML = `<p>Failed to load announcement.</p>`;
+            loader.style.display = 'none';
+            viewer.style.display = 'block';
+            container.innerHTML = `
+<h1>Failed to load announcement.</h1>
+`;
         }
     }
 

@@ -20,8 +20,12 @@ function getEntries(dir: string) {
                 continue;
             }
 
+            if (file.endsWith('.d.ts')) {
+                continue;
+            }
+
             const relative = path
-                .relative(dir, fullPath)
+                .relative(path.resolve(__dirname, 'src'), fullPath)
                 .replace(/\.tsx?$/, '')
                 .replace(/\\/g, '/');
 
@@ -33,27 +37,30 @@ function getEntries(dir: string) {
     return entries;
 }
 
-const componentsDir = path.resolve(__dirname, 'src/components');
+const srcDir = path.resolve(__dirname, 'src');
 
 export default defineConfig({
     plugins: [react()],
     publicDir: false,
 
     build: {
-        outDir: 'public/out/components',
-        emptyOutDir: false,
+        outDir: 'public/out',
+        emptyOutDir: true,
+
         rollupOptions: {
-            input: getEntries(componentsDir),
+            input: getEntries(srcDir),
 
             output: {
                 format: 'es',
+
                 entryFileNames: '[name].js',
+                chunkFileNames: 'chunks/[name].js',
 
                 assetFileNames: (assetInfo) => {
                     const name = assetInfo.name ?? '';
 
                     if (name.endsWith('.css')) {
-                        return '[name][extname]';
+                        return 'styles/[name][extname]';
                     }
 
                     return 'assets/[name][extname]';

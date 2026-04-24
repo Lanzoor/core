@@ -4,7 +4,6 @@
         --document-text: #111;
 
         --document-text-bold: black;
-        --document-text-bold-hover: #333;
 
         --document-p-bg: rgba(0, 0, 0, 0.02);
 
@@ -17,8 +16,7 @@
         --document-bg: black;
         --document-text: #ccc;
 
-        --document-text-bold: #aaa;
-        --document-text-bold-hover: #777;
+        --document-text-bold: #ddd;
 
         --document-h1: #ddd;
 
@@ -29,6 +27,7 @@
 
     body {
         padding: 2%;
+        font-family: 'Noto Sans';
 
         background: var(--document-bg);
         color: var(--document-text);
@@ -49,11 +48,6 @@
         transition:
             text-shadow 0.2s,
             color 0.2s;
-    }
-
-    b:hover,
-    strong:hover {
-        color: var(--document-text-bold-hover);
     }
 
     table,
@@ -97,7 +91,7 @@
     h5,
     h6,
     th {
-        font-family: 'Space Grotesk';
+        font-family: 'Geist';
     }
 
     h1 {
