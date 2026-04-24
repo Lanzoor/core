@@ -1,4 +1,3 @@
-The ultimate repository for all of Lanzoor's webpages, documents, and profiles.
+Repository for my domain lanzoor.dev
 
 > Visit [https://lanzoor.dev](lanzoor.dev) for the website!
-
