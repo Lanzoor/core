@@ -5,7 +5,7 @@
 .vercel
 .vscode
 
-**/.env*.local
+**/.env*
 
 *.md
 !README.md
