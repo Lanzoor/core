@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
+import './TopPanel.css';
+
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = '/out/components/top-panel/TopPanel.css';
+document.head.appendChild(link);
+
 const isLoaded = Array.from(document.styleSheets).some((sheet) => {
     return sheet.href && sheet.href.includes('main.css');
 });

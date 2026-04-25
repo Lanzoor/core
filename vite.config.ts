@@ -60,7 +60,14 @@ export default defineConfig({
                     const name = assetInfo.name ?? '';
 
                     if (name.endsWith('.css')) {
-                        return 'styles/[name][extname]';
+                        const originalPath = assetInfo.originalFileName ?? '';
+                        if (originalPath) {
+                            const relative = path
+                                .relative(srcDir, originalPath)
+                                .replace(/\.tsx?$/, '')
+                                .replace(/\\/g, '/');
+                            return `${relative}[extname]`;
+                        }
                     }
 
                     return 'assets/[name][extname]';
