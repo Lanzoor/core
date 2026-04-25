@@ -1,3 +1,3 @@
-Repository for my domain lanzoor.dev
+# core
 
-> Visit [https://lanzoor.dev](lanzoor.dev) for the website!
+frontend repository for [https://lanzoor.dev](lanzoor.dev)

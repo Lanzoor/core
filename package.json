@@ -2,7 +2,7 @@
     "name": "core",
     "private": true,
     "version": "26.18.1",
-    "description": "Repository for my domain lanzoor.dev",
+    "description": "frontend repository for lanzoor.dev",
     "license": "ISC",
     "author": "Lanzoor",
     "type": "module",
