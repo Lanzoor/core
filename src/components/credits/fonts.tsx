@@ -83,6 +83,16 @@ const fonts = [
     },
 
     {
+        fontName: 'Noto Sans Mono',
+        internalName: 'noto-sans-mono',
+        creator: 'Google Fonts',
+        creatorUrl: 'https://fonts.google.com',
+        fontUrls: ['https://fonts.google.com/noto'],
+        loadMethod: 'Google Fonts',
+        usage: 'alternative primary, unicode support',
+    },
+
+    {
         fontName: 'Brass Mono Code',
         internalName: 'brass-mono',
         creator: 'fontsecapeter',

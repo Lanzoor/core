@@ -5,38 +5,33 @@
 
         --document-text-bold: black;
 
-        --document-p-bg: rgba(0, 0, 0, 0.02);
-
-        --document-h1: black;
+        --document-header: black;
 
         --document-th-bg: rgba(0, 0, 0, 0.075);
+        --document-hr-bg: #eee;
     }
 
     [data-theme='dark'] {
-        --document-bg: black;
-        --document-text: #ccc;
+        --document-bg: #111;
+        --document-text: #eee;
 
         --document-text-bold: #ddd;
 
-        --document-h1: #ddd;
-
-        --document-p-bg: rgba(255, 255, 255, 0.02);
+        --document-header: #ddd;
 
         --document-th-bg: rgba(255, 255, 255, 0.15);
+        --document-hr-bg: #333;
     }
 
     body {
-        padding: 2%;
-        font-family: 'Noto Sans';
+        padding: 4%;
+        font-family: 'Geist';
 
         background: var(--document-bg);
         color: var(--document-text);
     }
 
     p {
-        border-radius: 20px;
-        padding: 1em;
-        background: var(--document-p-bg);
         line-height: 1.75;
     }
 
@@ -91,48 +86,9 @@
     h5,
     h6,
     th {
-        font-family: 'Geist';
-    }
-
-    h1 {
-        /* color: rgb(214, 180, 255);
-    text-shadow: 0 0 10px rgb(157, 66, 255); */
-        color: var(--document-h1);
-
-        font-size: 40px;
-        padding-left: 10px;
-    }
-
-    h2 {
-        color: rgb(180, 134, 255);
-        text-shadow: 0 0 10px rgb(185, 64, 255);
-        font-size: 35px;
-        padding-left: 10px;
-    }
-
-    h3 {
-        color: rgb(122, 99, 203);
-        text-shadow: 0 0 5px rgb(140, 53, 255);
-    }
-
-    h3 {
-        font-size: 30px;
-        padding-left: 10px;
-    }
-
-    h4 {
-        color: rgb(70, 90, 130);
-        text-shadow: 0 0 2.5px rgb(70, 90, 130);
-        font-size: 25px;
-        padding-left: 10px;
-    }
-
-    h1,
-    h2,
-    h3 {
-        padding-top: 5px;
-        padding-bottom: 5px;
-        margin-left: 0.5em;
+        color: var(--document-header);
+        font-family: 'Noto Sans Mono';
+        font-weight: 400;
     }
 
     a {
@@ -303,9 +259,9 @@
     hr {
         border: none;
         height: 5px;
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: var(--document-hr-bg);
         border-radius: 2px;
-        margin: 2em 0;
+        margin: 10px 0;
     }
 
     #portal {
