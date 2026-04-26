@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
+import { Core } from '@/main';
 
-import './TopPanel.css';
+// @ts-ignore
+import '@/components/top-panel/TopPanel.css';
 
-const link = document.createElement('link');
-link.rel = 'stylesheet';
-link.href = '/out/components/top-panel/TopPanel.css';
-document.head.appendChild(link);
+Core.loadCSS('/out/components/top-panel/TopPanel.css');
 
 const isLoaded = Array.from(document.styleSheets).some((sheet) => {
     return sheet.href && sheet.href.includes('main.css');
@@ -142,12 +141,12 @@ function PanelRoot() {
                 </nav>
 
                 <div id="top-panel--right">
-                    <img
+                    {/* <img
                         src="/assets/icons/settings.svg"
                         alt="⚙"
                         className="panel-icon"
                         onClick={() => toggleOpt()}
-                    />
+                    /> */}
                     <img
                         src="/assets/icons/hamburger.svg"
                         alt="☰"
@@ -189,7 +188,7 @@ function PanelRoot() {
                     </nav>
                 </div>
             </div>
-
+            {/*
             <div
                 id="option-overlay"
                 className={optOpen ? 'active' : ''}
@@ -228,7 +227,7 @@ function PanelRoot() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 }

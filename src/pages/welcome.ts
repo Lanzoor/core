@@ -1,20 +1,4 @@
-import { pingServer } from '../ping-server.js';
-
-function isMobileDevice() {
-    return (navigator as any).userAgentData?.mobile || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || ('ontouchstart' in window && navigator.maxTouchPoints > 0);
-}
-
-async function sleep(timeMs: number): Promise<any> {
-    return new Promise((p) => setTimeout(p, timeMs));
-}
-
-function pickRandom<T>(arr: T[]): T {
-    return arr[Math.floor(Math.random() * arr.length)];
-}
-
-function randInt(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+import { Core } from '@/main.js';
 
 let enableAnimation = true;
 let enableOptimization = false;
@@ -25,7 +9,7 @@ let baseFontSizePx = 80;
 const optimizationInfo = document.querySelector('#welcome--profile #name-display #optimization-indicator')!;
 
 function updateOptimization() {
-    enableOptimization = window.matchMedia('(max-width: 1080px)').matches || isMobileDevice();
+    enableOptimization = window.matchMedia('(max-width: 1080px)').matches || Core.isMobileDevice();
 
     animationIntervalMs = enableOptimization ? 2000 : 1000;
     baseFontSizePx = enableOptimization ? 40 : 80;
@@ -54,13 +38,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         element?.classList.add('inactive');
     });
 
-    await sleep(500);
+    await Core.sleep(500);
 
     for (const element of htmlElements) {
         element.classList.remove('inactive');
         element.classList.add('active');
 
-        await sleep(1000);
+        await Core.sleep(1000);
     }
 });
 
@@ -70,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     updateDisplay.textContent = updateFail;
     try {
-        const statusResult = await pingServer('https://www.lanzoor.dev/api/status');
+        const statusResult = await Core.pingServer('https://www.lanzoor.dev/api/status');
         if (statusResult) {
             updateDisplay.textContent = new Date(statusResult.lastUpdated).toLocaleString('en-US', { month: 'long', day: 'numeric', hour: 'numeric' });
         } else {
@@ -89,7 +73,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const userIDDisplay = document.querySelector('#discord-status #user-id')!;
     const statusDisplay = document.querySelector('#discord-status #status')!;
 
-    const discordStatusResult = await pingServer('https://api.lanzoor.dev/status/discord');
+    const discordStatusResult = await Core.pingServer('https://api.lanzoor.dev/status/discord');
     if (discordStatusResult) {
         const discordUserID = discordStatusResult.data.discord_user.id;
 
@@ -239,10 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!enableAnimation) return;
 
         const currentFont = fonts[fontIndex];
-        const currentFontWeight = pickRandom(['100', '200', '300']);
-        const currentFontStyle = pickRandom(['normal', 'italic']);
+        const currentFontWeight = Core.pickRandom(['100', '200', '300']);
+        const currentFontStyle = Core.pickRandom(['normal', 'italic']);
 
-        const scale = enableOptimization ? randInt(75, 100) / baseFontSizePx : randInt(100, 150) / baseFontSizePx;
+        const scale = enableOptimization ? Core.randInt(75, 100) / baseFontSizePx : Core.randInt(100, 150) / baseFontSizePx;
 
         for (const letter of letters) {
             letter.style.fontFamily = currentFont;

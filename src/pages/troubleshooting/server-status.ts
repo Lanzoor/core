@@ -1,4 +1,4 @@
-import { pingServer } from '../../ping-server.js';
+import { Core } from '@/main.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const serverStatus = document.getElementById('server-status')!;
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function updateServerStatus() {
         try {
-            const fetchResult = await pingServer('https://api.lanzoor.dev/status');
+            const fetchResult = await Core.pingServer('https://api.lanzoor.dev/status');
             if (fetchResult) {
                 serverStatus.textContent = '🟢 Online';
             } else {

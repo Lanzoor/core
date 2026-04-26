@@ -46,4 +46,27 @@ export namespace Core {
             });
         });
     }
+
+    export function loadCSS(href: string) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+    }
+
+    export function pickRandom<T>(arr: T[]): T {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    export function randInt(min: number, max: number): number {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    export function isMobileDevice() {
+        return (navigator as any).userAgentData?.mobile || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || ('ontouchstart' in window && navigator.maxTouchPoints > 0);
+    }
+
+    export async function sleep(timeMs: number): Promise<any> {
+        return new Promise((p) => setTimeout(p, timeMs));
+    }
 }
