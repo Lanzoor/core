@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { createRoot } from 'react-dom/client';
 
 type Font = {
@@ -123,7 +123,7 @@ function FontDisplay({ font }: { font: Font }) {
             </a>
             {' | '}
             {font.fontUrls.map((url, i) => (
-                <React.Fragment key={url}>
+                <Fragment key={url}>
                     <a
                         href={url}
                         target="_blank"
@@ -132,7 +132,7 @@ function FontDisplay({ font }: { font: Font }) {
                         {font.fontUrls.length === 1 ? 'link' : `link ${i + 1}`}
                     </a>
                     {i < font.fontUrls.length - 1 && ' | '}
-                </React.Fragment>
+                </Fragment>
             ))}
             <br />
             Loaded via <i>{font.loadMethod}</i> <br />
@@ -168,5 +168,84 @@ function FontCreditsRoot() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('font-grid')!;
+    if (!root) return;
+
     createRoot(root).render(<FontCreditsRoot />);
+});
+function FontButton({ font, selected, onClick }: { font: Font; selected: boolean; onClick: () => void }) {
+    return (
+        <button
+            className={`font-button ${font.internalName} ${selected ? 'selected' : ''}`}
+            onClick={onClick}
+        >
+            {font.fontName}
+        </button>
+    );
+}
+
+function FontTestingRoot() {
+    const [selectedFont, setSelectedFont] = useState('Geist');
+    const [fontWeight, setFontWeight] = useState('300');
+    const [italic, setItalic] = useState(false);
+
+    useEffect(() => {
+        const fontDemo = document.querySelector('#demo') as HTMLDivElement | null;
+
+        if (!fontDemo) return;
+
+        fontDemo.className = '';
+        fontDemo.classList.add('active');
+        fontDemo.classList.add(selectedFont);
+
+        fontDemo.style.fontWeight = fontWeight ?? '300';
+        fontDemo.style.fontStyle = italic ? 'italic' : 'normal';
+    }, [selectedFont, fontWeight, italic]);
+
+    return (
+        <>
+            <h1>Font Options</h1>
+            Select a font using the buttons below.
+            <div id="font-buttons">
+                {fonts.map((font) => (
+                    <FontButton
+                        key={font.internalName}
+                        font={font}
+                        selected={selectedFont === font.internalName}
+                        onClick={() => setSelectedFont(font.internalName)}
+                    />
+                ))}
+            </div>
+            You can also select the font weight.
+            <input
+                type="text"
+                className="styled"
+                id="font-weight-input"
+                placeholder="ex) 300, 700, etc."
+                autoComplete="off"
+                value={fontWeight}
+                onChange={(e) => setFontWeight(e.target.value)}
+            />
+            <br />
+            Italic:
+            <label
+                className="switch"
+                id="font-style-input"
+            >
+                <input
+                    type="checkbox"
+                    checked={italic}
+                    onChange={(e) => setItalic(e.target.checked)}
+                />
+
+                <span className="slider"></span>
+            </label>
+        </>
+    );
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const root = document.getElementById('font-options');
+    if (!root) return;
+
+    createRoot(root).render(<FontTestingRoot />);
 });

@@ -14,12 +14,11 @@
     <meta name="theme-color" content="#6f27f5">
 
     <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/structure/subdirectories.css" />
     <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
-    <div class="section fixed-bg centered" id="welcome--intro">
+    <section class="fixed-bg centered" id="welcome--intro">
         <div id="introduction">
             <div id="header">
                 <h1>lanzoor.dev</h1>
@@ -52,10 +51,10 @@
                 Open navigation panel
             </button>
         </div>
-    </div>
+    </section>
 
-    <div class="section fixed-bg no-padding centered" id="welcome--profile">
-        <div class="section" id="name-display">
+    <section class="fixed-bg no-padding centered" id="welcome--profile">
+        <section id="name-display">
             <canvas></canvas>
 
             <div id="lanzoor-letters">
@@ -71,10 +70,9 @@
             <div id="optimization-indicator">Optimization enabled</div>
 
             <button>⏸ Pause animation</button>
+        </section>
 
-        </div>
-
-        <div class="section" id="name-description">
+        <section id="name-description">
             Welp, my name is <b>Lanzoor</b>! <span class="dim">(If you couldn't tell already.)</span><br>
             I just thought of the name randomly when I was really young or something.<br>
             The name is supposed to be pronounced like
@@ -82,9 +80,9 @@
                 /lɑn:.'zoʊɹ/
             </span> in IPA,
             or 'lan-ZOr' in human language.
-        </div>
+        </section>
 
-        <div class="section" id="nationality-description">
+        <section id="nationality-description">
             <div class="flex-row">
                 <h1>Nationality: <b>South Korea</b></h1>
 
@@ -96,10 +94,10 @@
                 That said, I am currently considering studying abroad.<br>
                 <span class="dim">(btw i do have some... <i>opinions</i> about South Korea.)</span>
             </p>
-        </div>
-    </div>
+        </section>
+    </section>
 
-    <div class="section fixed-bg" id="connections">
+    <section class="fixed-bg" id="connections">
         <div id="container">
             <div id="socials">
                 <h1>Socials</h1><br>
@@ -147,14 +145,17 @@
         </div>
 
         <p class="with-bg">
-            ⚠ Please do not spam or try to scam me, you <i>will</i> get <b>ignored, blocked and reported without any
+            ⚠ Please do not spam or try to scam me, you <i>will</i> get <b>ignored, blocked and
+                reported without any
                 warnings.</b><br>
-            I will try to respond to your inquiry as soon as possible, but <b>I do recommend using Discord for most
+            I will try to respond to your inquiry as soon as possible, but <b>I do recommend using
+                Discord for most
                 inquiries!</b>
         </p>
 
         <footer>
-            Website made with <b>HTML, CSS, JavaScript / Typescript and love</b> by <code>lanzoor</code>!<br>
+            Website made with <b>HTML, CSS, JavaScript / Typescript and love</b> by
+            <code>lanzoor</code>!<br>
             <span class="dim">
                 Last updated @
                 <code id="update-display">
@@ -165,7 +166,7 @@
                 </code>
             </span>
         </footer>
-    </div>
+    </section>
 
     <script type="module" src="/out/components/top-panel/TopPanel.js"></script>
     <script type="module" src="/out/pages/welcome.js"></script>

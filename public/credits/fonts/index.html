@@ -8,12 +8,11 @@
     <title>Special Thanks | lanzoor.dev</title>
 
     <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/structure/subdirectories.css" />
     <link rel="stylesheet" href="/credits/fonts/styles.css" />
 </head>
 
 <body>
-    <div class="section stretched" id="credits-fonts--intro">
+    <section class="stretched" id="credits-fonts--intro">
         <h1>Fonts</h1>
 
         <div class="description">
@@ -43,36 +42,19 @@
                 for compatiabillity purposes.<br>
             </span>
         </div>
-    </div>
+    </section>
 
-    <div class="section no-padding" id="credits-fonts--font-showcase">
-        <div id="font-grid" class="flex-grid">
-        </div>
-    </div>
+    <section class="no-padding" id="credits-fonts--font-showcase">
+        <div id="font-grid" class="flex-grid">Loading fonts...</div>
+    </section>
 
-    <div class="section" id="credits-fonts--font-testing">
+    <section id="credits-fonts--font-testing">
         <p>
             You can try out these fonts for yourself below! <b>Select a font via the buttons below to get
-                started.</b><br>
-            You can also select the font weight: <input type="text" class="styled" id="font-weight-input"
-                placeholder="ex) 300, 700, etc." autocomplete="off"><br>
-
-            Italic: <label class="switch" id="font-style-input">
-                <input type="checkbox" />
-                <span class="slider"></span>
-            </label>
+                started.</b>
         </p>
 
-        <div id="font-buttons">
-            <button class="font-button geist">Geist</button>
-            <button class="font-button space-grotesk">Space Grotesk</button>
-            <button class="font-button jetbrains-mono">JetBrains Mono</button>
-            <button class="font-button fira-code">Fira Code</button>
-            <button class="font-button fairfax-hd">Fairfax HD</button>
-            <button class="font-button noto-sans">Noto Sans</button>
-            <button class="font-button noto-sans-mono">Noto Sans Mono</button>
-            <button class="font-button brass-mono">Brass Mono</button>
-        </div>
+        <div id="font-options">Loading font options...</div>
 
         <p id="demo">
             The quick brown fox jumps over the lazy dogs.<br><br>
@@ -82,7 +64,7 @@
             a b c d e f g h i j k l m n o p q r s t u v w x y z<br><br>
 
             <span class="dim">numbers</span><br>
-            0 1 2 3 4 5 6 7 8 9 ₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ½ ¼ ¾ ↋ ↊ ૪<br><br>
+            0 1 2 3 4 5 6 7 8 9 ₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ½ ¼ ¾ ↊ ↋ ૪<br><br>
 
             <span class="dim">monospace ligatures</span><br>
             -- --- == === != !== =!= =:= =/= &lt;= &gt;= &amp;&amp; &amp;&amp;&amp; &amp;= ++ +++ *** ;; !! ?? ??? ?: ?.
@@ -160,10 +142,9 @@
         <footer>
             - Thank you font designers for creating these amazing fonts! -
         </footer>
-    </div>
+    </section>
 
     <script type="module" src="/out/components/top-panel/TopPanel.js"></script>
-    <script type="module" src="/out/pages/credits/fonts.js"></script>
     <script type="module" src="/out/components/credits/fonts.js"></script>
 </body>
 
