@@ -15,17 +15,19 @@ if (!isLoaded) {
     console.warn('The top panel script was invoked, but required styles were not loaded.');
 }
 
-type Destination = {
+type Context = 'inline-links' | 'panel-links';
+type Link = {
     link: string;
     name: string;
-    children?: Destination[];
+    context?: Context[];
+    children?: Link[];
 };
 
 const themes: string[] = ['dark', 'light'];
 
-const destinations: Destination[] = [
+const destinations: Link[] = [
     { link: '/', name: 'Welcome!' },
-    { link: '/map', name: 'Site Map' },
+    { link: '/map', name: 'Site Map', context: ['panel-links'] },
     {
         link: '/projects',
         name: 'Projects',
@@ -135,7 +137,8 @@ function PanelRoot() {
                     {destinations.map((d, i) => (
                         <Destination
                             key={i}
-                            {...d}
+                            value={d}
+                            context="inline-links"
                         />
                     ))}
                 </nav>
@@ -180,8 +183,8 @@ function PanelRoot() {
                             {destinations.map((d, i) => (
                                 <Destination
                                     key={i}
-                                    {...d}
-                                    inline={false}
+                                    value={d}
+                                    context="panel-links"
                                 />
                             ))}
                         </ul>
@@ -232,32 +235,33 @@ function PanelRoot() {
     );
 }
 
-function Destination({ link, name, children, inline = true }: Destination & { inline?: boolean }) {
+function Destination({ value, context }: { value: Link; context?: Context }) {
     const [open, setOpen] = useState(false);
+    const valueContext = value.context ?? ['inline-links', 'panel-links'];
 
-    if (inline) {
+    if (context == 'inline-links' && valueContext.includes('inline-links')) {
         return (
             <div>
                 <a
-                    href={link}
-                    target={link.startsWith('http') ? '_blank' : '_self'}
+                    href={value.link}
+                    target={value.link.startsWith('http') ? '_blank' : '_self'}
                 >
-                    {name}
+                    {value.name}
                 </a>
             </div>
         );
-    } else {
+    } else if (context == 'panel-links' && valueContext.includes('panel-links')) {
         return (
             <>
                 <li>
-                    <div onClick={() => children && setOpen(!open)}>
+                    <div onClick={() => value.children && setOpen(!open)}>
                         <a
-                            href={children ? undefined : link}
-                            target={link.startsWith('http') ? '_blank' : '_self'}
+                            href={value.children ? undefined : value.link}
+                            target={value.link.startsWith('http') ? '_blank' : '_self'}
                         >
-                            {name}
+                            {value.name}
                         </a>
-                        {children && (
+                        {value.children && (
                             <img
                                 src="/assets/icons/caret-down.svg"
                                 alt="▼"
@@ -267,13 +271,13 @@ function Destination({ link, name, children, inline = true }: Destination & { in
                     </div>
                 </li>
 
-                {children && open && (
+                {value.children && open && (
                     <ul className={`dropdown${open ? ' open' : ''}`}>
-                        {children.map((c, i) => (
+                        {value.children.map((d, i) => (
                             <Destination
                                 key={i}
-                                {...c}
-                                inline={false}
+                                value={d}
+                                context="panel-links"
                             />
                         ))}
                     </ul>

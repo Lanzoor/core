@@ -49,9 +49,9 @@
         font-style: italic;
         font-size: 200px;
         margin: 0;
-        color: var(--mono);
+        color: var(--primary);
 
-        text-shadow: 0 0 20px var(--mono-25);
+        text-shadow: 0 0 20px var(--primary-25);
 
         z-index: 2;
     }
@@ -60,7 +60,7 @@
     #credits-fonts--font-testing p {
         background: radial-gradient(circle at 50% -100%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.75));
         border-radius: 30px;
-        border: 2px solid var(--mono-50);
+        border: 2px solid var(--primary-50);
 
         box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(4px);

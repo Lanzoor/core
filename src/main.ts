@@ -54,8 +54,8 @@ export namespace Core {
         document.head.appendChild(link);
     }
 
-    export function pickRandom<T>(arr: T[]): T {
-        return arr[Math.floor(Math.random() * arr.length)];
+    export function pickRandom<T>(array: T[]): T {
+        return array[Math.floor(Math.random() * array.length)];
     }
 
     export function randInt(min: number, max: number): number {

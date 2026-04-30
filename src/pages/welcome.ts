@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     word = document.getElementById('lanzoor-letters')!;
     letters = Array.from(document.querySelectorAll('#lanzoor-letters span')).map((element) => element as HTMLSpanElement);
 
-    fonts = ['JetBrains Mono', 'Space Grotesk', 'Fira Code', 'Fairfax HD', 'Brass Mono', 'Noto Sans', 'Geist'];
+    fonts = ['JetBrains Mono', 'Fira Code', 'Fairfax HD', 'Brass Mono', 'Noto Sans', 'Noto Sans Mono', 'Geist'];
 
     fontIndex = 0;
 
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const currentFont = fonts[fontIndex];
         const currentFontWeight = Core.pickRandom(['100', '200', '300']);
-        const currentFontStyle = Core.pickRandom(['normal', 'italic']);
+        const currentFontStyle = Core.pickRandom(['normal', 'normal', 'italic']);
 
         const scale = enableOptimization ? Core.randInt(75, 100) / baseFontSizePx : Core.randInt(100, 150) / baseFontSizePx;
 

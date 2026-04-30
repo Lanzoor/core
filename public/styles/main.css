@@ -56,19 +56,19 @@
 
 @layer base {
     :root {
-        --mono: black;
-        --mono-75: rgba(0, 0, 0, 0.75);
-        --mono-50: rgba(0, 0, 0, 0.5);
-        --mono-25: rgba(0, 0, 0, 0.25);
-        --mono-10: rgba(0, 0, 0, 0.1);
-        --mono-05: rgba(0, 0, 0, 0.05);
+        --primary: black;
+        --primary-75: rgba(0, 0, 0, 0.75);
+        --primary-50: rgba(0, 0, 0, 0.5);
+        --primary-25: rgba(0, 0, 0, 0.25);
+        --primary-10: rgba(0, 0, 0, 0.1);
+        --primary-05: rgba(0, 0, 0, 0.05);
 
-        --inv: white;
-        --inv-75: rgba(255, 255, 255, 0.75);
-        --inv-50: rgba(255, 255, 255, 0.5);
-        --inv-25: rgba(255, 255, 255, 0.25);
-        --inv-10: rgba(255, 255, 255, 0.1);
-        --inv-05: rgba(255, 255, 255, 0.05);
+        --secondary: white;
+        --secondary-75: rgba(255, 255, 255, 0.75);
+        --secondary-50: rgba(255, 255, 255, 0.5);
+        --secondary-25: rgba(255, 255, 255, 0.25);
+        --secondary-10: rgba(255, 255, 255, 0.1);
+        --secondary-05: rgba(255, 255, 255, 0.05);
 
         --bg: white;
         --text: #111;
@@ -85,19 +85,19 @@
     }
 
     [data-theme='dark'] {
-        --mono: white;
-        --mono-75: rgba(255, 255, 255, 0.75);
-        --mono-50: rgba(255, 255, 255, 0.5);
-        --mono-25: rgba(255, 255, 255, 0.25);
-        --mono-10: rgba(255, 255, 255, 0.1);
-        --mono-05: rgba(255, 255, 255, 0.05);
+        --primary: white;
+        --primary-75: rgba(255, 255, 255, 0.75);
+        --primary-50: rgba(255, 255, 255, 0.5);
+        --primary-25: rgba(255, 255, 255, 0.25);
+        --primary-10: rgba(255, 255, 255, 0.1);
+        --primary-05: rgba(255, 255, 255, 0.05);
 
-        --inv: black;
-        --inv-75: rgba(0, 0, 0, 0.75);
-        --inv-50: rgba(0, 0, 0, 0.5);
-        --inv-25: rgba(0, 0, 0, 0.25);
-        --inv-10: rgba(0, 0, 0, 0.1);
-        --inv-05: rgba(0, 0, 0, 0.05);
+        --secondary: black;
+        --secondary-75: rgba(0, 0, 0, 0.75);
+        --secondary-50: rgba(0, 0, 0, 0.5);
+        --secondary-25: rgba(0, 0, 0, 0.25);
+        --secondary-10: rgba(0, 0, 0, 0.1);
+        --secondary-05: rgba(0, 0, 0, 0.05);
 
         --bg: #111;
         --text: #eee;
@@ -205,7 +205,7 @@
         transition:
             background-color 0.2s,
             box-shadow 0.2s;
-        border: 2px solid var(--mono-25);
+        border: 2px solid var(--primary-25);
     }
 
     table {
@@ -226,6 +226,18 @@
     th {
         color: var(--header);
         font-family: 'Noto Sans Mono';
+        font-weight: 400;
+        text-shadow: 0 0 20px var(--primary-25);
+    }
+
+    header h1,
+    header h2,
+    header h3,
+    header h4,
+    header h5,
+    header h6 {
+        color: var(--primary);
+        font-family: 'Geist';
         font-weight: 400;
     }
 

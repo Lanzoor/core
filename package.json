@@ -1,7 +1,7 @@
 {
     "name": "core",
     "private": true,
-    "version": "26.19.1",
+    "version": "26.19.2",
     "description": "frontend repository for lanzoor.dev",
     "license": "ISC",
     "author": "Lanzoor",
