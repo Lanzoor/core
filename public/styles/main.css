@@ -82,6 +82,9 @@
 
         --th-bg: rgba(0, 0, 0, 0.075);
         --hr-bg: #eee;
+
+        --debug-primary: rgb(255, 0, 0);
+        --debug-secondary: rgb(255, 129, 129);
     }
 
     [data-theme='dark'] {
@@ -679,9 +682,15 @@
             background-attachment: scroll !important;
         }
     }
+
     /* ==================== Debug ==================== */
+    /* make sure to comment out when pushing to production */
 
     /* * {
-        outline: 1px solid red !important;
+        outline: 2px solid var(--debug-primary);
+    }
+
+    *:not(div) {
+        outline: 2px solid var(--debug-secondary);
     } */
 }

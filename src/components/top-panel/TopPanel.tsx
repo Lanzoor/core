@@ -123,39 +123,43 @@ function PanelRoot() {
 
     return (
         <>
-            <div id="top-panel">
-                <div id="top-panel--left">
-                    <a
-                        href="/"
-                        className="plain"
-                    >
-                        lanzoor.dev
-                    </a>
-                </div>
+            <div id="top-panel-overlay">
+                <div id="top-panel">
+                    <div id="top-panel--top">
+                        <a
+                            href="/"
+                            className="plain"
+                        >
+                            lanzoor.dev
+                        </a>
 
-                <nav id="top-panel--links">
-                    {destinations.map((d, i) => (
-                        <Destination
-                            key={i}
-                            value={d}
-                            context="inline-links"
-                        />
-                    ))}
-                </nav>
-
-                <div id="top-panel--right">
-                    {/* <img
+                        <div id="top-panel--buttons">
+                            {/* <img
                         src="/assets/icons/settings.svg"
                         alt="⚙"
                         className="panel-icon"
                         onClick={() => toggleOpt()}
                     /> */}
-                    <img
-                        src="/assets/icons/hamburger.svg"
-                        alt="☰"
-                        className="panel-icon"
-                        onClick={() => toggleNav()}
-                    />
+                            <img
+                                src="/assets/icons/hamburger.svg"
+                                alt="☰"
+                                className="panel-icon"
+                                onClick={() => toggleNav()}
+                            />
+                        </div>
+                    </div>
+
+                    <div id="top-panel--bottom">
+                        <nav id="top-panel--links">
+                            {destinations.map((d, i) => (
+                                <Destination
+                                    key={i}
+                                    value={d}
+                                    context="inline-links"
+                                />
+                            ))}
+                        </nav>
+                    </div>
                 </div>
             </div>
 
@@ -241,14 +245,12 @@ function Destination({ value, context }: { value: Link; context?: Context }) {
 
     if (context == 'inline-links' && valueContext.includes('inline-links')) {
         return (
-            <div>
-                <a
-                    href={value.link}
-                    target={value.link.startsWith('http') ? '_blank' : '_self'}
-                >
-                    {value.name}
-                </a>
-            </div>
+            <a
+                href={value.link}
+                target={value.link.startsWith('http') ? '_blank' : '_self'}
+            >
+                {value.name}
+            </a>
         );
     } else if (context == 'panel-links' && valueContext.includes('panel-links')) {
         return (

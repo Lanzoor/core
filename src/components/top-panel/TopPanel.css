@@ -1,18 +1,17 @@
 @layer component {
     :root {
-        --top-panel-height: min(75px, 10vh);
-
+        --top-panel-height: min(200px, 20vh);
         --top-panel-bg: rgba(200, 200, 200, 0.75);
         --top-panel-text: black;
     }
 
     [data-theme='dark'] {
-        --top-panel-bg: rgba(0, 0, 0, 0.75);
+        --top-panel-bg: radial-gradient(circle at 50% -25%, black 0%, transparent 50%);
         --top-panel-text: white;
     }
 
     body {
-        margin-top: var(--top-panel-height);
+        padding-top: 20vh;
     }
 
     #top-panel,
@@ -26,27 +25,21 @@
         display: inline-block;
     }
 
-    #top-panel p,
-    #navigation-panel p {
-        background: none;
-    }
-
     #top-panel {
-        position: fixed;
+        position: absolute;
+        inset: 0 0 auto 0;
 
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
 
-        flex-direction: row;
-
-        inset: 0 0 auto 0;
+        padding: 2%;
+        gap: 4%;
 
         height: var(--top-panel-height);
 
-        background: var(--top-panel-bg);
         box-shadow: 0 5px 30px var(--top-panel-bg);
-        backdrop-filter: blur(4px);
 
         z-index: 2147483647;
 
@@ -54,24 +47,71 @@
         overflow-y: hidden;
     }
 
-    #top-panel--links {
+    #top-panel-overlay {
         position: absolute;
+        inset: 0 0 auto 0;
+        width: 100%;
+        height: 100%;
+        background: var(--top-panel-bg);
+
+        pointer-events: none;
+    }
+
+    #top-panel--top {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #top-panel--top a {
+        padding: 0;
+
+        text-shadow: none;
+        color: var(--top-panel-text);
+        text-decoration: none;
+
+        font-size: min(45px, 4.5vh);
+        font-family: 'Space Grotesk';
+
+        transition:
+            color 0.5s ease,
+            text-shadow 0.5s ease;
+    }
+
+    #top-panel--top a:hover {
+        color: rgb(200, 200, 200);
+
+        text-shadow:
+            0 0 10px white,
+            4px 4px 1px rgb(100, 100, 100);
+    }
+
+    #top-panel--buttons {
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+    }
+
+    #top-panel--links {
+        width: 100%;
         display: flex;
 
         align-items: center;
         justify-content: center;
         flex-direction: row;
-        gap: 20px;
+        gap: 40px;
 
         pointer-events: none;
-
-        width: 100vw;
-        height: 100%;
     }
 
     #top-panel--links a {
-        position: relative;
-        display: inline-block;
         text-decoration: none;
 
         font-family: 'Geist';
@@ -124,8 +164,6 @@
         width: 100%;
     }
 
-    #top-panel--left,
-    #top-panel--right,
     #navigation--close {
         display: flex;
         position: relative;
@@ -167,7 +205,6 @@
         transform: rotate(0deg);
     }
 
-    #top-panel--right p,
     #navigation--close p {
         margin: 0;
         padding: 0;
@@ -175,29 +212,6 @@
 
         font-size: min(30px, 3vh);
         font-family: 'Space Grotesk';
-    }
-
-    #top-panel--left a {
-        padding: 0;
-
-        text-shadow: none;
-        color: var(--top-panel-text);
-        text-decoration: none;
-
-        font-size: min(45px, 4.5vh);
-        font-family: 'Space Grotesk';
-
-        transition:
-            color 0.5s ease,
-            text-shadow 0.5s ease;
-    }
-
-    #top-panel--left a:hover {
-        color: rgb(200, 200, 200);
-
-        text-shadow:
-            0 0 10px white,
-            4px 4px 1px rgb(100, 100, 100);
     }
 
     #navigation--close p,

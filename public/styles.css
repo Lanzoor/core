@@ -39,8 +39,6 @@
 
     #welcome--intro {
         background: var(--welcome--intro-bg);
-        backdrop-filter: blur(2px);
-        min-height: 90vh;
     }
 
     #welcome--intro div.inactive {
