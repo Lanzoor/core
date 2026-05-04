@@ -85,6 +85,8 @@
 
         --debug-primary: rgb(255, 0, 0);
         --debug-secondary: rgb(255, 129, 129);
+
+        --div-padding: 4%;
     }
 
     [data-theme='dark'] {
@@ -555,7 +557,7 @@
         flex: none;
 
         overflow: hidden;
-        padding: min(100%, 5vh);
+        padding: var(--div-padding);
     }
 
     section.no-padding {
@@ -661,6 +663,10 @@
     /* ==================== The Responsive Zone ==================== */
 
     @media (max-width: 768px) {
+        :root {
+            --div-padding: 8%;
+        }
+
         body,
         p,
         blockquote,
@@ -668,17 +674,16 @@
             font-size: 15px;
         }
 
-        h1 {
-            font-size: 20px;
-        }
-        h2 {
-            font-size: 15px;
-        }
-        h3 {
-            font-size: 15px;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 30px;
         }
 
-        .section.fixed-bg {
+        section.fixed-bg {
             background-attachment: scroll !important;
         }
     }

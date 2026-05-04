@@ -7,14 +7,6 @@ import '@/components/top-panel/TopPanel.css';
 
 Core.loadCSS('/out/components/top-panel/TopPanel.css');
 
-const isLoaded = Array.from(document.styleSheets).some((sheet) => {
-    return sheet.href && sheet.href.includes('main.css');
-});
-
-if (!isLoaded) {
-    console.warn('The top panel script was invoked, but required styles were not loaded.');
-}
-
 type Context = 'inline-links' | 'panel-links';
 type Link = {
     link: string;
@@ -132,6 +124,18 @@ function PanelRoot() {
                         >
                             lanzoor.dev
                         </a>
+                    </div>
+
+                    <div id="top-panel--bottom">
+                        <nav id="top-panel--links">
+                            {destinations.map((d, i) => (
+                                <Destination
+                                    key={i}
+                                    value={d}
+                                    context="inline-links"
+                                />
+                            ))}
+                        </nav>
 
                         <div id="top-panel--buttons">
                             {/* <img
@@ -147,18 +151,6 @@ function PanelRoot() {
                                 onClick={() => toggleNav()}
                             />
                         </div>
-                    </div>
-
-                    <div id="top-panel--bottom">
-                        <nav id="top-panel--links">
-                            {destinations.map((d, i) => (
-                                <Destination
-                                    key={i}
-                                    value={d}
-                                    context="inline-links"
-                                />
-                            ))}
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -294,4 +286,22 @@ document.addEventListener('DOMContentLoaded', () => {
     root.id = 'top-panel-root';
     document.body.appendChild(root);
     createRoot(root).render(<PanelRoot />);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    let lastY = window.scrollY;
+
+    const handleScroll = () => {
+        const currentY = window.scrollY;
+        const scrollingDown = currentY > lastY;
+        const scrollAtTop = currentY === 0;
+
+        document.getElementById('top-panel')?.classList.toggle('hidden', scrollingDown);
+        document.getElementById('top-panel')?.classList.toggle('at-top', scrollAtTop);
+
+        lastY = currentY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
 });
