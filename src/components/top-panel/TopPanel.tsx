@@ -304,4 +304,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
+
+    if (window.scrollY === 0) {
+        document.getElementById('top-panel')?.classList.add('at-top');
+    }
 });

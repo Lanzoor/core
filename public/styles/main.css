@@ -235,24 +235,26 @@
         text-shadow: 0 0 20px var(--primary-25);
     }
 
-    header h1,
-    header h2,
-    header h3,
-    header h4,
-    header h5,
-    header h6 {
-        color: var(--primary);
-        font-family: 'Geist';
-        font-weight: 400;
-    }
-
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
+        margin: 20px 0 20px 0;
+    }
+
+    header h1,
+    header h2,
+    header h3,
+    header h4,
+    header h5,
+    header h6 {
         margin: 0 0 20px 0;
+
+        color: var(--primary);
+        font-family: 'Geist';
+        font-weight: 400;
     }
 
     a {

@@ -8,14 +8,18 @@
     [data-theme='dark'] {
         --top-panel-overlay-bg: radial-gradient(circle at 50% -25%, black 0%, transparent 25%);
 
-        --top-panel-bg--at-top: rgba(0, 0, 0, 0.5);
+        --top-panel-bg--at-top: rgba(0, 0, 0, 0.25);
         --top-panel-bg--solid: rgba(0, 0, 0, 0.5);
 
         --top-panel-text: white;
     }
 
-    body {
+    /* body {
         padding-top: 25vh;
+    } */
+
+    body > main > section:first-of-type {
+        padding-top: calc(25vh + var(--div-padding));
     }
 
     #top-panel,
