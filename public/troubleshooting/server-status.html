@@ -12,23 +12,26 @@
 </head>
 
 <body>
-    <section class="stretched centered horizontally">
-        <h1>- Server Status -</h1>
+    <main>
+        <section class="stretched centered horizontally">
+            <h1>- Server Status -</h1>
 
-        <p>
-            Current server status (<code>/api/status</code>): <b id="server-status">🟡 Unknown</b> | Last pinged <code
-                id="ping-display">not pinged yet</code><br><br>
+            <p>
+                Current server status (<code>/api/status</code>): <b id="server-status">🟡 Unknown</b> | Last pinged
+                <code id="ping-display">not pinged yet</code><br><br>
 
-            If the online status says <b>🟡 Unknown</b> even after waiting a while, it is most likely a JavaScript link
-            error.<br>
-            <b>Please check our <a href="/troubleshooting/javascript-error.html">JavaScript troubleshooting
-                    page</a></b>. Otherwise, please follow the steps below.
-        </p>
+                If the online status says <b>🟡 Unknown</b> even after waiting a while, it is most likely a JavaScript
+                link
+                error.<br>
+                <b>Please check our <a href="/troubleshooting/javascript-error.html">JavaScript troubleshooting
+                        page</a></b>. Otherwise, please follow the steps below.
+            </p>
 
-        <h1>- Server Error -</h1>
+            <h1>- Server Error -</h1>
 
-        <h3>We apologize for the inconvenience.</h3>
-    </section>
+            <h3>We apologize for the inconvenience.</h3>
+        </section>
+    </main>
 
     <script type="module" src="/out/components/top-panel/TopPanel.js"></script>
     <script type="module" src="/out/pages/troubleshooting/server-status.js"></script>

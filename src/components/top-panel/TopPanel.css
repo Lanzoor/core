@@ -1,17 +1,25 @@
 @layer component {
     :root {
-        --top-panel-height: min(200px, 20vh);
-        --top-panel-bg: rgba(200, 200, 200, 0.75);
+        --top-panel-height: 25vh;
+        --top-panel-bg--at-top: rgba(200, 200, 200, 0.75);
         --top-panel-text: black;
     }
 
     [data-theme='dark'] {
-        --top-panel-bg: radial-gradient(circle at 50% -25%, black 0%, transparent 50%);
+        --top-panel-overlay-bg: radial-gradient(circle at 50% -25%, black 0%, transparent 25%);
+
+        --top-panel-bg--at-top: rgba(0, 0, 0, 0.25);
+        --top-panel-bg--solid: rgba(0, 0, 0, 0.5);
+
         --top-panel-text: white;
     }
 
-    body {
-        padding-top: 20vh;
+    /* body {
+        padding-top: 25vh;
+    } */
+
+    body > main > section:first-of-type {
+        padding-top: calc(25vh + var(--div-padding));
     }
 
     #top-panel,
@@ -26,7 +34,7 @@
     }
 
     #top-panel {
-        position: absolute;
+        position: fixed;
         inset: 0 0 auto 0;
 
         display: flex;
@@ -39,12 +47,28 @@
 
         height: var(--top-panel-height);
 
-        box-shadow: 0 5px 30px var(--top-panel-bg);
-
         z-index: 2147483647;
+        background: var(--top-panel-bg--solid);
+
+        backdrop-filter: blur(4px);
 
         overflow-x: hidden;
         overflow-y: hidden;
+        transition:
+            transform 0.3s ease-in-out,
+            background 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    #top-panel.at-top {
+        background: var(--top-panel-bg--at-top);
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    #top-panel.hidden {
+        transform: translateY(-200%);
     }
 
     #top-panel-overlay {
@@ -52,7 +76,7 @@
         inset: 0 0 auto 0;
         width: 100%;
         height: 100%;
-        background: var(--top-panel-bg);
+        background: var(--top-panel-overlay-bg);
 
         pointer-events: none;
     }
@@ -61,7 +85,7 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
 
@@ -72,7 +96,7 @@
         color: var(--top-panel-text);
         text-decoration: none;
 
-        font-size: min(45px, 4.5vh);
+        font-size: 200%;
         font-family: 'Space Grotesk';
 
         transition:
@@ -99,14 +123,23 @@
         height: 100%;
     }
 
-    #top-panel--links {
-        width: 100%;
+    #top-panel--bottom {
         display: flex;
-
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        flex-direction: row;
         gap: 40px;
+    }
+
+    #top-panel--links {
+        width: 100%;
+
+        gap: 40px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
 
         pointer-events: none;
     }

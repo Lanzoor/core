@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const html = await res.text();
 
             const cleanHTML = DOMPurify.sanitize(html, {
-                ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'blockquote', 'img', 'br', 'hr', 'code', 'pre'],
+                ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li', 'strong', 'em', 'b', 'i', 'blockquote', 'img', 'br', 'hr', 'code', 'pre', 'header'],
                 ALLOWED_ATTR: ['href', 'target', 'src', 'alt', 'class', 'id'],
                 FORBID_TAGS: ['script', 'style', 'iframe', 'object', 'embed'],
                 FORBID_ATTR: ['onerror', 'onload', 'onclick'],

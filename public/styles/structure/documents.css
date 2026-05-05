@@ -1,8 +1,4 @@
 @layer structure {
-    body {
-        padding: 4%;
-    }
-
     a {
         text-decoration: none;
         text-shadow: 0 10px 25px rgb(83, 45, 255);
