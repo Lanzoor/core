@@ -66,34 +66,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const avatarDisplay = document.querySelector('#discord-status #avatar')! as HTMLImageElement;
-    const displayNameDisplay = document.querySelector('#discord-status #display-name')!;
-    const usernameDisplay = document.querySelector('#discord-status #username')!;
-    const userIDDisplay = document.querySelector('#discord-status #user-id')!;
-    const statusDisplay = document.querySelector('#discord-status #status')!;
+// TODO: probably move this to react logic, this is ugly as fuck
+// document.addEventListener('DOMContentLoaded', async () => {
+//     const avatarDisplay = document.querySelector('#discord-status #avatar')! as HTMLImageElement;
+//     const displayNameDisplay = document.querySelector('#discord-status #display-name')!;
+//     const usernameDisplay = document.querySelector('#discord-status #username')!;
+//     const userIDDisplay = document.querySelector('#discord-status #user-id')!;
+//     const statusDisplay = document.querySelector('#discord-status #status')!;
 
-    const discordStatusResult = await Core.pingServer('https://api.lanzoor.dev/status/discord');
-    if (discordStatusResult) {
-        const discordUserID = discordStatusResult.data.discord_user.id;
+//     const discordStatusResult = await Core.pingServer('https://api.lanzoor.dev/status/discord');
+//     if (discordStatusResult) {
+//         const discordUserID = discordStatusResult.data.discord_user.id;
 
-        const discordAvatar = discordStatusResult.data.discord_user.avatar;
-        const discordAvatarURL = `https://cdn.discordapp.com/avatars/${discordUserID}/${discordAvatar}.png?size=512`;
+//         const discordAvatar = discordStatusResult.data.discord_user.avatar;
+//         const discordAvatarURL = `https://cdn.discordapp.com/avatars/${discordUserID}/${discordAvatar}.png?size=512`;
 
-        const discordDisplayName = discordStatusResult.data.discord_user.global_name;
-        const discordUserName = discordStatusResult.data.discord_user.username;
+//         const discordDisplayName = discordStatusResult.data.discord_user.global_name;
+//         const discordUserName = discordStatusResult.data.discord_user.username;
 
-        const discordStatus = discordStatusResult.data.discord_status;
+//         const discordStatus = discordStatusResult.data.discord_status;
 
-        avatarDisplay.src = discordAvatarURL;
-        displayNameDisplay.textContent = discordDisplayName;
-        usernameDisplay.textContent = discordUserName;
-        userIDDisplay.textContent = discordUserID;
-        statusDisplay.className = '';
-        statusDisplay.textContent = discordStatus;
-        statusDisplay.classList.add(`status-${discordStatus}`);
-    }
-});
+//         avatarDisplay.src = discordAvatarURL;
+//         displayNameDisplay.textContent = discordDisplayName;
+//         usernameDisplay.textContent = discordUserName;
+//         userIDDisplay.textContent = discordUserID;
+//         statusDisplay.className = '';
+//         statusDisplay.textContent = discordStatus;
+//         statusDisplay.classList.add(`status-${discordStatus}`);
+//     }
+// });
 
 type Star = {
     x: number;
@@ -209,9 +210,10 @@ let fontIndex = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     word = document.getElementById('lanzoor-letters')!;
+
     letters = Array.from(document.querySelectorAll('#lanzoor-letters span')).map((element) => element as HTMLSpanElement);
 
-    fonts = ['JetBrains Mono', 'Fira Code', 'Fairfax HD', 'Brass Mono', 'Noto Sans', 'Noto Sans Mono', 'Geist'];
+    fonts = ['JetBrains Mono', 'Fira Code', 'Noto Sans', 'Noto Sans Mono', 'Geist'];
 
     fontIndex = 0;
 

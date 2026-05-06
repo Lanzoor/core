@@ -16,12 +16,10 @@ function getEntries(dir: string) {
                 continue;
             }
 
-            if (!file.endsWith('.ts') && !file.endsWith('.tsx')) {
-                continue;
-            }
+            const isValidTsFile = (file.endsWith('.ts') || file.endsWith('.tsx')) && !file.endsWith('.d.ts');
 
-            if (file.endsWith('.d.ts')) {
-                continue;
+            if (!isValidTsFile) {
+                console.info(`file ${file} skipped, as it does not match the allowed file format`);
             }
 
             const relative = path
@@ -64,7 +62,7 @@ export default defineConfig({
                         if (originalPath) {
                             const relative = path
                                 .relative(srcDir, originalPath)
-                                .replace(/\.tsx?$/, '')
+                                .replace(/\.(tsx?|css)$/, '')
                                 .replace(/\\/g, '/');
                             return `${relative}[extname]`;
                         }

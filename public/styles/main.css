@@ -83,6 +83,9 @@
         --th-bg: rgba(0, 0, 0, 0.075);
         --hr-bg: #eee;
 
+        --code-bg: #ddd;
+        --code-text: #222;
+
         --debug-primary: rgb(255, 0, 0);
         --debug-secondary: rgb(255, 129, 129);
 
@@ -116,6 +119,9 @@
 
         --th-bg: rgba(255, 255, 255, 0.15);
         --hr-bg: #333;
+
+        --code-bg: #222;
+        --code-text: #ddd;
     }
 
     .brass-mono,
@@ -281,29 +287,33 @@
 
     code,
     kbd {
+        display: inline-block;
         font-family: 'JetBrains Mono';
-        padding: 0.1em 0.2em;
-        border-radius: 6px;
-        cursor: pointer;
+        padding: 4px 8px;
+        border-radius: 10px;
+        margin: 4px 0;
     }
 
     code {
         background-color: rgb(35, 35, 55);
         color: rgb(170, 190, 220);
         border: 1px solid rgb(181, 186, 255);
+
+        /* background: var(--code-bg);
+        color: var(--code-text); */
     }
 
     kbd {
-        background: rgb(29, 29, 29);
-        color: rgb(145, 145, 145);
-        border: 1px solid rgb(100, 100, 100);
+        background-color: rgb(35, 35, 55);
+        color: rgb(170, 190, 220);
+        border: 1px solid rgb(181, 186, 255);
     }
 
     code b,
     b code,
     code strong,
     strong code {
-        color: rgb(146, 171, 208);
+        color: var(--text);
     }
 
     pre {

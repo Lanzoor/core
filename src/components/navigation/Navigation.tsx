@@ -3,9 +3,9 @@ import { createRoot } from 'react-dom/client';
 import { Core } from '@/main';
 
 // @ts-ignore
-import '@/components/top-panel/TopPanel.css';
+import '@/components/navigation/Navigation.css';
 
-Core.loadCSS('/out/components/top-panel/TopPanel.css');
+Core.loadCSS('/out/components/navigation/Navigation.css');
 
 type Context = 'inline-links' | 'panel-links';
 type Link = {
@@ -14,8 +14,6 @@ type Link = {
     context?: Context[];
     children?: Link[];
 };
-
-const themes: string[] = ['dark', 'light'];
 
 const destinations: Link[] = [
     { link: '/', name: 'Welcome!' },
@@ -51,68 +49,94 @@ const destinations: Link[] = [
     { link: '/troubleshooting', name: 'Troubleshooting' },
 ];
 
-function PanelRoot() {
-    const [navOpen, setNavOpen] = useState(false);
-    const [optOpen, setOptOpen] = useState(false);
-    const [theme, setTheme] = useState(() => {
-        const stored = localStorage.getItem('theme');
-        return stored || 'dark';
-    });
+let theme = localStorage.getItem('theme') || 'dark';
+const themes: string[] = ['dark', 'light'];
 
-    useEffect(() => {
-        if (!themes.includes(theme)) {
-            setTheme('dark');
-        }
+// if (!themes.includes(theme)) {
+theme = 'dark';
+localStorage.setItem('theme', theme);
+// }
 
-        localStorage.setItem('theme', theme);
-        document.documentElement.setAttribute('data-theme', theme);
-    }, [theme]);
+document.addEventListener('DOMContentLoaded', () => {
+    document.documentElement.setAttribute('data-theme', theme);
+});
 
-    useEffect(() => {
-        const handleKey = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') {
-                setNavOpen(false);
-                setOptOpen(false);
-            }
-        };
+let overlayStates = {
+    navigation: false,
+    // options: false,
+};
 
-        window.addEventListener('keydown', handleKey);
-        return () => window.removeEventListener('keydown', handleKey);
-    }, []);
+function setNavigation(value?: boolean) {
+    overlayStates.navigation = value !== undefined ? value : !overlayStates.navigation;
 
-    function toggleNav(force: boolean = false) {
-        if (force) {
-            return setNavOpen(false);
-        }
+    let navigationOverlay = document.getElementById('navigation-overlay');
 
-        setNavOpen((prev) => !prev);
+    if (navigationOverlay) {
+        navigationOverlay.className = overlayStates.navigation ? 'active' : '';
     }
+}
 
-    function toggleOpt(force: boolean = false) {
-        if (force) {
-            return setOptOpen(false);
-        }
+// function toggleTheme() {
+//     if (theme == 'dark') {
+//         theme = 'light';
+//     } else {
+//         theme = 'dark';
+//     }
 
-        setOptOpen((prev) => !prev);
+//     document.documentElement.setAttribute('data-theme', theme);
+// }
+
+function Destination({ value, context }: { value: Link; context?: Context }) {
+    const [open, setOpen] = useState(false);
+    const valueContext = value.context ?? ['inline-links', 'panel-links'];
+
+    if (context == 'inline-links' && valueContext.includes('inline-links')) {
+        return (
+            <a
+                href={value.link}
+                target={value.link.startsWith('http') ? '_blank' : '_self'}
+            >
+                {value.name}
+            </a>
+        );
+    } else if (context == 'panel-links' && valueContext.includes('panel-links')) {
+        return (
+            <>
+                <li>
+                    <div onClick={() => value.children && setOpen(!open)}>
+                        <a
+                            href={value.children ? undefined : value.link}
+                            target={value.link.startsWith('http') ? '_blank' : '_self'}
+                        >
+                            {value.name}
+                        </a>
+                        {value.children && (
+                            <img
+                                src="/assets/icons/caret-down.svg"
+                                alt="▼"
+                                className={`panel-icon chevron${open ? ' open' : ''}`}
+                            />
+                        )}
+                    </div>
+                </li>
+
+                {value.children && open && (
+                    <ul className={`dropdown${open ? ' open' : ''}`}>
+                        {value.children.map((d, i) => (
+                            <Destination
+                                key={i}
+                                value={d}
+                                context="panel-links"
+                            />
+                        ))}
+                    </ul>
+                )}
+            </>
+        );
     }
+}
 
-    function toggleTheme() {
-        setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
-    }
-
-    useEffect(() => {
-        const navButtons = Array.from(document.getElementsByClassName('navigation-toggle'));
-        const optButtons = Array.from(document.getElementsByClassName('option-toggle'));
-
-        navButtons.forEach((el) => el.addEventListener('click', () => toggleNav()));
-        optButtons.forEach((el) => el.addEventListener('click', () => toggleOpt()));
-
-        return () => {
-            navButtons.forEach((el) => el.removeEventListener('click', () => toggleNav()));
-            optButtons.forEach((el) => el.removeEventListener('click', () => toggleOpt()));
-        };
-    }, []);
-
+function TopPanelRoot() {
     return (
         <>
             <div id="top-panel-overlay">
@@ -148,24 +172,28 @@ function PanelRoot() {
                                 src="/assets/icons/hamburger.svg"
                                 alt="☰"
                                 className="panel-icon"
-                                onClick={() => toggleNav()}
+                                id="toggle--navigation"
                             />
+                            {/* <img
+                                src="/assets/icons/color-mode.svg"
+                                alt="t"
+                                className="panel-icon"
+                                id="toggle--theme"
+                            /> */}
                         </div>
                     </div>
                 </div>
             </div>
+        </>
+    );
+}
 
-            <div
-                id="navigation-overlay"
-                className={navOpen ? 'active' : ''}
-            >
+function OverlayRoot() {
+    return (
+        <>
+            <div id="navigation-overlay">
                 <div id="navigation-panel">
-                    <div
-                        id="navigation--close"
-                        onClick={() => {
-                            toggleNav(false);
-                        }}
-                    >
+                    <div id="navigation--close">
                         <p>Close</p>
                         <img
                             src="/assets/icons/close.svg"
@@ -231,61 +259,32 @@ function PanelRoot() {
     );
 }
 
-function Destination({ value, context }: { value: Link; context?: Context }) {
-    const [open, setOpen] = useState(false);
-    const valueContext = value.context ?? ['inline-links', 'panel-links'];
-
-    if (context == 'inline-links' && valueContext.includes('inline-links')) {
-        return (
-            <a
-                href={value.link}
-                target={value.link.startsWith('http') ? '_blank' : '_self'}
-            >
-                {value.name}
-            </a>
-        );
-    } else if (context == 'panel-links' && valueContext.includes('panel-links')) {
-        return (
-            <>
-                <li>
-                    <div onClick={() => value.children && setOpen(!open)}>
-                        <a
-                            href={value.children ? undefined : value.link}
-                            target={value.link.startsWith('http') ? '_blank' : '_self'}
-                        >
-                            {value.name}
-                        </a>
-                        {value.children && (
-                            <img
-                                src="/assets/icons/caret-down.svg"
-                                alt="▼"
-                                className={`panel-icon chevron${open ? ' open' : ''}`}
-                            />
-                        )}
-                    </div>
-                </li>
-
-                {value.children && open && (
-                    <ul className={`dropdown${open ? ' open' : ''}`}>
-                        {value.children.map((d, i) => (
-                            <Destination
-                                key={i}
-                                value={d}
-                                context="panel-links"
-                            />
-                        ))}
-                    </ul>
-                )}
-            </>
-        );
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    const root = document.createElement('div');
-    root.id = 'top-panel-root';
-    document.body.appendChild(root);
-    createRoot(root).render(<PanelRoot />);
+    const topPanelRoot = document.createElement('div');
+    topPanelRoot.id = 'top-panel-root';
+    document.body.appendChild(topPanelRoot);
+    createRoot(topPanelRoot).render(<TopPanelRoot />);
+
+    const overlayRoot = document.createElement('div');
+    overlayRoot.id = 'overlay-root';
+    document.body.appendChild(overlayRoot);
+    createRoot(overlayRoot).render(<OverlayRoot />);
+
+    // Handle click events
+    document.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+
+        if (target.closest('#toggle--navigation')) setNavigation();
+        if (target.closest('#navigation--close')) setNavigation(false);
+        // if (target.closest('#toggle--theme')) toggleTheme();
+        if (target.closest('#navigation-overlay') && !target.closest('#navigation-panel')) setNavigation(false);
+    });
+
+    window.addEventListener('keydown', (keyboardEvent: KeyboardEvent) => {
+        if (keyboardEvent.key === 'Escape') {
+            setNavigation(false);
+        }
+    });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -308,4 +307,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.scrollY === 0) {
         document.getElementById('top-panel')?.classList.add('at-top');
     }
+});
+
+function BottomNavigationRoot() {
+    return (
+        <>
+            <div id="container">this is a test uhh please ignore this for now i promise there will be something added here soon enuf </div>
+        </>
+    );
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const root = document.createElement('section');
+    root.id = 'connections';
+    root.className = 'fixed-bg';
+    document.querySelector('main')?.appendChild(root);
+    createRoot(root).render(<BottomNavigationRoot />);
 });

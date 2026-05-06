@@ -12,78 +12,82 @@
 </head>
 
 <body>
-    <section class="fixed-bg centered horizontally">
-        <h1>My Projects</h1>
+    <main>
 
-        <p>
-            Here is the ultimate showcase of all projects I have made along my journey!<br>
-            <b>Click the buttons below to filter by type! <i>! This page is still under construction. !</i></b>
-        </p>
+        <section class="fixed-bg centered horizontally">
+            <h1>My Projects</h1>
 
-        <div id="projects--filter-buttons">
-            <button class="projects--filter-button show-all selected">Show All</button>
-            <button class="projects--filter-button websites">Websites</button>
-            <button class="projects--filter-button programs">Programs</button>
-            <button class="projects--filter-button videos">Videos</button>
-            <button class="projects--filter-button conlangs">Conlangs</button>
-        </div>
+            <p>
+                Here is the ultimate showcase of all projects I have made along my journey!<br>
+                <b>Click the buttons below to filter by type! <i>! This page is still under construction. !</i></b>
+            </p>
 
-        <div class="projects--div websites visible">
-            <h2>Websites</h2>
+            <div id="projects--filter-buttons">
+                <button class="projects--filter-button show-all selected">Show All</button>
+                <button class="projects--filter-button websites">Websites</button>
+                <button class="projects--filter-button programs">Programs</button>
+                <button class="projects--filter-button videos">Videos</button>
+                <button class="projects--filter-button conlangs">Conlangs</button>
+            </div>
 
-            <div class="projects--grid">
-                <div>
-                    placeholder placeholder
+            <div class="projects--div websites visible">
+                <h2>Websites</h2>
+
+                <div class="projects--grid">
+                    <div>
+                        placeholder placeholder
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="projects--div programs visible">
-            <h2>Programs</h2>
+            <div class="projects--div programs visible">
+                <h2>Programs</h2>
 
-            <div class="projects--grid">
-                <div>
-                    <b>VSCode Tweaks</b><br>Custom Visual Studio Code tweaks and overlays
+                <div class="projects--grid">
+                    <div>
+                        <b>VSCode Tweaks</b><br>Custom Visual Studio Code tweaks and overlays
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="projects--div videos visible">
-            <h2>Videos</h2>
+            <div class="projects--div videos visible">
+                <h2>Videos</h2>
 
-            <blockquote>
-                I have a youtube channel, check it out! - <a
-                    href="https://youtube.com/@lanzoorgaming">@lanzoorgaming</a><br>
-                I usually make gaming content and shorts, but I would really like to try out a few more niches!
-            </blockquote>
+                <blockquote>
+                    I have a youtube channel, check it out! - <a
+                        href="https://youtube.com/@lanzoorgaming">@lanzoorgaming</a><br>
+                    I usually make gaming content and shorts, but I would really like to try out a few more niches!
+                </blockquote>
 
-            <div class="projects--grid">
-                <div>
-                    <b>Placeholder</b><br>
-                    Placeholder
+                <div class="projects--grid">
+                    <div>
+                        <b>Placeholder</b><br>
+                        Placeholder
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="projects--div conlangs visible">
-            <h2>Conlangs</h2>
+            <div class="projects--div conlangs visible">
+                <h2>Conlangs</h2>
 
-            <blockquote>
-                Here are all of my conlangs <span class="dim">(constructed languages)</span> I have been working on!<br>
-                Please do note that most of them are in their development stages.<br>
-                <b>I do not plan on making progress on my constructed languages, at least for now.</b>
-            </blockquote>
+                <blockquote>
+                    Here are all of my conlangs <span class="dim">(constructed languages)</span> I have been working
+                    on!<br>
+                    Please do note that most of them are in their development stages.<br>
+                    <b>I do not plan on making progress on my constructed languages, at least for now.</b>
+                </blockquote>
 
-            <div class="projects--grid">
-                <div onclick="location.href='/projects/conlangs/proto-lanzavel'">
-                    <b>Proto-Lanzavel</b><br>
-                    A root language for the Lanzavel language family
+                <div class="projects--grid">
+                    <div onclick="location.href='/projects/conlangs/proto-lanzavel'">
+                        <b>Proto-Lanzavel</b><br>
+                        A root language for the Lanzavel language family
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <script type="module" src="/out/components/top-panel/TopPanel.js"></script>
+    <script type="module" src="/out/components/navigation/Navigation.js"></script>
     <script src="/out/pages/projects.js"></script>
 </body>
 
