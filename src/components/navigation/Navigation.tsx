@@ -309,18 +309,96 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+type Connection = {
+    imageSrc: string;
+    connectionName: string;
+    connectionLink?: string;
+    handleName?: string;
+};
+
+const connections: Connection[] = [
+    {
+        imageSrc: '/assets/icons/discord.svg',
+        connectionName: 'Discord',
+        connectionLink: 'https://www.discord.com',
+        handleName: '@lanzoor | 1160164047111606292',
+    },
+
+    {
+        imageSrc: '/assets/icons/reddit.svg',
+        connectionName: 'Reddit',
+        connectionLink: 'https://www.reddit.com/user/Lanzoor/',
+        handleName: '@Lanzoor',
+    },
+];
+
+function Connection({ connection }: { connection: Connection }) {
+    return (
+        <>
+            <div className="connection">
+                <img
+                    src={connection.imageSrc}
+                    alt={''}
+                />
+
+                <div>{connection.connectionName}</div>
+
+                {connection.connectionLink && connection.handleName && <a href={connection.connectionLink}>{connection.handleName}</a>}
+            </div>
+        </>
+    );
+}
+
 function BottomNavigationRoot() {
     return (
         <>
-            <div id="container">this is a test uhh please ignore this for now i promise there will be something added here soon enuf </div>
+            <div className="flex-child">
+                <h1>lanzoor.dev</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat sit veritatis illum eos. Laudantium architecto velit officiis. Fugit accusamus eligendi blanditiis adipisci, vel consectetur molestiae, corrupti veniam perferendis temporibus est.
+                <footer>
+                    Last updated @ <b id="footer--last-updated">...</b> | frontend <b id="footer--frontend">...</b> | backend <b id="footer--backend">...</b>
+                </footer>
+            </div>
+
+            <div className="flex-child">
+                <h2>Navigation</h2>
+                Lorem Ipsum Dolor
+            </div>
+
+            <div
+                className="flex-child"
+                id="connections"
+            >
+                <h2>Connections</h2>
+
+                {connections.map((c, i) => (
+                    <Connection connection={c} />
+                ))}
+            </div>
         </>
     );
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.createElement('section');
-    root.id = 'connections';
+    root.id = 'bottom-navigation';
     root.className = 'fixed-bg';
     document.querySelector('main')?.appendChild(root);
     createRoot(root).render(<BottomNavigationRoot />);
+});
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const data = await Core.pingServer('https://api.lanzoor.dev/status');
+
+        const lastUpdated = document.getElementById('footer--last-updated');
+        const frontend = document.getElementById('footer--frontend');
+        const backend = document.getElementById('footer--backend');
+
+        if (lastUpdated) lastUpdated.textContent = new Date(data.lastUpdated).toLocaleString('en-US', { month: 'long', day: 'numeric', hour: 'numeric' });
+        if (frontend) frontend.textContent = data.versions.frontend;
+        if (backend) backend.textContent = data.versions.backend;
+    } catch (error) {
+        console.warn('failed to fetch from status:\n\t', error);
+    }
 });

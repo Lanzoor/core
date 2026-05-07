@@ -48,24 +48,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const updateDisplay = document.getElementById('update-display')!;
-    const updateFail = 'failed to fetch';
-
-    updateDisplay.textContent = updateFail;
-    try {
-        const statusResult = await Core.pingServer('https://www.lanzoor.dev/api/status');
-        if (statusResult) {
-            updateDisplay.textContent = new Date(statusResult.lastUpdated).toLocaleString('en-US', { month: 'long', day: 'numeric', hour: 'numeric' });
-        } else {
-            updateDisplay.textContent = updateFail;
-        }
-    } catch (err) {
-        console.error(err);
-        updateDisplay.textContent = updateFail;
-    }
-});
-
 // TODO: probably move this to react logic, this is ugly as fuck
 // document.addEventListener('DOMContentLoaded', async () => {
 //     const avatarDisplay = document.querySelector('#discord-status #avatar')! as HTMLImageElement;

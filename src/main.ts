@@ -17,7 +17,6 @@ this warning exits purely for preventing mistakes, and may (or should) be ignore
 
             const result = await fetch(route, options);
 
-            console.log(result);
             if (!result.ok) {
                 console.error(`failed to ping ${route}: ${route} responded with an error\n\t`, Error(result.statusText));
                 return;
