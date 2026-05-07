@@ -722,5 +722,23 @@
         #top-panel--links {
             display: none;
         }
+
+        #bottom-navigation {
+            padding: auto 10%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        #bottom-navigation .flex-child {
+            max-width: none;
+            margin: 1% 0;
+        }
+
+        #bottom-navigation .flex-child:nth-child(even) {
+            align-self: flex-end;
+        }
     }
 }
