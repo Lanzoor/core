@@ -1,10 +1,5 @@
 @layer page {
     :root {
-        --font-credits--intro-bg: radial-gradient(circle at 50% 100%, #ccc, #fff);
-        --font-credits--testing-demo-bg: radial-gradient(circle at top left, #fff 0%, #bbb 55%, transparent 100%), radial-gradient(circle at bottom right, #fff 0%, #bbb 55%, transparent 100%);
-    }
-
-    [data-theme='dark'] {
         --font-credits--intro-bg: radial-gradient(circle at 50% 100%, #222, black);
         --font-credits--testing-demo-bg: radial-gradient(circle at top left, #333 0%, #111 55%, transparent 100%), radial-gradient(circle at bottom right, #333 0%, #111 55%, transparent 100%);
     }

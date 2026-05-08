@@ -1,12 +1,5 @@
 @layer component {
     :root {
-        --left-panel-bg: #eee;
-        --left-panel-text: #222;
-
-        --left-panel-border: #666;
-    }
-
-    [data-theme='dark'] {
         --left-panel-bg: #151515;
         --left-panel-text: #eee;
 

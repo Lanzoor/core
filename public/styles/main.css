@@ -56,43 +56,6 @@
 
 @layer base {
     :root {
-        --primary: black;
-        --primary-75: rgba(0, 0, 0, 0.75);
-        --primary-50: rgba(0, 0, 0, 0.5);
-        --primary-25: rgba(0, 0, 0, 0.25);
-        --primary-10: rgba(0, 0, 0, 0.1);
-        --primary-05: rgba(0, 0, 0, 0.05);
-
-        --secondary: white;
-        --secondary-75: rgba(255, 255, 255, 0.75);
-        --secondary-50: rgba(255, 255, 255, 0.5);
-        --secondary-25: rgba(255, 255, 255, 0.25);
-        --secondary-10: rgba(255, 255, 255, 0.1);
-        --secondary-05: rgba(255, 255, 255, 0.05);
-
-        --bg: white;
-        --text: #111;
-
-        --text-bold: black;
-
-        --anchor: #555;
-        --anchor-hover: #777;
-
-        --header: black;
-
-        --th-bg: rgba(0, 0, 0, 0.075);
-        --hr-bg: #eee;
-
-        --code-bg: #ddd;
-        --code-text: #222;
-
-        --debug-primary: rgb(255, 0, 0);
-        --debug-secondary: rgb(255, 129, 129);
-
-        --div-padding: 4%;
-    }
-
-    [data-theme='dark'] {
         --primary: white;
         --primary-75: rgba(255, 255, 255, 0.75);
         --primary-50: rgba(255, 255, 255, 0.5);
@@ -122,6 +85,104 @@
 
         --code-bg: #222;
         --code-text: #ddd;
+
+        --debug-primary: rgb(255, 0, 0);
+        --debug-secondary: rgb(255, 129, 129);
+
+        --div-padding: 4%;
+    }
+
+    /* terminal-style color pallete */
+    :root {
+        --red: #e05555;
+        --green: #4ec94e;
+        --yellow: #e0c060;
+        --blue: #5588e0;
+        --magenta: #b060d0;
+        --purple: #8d60d0;
+        --cyan: #40bfbf;
+
+        --bright-red: #ff7070;
+        --bright-green: #70e870;
+        --bright-yellow: #ffe070;
+        --bright-blue: #77aaff;
+        --bright-magenta: #dd88ff;
+        --bright-purple: #b584ff;
+        --bright-cyan: #70e8e8;
+    }
+
+    .col.black,
+    .col.black * {
+        color: var(--black);
+    }
+    .col.red,
+    .col.red * {
+        color: var(--red);
+    }
+    .col.green,
+    .col.green * {
+        color: var(--green);
+    }
+    .col.yellow,
+    .col.yellow * {
+        color: var(--yellow);
+    }
+    .col.blue,
+    .col.blue * {
+        color: var(--blue);
+    }
+    .col.magenta,
+    .col.magenta * {
+        color: var(--magenta);
+    }
+    .col.purple,
+    .col.purple * {
+        color: var(--purple);
+    }
+    .col.cyan,
+    .col.cyan * {
+        color: var(--cyan);
+    }
+    .col.white,
+    .col.white * {
+        color: var(--white);
+    }
+
+    .col.bright.black,
+    .col.bright.black * {
+        color: var(--bright-black);
+    }
+    .col.bright.red,
+    .col.bright.red * {
+        color: var(--bright-red);
+    }
+    .col.bright.green,
+    .col.bright.green * {
+        color: var(--bright-green);
+    }
+    .col.bright.yellow,
+    .col.bright.yellow * {
+        color: var(--bright-yellow);
+    }
+    .col.bright.blue,
+    .col.bright.blue * {
+        color: var(--bright-blue);
+    }
+    .col.bright.magenta,
+    .col.bright.magenta * {
+        color: var(--bright-magenta);
+    }
+    .col.bright.purple,
+    .col.bright.purple * {
+        color: var(--bright-purple);
+    }
+    .col.bright.cyan,
+    .col.bright.cyan * {
+        color: var(--bright-cyan);
+    }
+    .col.bright.white,
+    .col.bright.white * {
+        color: var(--bright-white);
     }
 
     .brass-mono,
@@ -238,7 +299,7 @@
         color: var(--header);
         font-family: 'Noto Sans Mono';
         font-weight: 400;
-        text-shadow: 0 0 20px var(--primary-25);
+        /* text-shadow: 0 0 20px var(--primary-25); */
     }
 
     h1,
@@ -259,7 +320,6 @@
         margin: 0 0 20px 0;
 
         color: var(--primary);
-        font-family: 'Geist';
         font-weight: 400;
     }
 
@@ -332,10 +392,16 @@
     blockquote {
         border-left: 4px solid rgb(59, 56, 160);
         margin-left: 0;
-        background-color: rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.08);
         border-radius: 10px;
 
+        margin: 1em 0;
         padding: 0.5em 1em;
+    }
+
+    blockquote.warning {
+        border-left-color: rgb(255, 222, 92);
+        background: rgba(255, 255, 0, 0.08);
     }
 
     ul,

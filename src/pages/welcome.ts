@@ -20,33 +20,33 @@ function updateOptimization() {
 document.addEventListener('DOMContentLoaded', updateOptimization);
 window.addEventListener('resize', updateOptimization);
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const elements = [
-        //
-        '#welcome--intro #introduction',
-        '#welcome--intro #buttons',
-    ];
+// document.addEventListener('DOMContentLoaded', async () => {
+//     const elements = [
+//         //
+//         '#welcome--intro #introduction',
+//         '#welcome--intro #buttons',
+//     ];
 
-    const htmlElements = elements
-        .map((element) => {
-            return document.querySelector(element);
-        })
-        .filter(Boolean) as HTMLElement[];
+//     const htmlElements = elements
+//         .map((element) => {
+//             return document.querySelector(element);
+//         })
+//         .filter(Boolean) as HTMLElement[];
 
-    htmlElements.forEach((element) => {
-        element?.classList.remove('active');
-        element?.classList.add('inactive');
-    });
+//     htmlElements.forEach((element) => {
+//         element?.classList.remove('active');
+//         element?.classList.add('inactive');
+//     });
 
-    await Core.sleep(500);
+//     await Core.sleep(500);
 
-    for (const element of htmlElements) {
-        element.classList.remove('inactive');
-        element.classList.add('active');
+//     for (const element of htmlElements) {
+//         element.classList.remove('inactive');
+//         element.classList.add('active');
 
-        await Core.sleep(1000);
-    }
-});
+//         await Core.sleep(1000);
+//     }
+// });
 
 // TODO: probably move this to react logic, this is ugly as fuck
 // document.addEventListener('DOMContentLoaded', async () => {

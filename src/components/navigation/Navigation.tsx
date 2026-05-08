@@ -330,6 +330,24 @@ const connections: Connection[] = [
         connectionLink: 'https://www.reddit.com/user/Lanzoor/',
         handleName: '@Lanzoor',
     },
+    {
+        imageSrc: '/assets/icons/github.svg',
+        connectionName: 'GitHub',
+        connectionLink: 'https://github.com/Lanzoor',
+        handleName: 'Lanzoor',
+    },
+    {
+        imageSrc: '/assets/icons/steam.svg',
+        connectionName: 'Steam',
+        connectionLink: 'https://steamcommunity.com/id/lanzoor/',
+        handleName: 'lanzoor | Lanzoor13',
+    },
+    {
+        imageSrc: '/assets/icons/youtube.svg',
+        connectionName: 'YouTube',
+        connectionLink: 'https://www.youtube.com/@lanzoorgaming',
+        handleName: '@lanzoorgaming',
+    },
 ];
 
 function Connection({ connection }: { connection: Connection }) {
@@ -343,7 +361,14 @@ function Connection({ connection }: { connection: Connection }) {
 
                 <div>{connection.connectionName}</div>
 
-                {connection.connectionLink && connection.handleName && <a href={connection.connectionLink}>{connection.handleName}</a>}
+                {connection.connectionLink && connection.handleName && (
+                    <a
+                        href={connection.connectionLink}
+                        target="_blank"
+                    >
+                        {connection.handleName}
+                    </a>
+                )}
             </div>
         </>
     );

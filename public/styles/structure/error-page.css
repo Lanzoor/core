@@ -1,18 +1,5 @@
 @layer structure {
     :root {
-        --error-bg: linear-gradient(140deg, #eef6ff 0%, #dbeeff 50%, #c7e3ff 100%);
-
-        --error-h1-bg: linear-gradient(120deg, #3aa6c7, #1f6fb2);
-        --error-h1-shadow: 0 6px 18px rgba(31, 111, 178, 0.25);
-
-        --error-h2-bg: linear-gradient(175deg, #5bc7de, #2f8fd1);
-        --error-h2-shadow: 0 6px 18px rgba(47, 143, 209, 0.2);
-
-        --error-text: #2a4a68;
-        --error-text-bold: #1f6fb2;
-    }
-
-    [data-theme='dark'] {
         --error-bg: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
 
         --error-h1-bg: linear-gradient(120deg, #aef3ff, #2facff);
