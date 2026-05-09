@@ -1,5 +1,3 @@
-/* ==================== Fonts ==================== */
-
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
@@ -187,6 +185,12 @@
         color: var(--bright-white);
     }
 
+    .adaptive-text-shadow,
+    .adaptive-text-shadow * {
+        text-shadow: 0 0 10px oklch(from currentColor calc(l * 0.7) calc(c * 2) calc(h + 10));
+    }
+
+    /* font identifiers */
     .brass-mono,
     .brass-mono * {
         font-family: 'Brass Mono', Consolas, monospace;
@@ -661,6 +665,16 @@
 
     section.centered.vertically {
         vertical-align: middle;
+    }
+
+    section.aligned.left {
+        text-align: left;
+    }
+    section.aligned.center {
+        text-align: center;
+    }
+    section.aligned.right {
+        text-align: right;
     }
 
     .dim {

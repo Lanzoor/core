@@ -2,7 +2,7 @@
     :root {
         --top-panel-overlay-bg: radial-gradient(circle at 50% -25%, black 0%, transparent 25%);
 
-        --top-panel-text: white;
+        --top-panel-text: #aaa;
         --top-panel-bg--at-top: rgba(0, 0, 0, 0.25);
         --top-panel-bg--solid: rgba(0, 0, 0, 0.5);
 
@@ -84,6 +84,11 @@
         transition: text-shadow 0.5s ease;
     }
 
+    .logo,
+    .logo * {
+        color: white;
+    }
+
     .logo .lanzoordev-head {
         text-shadow: 0 0 25px rgb(129, 18, 255);
         color: transparent;
@@ -127,7 +132,7 @@
         transform: translateX(-50%);
         width: 100%;
 
-        gap: 40px;
+        gap: 5px;
 
         display: flex;
         flex-direction: row;
@@ -143,51 +148,21 @@
         font-family: 'JetBrains Mono';
         font-size: 20px;
 
-        padding: 2.5px;
+        padding: 5px 10px;
         color: var(--top-panel-text);
-        text-shadow: 0 0 10px var(--top-panel-text);
-
-        opacity: 0.7;
 
         pointer-events: auto;
 
-        transition:
-            color 0.2s ease,
-            text-shadow 0.2s ease,
-            opacity 0.2s ease;
+        transition: all 0.5s ease;
     }
 
     #top-panel--links a:hover {
         text-decoration: none;
 
-        opacity: 1;
-
-        color: var(--top-panel-text);
-        text-shadow:
-            0 0 10px var(--top-panel-text),
-            4px 4px 1px rgb(165, 165, 165),
-            4px 4px 10px rgb(100, 100, 100);
+        background: rgb(44, 1, 77);
+        color: rgb(141, 83, 255);
 
         transform: none;
-    }
-
-    #top-panel--links a::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-
-        width: 0;
-        height: 3px;
-        background: var(--primary-50);
-        transition:
-            width 0.5s ease-out,
-            background 0.5s ease-out;
-    }
-
-    #top-panel--links a:hover::after {
-        background: var(--primary-75);
-        width: 100%;
     }
 
     #navigation--close {
@@ -658,9 +633,6 @@
     @media (max-width: 1600px) {
         #top-panel .logo {
             font-size: 25px;
-        }
-        #top-panel--links {
-            gap: 20px;
         }
         #top-panel--links a {
             font-size: 10px;

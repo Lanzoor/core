@@ -16,3 +16,5 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+
+/public/docs/announcements/farewell.html
