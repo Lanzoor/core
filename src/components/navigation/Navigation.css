@@ -1,7 +1,5 @@
 @layer component {
     :root {
-        --top-panel-height: 25vh;
-
         --top-panel-overlay-bg: radial-gradient(circle at 50% -25%, black 0%, transparent 25%);
 
         --top-panel-text: white;
@@ -35,14 +33,12 @@
         inset: 0 0 auto 0;
 
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
 
         padding: 2%;
         gap: 4%;
-
-        height: var(--top-panel-height);
 
         z-index: 2147483647;
         background: var(--top-panel-bg--solid);
@@ -68,25 +64,7 @@
         transform: translateY(-200%);
     }
 
-    #top-panel-overlay {
-        position: absolute;
-        inset: 0 0 auto 0;
-        width: 100%;
-        height: 100%;
-        background: var(--top-panel-overlay-bg);
-
-        pointer-events: none;
-    }
-
-    #top-panel--top {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #top-panel--top a {
+    #top-panel a {
         padding: 0;
 
         text-shadow: none;
@@ -94,19 +72,42 @@
         text-decoration: none;
 
         font-size: 200%;
-        font-family: 'Space Grotesk';
+        font-family: 'Noto Sans Mono';
 
         transition:
             color 0.5s ease,
             text-shadow 0.5s ease;
     }
 
-    #top-panel--top a:hover {
-        color: rgb(200, 200, 200);
+    #top-panel .logo,
+    #top-panel .logo * {
+        transition: text-shadow 0.5s ease;
+    }
 
-        text-shadow:
-            0 0 10px white,
-            4px 4px 1px rgb(100, 100, 100);
+    .logo .lanzoordev-head {
+        text-shadow: 0 0 25px rgb(129, 18, 255);
+        color: transparent;
+        background: linear-gradient(90deg, rgb(151, 86, 255), rgb(123, 61, 255));
+        background-clip: text;
+    }
+
+    h1.logo .lanzoordev-head {
+        text-shadow: 0 0 50px rgb(129, 18, 255);
+    }
+
+    .logo .lanzoordev-tail {
+        opacity: 0.5;
+    }
+
+    #top-panel .logo:hover {
+        text-shadow: 0 0 20px white;
+    }
+
+    #top-panel .logo:hover .lanzoordev-head {
+        text-shadow: 0 0 20px rgb(174, 103, 255);
+        color: transparent;
+        background: linear-gradient(90deg, rgb(151, 86, 255), rgb(123, 61, 255));
+        background-clip: text;
     }
 
     #top-panel--buttons {
@@ -120,15 +121,10 @@
         height: 100%;
     }
 
-    #top-panel--bottom {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-    }
-
     #top-panel--links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         width: 100%;
 
         gap: 40px;
@@ -144,7 +140,7 @@
     #top-panel--links a {
         text-decoration: none;
 
-        font-family: 'Geist';
+        font-family: 'JetBrains Mono';
         font-size: 20px;
 
         padding: 2.5px;
@@ -263,16 +259,13 @@
     }
 
     #navigation-overlay,
-    #navigation-overlay *,
-    #option-overlay,
-    #option-overlay * {
+    #navigation-overlay * {
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.5s ease;
     }
 
-    #navigation-overlay,
-    #option-overlay {
+    #navigation-overlay {
         display: block;
         position: fixed;
 
@@ -291,9 +284,7 @@
     }
 
     #navigation-overlay.active,
-    #navigation-overlay.active *,
-    #option-overlay.active,
-    #option-overlay.active * {
+    #navigation-overlay.active * {
         opacity: 1;
         pointer-events: auto;
     }
@@ -374,77 +365,6 @@
         text-shadow: 0 0 10px black;
 
         cursor: pointer;
-    }
-
-    #option-overlay {
-        padding: 4%;
-    }
-
-    #option-panel {
-        position: relative;
-
-        width: 100%;
-        height: 100%;
-        padding: 2%;
-
-        background: var(--secondary-50);
-        border: 5px solid var(--secondary-75);
-        border-radius: 30px;
-
-        overflow-y: auto;
-    }
-
-    #option-header {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    #option-header p {
-        all: unset;
-        font-size: 40px;
-        font-family: 'Geist';
-        color: var(--top-panel-text);
-    }
-
-    #options {
-        padding: 2%;
-
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #options .option {
-        position: relative;
-
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    #options .option p {
-        all: unset;
-        font-size: 30px;
-        font-family: 'Geist';
-        color: var(--top-panel-text);
-    }
-
-    #options .option div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #options .option .panel-icon {
-        margin-right: 20px;
     }
 
     .dropdown {
@@ -675,6 +595,7 @@
         color: #9c9c9c;
         text-shadow: 0 0 10px #555555;
     } */
+
     @media (max-width: 768px) {
         #navigation-panel {
             width: 75vw;
@@ -709,10 +630,6 @@
     }
 
     @media (max-width: 1080px) {
-        #top-panel--links {
-            display: none;
-        }
-
         #bottom-navigation {
             padding: auto 10%;
 
@@ -729,6 +646,24 @@
 
         #bottom-navigation .flex-child:nth-child(even) {
             align-self: flex-end;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        #top-panel--links {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1600px) {
+        #top-panel .logo {
+            font-size: 25px;
+        }
+        #top-panel--links {
+            gap: 20px;
+        }
+        #top-panel--links a {
+            font-size: 10px;
         }
     }
 }

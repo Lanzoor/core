@@ -71,7 +71,7 @@
         --secondary-05: rgba(0, 0, 0, 0.05);
 
         --bg: #111;
-        --text: #eee;
+        --text: #ccc;
 
         --text-bold: #ddd;
 
@@ -94,6 +94,7 @@
 
     /* terminal-style color pallete */
     :root {
+        --black: #333;
         --red: #e05555;
         --green: #4ec94e;
         --yellow: #e0c060;
@@ -102,6 +103,7 @@
         --purple: #8d60d0;
         --cyan: #40bfbf;
 
+        --bright-black: #666;
         --bright-red: #ff7070;
         --bright-green: #70e870;
         --bright-yellow: #ffe070;
@@ -244,7 +246,7 @@
     }
 
     body {
-        font-family: 'Geist';
+        font-family: 'JetBrains Mono';
         font-weight: 300;
         font-size: 25px;
 

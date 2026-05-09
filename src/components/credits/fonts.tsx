@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     createRoot(root).render(<FontCreditsRoot />);
 });
+
 function FontButton({ font, selected, onClick }: { font: Font; selected: boolean; onClick: () => void }) {
     return (
         <button

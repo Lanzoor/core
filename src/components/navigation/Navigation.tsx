@@ -96,7 +96,7 @@ function Destination({ value, context }: { value: Link; context?: Context }) {
                 href={value.link}
                 target={value.link.startsWith('http') ? '_blank' : '_self'}
             >
-                {value.name}
+                {`[ ${value.name.toLowerCase()} ]`}
             </a>
         );
     } else if (context == 'panel-links' && valueContext.includes('panel-links')) {
@@ -139,49 +139,43 @@ function Destination({ value, context }: { value: Link; context?: Context }) {
 function TopPanelRoot() {
     return (
         <>
-            <div id="top-panel-overlay">
-                <div id="top-panel">
-                    <div id="top-panel--top">
-                        <a
-                            href="/"
-                            className="plain"
-                        >
-                            lanzoor.dev
-                        </a>
-                    </div>
+            <div id="top-panel">
+                <a
+                    href="/"
+                    className="logo plain"
+                >
+                    <span className="lanzoordev-head">lanzoor</span>.<span className="lanzoordev-tail">dev</span>
+                </a>
 
-                    <div id="top-panel--bottom">
-                        <nav id="top-panel--links">
-                            {destinations.map((d, i) => (
-                                <Destination
-                                    key={i}
-                                    value={d}
-                                    context="inline-links"
-                                />
-                            ))}
-                        </nav>
+                <nav id="top-panel--links">
+                    {destinations.map((d, i) => (
+                        <Destination
+                            key={i}
+                            value={d}
+                            context="inline-links"
+                        />
+                    ))}
+                </nav>
 
-                        <div id="top-panel--buttons">
-                            {/* <img
+                <div id="top-panel--buttons">
+                    {/* <img
                         src="/assets/icons/settings.svg"
                         alt="⚙"
                         className="panel-icon"
                         onClick={() => toggleOpt()}
                     /> */}
-                            <img
-                                src="/assets/icons/hamburger.svg"
-                                alt="☰"
-                                className="panel-icon"
-                                id="toggle--navigation"
-                            />
-                            {/* <img
+                    <img
+                        src="/assets/icons/hamburger.svg"
+                        alt="☰"
+                        className="panel-icon"
+                        id="toggle--navigation"
+                    />
+                    {/* <img
                                 src="/assets/icons/color-mode.svg"
                                 alt="t"
                                 className="panel-icon"
                                 id="toggle--theme"
                             /> */}
-                        </div>
-                    </div>
                 </div>
             </div>
         </>
