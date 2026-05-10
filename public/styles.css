@@ -167,6 +167,52 @@
         border-radius: 2147483647px;
     }
 
+    #welcome--profile #nationality {
+        align-items: center;
+
+        background: radial-gradient(circle at -50% 50%, rgb(4, 26, 114), black);
+    }
+
+    #welcome--profile #nationality #localtime-clock {
+        text-align: left;
+        user-select: none;
+    }
+
+    #welcome--profile #nationality #localtime-clock .date {
+        color: var(--blue);
+    }
+
+    #welcome--profile #nationality #localtime-clock .time {
+        display: inline-block;
+        font-size: 30px;
+
+        margin: 0 5px;
+        padding: 10px;
+
+        color: var(--cyan);
+        background: rgba(0, 200, 255, 0.05);
+        border: 1px solid rgba(0, 200, 255, 0.3);
+        border-radius: 4px;
+        box-shadow:
+            0 0 10px rgba(0, 200, 255, 0.15),
+            inset 0 0 10px rgba(0, 200, 255, 0.05);
+
+        transition: 0.5s ease;
+    }
+
+    #welcome--profile #nationality #localtime-clock .time:hover {
+        transform: scale(1.1);
+        background: rgba(0, 200, 255, 0.25);
+    }
+
+    /* #welcome--profile #nationality #localtime-clock span {
+        font-size: 30px;
+        padding: 10px;
+        color: var(--cyan);
+        border: 2px solid rgb(0, 80, 146);
+        border-radius: 5px;
+    } */
+
     @media (max-width: 768px) {
         #welcome--intro {
             backdrop-filter: none;
@@ -213,6 +259,10 @@
 
         #welcome--intro header h1 {
             font-size: 50px;
+        }
+
+        #welcome--profile #nationality {
+            flex-direction: column-reverse !important;
         }
     }
 }

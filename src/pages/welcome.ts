@@ -225,3 +225,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(animateFont, animationIntervalMs);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    let localtimeClock = document.getElementById('localtime-clock');
+
+    if (!localtimeClock) return;
+
+    let monthDisplay = document.querySelector('#localtime-clock #month');
+    let dayDisplay = document.querySelector('#localtime-clock #day');
+    let yearDisplay = document.querySelector('#localtime-clock #year');
+
+    let hourDisplay = document.querySelector('#localtime-clock #hour');
+    let minuteDisplay = document.querySelector('#localtime-clock #minute');
+    let secondDisplay = document.querySelector('#localtime-clock #second');
+
+    function updateLocalTime(): void {
+        const date = new Date();
+        const utc9 = new Date(date.getTime() + 9 * 60 * 60 * 1000);
+        const month = utc9.toLocaleString('en-US', { month: 'long', timeZone: 'Asia/Seoul' });  
+        const day = String(utc9.getUTCDate()).padStart(2, '0');
+        const year = utc9.getUTCFullYear();
+        let hour = utc9.getUTCHours();
+        const minute = String(utc9.getUTCMinutes()).padStart(2, '0');
+        const second = String(utc9.getUTCSeconds()).padStart(2, '0');
+
+        if (!monthDisplay || !dayDisplay || !yearDisplay || !hourDisplay || !minuteDisplay || !secondDisplay) return;
+
+        monthDisplay.textContent = month;
+        dayDisplay.textContent = day;
+        yearDisplay.textContent = String(year);
+
+        hourDisplay.textContent = String(hour);
+        minuteDisplay.textContent = minute;
+        secondDisplay.textContent = second;
+    }
+
+    updateLocalTime();
+    setInterval(updateLocalTime, 1000);
+});

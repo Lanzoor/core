@@ -17,6 +17,7 @@ type Link = {
 
 const destinations: Link[] = [
     { link: '/', name: 'Welcome!' },
+    { link: '/about', name: 'About' },
     { link: '/map', name: 'Site Map', context: ['panel-links'] },
     {
         link: '/projects',
@@ -39,6 +40,7 @@ const destinations: Link[] = [
     {
         link: '/credits',
         name: 'Credits',
+        context: ['panel-links'],
         children: [
             { link: '/credits', name: 'Credits' },
             { link: '/credits/contributors', name: 'Contributors' },
@@ -46,7 +48,7 @@ const destinations: Link[] = [
             { link: '/credits/assets', name: 'Asset Credits' },
         ],
     },
-    { link: '/troubleshooting', name: 'Troubleshooting' },
+    { link: '/troubleshooting', name: 'Troubleshooting', context: ['panel-links'] },
 ];
 
 let theme = localStorage.getItem('theme') || 'dark';
@@ -375,7 +377,7 @@ function BottomNavigationRoot() {
                 <h1>lanzoor.dev</h1>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat sit veritatis illum eos. Laudantium architecto velit officiis. Fugit accusamus eligendi blanditiis adipisci, vel consectetur molestiae, corrupti veniam perferendis temporibus est.
                 <footer>
-                    Last updated @ <b id="footer--last-updated">...</b> | frontend <b id="footer--frontend">...</b> | backend <b id="footer--backend">...</b>
+                    frontend <b id="footer--frontend">...</b> | backend <b id="footer--backend">...</b>
                 </footer>
             </div>
 

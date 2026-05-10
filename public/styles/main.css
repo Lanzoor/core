@@ -93,21 +93,27 @@
     /* terminal-style color pallete */
     :root {
         --black: #333;
-        --red: #e05555;
-        --green: #4ec94e;
-        --yellow: #e0c060;
-        --blue: #5588e0;
-        --magenta: #b060d0;
-        --purple: #8d60d0;
-        --cyan: #40bfbf;
-
         --bright-black: #666;
+
+        --red: #e05555;
         --bright-red: #ff7070;
+
+        --green: #4ec94e;
         --bright-green: #70e870;
+
+        --yellow: #e0c060;
         --bright-yellow: #ffe070;
+
+        --blue: #5588e0;
         --bright-blue: #77aaff;
+
+        --magenta: #b060d0;
         --bright-magenta: #dd88ff;
+
+        --purple: #8d60d0;
         --bright-purple: #b584ff;
+
+        --cyan: #40bfbf;
         --bright-cyan: #70e8e8;
     }
 
@@ -115,74 +121,71 @@
     .col.black * {
         color: var(--black);
     }
-    .col.red,
-    .col.red * {
-        color: var(--red);
-    }
-    .col.green,
-    .col.green * {
-        color: var(--green);
-    }
-    .col.yellow,
-    .col.yellow * {
-        color: var(--yellow);
-    }
-    .col.blue,
-    .col.blue * {
-        color: var(--blue);
-    }
-    .col.magenta,
-    .col.magenta * {
-        color: var(--magenta);
-    }
-    .col.purple,
-    .col.purple * {
-        color: var(--purple);
-    }
-    .col.cyan,
-    .col.cyan * {
-        color: var(--cyan);
-    }
-    .col.white,
-    .col.white * {
-        color: var(--white);
-    }
-
     .col.bright.black,
     .col.bright.black * {
         color: var(--bright-black);
+    }
+
+    .col.red,
+    .col.red * {
+        color: var(--red);
     }
     .col.bright.red,
     .col.bright.red * {
         color: var(--bright-red);
     }
+
+    .col.green,
+    .col.green * {
+        color: var(--green);
+    }
     .col.bright.green,
     .col.bright.green * {
         color: var(--bright-green);
+    }
+
+    .col.yellow,
+    .col.yellow * {
+        color: var(--yellow);
     }
     .col.bright.yellow,
     .col.bright.yellow * {
         color: var(--bright-yellow);
     }
+
+    .col.blue,
+    .col.blue * {
+        color: var(--blue);
+    }
     .col.bright.blue,
     .col.bright.blue * {
         color: var(--bright-blue);
+    }
+
+    .col.magenta,
+    .col.magenta * {
+        color: var(--magenta);
     }
     .col.bright.magenta,
     .col.bright.magenta * {
         color: var(--bright-magenta);
     }
+    .col.purple,
+    .col.purple * {
+        color: var(--purple);
+    }
     .col.bright.purple,
     .col.bright.purple * {
         color: var(--bright-purple);
     }
+
+    .col.cyan,
+    .col.cyan * {
+        color: var(--cyan);
+    }
     .col.bright.cyan,
     .col.bright.cyan * {
         color: var(--bright-cyan);
-    }
-    .col.bright.white,
-    .col.bright.white * {
-        color: var(--bright-white);
     }
 
     .adaptive-text-shadow,
