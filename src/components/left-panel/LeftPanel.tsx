@@ -25,17 +25,17 @@ function LeftPanel() {
 }
 
 function LeftPanelItem({ element }: { element: HTMLElement }) {
-    const elementType = element.tagName.toLowerCase();
-    if (!/^h[1-6]$/i.test(elementType)) return null;
-
-    const isHeader = element.closest('header') !== null;
+    const tag = element.tagName.toLowerCase();
+    if (!/^h[1-3]$/i.test(tag)) return null;
+    const level = parseInt(tag[1]!);
 
     return (
-        <>
-            <li className={isHeader ? 'lt-header' : 'lt-' + elementType}>
-                <a href={'#' + element.id}>{element.textContent}</a>
-            </li>
-        </>
+        <li
+            className={`lt-${tag}`}
+            style={{ paddingLeft: `${(level - 1) * 48}px` }}
+        >
+            <a href={`#${element.id}`}>{element.textContent}</a>
+        </li>
     );
 }
 

@@ -1,81 +1,39 @@
 @layer component {
     :root {
-        --left-panel-bg: #151515;
-        --left-panel-text: #eee;
-
-        --left-panel-border: #666;
-    }
-
-    body {
-        padding: 0;
-        margin: 0;
-
-        display: flex;
-        flex-direction: row;
-    }
-
-    main {
-        width: 100%;
-        max-height: 100vh;
-        padding: 4%;
-
-        overflow: auto;
+        --left-panel-width: 20%;
+        --left-panel-bg: #0f0f0f;
+        --left-panel-text: #ccc;
+        --left-panel-text-muted: #666;
+        --left-panel-border: #222;
+        --left-panel-accent: #7c3aed;
+        --left-panel-hover: rgba(124, 58, 237, 0.08);
+        --left-panel-active: rgba(124, 58, 237, 0.15);
     }
 
     #left-panel {
-        min-width: 20%;
-        max-width: 30%;
-        min-height: 100%;
+        position: fixed;
+        inset: 0 0 0 auto;
 
-        padding: 1%;
+        width: var(--left-panel-width);
+        height: 100%;
 
-        background: var(--left-panel-bg);
-        border-right: 2px solid var(--left-panel-border);
+        padding-top: var(--top-panel-max-height);
 
         overflow-y: auto;
     }
 
-    .lt-header {
-        font-size: 30px;
-        font-weight: 700;
-    }
-
+    #left-panel,
     #left-panel ul {
-        background: none;
-        list-style: none;
-        padding: 0;
-        margin: 0;
+        background: var(--left-panel-bg);
     }
 
     #left-panel li {
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-
-        min-height: 50px;
-        margin: 0;
-        padding: 0 10px;
-        border-radius: 8px;
-
-        cursor: pointer;
-        transition:
-            background 0.15s ease,
-            color 0.15s ease;
-    }
-
-    #left-panel li:hover {
-        background: rgba(255, 255, 255, 0.08);
-    }
-
-    #left-panel li a {
-        color: var(--left-panel-text);
-
-        width: 100%;
-        height: 100%;
         text-decoration: none;
-        text-shadow: none;
+    }
+
+    main section {
+        padding-left: 25%;
+        padding-right: 25%;
     }
 
     @media (max-width: 768px) {

@@ -19,15 +19,15 @@ const destinations: Link[] = [
     { link: '/', name: 'Welcome!' },
     { link: '/about', name: 'About' },
     { link: '/map', name: 'Site Map', context: ['panel-links'] },
-    {
-        link: '/projects',
-        name: 'Projects',
-        children: [
-            { link: '/projects', name: 'Project Portal' },
-            { link: 'https://www.youtube.com/@lanzoorgaming', name: 'Videos' },
-            { link: '/projects/conlangs', name: 'Conlangs' },
-        ],
-    },
+    // {
+    //     link: '/projects',
+    //     name: 'Projects',
+    //     children: [
+    //         { link: '/projects', name: 'Project Portal' },
+    //         { link: 'https://www.youtube.com/@lanzoorgaming', name: 'Videos' },
+    //         { link: '/projects/conlangs', name: 'Conlangs' },
+    //     ],
+    // },
     {
         link: '/docs',
         name: 'Documents',
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 type Connection = {
     imageSrc: string;
-    connectionName: string;
+    connectionName?: string;
     connectionLink?: string;
     handleName?: string;
 };
@@ -344,6 +344,10 @@ const connections: Connection[] = [
         connectionLink: 'https://www.youtube.com/@lanzoorgaming',
         handleName: '@lanzoorgaming',
     },
+    {
+        imageSrc: '/assets/icons/gmail.svg',
+        connectionName: 'lanzoorsupport@gmail.com',
+    },
 ];
 
 function Connection({ connection }: { connection: Connection }) {
@@ -355,7 +359,7 @@ function Connection({ connection }: { connection: Connection }) {
                     alt={''}
                 />
 
-                <div>{connection.connectionName}</div>
+                {connection.connectionName && <div>{connection.connectionName}</div>}
 
                 {connection.connectionLink && connection.handleName && (
                     <a
@@ -404,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = document.createElement('section');
     root.id = 'bottom-navigation';
     root.className = 'fixed-bg';
-    document.querySelector('main')?.appendChild(root);
+    document.body.appendChild(root);
     createRoot(root).render(<BottomNavigationRoot />);
 });
 

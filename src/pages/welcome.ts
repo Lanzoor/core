@@ -231,33 +231,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!localtimeClock) return;
 
-    let monthDisplay = document.querySelector('#localtime-clock #month');
-    let dayDisplay = document.querySelector('#localtime-clock #day');
-    let yearDisplay = document.querySelector('#localtime-clock #year');
-
-    let hourDisplay = document.querySelector('#localtime-clock #hour');
-    let minuteDisplay = document.querySelector('#localtime-clock #minute');
-    let secondDisplay = document.querySelector('#localtime-clock #second');
+    let dateDisplay = document.querySelector('#localtime-clock #date');
+    let timeDisplay = document.querySelector('#localtime-clock #time');
 
     function updateLocalTime(): void {
         const date = new Date();
         const utc9 = new Date(date.getTime() + 9 * 60 * 60 * 1000);
-        const month = utc9.toLocaleString('en-US', { month: 'long', timeZone: 'Asia/Seoul' });  
-        const day = String(utc9.getUTCDate()).padStart(2, '0');
-        const year = utc9.getUTCFullYear();
         let hour = utc9.getUTCHours();
         const minute = String(utc9.getUTCMinutes()).padStart(2, '0');
         const second = String(utc9.getUTCSeconds()).padStart(2, '0');
 
-        if (!monthDisplay || !dayDisplay || !yearDisplay || !hourDisplay || !minuteDisplay || !secondDisplay) return;
+        if (!timeDisplay || !dateDisplay) return;
 
-        monthDisplay.textContent = month;
-        dayDisplay.textContent = day;
-        yearDisplay.textContent = String(year);
+        dateDisplay.textContent = utc9.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'Asia/Seoul' });
 
-        hourDisplay.textContent = String(hour);
-        minuteDisplay.textContent = minute;
-        secondDisplay.textContent = second;
+        timeDisplay.innerHTML = `<b>${hour}</b>:<b>${minute}</b>:<b>${second}</b>`;
     }
 
     updateLocalTime();

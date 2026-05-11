@@ -174,35 +174,76 @@
     }
 
     #welcome--profile #nationality #localtime-clock {
-        text-align: left;
-        user-select: none;
-    }
+        font-family: 'Noto Sans Mono';
+        background: #171717;
+        padding: 2%;
 
-    #welcome--profile #nationality #localtime-clock .date {
-        color: var(--blue);
-    }
+        border: 2px solid #444;
+        border-radius: 30px;
 
-    #welcome--profile #nationality #localtime-clock .time {
-        display: inline-block;
-        font-size: 30px;
-
-        margin: 0 5px;
-        padding: 10px;
-
-        color: var(--cyan);
-        background: rgba(0, 200, 255, 0.05);
-        border: 1px solid rgba(0, 200, 255, 0.3);
-        border-radius: 4px;
         box-shadow:
-            0 0 10px rgba(0, 200, 255, 0.15),
-            inset 0 0 10px rgba(0, 200, 255, 0.05);
+            -20px 10px 40px rgba(88, 241, 255, 0.5),
+            0 0 40px rgba(88, 88, 255, 0.5),
+            20px -10px 40px rgba(191, 88, 255, 0.5);
 
-        transition: 0.5s ease;
+        text-align: center;
+        user-select: none;
+
+        animation: clockGlow 10s ease infinite;
     }
 
-    #welcome--profile #nationality #localtime-clock .time:hover {
-        transform: scale(1.1);
-        background: rgba(0, 200, 255, 0.25);
+    @keyframes clockGlow {
+        0% {
+            box-shadow:
+                -20px 10px 40px rgba(88, 241, 255, 0.25),
+                0 0 40px rgba(88, 88, 255, 0.25),
+                20px -10px 40px rgba(191, 88, 255, 0.25);
+        }
+
+        50% {
+            box-shadow:
+                20px -10px 40px rgba(88, 241, 255, 0.25),
+                0 0 40px rgba(88, 88, 255, 0.25),
+                -20px 10px 40px rgba(191, 88, 255, 0.25);
+        }
+
+        100% {
+            box-shadow:
+                -20px 10px 40px rgba(88, 241, 255, 0.25),
+                0 0 40px rgba(88, 88, 255, 0.25),
+                20px -10px 40px rgba(191, 88, 255, 0.25);
+        }
+    }
+
+    #welcome--profile #nationality #localtime-clock #time {
+        font-size: 50px;
+    }
+
+    #welcome--profile #nationality #localtime-clock #time b {
+        text-shadow: 0 0 10px rgba(88, 88, 255, 0.5);
+        color: transparent;
+
+        background: linear-gradient(180deg, rgba(88, 241, 255, 0.5), rgba(88, 88, 255, 0.5), rgba(191, 88, 255, 0.5));
+        background-clip: text;
+    }
+
+    #welcome--profile #nationality #localtime-clock #date {
+        text-shadow: 0 0 10px rgba(88, 241, 255, 0.5);
+        color: transparent;
+
+        background: linear-gradient(180deg, rgba(88, 88, 255, 0.5), rgba(88, 255, 247, 0.5));
+        background-clip: text;
+    }
+
+    #responsive-wrapper {
+        opacity: 0.9;
+    }
+
+    #to-the-left {
+        display: inline-block;
+    }
+    #below {
+        display: none;
     }
 
     /* #welcome--profile #nationality #localtime-clock span {
@@ -263,6 +304,18 @@
 
         #welcome--profile #nationality {
             flex-direction: column-reverse !important;
+        }
+
+        #to-the-left {
+            display: none;
+        }
+        #below {
+            display: inline-block;
+        }
+
+        #welcome--profile #nationality #localtime-clock {
+            padding: 4%;
+            margin: 4% 0;
         }
     }
 }

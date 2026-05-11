@@ -1,5 +1,6 @@
 @layer component {
     :root {
+        --top-panel-max-height: 20vh;
         --top-panel-overlay-bg: radial-gradient(circle at 50% -25%, black 0%, transparent 25%);
 
         --top-panel-text: #aaa;
@@ -39,6 +40,8 @@
 
         padding: 2%;
         gap: 4%;
+
+        max-height: var(--top-panel-max-height);
 
         z-index: 2147483647;
         background: var(--top-panel-bg--solid);
