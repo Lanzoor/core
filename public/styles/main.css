@@ -332,6 +332,11 @@
         font-weight: 400;
     }
 
+    a.plain {
+        color: var(--text);
+        text-decoration: none;
+    }
+
     a:not(.plain) {
         display: inline-block;
 

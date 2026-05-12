@@ -3,10 +3,20 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import fs from 'fs';
 
+const excludedDirs = [path.resolve(__dirname, 'src/scripts')];
+
+function isExcluded(dir: string) {
+    return excludedDirs.some((excluded) => dir.startsWith(excluded));
+}
+
 function getEntries(dir: string) {
     const entries: Record<string, string> = {};
 
     function scan(currentDir: string) {
+        if (isExcluded(currentDir)) {
+            return;
+        }
+
         for (const file of fs.readdirSync(currentDir)) {
             const fullPath = path.join(currentDir, file);
             const stat = fs.statSync(fullPath);
@@ -20,6 +30,7 @@ function getEntries(dir: string) {
 
             if (!isValidTsFile) {
                 console.info(`file ${file} skipped, as it does not match the allowed file format`);
+                continue;
             }
 
             const relative = path
