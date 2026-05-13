@@ -1,4 +1,8 @@
 @layer page {
+    :root {
+        --logo-font-size: 100px;
+    }
+
     body {
         background-image: url('/assets/iris.jpg');
         background-position: center center;
@@ -7,20 +11,6 @@
         background-attachment: fixed;
 
         font-family: 'JetBrains Mono';
-    }
-
-    @keyframes floatAnimation {
-        0% {
-            transform: translateY(-5px);
-        }
-
-        50% {
-            transform: translateY(5px);
-        }
-
-        100% {
-            transform: translateY(-5px);
-        }
     }
 
     #welcome--intro {
@@ -41,13 +31,13 @@
         }
     }
 
-    #welcome--intro header h1 {
-        font-size: 100px;
+    #welcome--intro header .logo {
+        font-size: var(--logo-font-size);
         user-select: none;
         position: relative;
     }
 
-    #welcome--intro header h1::after {
+    #welcome--intro header .logo::after {
         position: absolute;
         left: auto;
         bottom: 4px;
@@ -286,20 +276,12 @@
     }
 
     @media (max-width: 1080px) {
+        :root {
+            --logo-font-size: 50px;
+        }
+
         #welcome--profile #name-display {
             height: 500px;
-        }
-
-        #connections #container {
-            flex-direction: column;
-        }
-
-        #connections #support {
-            align-self: flex-end;
-        }
-
-        #welcome--intro header h1 {
-            font-size: 50px;
         }
 
         #welcome--profile #nationality {

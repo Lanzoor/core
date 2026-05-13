@@ -14,6 +14,7 @@ function getEntries(dir: string) {
 
     function scan(currentDir: string) {
         if (isExcluded(currentDir)) {
+            console.info(`directory ${currentDir} skipped, as it is explicitly excluded`);
             return;
         }
 
@@ -26,9 +27,9 @@ function getEntries(dir: string) {
                 continue;
             }
 
-            const isValidTsFile = (file.endsWith('.ts') || file.endsWith('.tsx')) && !file.endsWith('.d.ts');
+            const isValidFile = (file.endsWith('.ts') || file.endsWith('.tsx')) && !file.endsWith('.d.ts');
 
-            if (!isValidTsFile) {
+            if (!isValidFile) {
                 console.info(`file ${file} skipped, as it does not match the allowed file format`);
                 continue;
             }

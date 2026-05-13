@@ -1,0 +1,18 @@
+.blog {
+    margin: 2% 0;
+}
+
+#tags {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.tag {
+    padding: 5px 10px;
+
+    background: #222;
+    border: 2px solid #777;
+    border-radius: 5px;
+}

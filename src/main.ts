@@ -35,32 +35,6 @@ this warning exits purely for preventing mistakes, and may (or should) be ignore
         }
     }
 
-    export function enableSmoothScroll() {
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener('click', (event) => {
-                event.preventDefault();
-                const targetElement = event.currentTarget as HTMLAnchorElement;
-                const target = document.querySelector(targetElement.getAttribute('href')!);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    }
-
-    export function loadCSS(href: string) {
-        try {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = href;
-            document.head.appendChild(link);
-            console.info(`successfully injected <link> tag for ${href}
-if the styles somehow don't load, please ensure that the correct CSS file is injected`);
-        } catch (error) {
-            console.error(`failed to inject <link> tag for ${href}:\n\t`, error, `\nthis may cause weird styles when components are loaded`);
-        }
-    }
-
     export function pickRandom<T>(array: T[]): T {
         return array[Math.floor(Math.random() * array.length)];
     }
@@ -69,11 +43,39 @@ if the styles somehow don't load, please ensure that the correct CSS file is inj
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    export function isMobileDevice() {
-        return (navigator as any).userAgentData?.mobile || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || ('ontouchstart' in window && navigator.maxTouchPoints > 0);
-    }
-
     export async function sleep(timeMs: number): Promise<any> {
         return new Promise((p) => setTimeout(p, timeMs));
+    }
+
+    export namespace DOM {
+        export function isMobileDevice() {
+            return (navigator as any).userAgentData?.mobile || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || ('ontouchstart' in window && navigator.maxTouchPoints > 0);
+        }
+
+        export function loadCSS(href: string) {
+            try {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = href;
+                document.head.appendChild(link);
+                console.info(`successfully injected <link> tag for ${href}
+if the styles somehow don't load, please ensure that the correct CSS file is injected`);
+            } catch (error) {
+                console.error(`failed to inject <link> tag for ${href}:\n\t`, error, `\nthis may cause weird styles when components are loaded`);
+            }
+        }
+
+        export function enableSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const targetElement = event.currentTarget as HTMLAnchorElement;
+                    const target = document.querySelector(targetElement.getAttribute('href')!);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        }
     }
 }

@@ -5,7 +5,7 @@ import { Core } from '@/main';
 // @ts-ignore
 import '@/components/left-panel/LeftPanel.css';
 
-Core.loadCSS('/out/components/left-panel/LeftPanel.css');
+Core.DOM.loadCSS('/out/components/left-panel/LeftPanel.css');
 
 function LeftPanel() {
     const ltTracks = Array.from(document.getElementsByClassName('lt-track')).map((e) => e as HTMLElement);

@@ -12,24 +12,24 @@
         --error-text-bold: #d3f9ff;
     }
 
-    body {
+    main {
         background: var(--error-bg);
         color: var(--error-text);
     }
 
-    b {
+    main b {
         color: var(--error-text-bold);
         text-shadow: 0 0 20px var(--error-text-bold);
     }
 
-    h1,
-    h2,
-    h3 {
+    main h1,
+    main h2,
+    main h3 {
         font-family: 'Fira Code';
         line-height: 1.1;
     }
 
-    h1 {
+    main h1 {
         background: var(--error-h1-bg);
         text-shadow: var(--error-h1-shadow);
 
@@ -38,7 +38,7 @@
         color: transparent;
     }
 
-    h2 {
+    main h2 {
         background: var(--error-h2-bg);
         text-shadow: var(--error-h2-shadow);
 
@@ -47,7 +47,7 @@
         color: transparent;
     }
 
-    h3 {
+    main h3 {
         background: linear-gradient(175deg, #aef3ff, #2facff);
         text-shadow: 0 2.5px 20px rgb(0, 98, 255);
         -webkit-background-clip: text;
@@ -55,7 +55,7 @@
         color: transparent;
     }
 
-    a {
+    main a {
         display: inline-block;
         background: linear-gradient(120deg, #4da6ff, #00e0ff);
         text-shadow: 0 3px 18px rgba(0, 200, 255, 0.8);
@@ -65,7 +65,7 @@
         transition: all 0.2s ease;
     }
 
-    a:hover {
+    main a:hover {
         background: linear-gradient(120deg, #7bb8ff, #6affff);
         text-shadow: 0 0 18px rgba(120, 240, 255, 1);
         -webkit-background-clip: text;

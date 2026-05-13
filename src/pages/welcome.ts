@@ -1,5 +1,37 @@
 import { Core } from '@/main.js';
 
+document.addEventListener('DOMContentLoaded', async () => {
+    const logo = document.querySelector('header .logo');
+    const head = document.querySelector('header .logo .head');
+    const tail = document.querySelector('header .logo .tail');
+
+    if (!logo || !head || !tail) return;
+
+    for (const parent of [head, tail]) {
+        let textContent = parent.textContent;
+        parent.textContent = '';
+
+        for (const letter of textContent.split('')) {
+            let span = document.createElement('span');
+            span.textContent = letter;
+            parent.appendChild(span);
+        }
+    }
+
+    let letters = Array.from(document.querySelectorAll('header .logo span')) as HTMLElement[];
+
+    for (const span of letters) {
+        span.style.display = 'none';
+    }
+
+    await Core.sleep(500);
+
+    for (const span of letters) {
+        span.style.display = 'inline-block';
+        await Core.sleep(75);
+    }
+});
+
 let enableAnimation = true;
 let enableOptimization = false;
 
@@ -9,7 +41,7 @@ let baseFontSizePx = 80;
 const optimizationInfo = document.querySelector('#welcome--profile #name-display #optimization-indicator')!;
 
 function updateOptimization() {
-    enableOptimization = window.matchMedia('(max-width: 1080px)').matches || Core.isMobileDevice();
+    enableOptimization = window.matchMedia('(max-width: 1080px)').matches || Core.DOM.isMobileDevice();
 
     animationIntervalMs = enableOptimization ? 2000 : 1000;
     baseFontSizePx = enableOptimization ? 40 : 80;
@@ -156,33 +188,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     drawStars();
 
-    // function animateStars() {
-    //     if (!enableAnimation) return;
+    function animateStars() {
+        if (!enableAnimation) return;
 
-    //     ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    //     for (let i = 0; i < stars.length; i++) {
-    //         const star = stars[i];
+        ctx.fillStyle = 'white';
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = 'white';
 
-    //         star.y -= star.speed;
+        for (let i = 0; i < stars.length; i++) {
+            const star = stars[i];
 
-    //         if (star.y < -10) {
-    //             stars[i] = createStar(false);
-    //             continue;
-    //         }
+            star.y -= star.speed;
 
-    //         ctx.globalAlpha = star.opacity;
-    //         ctx.fillStyle = 'white';
-    //         ctx.shadowBlur = 20;
-    //         ctx.shadowColor = 'white';
+            if (star.y < -10) {
+                stars[i] = createStar(false);
+                continue;
+            }
 
-    //         ctx.beginPath();
-    //         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-    //         ctx.fill();
-    //     }
-    // }
+            ctx.globalAlpha = star.opacity;
 
-    // setInterval(animateStars, animationIntervalMs);
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        requestAnimationFrame(animateStars);
+    }
+
+    animateStars();
 });
 
 let letters: HTMLSpanElement[] = [];

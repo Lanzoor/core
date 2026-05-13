@@ -84,38 +84,20 @@
 
     #top-panel .logo,
     #top-panel .logo * {
-        transition: text-shadow 0.5s ease;
-    }
-
-    .logo,
-    .logo * {
-        color: white;
-    }
-
-    .logo .lanzoordev-head {
-        text-shadow: 0 0 25px rgb(129, 18, 255);
-        color: transparent;
-        background: linear-gradient(90deg, rgb(151, 86, 255), rgb(123, 61, 255));
-        background-clip: text;
-    }
-
-    h1.logo .lanzoordev-head {
-        text-shadow: 0 0 50px rgb(129, 18, 255);
-    }
-
-    .logo .lanzoordev-tail {
-        opacity: 0.5;
+        transition: all 0.5s ease;
     }
 
     #top-panel .logo:hover {
         text-shadow: 0 0 20px white;
     }
 
-    #top-panel .logo:hover .lanzoordev-head {
+    #top-panel .logo:hover .head {
         text-shadow: 0 0 20px rgb(174, 103, 255);
-        color: transparent;
-        background: linear-gradient(90deg, rgb(151, 86, 255), rgb(123, 61, 255));
-        background-clip: text;
+        color: rgb(175, 138, 255);
+    }
+
+    #top-panel .logo:hover .tail {
+        text-shadow: 0 0 20px #777;
     }
 
     #top-panel--buttons {
@@ -396,7 +378,6 @@
     }
 
     footer {
-        font-family: 'Space Grotesk';
         margin: 2% 0;
         opacity: 0.75;
     }

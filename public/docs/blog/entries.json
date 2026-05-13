@@ -25,8 +25,12 @@
     "path": "2026/05/api-structure-update.html",
     "slug": "api-structure-update",
     "title": "API Structure Update Notice",
-    "description": "",
-    "tags": [],
+    "description": "a notice regarding several important changes to the API structure",
+    "tags": [
+      "important",
+      "announcement",
+      "api"
+    ],
     "date": {
       "year": "2026",
       "month": "05"

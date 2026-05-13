@@ -5,7 +5,7 @@ import { Core } from '@/main';
 // @ts-ignore
 import '@/components/navigation/Navigation.css';
 
-Core.loadCSS('/out/components/navigation/Navigation.css');
+Core.DOM.loadCSS('/out/components/navigation/Navigation.css');
 
 type Context = 'inline-links' | 'panel-links';
 type Link = {
@@ -146,7 +146,7 @@ function TopPanelRoot() {
                     href="/"
                     className="logo plain"
                 >
-                    <span className="lanzoordev-head">lanzoor</span>.<span className="lanzoordev-tail">dev</span>
+                    <span className="head">lanzoor</span>.<span className="tail">dev</span>
                 </a>
 
                 <nav id="top-panel--links">
@@ -265,7 +265,9 @@ document.addEventListener('DOMContentLoaded', () => {
     overlayRoot.id = 'overlay-root';
     document.body.appendChild(overlayRoot);
     createRoot(overlayRoot).render(<OverlayRoot />);
+});
 
+document.addEventListener('DOMContentLoaded', () => {
     // Handle click events
     document.addEventListener('click', (event) => {
         const target = event.target as HTMLElement;
@@ -396,9 +398,30 @@ function BottomNavigationRoot() {
             >
                 <h2>Connections</h2>
 
+                <p className="dim">
+                    If you have any{' '}
+                    <b>
+                        <span className="col bright black">questions</span>, <span className="col bright yellow">suggestions</span>, or <span className="col bright red">concerns</span>,
+                    </b>{' '}
+                    use the connections below to get in touch!
+                </p>
+
+                <hr />
+
                 {connections.map((c, i) => (
-                    <Connection connection={c} />
+                    <Connection
+                        connection={c}
+                        key={i}
+                    />
                 ))}
+
+                <hr />
+
+                <p className="dim">
+                    ⚠ Please do not spam or try to scam me, you <i>will</i> get <b>ignored, blocked and reported without any warnings.</b>
+                    <br />
+                    <br />I try to respond to inquiries as quickly as possible, but <b>I do recommend using Discord / email for most inquiries!</b>
+                </p>
             </div>
         </>
     );
