@@ -307,81 +307,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-type Connection = {
-    imageSrc: string;
-    connectionName?: string;
-    connectionLink?: string;
-    handleName?: string;
-};
-
-const connections: Connection[] = [
-    {
-        imageSrc: '/assets/icons/discord.svg',
-        connectionName: 'Discord',
-        connectionLink: 'https://www.discord.com',
-        handleName: '@lanzoor | 1160164047111606292',
-    },
-
-    {
-        imageSrc: '/assets/icons/reddit.svg',
-        connectionName: 'Reddit',
-        connectionLink: 'https://www.reddit.com/user/Lanzoor/',
-        handleName: '@Lanzoor',
-    },
-    {
-        imageSrc: '/assets/icons/github.svg',
-        connectionName: 'GitHub',
-        connectionLink: 'https://github.com/Lanzoor',
-        handleName: 'Lanzoor',
-    },
-    {
-        imageSrc: '/assets/icons/steam.svg',
-        connectionName: 'Steam',
-        connectionLink: 'https://steamcommunity.com/id/lanzoor/',
-        handleName: 'lanzoor | Lanzoor13',
-    },
-    {
-        imageSrc: '/assets/icons/youtube.svg',
-        connectionName: 'YouTube',
-        connectionLink: 'https://www.youtube.com/@lanzoorgaming',
-        handleName: '@lanzoorgaming',
-    },
-    {
-        imageSrc: '/assets/icons/gmail.svg',
-        connectionName: 'lanzoorsupport@gmail.com',
-    },
-];
-
-function Connection({ connection }: { connection: Connection }) {
-    return (
-        <>
-            <div className="connection">
-                <img
-                    src={connection.imageSrc}
-                    alt={''}
-                />
-
-                {connection.connectionName && <div>{connection.connectionName}</div>}
-
-                {connection.connectionLink && connection.handleName && (
-                    <a
-                        href={connection.connectionLink}
-                        target="_blank"
-                    >
-                        {connection.handleName}
-                    </a>
-                )}
-            </div>
-        </>
-    );
-}
-
 function BottomNavigationRoot() {
     return (
         <>
             <div className="flex-child">
-                <h1>lanzoor.dev</h1>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat sit veritatis illum eos. Laudantium architecto velit officiis. Fugit accusamus eligendi blanditiis adipisci, vel consectetur molestiae, corrupti veniam perferendis temporibus est.
+                <h1 className="logo">
+                    <span className="head">lanzoor</span>.<span className="tail">dev</span>
+                </h1>
+                A website by Lanzoor, including projects, showcases, documents, and more!
                 <footer>
                     frontend <b id="footer--frontend">...</b> | backend <b id="footer--backend">...</b>
                 </footer>
@@ -401,19 +334,85 @@ function BottomNavigationRoot() {
                 <p className="dim">
                     If you have any{' '}
                     <b>
-                        <span className="col bright black">questions</span>, <span className="col bright yellow">suggestions</span>, or <span className="col bright red">concerns</span>,
-                    </b>{' '}
+                        <span className="col bright black">questions</span>
+                        {', '}
+                        <span className="col bright yellow">suggestions</span>
+                        {', '}
+                        or <span className="col bright red">concerns</span>
+                        {', '}
+                    </b>
                     use the connections below to get in touch!
                 </p>
 
                 <hr />
 
-                {connections.map((c, i) => (
-                    <Connection
-                        connection={c}
-                        key={i}
-                    />
-                ))}
+                <div id="connections">
+                    <div className="connection">
+                        <img src="/assets/icons/discord.svg" />
+
+                        <div>Discord</div>
+
+                        <a
+                            href="https://www.discord.com"
+                            target="_blank"
+                        >
+                            @lanzoor | 1160164047111606292
+                        </a>
+                    </div>
+                    <div className="connection">
+                        <img src="/assets/icons/reddit.svg" />
+
+                        <div>Reddit</div>
+
+                        <a
+                            href="https://www.reddit.com/user/Lanzoor/"
+                            target="_blank"
+                        >
+                            @Lanzoor
+                        </a>
+                    </div>
+                    <div className="connection">
+                        <img src="/assets/icons/github.svg" />
+
+                        <div>GitHub</div>
+
+                        <a
+                            href="https://github.com/Lanzoor"
+                            target="_blank"
+                        >
+                            Lanzoor
+                        </a>
+                    </div>
+                    <div className="connection">
+                        <img src="/assets/icons/steam.svg" />
+
+                        <div>Steam</div>
+
+                        <a
+                            href="https://steamcommunity.com/id/lanzoor/"
+                            target="_blank"
+                        >
+                            lanzoor | Lanzoor13
+                        </a>
+                    </div>
+                    <div className="connection">
+                        <img src="/assets/icons/youtube.svg" />
+
+                        <div>YouTube</div>
+
+                        <a
+                            href="https://www.youtube.com/@lanzoorgaming"
+                            target="_blank"
+                        >
+                            @lanzoorgaming
+                        </a>
+                    </div>
+                    <div className="connection">
+                        <img src="/assets/icons/gmail.svg" />
+
+                        <div>lanzoorsupport@gmail.com</div>
+                    </div>
+                </div>
 
                 <hr />
 

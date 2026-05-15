@@ -7,6 +7,8 @@
         --top-panel-bg--at-top: rgba(0, 0, 0, 0.25);
         --top-panel-bg--solid: rgba(0, 0, 0, 0.5);
 
+        --bottom-navigation-bg: radial-gradient(circle at 50% -25%, #222 0%, #111 100%);
+
         --connections-bg: linear-gradient(140deg, #3a0387 0%, #1b0346 25%, #1b0346 75%, #4307b1);
     }
 
@@ -341,7 +343,7 @@
 
     #bottom-navigation {
         padding: auto 20%;
-        background: #111;
+        background: var(--bottom-navigation-bg);
         border-top: 3px solid #444;
 
         display: flex;

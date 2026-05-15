@@ -1,13 +1,9 @@
+import { Fragment } from 'react/jsx-runtime';
 import { createRoot } from 'react-dom/client';
 import { BlogEntry } from '@/scripts/blog';
 import { Core } from '@/main';
 
-function BlogEntry({ blogEntry }: { blogEntry: BlogEntry }) {
-    let tagEntries = ['important', 'announcement', 'guide', 'api'];
-
-    let blogClassList = ['tag', ...blogEntry.tags.filter((b) => tagEntries.includes(b))];
-    let blogClassName = blogClassList.join(' ');
-
+function formatBlogEntryDate(blogEntry: BlogEntry) {
     let blogEntryDate = new Date();
 
     try {
@@ -22,7 +18,16 @@ function BlogEntry({ blogEntry }: { blogEntry: BlogEntry }) {
         year: 'numeric',
     }).format(blogEntryDate);
 
-    console.log(lastUpdated);
+    return lastUpdated;
+}
+
+function BlogEntry({ blogEntry }: { blogEntry: BlogEntry }) {
+    let tagEntries = ['important', 'announcement', 'guide', 'api'];
+
+    let blogClassList = ['tag', ...blogEntry.tags.filter((b) => tagEntries.includes(b))];
+    let blogClassName = blogClassList.join(' ');
+
+    let lastUpdated = formatBlogEntryDate(blogEntry);
 
     return (
         <>
@@ -48,18 +53,18 @@ function BlogEntry({ blogEntry }: { blogEntry: BlogEntry }) {
                         )}
 
                         <span className="dim">
-                            <b>{lastUpdated}</b>
+                            {lastUpdated && <b>{lastUpdated}</b>}
                             {' • '}
                             {(blogEntry.tags.length > 0 && (
                                 <>
                                     <span id="tags">
-                                        {blogEntry.tags.map((b, i) => {
+                                        {blogEntry.tags.map((be, i) => {
                                             return (
                                                 <span
                                                     className={blogClassName}
                                                     key={i}
                                                 >
-                                                    {b}
+                                                    {be}
                                                 </span>
                                             );
                                         })}
@@ -76,6 +81,8 @@ function BlogEntry({ blogEntry }: { blogEntry: BlogEntry }) {
 }
 
 function BlogRoot({ blogEntries }: { blogEntries: BlogEntry[] }) {
+    let currentEntryMonth: string | null = null;
+
     return (
         <>
             <p>
@@ -84,13 +91,17 @@ function BlogRoot({ blogEntries }: { blogEntries: BlogEntry[] }) {
                     Some entries may be ignored if crucial information <span className="dim">(such as the title)</span> are missing.
                 </i>
             </p>
+            {blogEntries.map((be, i) => {
+                const showHeader = currentEntryMonth !== be.date.month;
+                if (showHeader) currentEntryMonth = be.date.month;
 
-            {blogEntries.map((d, i) => (
-                <BlogEntry
-                    blogEntry={d}
-                    key={i}
-                />
-            ))}
+                return (
+                    <Fragment key={i}>
+                        {showHeader && <h4>{formatBlogEntryDate(be)}</h4>}
+                        <BlogEntry blogEntry={be} />
+                    </Fragment>
+                );
+            })}
         </>
     );
 }
