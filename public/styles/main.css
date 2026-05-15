@@ -332,71 +332,6 @@
         font-weight: 400;
     }
 
-    a.plain {
-        text-decoration: none;
-        color: var(--text);
-    }
-
-    a:not(.plain) {
-        text-decoration: none;
-        display: inline-block;
-
-        border-radius: 10px;
-
-        color: var(--anchor);
-
-        transition: all 0.2s ease;
-    }
-
-    a:not(.plain):hover {
-        text-decoration: underline;
-        color: var(--anchor-hover);
-    }
-
-    code,
-    kbd {
-        display: inline-block;
-        font-family: 'JetBrains Mono';
-        padding: 4px 8px;
-        border-radius: 10px;
-        margin: 4px 0;
-    }
-
-    code {
-        background-color: rgb(35, 35, 55);
-        color: rgb(170, 190, 220);
-        border: 1px solid rgb(181, 186, 255);
-
-        /* background: var(--code-bg);
-        color: var(--code-text); */
-    }
-
-    kbd {
-        background-color: rgb(35, 35, 55);
-        color: rgb(170, 190, 220);
-        border: 1px solid rgb(181, 186, 255);
-    }
-
-    code b,
-    b code,
-    code strong,
-    strong code {
-        color: var(--text);
-    }
-
-    pre {
-        background: rgb(40, 40, 60);
-        padding: 0.75em 0.35em;
-        margin: 1rem 1rem;
-        border-radius: 6px;
-        box-shadow: 0 0 10px 5px rgba(120, 140, 180, 0.4);
-        user-select: text;
-        color: rgb(180, 185, 200);
-
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
     blockquote {
         border-left: 4px solid rgb(59, 56, 160);
         margin-left: 0;
@@ -407,9 +342,19 @@
         padding: 0.5em 1em;
     }
 
+    blockquote.info {
+        border-left-color: rgb(92, 255, 97);
+        background: rgba(21, 255, 0, 0.08);
+    }
+
     blockquote.warning {
         border-left-color: rgb(255, 222, 92);
         background: rgba(255, 255, 0, 0.08);
+    }
+
+    blockquote.error {
+        border-left-color: rgb(255, 92, 92);
+        background: rgba(255, 0, 0, 0.08);
     }
 
     ul:not(.plain),
@@ -776,6 +721,66 @@
 
     .logo .tail {
         color: #777;
+    }
+
+    /* ==================== inline-blocks ==================== */
+
+    code,
+    kbd {
+        display: inline-block;
+        font-family: 'JetBrains Mono';
+        padding: 4px 8px;
+        border-radius: 10px;
+        margin: 4px 0;
+    }
+
+    code {
+        background-color: rgb(35, 35, 55);
+        color: rgb(170, 190, 220);
+        border: 1px solid rgb(181, 186, 255);
+
+        /* background: var(--code-bg);
+        color: var(--code-text); */
+    }
+
+    kbd {
+        background-color: rgb(35, 35, 55);
+        color: rgb(170, 190, 220);
+        border: 1px solid rgb(181, 186, 255);
+    }
+
+    pre {
+        background: rgb(40, 40, 60);
+        padding: 0.75em 0.35em;
+        margin: 1rem 1rem;
+        border-radius: 6px;
+        box-shadow: 0 0 10px 5px rgba(120, 140, 180, 0.4);
+        user-select: text;
+        color: rgb(180, 185, 200);
+
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    a.plain {
+        text-decoration: none;
+        color: var(--text);
+    }
+
+    a:not(.plain) {
+        text-decoration: none;
+        display: inline-block;
+
+        border-radius: 10px;
+
+        color: var(--anchor);
+
+        transition: all 0.2s ease;
+    }
+
+    a:not(.plain):hover {
+        text-decoration: underline;
+        color: var(--anchor-hover);
     }
 
     /* ==================== The Responsive Zone ==================== */

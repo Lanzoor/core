@@ -10,6 +10,7 @@
         "dev": "vite",
         "preview": "vite preview",
         "build": "vite build",
+        "watch": "vite build --watch",
         "check": "tsc --noEmit",
         "clean": "rm -rf public/out"
     },

@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { BlogEntry } from '@/scripts/blog';
+import { Core } from '@/main';
 
 function BlogEntry({ blogEntry }: { blogEntry: BlogEntry }) {
     let tagEntries = ['important', 'announcement', 'guide', 'api'];
@@ -27,9 +28,9 @@ function BlogEntry({ blogEntry }: { blogEntry: BlogEntry }) {
         <>
             {blogEntry.title !== '' && (
                 <div className="blog">
-                    <a href={'/docs/blog/' + blogEntry.path}>
-                        <h2>{blogEntry.title}</h2>
-                    </a>
+                    <h2>
+                        <a href={'/docs/blog/' + blogEntry.path}>{blogEntry.title}</a>
+                    </h2>
 
                     <hr />
 
@@ -94,14 +95,19 @@ function BlogRoot({ blogEntries }: { blogEntries: BlogEntry[] }) {
     );
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const blogs = document.getElementById('blogs');
 
     if (!blogs) return;
 
-    fetch('/docs/blog/entries.json')
-        .then((res) => res.json())
-        .then((data: BlogEntry[]) => {
-            createRoot(blogs).render(<BlogRoot blogEntries={data} />);
-        });
+    let blogEntries = await Core.pingServer('/docs/blog/entries.json');
+
+    blogEntries.sort((a: BlogEntry, b: BlogEntry) => {
+        const aDate = Number(a.date.year) * 100 + Number(a.date.month);
+        const bDate = Number(b.date.year) * 100 + Number(b.date.month);
+
+        return bDate - aDate;
+    });
+
+    createRoot(blogs).render(<BlogRoot blogEntries={blogEntries} />);
 });
