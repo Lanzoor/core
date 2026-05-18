@@ -56,7 +56,8 @@ button.red:hover {
     background: var(--red);
 }
 
-#lv-5 #grid {
+#lv-5 #grid,
+#lv-6 #grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
@@ -70,4 +71,20 @@ button.red:hover {
 #lv-5 #grid div {
     text-align: center;
     cursor: pointer;
+}
+
+#lv-6 #grid div {
+    padding: 30px;
+}
+
+#lv-6 #grid div.first {
+    background-color: #ffffff;
+}
+
+#lv-6 #grid div.second {
+    background-color: #ffffff;
+}
+
+#lv-6 #spanner {
+    height: 300vh;
 }

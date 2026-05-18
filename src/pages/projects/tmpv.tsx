@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
 // #region types
-type PageID = 'failure' | 'lv-1' | 'lv-2' | 'lv-3' | 'lv-4' | 'lv-5' | 'complete';
+type PageID = 'failure' | 'lv-1' | 'lv-2' | 'lv-3' | 'lv-4' | 'lv-5' | 'lv-6' | 'complete';
 
 type PageProps = {
     resolve: (nextPage: PageID) => void;
@@ -190,7 +190,7 @@ const pages: PageDefinition[] = [
                     Click on the{' '}
                     <span
                         className="col bright red"
-                        onClick={() => resolve('complete')}
+                        onClick={() => resolve('lv-6')}
                     >
                         red
                     </span>{' '}
@@ -221,6 +221,39 @@ const pages: PageDefinition[] = [
                             purple
                         </div>
                     </div>
+                </section>
+            );
+        },
+    },
+    {
+        id: 'lv-6',
+        component: ({ resolve, reject }) => {
+            const [message, setMessage] = useState('Are you really colorblind or something?');
+
+            return (
+                <section id="lv-6">
+                    <h1>Level 6</h1>
+                    Click on the color that is <b>different</b> than others.
+                    <div id="grid">
+                        <div
+                            className="first"
+                            onClick={() => reject(message)}
+                        ></div>
+                        <div
+                            className="first"
+                            onClick={() => reject(message)}
+                        ></div>
+                        <div
+                            className="second"
+                            onClick={() => reject(message)}
+                        ></div>
+                        <div
+                            className="first"
+                            onClick={() => reject(message)}
+                        ></div>
+                    </div>
+                    <div id="spanner"></div>
+                    <a onClick={() => resolve('complete')}>I don't see a color that's off.</a>
                 </section>
             );
         },
@@ -261,10 +294,11 @@ function TMPVRoot({ initialPage }: { initialPage: string }) {
             <section>
                 <h1>Incorrect! Try again.</h1>
 
-                <p>
-                    {message}
-                    <a href={`/projects/tmpv?page=${from}`}>try again</a>
-                </p>
+                <p>{message}</p>
+
+                <a href={`/projects/tmpv?page=${from}`}>
+                    <button>try again</button>
+                </a>
             </section>
         );
     }
