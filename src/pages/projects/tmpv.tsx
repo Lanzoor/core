@@ -128,7 +128,7 @@ const pages: PageDefinition[] = [
             const [swapped, setSwapped] = useState(false);
 
             useEffect(() => {
-                if (clickCount === 99) {
+                if (clickCount === 98) {
                     setSwapped((s) => !s);
                     setMessage('did bro really fall for it AGAIN');
                 }
