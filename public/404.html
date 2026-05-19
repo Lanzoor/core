@@ -9,25 +9,88 @@
 
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/structure/error-page.css" />
+
+    <style>
+        #buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            margin: 2%;
+        }
+
+        #buttons button {
+            padding: 20px 40px;
+            font-family: 'JetBrains Mono';
+            font-size: 20px;
+
+            background: #111;
+            border: 2px solid #ccc;
+            color: #ccc;
+            border-radius: 10px;
+
+            transition: 0.25s ease;
+        }
+
+        #buttons button:hover {
+            border-color: white;
+            color: #111;
+            background: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <main>
-        <section class="stretched centered horizontally">
-            <h1>- Error 404: File not found -</h1>
+        <section class="stretched">
+
+            <div class="aligned-center">
+                <h1>404 - Page not found</h1>
+
+                <p>
+                    <b>We couldn't find a resource located at <span class="col bright green">'<span
+                                id="attempted-path-full"></span>'</span>.</b><br>
+                    The filename may have changed, or the file may have been moved or removed.<br><br>
+                </p>
+            </div>
 
             <p>
-                <b>The requested file could not be found on this website.</b><br>
-                The filename may have changed, or the file may have been moved or removed.<br><br>
+                <b>If you are a visitor:</b><br>
+                You can try and search for webpages with similar names.<br>
+                Please use the navigation panels or the buttons below to navigate into common pages.<br><br>
+            </p>
 
-                If you believe this is a mistake, you can use the top panel to warp into the common
-                pages.<br>
-                You may also try searching for a webpage with a similar name.
+            <div id="buttons">
+                <a class="plain" onclick="history.back()">
+                    <button>
+                        <- Back </button>
+                </a>
+
+                <a class="plain" href="/">
+                    <button>
+                        / Home
+                    </button>
+                </a>
+
+                <a id="try-again" href="/404">
+                    ↩ Try again
+                </a>
+            </div>
+
+            <p>
+                <b>If you are seeing this error on an API:</b><br>
+                Please keep up with posts tagged with <code>api</code> within <a href="/docs/blog">our blog</a>.<br>
+                Alternatively, you can refer to <a href="/api/docs">our API documentation</a>.
+                <br>
             </p>
         </section>
     </main>
 
     <script type="module" src="/out/components/navigation/Navigation.js"></script>
+    <script type="module" src="/out/pages/404.js"></script>
 </body>
 
 </html>

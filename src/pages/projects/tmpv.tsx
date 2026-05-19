@@ -71,9 +71,12 @@ const pages: PageDefinition[] = [
             const [swapped, setSwapped] = useState(false);
 
             useEffect(() => {
-                if (clickCount === 99) {
-                    setSwapped(true);
+                let traps = [50, 99];
+                if (traps.includes(clickCount)) {
+                    setSwapped((s) => !s);
                     setMessage('lmfao get trolled');
+                } else {
+                    setMessage('I told you to press the red one!!');
                 }
 
                 if (clickCount >= 100) resolve('lv-4');
@@ -128,10 +131,14 @@ const pages: PageDefinition[] = [
             const [swapped, setSwapped] = useState(false);
 
             useEffect(() => {
-                if (clickCount === 98) {
+                let traps = [15, 38, 57, 79, 98];
+                if (traps.includes(clickCount)) {
                     setSwapped((s) => !s);
                     setMessage('did bro really fall for it AGAIN');
+                } else {
+                    setMessage('I told you to press the green one!!');
                 }
+
                 if (clickCount >= 100) resolve('lv-5');
             }, [clickCount]);
 

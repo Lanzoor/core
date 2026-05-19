@@ -1,5 +1,5 @@
 @layer structure {
-    :root {
+    /* :root {
         --error-bg: radial-gradient(circle at bottom, #0e274a 0%, transparent 55%), linear-gradient(140deg, #020814, #050b1e 45%, #01040c);
 
         --error-h1-bg: linear-gradient(120deg, #aef3ff, #2facff);
@@ -95,5 +95,14 @@
     .solution:nth-child(even) {
         align-self: flex-end;
         text-align: right;
+    } */
+
+    div.exception {
+        margin: 20px;
+        padding: 20px;
+
+        background: black;
+        border: 2px solid #777;
+        border-radius: 20px;
     }
 }

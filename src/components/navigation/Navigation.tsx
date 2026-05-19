@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lastY = currentY;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('scroll', handleScroll);
     handleScroll();
 
     if (window.scrollY === 0) {
@@ -322,7 +322,21 @@ function BottomNavigationRoot() {
 
             <div className="flex-child">
                 <h2>Navigation</h2>
-                Lorem Ipsum Dolor
+
+                <nav>
+                    <div>
+                        <b className="dim">MAIN</b>
+                    </div>
+                    <div>
+                        / <a href="/">frontpage</a>
+                    </div>
+                    <div>
+                        /about <a href="/about">about</a>
+                    </div>
+                    <div>
+                        /map <a href="/map">site map</a>
+                    </div>
+                </nav>
             </div>
 
             <div
