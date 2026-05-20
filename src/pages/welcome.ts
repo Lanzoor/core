@@ -261,28 +261,37 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(animateFont, animationIntervalMs);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    let localtimeClock = document.getElementById('localtime-clock');
+//                 <div class="flex-child adaptive-text-shadow" id="localtime-clock">
+//                     <div id="time">
+//                         00:00:00
+//                     </div>
 
-    if (!localtimeClock) return;
+//                     <div id="date">
+//                         January 1, 1975
+//                     </div>
+//                 </div>
+// document.addEventListener('DOMContentLoaded', () => {
+//     let localtimeClock = document.getElementById('localtime-clock');
 
-    let dateDisplay = document.querySelector('#localtime-clock #date');
-    let timeDisplay = document.querySelector('#localtime-clock #time');
+//     if (!localtimeClock) return;
 
-    function updateLocalTime(): void {
-        const date = new Date();
-        const utc9 = new Date(date.getTime() + 9 * 60 * 60 * 1000);
-        let hour = utc9.getUTCHours();
-        const minute = String(utc9.getUTCMinutes()).padStart(2, '0');
-        const second = String(utc9.getUTCSeconds()).padStart(2, '0');
+//     let dateDisplay = document.querySelector('#localtime-clock #date');
+//     let timeDisplay = document.querySelector('#localtime-clock #time');
 
-        if (!timeDisplay || !dateDisplay) return;
+//     function updateLocalTime(): void {
+//         const date = new Date();
+//         const utc9 = new Date(date.getTime() + 9 * 60 * 60 * 1000);
+//         let hour = utc9.getUTCHours();
+//         const minute = String(utc9.getUTCMinutes()).padStart(2, '0');
+//         const second = String(utc9.getUTCSeconds()).padStart(2, '0');
 
-        dateDisplay.textContent = utc9.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'Asia/Seoul' });
+//         if (!timeDisplay || !dateDisplay) return;
 
-        timeDisplay.innerHTML = `<b>${hour}</b>:<b>${minute}</b>:<b>${second}</b>`;
-    }
+//         dateDisplay.textContent = utc9.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'Asia/Seoul' });
 
-    updateLocalTime();
-    setInterval(updateLocalTime, 1000);
-});
+//         timeDisplay.innerHTML = `<b>${hour}</b>:<b>${minute}</b>:<b>${second}</b>`;
+//     }
+
+//     updateLocalTime();
+//     setInterval(updateLocalTime, 1000);
+// });
