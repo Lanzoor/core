@@ -1,4 +1,4 @@
-console.info('main.js import triggered');
+console.info('main.ts import triggered');
 
 export namespace Core {
     /**

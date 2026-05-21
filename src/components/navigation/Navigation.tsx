@@ -316,6 +316,8 @@ function BottomNavigationRoot() {
                 </h1>
                 A website by Lanzoor, including projects, showcases, documents, and more!
                 <footer>
+                    © lanzoor.dev | 2026
+                    <br />
                     frontend <b id="footer--frontend">...</b> | backend <b id="footer--backend">...</b>
                 </footer>
             </div>
@@ -345,7 +347,7 @@ function BottomNavigationRoot() {
             >
                 <h2>Connections</h2>
 
-                <p className="dim">
+                <p>
                     If you have any{' '}
                     <b>
                         <span className="col bright black">questions</span>

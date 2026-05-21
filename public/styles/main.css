@@ -92,27 +92,35 @@
 
     /* terminal-style color pallete */
     :root {
+        --dark-black: #1a1a1a;
         --black: #333;
         --bright-black: #666;
 
+        --dark-red: #6b2a2a;
         --red: #e05555;
         --bright-red: #ff7070;
 
+        --dark-green: #1f4f1f;
         --green: #4ec94e;
         --bright-green: #70e870;
 
+        --dark-yellow: #5a4a18;
         --yellow: #e0c060;
         --bright-yellow: #ffe070;
 
+        --dark-blue: #1f3666;
         --blue: #5588e0;
         --bright-blue: #77aaff;
 
+        --dark-magenta: #4a2457;
         --magenta: #b060d0;
         --bright-magenta: #dd88ff;
 
+        --dark-purple: #3a2457;
         --purple: #8d60d0;
         --bright-purple: #b584ff;
 
+        --dark-cyan: #154040;
         --cyan: #40bfbf;
         --bright-cyan: #70e8e8;
     }
@@ -606,7 +614,7 @@
     }
 
     section.stretched {
-        min-height: calc(100vh - var(--top-panel-height));
+        min-height: calc(100vh);
     }
 
     section.centered.horizontally {

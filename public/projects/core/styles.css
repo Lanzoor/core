@@ -1,0 +1,84 @@
+@layer page {
+    #core--intro {
+        background: radial-gradient(ellipse at 50% 30%, rgba(106, 0, 255, 0.5) 0%, rgba(106, 0, 255, 0.2) 50%, transparent 75%), #000;
+    }
+
+    #core--intro blockquote {
+        text-align: left;
+        border: 5px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow:
+            inset 0 0 10px rgba(255, 255, 255, 0.1),
+            0 10px 30px rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(4px);
+    }
+
+    #core--intro header h1 {
+        color: rgb(148, 99, 255);
+        text-shadow: 0 0 20px rgb(81, 0, 255);
+    }
+
+    #core--stack {
+        background: #000;
+    }
+
+    #core--stack h2 {
+        color: rgb(64, 210, 255);
+    }
+
+    #core--stack h1,
+    #core--stack h2 {
+        margin: 0;
+    }
+
+    #core--stack #stacks {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        margin: 2% 0;
+        padding: 2%;
+
+        width: 100%;
+
+        background: rgba(0, 180, 255, 0.06);
+        border: 1px solid rgba(0, 180, 255, 0.2);
+        border-radius: 30px;
+        overflow-x: auto;
+    }
+
+    #core--stack #stacks .stack {
+        font-family: 'Geist';
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        margin: 1%;
+        padding: 2%;
+        gap: 4%;
+
+        max-width: 48%;
+
+        background: rgba(0, 180, 255, 0.1);
+        border: 1px solid rgba(0, 180, 255, 0.3);
+        border-radius: 20px;
+
+        color: rgb(64, 210, 255);
+        transition: 0.5s ease;
+    }
+
+    #core--stack #stacks .stack img {
+        width: 100px;
+        height: auto;
+    }
+
+    #core--stack #stacks .stack:hover {
+        background: rgba(0, 180, 255, 0.4);
+        border-color: rgba(0, 180, 255, 0.6);
+        box-shadow: 0 10px 30px rgba(0, 180, 255, 0.4);
+    }
+}

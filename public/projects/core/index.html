@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Core | lanzoor.dev</title>
+
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/projects/core/styles.css" />
+</head>
+
+<body>
+    <main>
+        <section class="centered horizontally" id="core--intro">
+            <header>
+                <h1>core</h1>
+                <p class="dim">the frontend codebase behind <b>lanzoor.dev</b></p>
+            </header>
+
+            <blockquote>
+                <p>
+                    <code>core</code> is the repository that provides <i>everything</i> you see on this website. <span
+                        class="dim">(Well, except for the backend.)</span>
+                </p>
+            </blockquote>
+        </section>
+
+        <section id="core--stack">
+            <h2>The stack behind core</h2>
+            <h1>How was core built?</h1>
+
+            <p>
+                Core was built <i>without</i> the usage of any <b>frameworks or site generators</b>.
+            </p>
+
+            <div id="stacks">
+
+                <div class="stack">
+                    <img src="/assets/icons/programming/html5.svg">
+                    <div>
+                        <h1>HTML</h1>
+                        The backbone of every page, structure, semantics, and content.
+                    </div>
+                </div>
+
+                <div class="stack">
+                    <img src="/assets/icons/programming/javascript.svg">
+                    <div>
+                        <h1>JavaScript</h1>
+                        Lightweight per-page scripts for simple interactivity and DOM manipulation.
+                    </div>
+                </div>
+
+                <div class="stack">
+                    <img src="/assets/icons/programming/typescript.svg">
+                    <div>
+                        <h1>TypeScript</h1>
+                        Strongly typed scripts for more complex logic.
+                    </div>
+                </div>
+
+                <div class="stack">
+                    <img src="/assets/icons/programming/react.svg">
+                    <div>
+                        <h1>React</h1>
+                        Used selectively for interactive, stateful UI.
+                    </div>
+                </div>
+
+                <div class="stack">
+                    <img src="/assets/icons/programming/vite.svg">
+                    <div>
+                        <h1>Vite</h1>
+                        Bundles and compiles all TypeScript and React into optimized JS files ready for the browser.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/out/components/navigation/Navigation.js"></script>
+</body>
+
+</html>
