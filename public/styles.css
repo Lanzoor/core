@@ -150,21 +150,55 @@
 
     #welcome--profile #profile-wrapper {
         max-width: 30%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
     }
 
     #welcome--profile #profile-picture {
         max-width: 50%;
         max-height: auto;
-        border-radius: 2147483647px;
     }
 
-    #welcome--profile #nationality {
+    #welcome--profile #hobbies #programming {
+        background: radial-gradient(ellipse at top left, rgba(0, 195, 255, 0.1) 0%, transparent 30%), black;
+    }
+
+    #welcome--profile #hobbies #programming .stack-group {
+        background: #111;
+        border: 3px solid #333;
+        border-radius: 30px;
+        padding: 3%;
+
+        display: flex;
+        flex-direction: row;
         align-items: center;
-
-        background: radial-gradient(circle at -50% 50%, rgb(4, 26, 114), black);
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    #welcome--profile #nationality #localtime-clock {
+    #welcome--profile #hobbies #programming .stack-group .stack {
+        background: #222;
+        border: 3px solid #666;
+        border-radius: 30px;
+
+        margin: 1%;
+        padding: 3%;
+    }
+
+    .stack-group .stack .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    /* #welcome--profile #nationality #localtime-clock {
         font-family: 'Noto Sans Mono';
         background: #171717;
         padding: 2%;
@@ -224,7 +258,7 @@
 
         background: linear-gradient(180deg, rgba(88, 88, 255, 0.5), rgba(88, 255, 247, 0.5));
         background-clip: text;
-    }
+    } */
 
     /* #welcome--profile #nationality #localtime-clock span {
         font-size: 30px;

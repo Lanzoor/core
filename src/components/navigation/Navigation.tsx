@@ -310,25 +310,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function BottomNavigationRoot() {
     return (
         <>
-            <div className="flex-child">
-                <h1 className="logo">
-                    <span className="head">lanzoor</span>.<span className="tail">dev</span>
-                </h1>
-                A website by Lanzoor, including projects, showcases, documents, and more!
-                <footer>
-                    © lanzoor.dev | 2026
-                    <br />
-                    frontend <b id="footer--frontend">...</b> | backend <b id="footer--backend">...</b>
-                </footer>
-            </div>
-
-            <div className="flex-child">
+            <section id="navigation">
                 <h2>Navigation</h2>
 
                 <nav>
-                    <div>
-                        <b className="dim">MAIN</b>
-                    </div>
+                    <div className="small-header">main</div>
                     <div>
                         / <a href="/">frontpage</a>
                     </div>
@@ -339,105 +325,132 @@ function BottomNavigationRoot() {
                         /map <a href="/map">site map</a>
                     </div>
                 </nav>
-            </div>
 
-            <div
-                className="flex-child"
-                id="connections"
-            >
-                <h2>Connections</h2>
-
-                <p>
-                    If you have any{' '}
-                    <b>
-                        <span className="col bright black">questions</span>
-                        {', '}
-                        <span className="col bright yellow">suggestions</span>
-                        {', '}
-                        or <span className="col bright red">concerns</span>
-                        {', '}
-                    </b>
-                    use the connections below to get in touch!
-                </p>
-
-                <hr />
-
-                <div id="connections">
-                    <div className="connection">
-                        <img src="/assets/icons/discord.svg" />
-
-                        <div>Discord</div>
-
-                        <a
-                            href="https://www.discord.com"
-                            target="_blank"
-                        >
-                            @lanzoor | 1160164047111606292
-                        </a>
+                <nav>
+                    <div className="small-header">docs</div>
+                    <div>
+                        /docs <a href="/docs">documents</a>
                     </div>
-                    <div className="connection">
-                        <img src="/assets/icons/reddit.svg" />
-
-                        <div>Reddit</div>
-
-                        <a
-                            href="https://www.reddit.com/user/Lanzoor/"
-                            target="_blank"
-                        >
-                            @Lanzoor
-                        </a>
+                    <div>
+                        /docs/blog <a href="/docs/blog">blog</a>
                     </div>
-                    <div className="connection">
-                        <img src="/assets/icons/github.svg" />
-
-                        <div>GitHub</div>
-
-                        <a
-                            href="https://github.com/Lanzoor"
-                            target="_blank"
-                        >
-                            Lanzoor
-                        </a>
+                    <div>
+                        /map <a href="/map">site map</a>
                     </div>
-                    <div className="connection">
-                        <img src="/assets/icons/steam.svg" />
+                </nav>
+            </section>
 
-                        <div>Steam</div>
-
-                        <a
-                            href="https://steamcommunity.com/id/lanzoor/"
-                            target="_blank"
-                        >
-                            lanzoor | Lanzoor13
-                        </a>
-                    </div>
-                    <div className="connection">
-                        <img src="/assets/icons/youtube.svg" />
-
-                        <div>YouTube</div>
-
-                        <a
-                            href="https://www.youtube.com/@lanzoorgaming"
-                            target="_blank"
-                        >
-                            @lanzoorgaming
-                        </a>
-                    </div>
-                    <div className="connection">
-                        <img src="/assets/icons/gmail.svg" />
-
-                        <div>lanzoorsupport@gmail.com</div>
-                    </div>
+            <section id="bottom">
+                <div className="flex-child">
+                    <h1 className="logo">
+                        <span className="head">lanzoor</span>.<span className="tail">dev</span>
+                    </h1>
+                    A website by Lanzoor, including projects, showcases, documents, and more!
+                    <footer>
+                        © lanzoor.dev | 2026
+                        <br />
+                        frontend <b id="footer--frontend">...</b> | backend <b id="footer--backend">...</b>
+                    </footer>
                 </div>
 
-                <hr />
+                <div
+                    className="flex-child"
+                    id="connections"
+                >
+                    <h2>Connections</h2>
 
-                <p className="dim">
-                    ⚠ Please do not spam or try to scam me, you <i>will</i> get <b>ignored, blocked and reported without any warnings.</b>
-                    <br />
-                    <br />I try to respond to inquiries as quickly as possible, but <b>I do recommend using Discord / email for most inquiries!</b>
-                </p>
-            </div>
+                    <p>
+                        If you have any{' '}
+                        <b>
+                            <span className="col bright black">questions</span>
+                            {', '}
+                            <span className="col bright yellow">suggestions</span>
+                            {', '}
+                            or <span className="col bright red">concerns</span>
+                            {', '}
+                        </b>
+                        use the connections below to get in touch!
+                    </p>
+
+                    <hr />
+
+                    <div id="connections">
+                        <div className="connection">
+                            <img src="/assets/icons/discord.svg" />
+
+                            <div>Discord</div>
+
+                            <a
+                                href="https://www.discord.com"
+                                target="_blank"
+                            >
+                                @lanzoor | 1160164047111606292
+                            </a>
+                        </div>
+                        <div className="connection">
+                            <img src="/assets/icons/reddit.svg" />
+
+                            <div>Reddit</div>
+
+                            <a
+                                href="https://www.reddit.com/user/Lanzoor/"
+                                target="_blank"
+                            >
+                                @Lanzoor
+                            </a>
+                        </div>
+                        <div className="connection">
+                            <img src="/assets/icons/github.svg" />
+
+                            <div>GitHub</div>
+
+                            <a
+                                href="https://github.com/Lanzoor"
+                                target="_blank"
+                            >
+                                Lanzoor
+                            </a>
+                        </div>
+                        <div className="connection">
+                            <img src="/assets/icons/steam.svg" />
+
+                            <div>Steam</div>
+
+                            <a
+                                href="https://steamcommunity.com/id/lanzoor/"
+                                target="_blank"
+                            >
+                                lanzoor | Lanzoor13
+                            </a>
+                        </div>
+                        <div className="connection">
+                            <img src="/assets/icons/youtube.svg" />
+
+                            <div>YouTube</div>
+
+                            <a
+                                href="https://www.youtube.com/@lanzoorgaming"
+                                target="_blank"
+                            >
+                                @lanzoorgaming
+                            </a>
+                        </div>
+                        <div className="connection">
+                            <img src="/assets/icons/gmail.svg" />
+
+                            <div>lanzoorsupport@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <p className="dim">
+                        ⚠ Please do not spam or try to scam me, you <i>will</i> get <b>ignored, blocked and reported without any warnings.</b>
+                        <br />
+                        <br />I try to respond to inquiries as quickly as possible, but <b>I do recommend using Discord / email for most inquiries!</b>
+                    </p>
+                </div>
+            </section>
         </>
     );
 }
@@ -445,7 +458,7 @@ function BottomNavigationRoot() {
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.createElement('section');
     root.id = 'bottom-navigation';
-    root.className = 'fixed-bg';
+    root.className = 'no-padding';
     document.body.appendChild(root);
     createRoot(root).render(<BottomNavigationRoot />);
 });
