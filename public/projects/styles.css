@@ -1,0 +1,153 @@
+@layer page {
+    :root {
+        --projects-bg: radial-gradient(circle at top left, rgba(0, 72, 255, 0.2) 0%, transparent 25%, transparent 100%), radial-gradient(circle at 100% 50%, rgba(0, 255, 255, 0.2) 0%, transparent 25%, transparent 100%), radial-gradient(circle at bottom left, rgba(47, 0, 255, 0.2) 0%, transparent 25%, transparent 100%), black;
+    }
+
+    #projects {
+        background: var(--projects-bg);
+    }
+
+    #container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        gap: 24px;
+
+        width: 100%;
+        margin: 2% 0;
+    }
+
+    .project {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+        min-width: 33%;
+
+        padding: 28px;
+
+        background: radial-gradient(circle at top left, rgba(0, 180, 255, 0.16), #111 45%);
+
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 22px;
+
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .project:hover {
+        border-color: rgba(0, 180, 255, 0.4);
+
+        box-shadow: 0 0 25px rgba(0, 180, 255, 0.25);
+    }
+
+    .project h1 {
+        margin: 0 0 14px 0;
+
+        font-family: 'JetBrains Mono';
+
+        color: rgb(220, 245, 255);
+
+        text-shadow: 0 0 12px rgba(0, 180, 255, 0.3);
+    }
+
+    .project .description {
+        margin: 0 0 22px 0;
+
+        line-height: 1.6;
+        font-size: 1rem;
+
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .project .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        margin-bottom: 24px;
+    }
+
+    .project .tags .tag {
+        font-size: 0.8rem;
+        font-weight: 600;
+
+        color: #777;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 2px;
+
+        background: #111;
+
+        padding: 5px 10px;
+
+        backdrop-filter: blur(10px);
+    }
+
+    .project .tags .tag.backend {
+        color: rgb(255, 120, 120);
+        border: 1px solid rgba(255, 0, 0, 0.25);
+    }
+
+    .project .tags .tag.frontend {
+        color: rgb(120, 255, 120);
+        border: 1px solid rgba(4, 255, 0, 0.25);
+    }
+
+    .project .tags .tag.webpage {
+        color: rgb(120, 220, 255);
+        border: 1px solid rgba(0, 180, 255, 0.25);
+    }
+
+    .project hr {
+        height: 1px;
+
+        margin: 0 0 18px 0;
+    }
+
+    .project .links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project .link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 10px 14px;
+
+        background: rgba(255, 255, 255, 0.03);
+
+        border-radius: 12px;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .project .link:hover {
+        background: rgba(255, 255, 255, 0.06);
+        transform: translateX(4px);
+    }
+
+    .project .link .name {
+        color: rgba(255, 255, 255, 0.75);
+        font-weight: 500;
+    }
+
+    .project .link a {
+        color: rgb(100, 210, 255);
+
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .project .link a:hover {
+        text-decoration: underline;
+    }
+}

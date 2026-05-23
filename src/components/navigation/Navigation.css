@@ -140,16 +140,20 @@
 
         pointer-events: auto;
 
-        transition: all 0.5s ease;
+        transition: 0.5s ease;
     }
 
-    #top-panel--links a:hover {
-        text-decoration: none;
-
-        background: rgb(44, 1, 77);
+    #top-panel--links a.current {
+        background: rgb(28, 4, 78);
         color: rgb(141, 83, 255);
+    }
 
-        transform: none;
+    #top-panel--links a.current:hover {
+        color: rgb(168, 124, 255);
+    }
+
+    #top-panel--links a:not(.current):hover {
+        color: #777;
     }
 
     #navigation--close {

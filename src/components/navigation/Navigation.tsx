@@ -97,6 +97,7 @@ function Destination({ value, context }: { value: Link; context?: Context }) {
             <a
                 href={value.link}
                 target={value.link.startsWith('http') ? '_blank' : '_self'}
+                className={value.link === window.location.pathname ? 'current' : ''}
             >
                 {`[ ${value.name.toLowerCase()} ]`}
             </a>

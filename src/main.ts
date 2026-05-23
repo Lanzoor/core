@@ -9,8 +9,9 @@ export namespace Core {
 
     export async function pingServer(route: string, options?: RequestInit): Promise<any | undefined> {
         try {
-            const fetchRegex = /^https:\/\/(www|api)\.[^/]+(\/.*)?$/;
-            if (!fetchRegex.test(route)) {
+            const urlRegex = /^https:\/\/(www|api)\.[^/]+(\/.*)?$/;
+            const pathRegex = /^(\/[a-zA-Z0-9_-]+)+\/?$/;
+            if (!urlRegex.test(route) || !pathRegex.test(route)) {
                 console.warn(`route ${route} did not match the recommended fetch API structure.
 this warning exits purely for preventing mistakes, and may (or should) be ignored if you know what you're doing`);
             }
@@ -69,8 +70,10 @@ if the styles somehow don't load, please ensure that the correct CSS file is inj
             document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
                 anchor.addEventListener('click', (event) => {
                     event.preventDefault();
+
                     const targetElement = event.currentTarget as HTMLAnchorElement;
                     const target = document.querySelector(targetElement.getAttribute('href')!);
+
                     if (target) {
                         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
