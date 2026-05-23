@@ -19,15 +19,15 @@ const destinations: Link[] = [
     { link: '/', name: 'Welcome!' },
     { link: '/about', name: 'About' },
     { link: '/map', name: 'Site Map', context: ['panel-links'] },
-    // {
-    //     link: '/projects',
-    //     name: 'Projects',
-    //     children: [
-    //         { link: '/projects', name: 'Project Portal' },
-    //         { link: 'https://www.youtube.com/@lanzoorgaming', name: 'Videos' },
-    //         { link: '/projects/conlangs', name: 'Conlangs' },
-    //     ],
-    // },
+    {
+        link: '/projects',
+        name: 'Projects',
+        children: [
+            { link: '/projects', name: 'Project Portal' },
+            { link: 'https://www.youtube.com/@lanzoorgaming', name: 'Videos' },
+            { link: '/projects/conlangs', name: 'Conlangs' },
+        ],
+    },
     {
         link: '/docs',
         name: 'Documents',
@@ -337,6 +337,35 @@ function BottomNavigationRoot() {
                     </div>
                     <div>
                         /map <a href="/map">site map</a>
+                    </div>
+                </nav>
+
+                <nav>
+                    <div className="small-header">projects</div>
+                    <div>
+                        /projects <a href="/projects">projects</a>
+                    </div>
+                    <div>
+                        /projects/videos <a href="https://www.youtube.com/@lanzoorgaming">videos</a>
+                    </div>
+                    <div>
+                        /projects/conlangs <a href="/projects/conlangs">conlangs</a>
+                    </div>
+                </nav>
+
+                <nav>
+                    <div className="small-header">credits</div>
+                    <div>
+                        /credits <a href="/credits">credits</a>
+                    </div>
+                    <div>
+                        /credits/contributors <a href="/credits/contributors">contributors</a>
+                    </div>
+                    <div>
+                        /credits/fonts <a href="/credits/fonts">font credits</a>
+                    </div>
+                    <div>
+                        /credits/assets <a href="/credits/assets">asset credits</a>
                     </div>
                 </nav>
             </section>

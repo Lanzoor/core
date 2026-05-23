@@ -1,6 +1,6 @@
 @layer page {
     :root {
-        --projects-bg: radial-gradient(circle at top left, rgba(0, 72, 255, 0.2) 0%, transparent 25%, transparent 100%), radial-gradient(circle at 100% 50%, rgba(0, 255, 255, 0.2) 0%, transparent 25%, transparent 100%), radial-gradient(circle at bottom left, rgba(47, 0, 255, 0.2) 0%, transparent 25%, transparent 100%), black;
+        --projects-bg: radial-gradient(circle at top left, rgba(0, 72, 255, 0.2) 0%, transparent 25%, transparent 100%), radial-gradient(circle at 100% 50%, rgba(0, 255, 255, 0.2) 0%, transparent 25%, transparent 100%), radial-gradient(circle at bottom left, rgba(0, 180, 255, 0.2) 0%, transparent 25%, transparent 100%), black;
     }
 
     #projects {
@@ -11,6 +11,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
 
         gap: 24px;
 
@@ -24,7 +25,7 @@
         display: flex;
         flex-direction: column;
 
-        min-width: 33%;
+        min-width: 30%;
 
         padding: 28px;
 
@@ -46,7 +47,8 @@
     }
 
     .project h1 {
-        margin: 0 0 14px 0;
+        font-size: 40px;
+        margin: 0 0 10px 0;
 
         font-family: 'JetBrains Mono';
 
@@ -59,7 +61,7 @@
         margin: 0 0 22px 0;
 
         line-height: 1.6;
-        font-size: 1rem;
+        font-size: 20px;
 
         color: rgba(255, 255, 255, 0.7);
     }
@@ -73,7 +75,7 @@
     }
 
     .project .tags .tag {
-        font-size: 0.8rem;
+        font-size: 12.5px;
         font-weight: 600;
 
         color: #777;
@@ -82,24 +84,68 @@
 
         background: #111;
 
-        padding: 5px 10px;
+        padding: 5px 12px;
 
         backdrop-filter: blur(10px);
+        transition: 0.5s ease;
+    }
+
+    .project .tags .tag:hover {
+        transform: translateY(-2px) scale(1.05);
+        cursor: pointer;
+    }
+
+    .project .tags .tag.wip {
+        color: rgb(255, 219, 120);
+        border: 1px solid rgba(246, 255, 0, 0.5);
+        text-shadow: 0 0 10px rgba(246, 255, 0, 0.25);
+        box-shadow:
+            0 0 10px rgba(246, 255, 0, 0.25),
+            inset 0 0 10px rgba(246, 255, 0, 0.25);
+    }
+
+    .project .tags .tag.archived {
+        color: rgb(255, 120, 120);
+        border: 1px solid rgba(255, 0, 0, 0.5);
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.25);
+        box-shadow:
+            0 0 10px rgba(255, 0, 0, 0.25),
+            inset 0 0 10px rgba(255, 0, 0, 0.25);
     }
 
     .project .tags .tag.backend {
         color: rgb(255, 120, 120);
         border: 1px solid rgba(255, 0, 0, 0.25);
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.25);
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.25);
     }
 
     .project .tags .tag.frontend {
         color: rgb(120, 255, 120);
         border: 1px solid rgba(4, 255, 0, 0.25);
+        text-shadow: 0 0 10px rgba(4, 255, 0, 0.25);
+        box-shadow: 0 0 10px rgba(4, 255, 0, 0.25);
     }
 
     .project .tags .tag.webpage {
         color: rgb(120, 220, 255);
         border: 1px solid rgba(0, 180, 255, 0.25);
+        text-shadow: 0 0 10px rgba(0, 180, 255, 0.25);
+        box-shadow: 0 0 10px rgba(0, 180, 255, 0.25);
+    }
+
+    .project .tags .tag.program {
+        color: rgb(120, 122, 255);
+        border: 1px solid rgba(85, 105, 255, 0.25);
+        text-shadow: 0 0 10px rgba(85, 105, 255, 0.25);
+        box-shadow: 0 0 10px rgba(85, 105, 255, 0.25);
+    }
+
+    .project .tags .tag.cli {
+        color: rgb(228, 120, 255);
+        border: 1px solid rgba(204, 85, 255, 0.25);
+        text-shadow: 0 0 10px rgba(204, 85, 255, 0.25);
+        box-shadow: 0 0 10px rgba(204, 85, 255, 0.25);
     }
 
     .project hr {
