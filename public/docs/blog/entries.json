@@ -4,7 +4,11 @@
     "slug": "domain-registration",
     "title": "Domain Registration Notice",
     "description": "",
-    "tags": [],
+    "tags": [
+      "important",
+      "announcement",
+      "core"
+    ],
     "date": {
       "year": "2026",
       "month": "02"
