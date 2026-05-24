@@ -22,18 +22,13 @@ function formatBlogEntryDate(blogEntry: BlogEntry) {
 }
 
 function BlogEntry({ blogEntry }: { blogEntry: BlogEntry }) {
-    let tagEntries = ['important', 'announcement', 'guide', 'api'];
-
-    let blogClassList = ['tag', ...blogEntry.tags.filter((b) => tagEntries.includes(b))];
-    let blogClassName = blogClassList.join(' ');
-
     let lastUpdated = formatBlogEntryDate(blogEntry);
 
     return (
         <>
             {blogEntry.title !== '' && (
                 <div className="blog">
-                    <h2>
+                    <h2 className="no-margin">
                         <a href={'/docs/blog/' + blogEntry.path}>{blogEntry.title}</a>
                     </h2>
 
@@ -52,27 +47,25 @@ function BlogEntry({ blogEntry }: { blogEntry: BlogEntry }) {
                             </>
                         )}
 
-                        <span className="dim">
-                            {lastUpdated && <b>{lastUpdated}</b>}
-                            {' • '}
-                            {(blogEntry.tags.length > 0 && (
-                                <>
-                                    <span id="tags">
-                                        {blogEntry.tags.map((be, i) => {
-                                            return (
-                                                <span
-                                                    className={blogClassName}
-                                                    key={i}
-                                                >
-                                                    {be}
-                                                </span>
-                                            );
-                                        })}
-                                    </span>
-                                    <br />
-                                </>
-                            )) || <>no tags provided</>}
-                        </span>
+                        <span className="dim">{lastUpdated && <b>{lastUpdated}</b>}</span>
+                        {' • '}
+                        {(blogEntry.tags.length > 0 && (
+                            <>
+                                <span className="tags">
+                                    {blogEntry.tags.map((be, i) => {
+                                        return (
+                                            <span
+                                                className={'tag ' + be}
+                                                key={i}
+                                            >
+                                                {be}
+                                            </span>
+                                        );
+                                    })}
+                                </span>
+                                <br />
+                            </>
+                        )) || <>no tags provided</>}
                     </p>
                 </div>
             )}
@@ -97,7 +90,7 @@ function BlogRoot({ blogEntries }: { blogEntries: BlogEntry[] }) {
 
                 return (
                     <Fragment key={i}>
-                        {showHeader && <h4>{formatBlogEntryDate(be)}</h4>}
+                        {showHeader && <h1 className="no-margin">{formatBlogEntryDate(be)}</h1>}
                         <BlogEntry blogEntry={be} />
                     </Fragment>
                 );

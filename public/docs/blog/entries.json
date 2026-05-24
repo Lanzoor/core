@@ -15,7 +15,11 @@
     "slug": "retirement-of-the-old-profile-website",
     "title": "Retirement of the Old Profile Website",
     "description": "",
-    "tags": [],
+    "tags": [
+      "important",
+      "announcement",
+      "core"
+    ],
     "date": {
       "year": "2026",
       "month": "02"
@@ -29,7 +33,7 @@
     "tags": [
       "important",
       "announcement",
-      "api"
+      "core-api"
     ],
     "date": {
       "year": "2026",
@@ -37,11 +41,14 @@
     }
   },
   {
-    "path": "2026/05/changes-to-my-email.html",
-    "slug": "changes-to-my-email",
-    "title": "",
-    "description": "",
-    "tags": [],
+    "path": "2026/05/monthly-recap.html",
+    "slug": "monthly-recap",
+    "title": "Monthly Recap | May 2026",
+    "description": "a monthly recap for May 2026",
+    "tags": [
+      "blog",
+      "monthly-recap"
+    ],
     "date": {
       "year": "2026",
       "month": "05"
@@ -52,7 +59,10 @@
     "slug": "what-happened-to-light-mode",
     "title": "What happened to light mode?",
     "description": "",
-    "tags": [],
+    "tags": [
+      "announcement",
+      "core"
+    ],
     "date": {
       "year": "2026",
       "month": "05"

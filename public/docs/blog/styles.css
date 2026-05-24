@@ -2,17 +2,73 @@
     margin: 2% 0;
 }
 
-#tags {
+.tags {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
     gap: 30px;
 }
 
-.tag {
-    padding: 5px 10px;
+.tags .tag {
+    font-weight: 500;
 
-    background: #222;
-    border: 2px solid #777;
-    border-radius: 5px;
+    color: #777;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+
+    background: #111;
+
+    padding: 5px 12px;
+
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease;
+}
+
+.tags .tag:hover {
+    transform: translateY(-2px) scale(1.05);
+    cursor: pointer;
+}
+
+.tags .tag.important {
+    color: rgb(255, 120, 120);
+    border: 1px solid rgba(255, 0, 0, 0.75);
+    text-shadow: 0 0 10px rgba(255, 0, 0);
+    box-shadow:
+        0 0 10px rgba(255, 0, 0, 0.5),
+        inset 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.tags .tag.announcement {
+    color: rgb(120, 179, 255);
+    border: 1px solid rgba(0, 157, 255, 0.5);
+    text-shadow: 0 0 10px rgba(0, 157, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 157, 255, 0.5);
+}
+
+.tags .tag.blog {
+    color: rgb(136, 120, 255);
+    border: 1px solid rgba(101, 66, 255, 0.5);
+    text-shadow: 0 0 10px rgba(101, 66, 255, 0.5);
+    box-shadow: 0 0 10px rgba(101, 66, 255, 0.5);
+}
+
+.tags .tag.monthly-recap {
+    color: rgb(255, 190, 120);
+    border: 1px solid rgba(255, 179, 66, 0.5);
+    text-shadow: 0 0 10px rgba(255, 179, 66, 0.5);
+    box-shadow: 0 0 10px rgba(255, 179, 66, 0.5);
+}
+
+.tags .tag.core {
+    color: rgb(120, 255, 163);
+    border: 1px solid rgba(66, 255, 123, 0.5);
+    text-shadow: 0 0 10px rgba(66, 255, 123, 0.5);
+    box-shadow: 0 0 10px rgba(66, 255, 123, 0.5);
+}
+
+.tags .tag.core-api {
+    color: rgb(255, 120, 120);
+    border: 1px solid rgba(255, 66, 66, 0.5);
+    text-shadow: 0 0 10px rgba(255, 66, 66, 0.5);
+    box-shadow: 0 0 10px rgba(255, 66, 66, 0.5);
 }
