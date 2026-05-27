@@ -364,6 +364,31 @@
         border-bottom: 3px solid #444;
     }
 
+    #bottom-navigation #navigation #navigation-links {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        gap: 2%;
+    }
+
+    #bottom-navigation #navigation #navigation-links .group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+
+    #bottom-navigation #navigation #navigation-links .group h2 {
+        margin: 5px 0;
+    }
+    #bottom-navigation #navigation #navigation-links a {
+        display: inline-block;
+    }
+
     #bottom-navigation #bottom {
         width: 100%;
 

@@ -839,10 +839,10 @@
     /* make sure to comment out when pushing to production */
 
     /* * {
-        outline: 2px solid var(--debug-primary);
+        outline: 2px solid var(--debug-primary) !important;
     }
 
     *:not(div) {
-        outline: 2px solid var(--debug-secondary);
+        outline: 2px solid var(--debug-secondary) !important;
     } */
 }

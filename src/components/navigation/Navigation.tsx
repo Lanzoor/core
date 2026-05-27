@@ -312,60 +312,32 @@ function BottomNavigationRoot() {
     return (
         <>
             <section id="navigation">
-                <h2>Navigation</h2>
+                <h1>Navigation</h1>
 
-                <nav>
-                    <div className="small-header">main</div>
-                    <div>
-                        / <a href="/">frontpage</a>
+                <nav id="navigation-links">
+                    <div className="group">
+                        <h2>General</h2>
+                        <a href="/">Frontpage</a>
+                        <a href="/about">About</a>
+                        <a href="/map">Site map</a>
                     </div>
-                    <div>
-                        /about <a href="/about">about</a>
+                    <div className="group">
+                        <h2>Documents</h2>
+                        <a href="/docs">Documents</a>
+                        <a href="/docs/blog">Blog</a>
                     </div>
-                    <div>
-                        /map <a href="/map">site map</a>
+                    <div className="group">
+                        <h2>Projects</h2>
+                        <a href="/projects">Projects</a>
+                        <a href="https://www.youtube.com/@lanzoorgaming">Videos</a>
+                        <a href="/projects/conlangs">Conlangs</a>
                     </div>
-                </nav>
-
-                <nav>
-                    <div className="small-header">docs</div>
-                    <div>
-                        /docs <a href="/docs">documents</a>
-                    </div>
-                    <div>
-                        /docs/blog <a href="/docs/blog">blog</a>
-                    </div>
-                    <div>
-                        /map <a href="/map">site map</a>
-                    </div>
-                </nav>
-
-                <nav>
-                    <div className="small-header">projects</div>
-                    <div>
-                        /projects <a href="/projects">projects</a>
-                    </div>
-                    <div>
-                        /projects/videos <a href="https://www.youtube.com/@lanzoorgaming">videos</a>
-                    </div>
-                    <div>
-                        /projects/conlangs <a href="/projects/conlangs">conlangs</a>
-                    </div>
-                </nav>
-
-                <nav>
-                    <div className="small-header">credits</div>
-                    <div>
-                        /credits <a href="/credits">credits</a>
-                    </div>
-                    <div>
-                        /credits/contributors <a href="/credits/contributors">contributors</a>
-                    </div>
-                    <div>
-                        /credits/fonts <a href="/credits/fonts">font credits</a>
-                    </div>
-                    <div>
-                        /credits/assets <a href="/credits/assets">asset credits</a>
+                    <div className="group">
+                        <h2>Credits</h2>
+                        <a href="/credits">Credits</a>
+                        <a href="/credits/contributors">Contributors</a>
+                        <a href="/credits/fonts">Font credits</a>
+                        <a href="/credits/assets">Asset credits</a>
                     </div>
                 </nav>
             </section>
