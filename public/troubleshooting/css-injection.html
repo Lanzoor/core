@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Injection | lanzoor.dev</title>
+
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/structure/error-page.css" />
+</head>
+
+<body>
+    <main>
+        <section class="stretched">
+            <h1>CSS Injection</h1>
+
+            <p>
+                This site intentionally injects CSS stylesheets via <code>&lt;link&gt;</code> tags using JavaScript.
+                <br>
+                <b>
+                    There is nothing to worry about,
+                </b> but if you're curious about why this is done or how to
+                troubleshoot it, keep reading.
+            </p>
+
+            <h2>When is CSS injection used, and why?</h2>
+
+            <p>
+                <b>
+                    CSS injection is used for common components that appear across multiple pages.
+                </b><br>
+                Examples include <b>the navigation panel</b>, <b>the link bar</b>, and more.<br><br>
+
+                In order to apply styles, a <code>&lt;link&gt;</code> tag must be present in the HTML document,
+                hence the name. <b>Manually adding <code>&lt;link&gt;</code> tags for shared components on every
+                    single page would be tedious and error-prone.</b> It would also make updates painful whenever
+                component locations change, which is exactly why we use CSS injection.
+            </p>
+
+            <h2>How is CSS injection used?</h2>
+
+            <p>
+                You can check the <code>loadCSS</code> function within
+                <a href="https://github.com/Lanzoor/core/blob/main/src/main.ts" target="_blank">main.ts</a>
+                for implementation details.
+            </p>
+
+            <h2>Why not just use a bundler?</h2>
+
+            <p>
+                Great question! This site uses a custom Vite configuration that doesn't support importing CSS directly
+                within React components, so CSS injection serves as a practical workaround.
+                <b>We're actively working on a better setup that supports native CSS imports and more.</b>
+            </p>
+
+            <h2>The styles are not loading!</h2>
+
+            <p>
+                Open the developer console (<kbd>F12</kbd>) and check for CSS injection logs. You can also search
+                for the relevant file directly in our source code. If the issue persists, feel free to
+                <a href="#connections">get in touch</a> with details about what you're seeing.
+            </p>
+        </section>
+    </main>
+    <script type="module" src="/out/components/navigation/Navigation.js"></script>
+</body>
+
+</html>

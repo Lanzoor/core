@@ -349,7 +349,7 @@ function BottomNavigationRoot() {
                     </h1>
                     A website by Lanzoor, including projects, showcases, documents, and more!
                     <footer>
-                        © lanzoor.dev | 2026
+                        © 2026 | lanzoor.dev
                         <br />
                         frontend <b id="footer--frontend">...</b> | backend <b id="footer--backend">...</b>
                     </footer>
@@ -440,7 +440,9 @@ function BottomNavigationRoot() {
                         <div className="connection">
                             <img src="/assets/icons/gmail.svg" />
 
-                            <div>lanzoorsupport@gmail.com</div>
+                            <div>Email</div>
+
+                            <a href="mailto:lanzoorsupport@gmail.com">lanzoorsupport@gmail.com</a>
                         </div>
                     </div>
 

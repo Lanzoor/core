@@ -1,75 +1,57 @@
 [
-  {
-    "path": "2026/02/domain-registration.html",
-    "slug": "domain-registration",
-    "title": "Domain Registration Notice",
-    "description": "",
-    "tags": [
-      "important",
-      "announcement",
-      "core"
-    ],
-    "date": {
-      "year": "2026",
-      "month": "02"
+    {
+        "path": "2026/02/domain-registration.html",
+        "slug": "domain-registration",
+        "title": "Domain Registration Notice",
+        "description": "",
+        "tags": ["important", "announcement", "core"],
+        "date": {
+            "year": "2026",
+            "month": "02"
+        }
+    },
+    {
+        "path": "2026/02/retirement-of-the-old-profile-website.html",
+        "slug": "retirement-of-the-old-profile-website",
+        "title": "Retirement of the Old Profile Website",
+        "description": "",
+        "tags": ["important", "announcement", "core"],
+        "date": {
+            "year": "2026",
+            "month": "02"
+        }
+    },
+    {
+        "path": "2026/05/api-structure-update.html",
+        "slug": "api-structure-update",
+        "title": "API Structure Update Notice",
+        "description": "a notice regarding several important changes to the API structure",
+        "tags": ["important", "announcement", "core-api"],
+        "date": {
+            "year": "2026",
+            "month": "05"
+        }
+    },
+    {
+        "path": "2026/05/monthly-recap.html",
+        "slug": "monthly-recap",
+        "title": "Monthly Recap | May 2026",
+        "description": "a monthly recap for May 2026",
+        "tags": ["blog", "monthly-recap"],
+        "date": {
+            "year": "2026",
+            "month": "05"
+        }
+    },
+    {
+        "path": "2026/05/what-happened-to-light-mode.html",
+        "slug": "what-happened-to-light-mode",
+        "title": "What happened to light mode?",
+        "description": "",
+        "tags": ["announcement", "core"],
+        "date": {
+            "year": "2026",
+            "month": "05"
+        }
     }
-  },
-  {
-    "path": "2026/02/retirement-of-the-old-profile-website.html",
-    "slug": "retirement-of-the-old-profile-website",
-    "title": "Retirement of the Old Profile Website",
-    "description": "",
-    "tags": [
-      "important",
-      "announcement",
-      "core"
-    ],
-    "date": {
-      "year": "2026",
-      "month": "02"
-    }
-  },
-  {
-    "path": "2026/05/api-structure-update.html",
-    "slug": "api-structure-update",
-    "title": "API Structure Update Notice",
-    "description": "a notice regarding several important changes to the API structure",
-    "tags": [
-      "important",
-      "announcement",
-      "core-api"
-    ],
-    "date": {
-      "year": "2026",
-      "month": "05"
-    }
-  },
-  {
-    "path": "2026/05/monthly-recap.html",
-    "slug": "monthly-recap",
-    "title": "Monthly Recap | May 2026",
-    "description": "a monthly recap for May 2026",
-    "tags": [
-      "blog",
-      "monthly-recap"
-    ],
-    "date": {
-      "year": "2026",
-      "month": "05"
-    }
-  },
-  {
-    "path": "2026/05/what-happened-to-light-mode.html",
-    "slug": "what-happened-to-light-mode",
-    "title": "What happened to light mode?",
-    "description": "",
-    "tags": [
-      "announcement",
-      "core"
-    ],
-    "date": {
-      "year": "2026",
-      "month": "05"
-    }
-  }
 ]

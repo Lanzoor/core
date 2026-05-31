@@ -54,15 +54,20 @@ this warning exits purely for preventing mistakes, and may (or should) be ignore
         }
 
         export function loadCSS(href: string) {
+            const cssInjectionMessage = `\n\ncss injections are intended; for more information, please refer to /troubleshooting/css-injection.html`;
+
             try {
                 const link = document.createElement('link');
                 link.rel = 'stylesheet';
                 link.href = href;
                 document.head.appendChild(link);
-                console.info(`successfully injected <link> tag for ${href}
-if the styles somehow don't load, please ensure that the correct CSS file is injected`);
+                console.info(
+                    `successfully injected <link> tag for ${href}
+if the styles somehow don't load, please ensure that the correct CSS file is injected`,
+                    cssInjectionMessage
+                );
             } catch (error) {
-                console.error(`failed to inject <link> tag for ${href}:\n\t`, error, `\nthis may cause weird styles when components are loaded`);
+                console.error(`failed to inject <link> tag for ${href}:\n\t`, error, `\nthis may cause weird styles when components are loaded`, cssInjectionMessage);
             }
         }
 
