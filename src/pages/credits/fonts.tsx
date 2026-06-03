@@ -12,6 +12,7 @@ type Font = {
     licenseUrl?: string;
 };
 
+// forgive me for what im about to do
 const OFL = 'The SIL Open Font License';
 const OFLUrl = 'https://openfontlicense.org/open-font-license-official-text/';
 const fonts = [
@@ -98,7 +99,10 @@ const fonts = [
 
 function FontDisplay({ font }: { font: Font }) {
     return (
-        <div className={`font-display ${font.internalName}`}>
+        <div
+            className={`font-display ${font.internalName}`}
+            id={font.internalName} // this is for referencing fonts via links
+        >
             <h1>{font.fontName}</h1>
             <span className="dim">
                 Internal name: <code>{font.internalName}</code>

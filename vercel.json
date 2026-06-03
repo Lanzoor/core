@@ -9,11 +9,6 @@
     },
     "redirects": [
         {
-            "source": "/api/docs/:path*",
-            "destination": "/api/docs/:path*",
-            "permanent": false
-        },
-        {
             "source": "/api/:path*",
             "destination": "https://api.lanzoor.dev/:path*",
             "permanent": true
