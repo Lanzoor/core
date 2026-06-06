@@ -90,8 +90,20 @@ if the styles somehow don't load, please ensure that the correct CSS file is inj
 
 export async function trackPageView() {
     try {
+        let isTrackingAllowed = localStorage.getItem('isTrackingAllowed');
+
+        if (isTrackingAllowed === null) {
+            isTrackingAllowed = 'true';
+            localStorage.setItem('isTrackingAllowed', isTrackingAllowed);
+        }
+
+        if (isTrackingAllowed === 'false') {
+            return;
+        }
+
         await fetch('https://api.lanzoor.dev/analytics', {
             method: 'POST',
+            keepalive: true,
             headers: {
                 'Content-Type': 'application/json',
             },
