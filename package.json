@@ -1,12 +1,11 @@
 {
     "name": "core",
     "private": true,
-    "description": "frontend repository for lanzoor.dev",
+    "description": "frontend source code for lanzoor.dev",
     "license": "ISC",
     "author": "Lanzoor",
     "type": "module",
     "scripts": {
-        "test": "echo \"info: ready to run!\"",
         "dev": "vite",
         "preview": "vite preview",
         "build": "vite build",

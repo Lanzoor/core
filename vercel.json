@@ -12,6 +12,16 @@
             "source": "/api/:path*",
             "destination": "https://api.lanzoor.dev/:path*",
             "permanent": true
+        },
+        {
+            "source": "/site-map/:path*",
+            "destination": "/map/:path*",
+            "permanent": false
+        },
+        {
+            "source": "/privacy-policy/:path*",
+            "destination": "/privacy-policy/v1/:path*",
+            "permanent": false
         }
     ]
 }

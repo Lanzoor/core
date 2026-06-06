@@ -1,0 +1,81 @@
+@layer page {
+    #roadmap--roadmap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+
+        gap: 80px;
+        padding: 7.5% 10%;
+        white-space: nowrap;
+
+        position: relative;
+
+        background: black;
+        user-select: none;
+    }
+
+    #roadmap--roadmap::before {
+        content: '';
+
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at right center, rgb(0, 0, 0), transparent 75%);
+
+        pointer-events: none;
+        z-index: 1002;
+    }
+
+    #roadmap--roadmap::after {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 100%;
+        height: 10px;
+
+        background: radial-gradient(circle at left center, #777777, #000);
+
+        z-index: 1000;
+    }
+
+    #roadmap--roadmap .step {
+        background: black;
+        padding: 30px 20px;
+        border-radius: 20px;
+
+        z-index: 1001;
+    }
+
+    #roadmap--roadmap .step .header {
+        opacity: 0.75;
+        font-size: 0.75em;
+    }
+
+    #roadmap--roadmap .step.current {
+        box-shadow:
+            0 0 20px rgba(100, 200, 100, 0.75),
+            inset 0 0 20px rgba(100, 200, 100, 0.75);
+        border: 2px solid rgb(100, 200, 100);
+        background: rgb(0, 25, 0);
+    }
+
+    #roadmap--roadmap .step.current .description {
+        color: rgb(100, 200, 100);
+    }
+
+    #roadmap--roadmap .step.pending {
+        box-shadow: 0 0 20px rgba(200, 200, 100, 0.75);
+        border: 2px solid rgba(200, 200, 100);
+        background: rgb(10, 10, 0);
+    }
+
+    #roadmap--roadmap .step.planned {
+        box-shadow: 0 0 20px rgba(200, 100, 100, 0.75);
+        border: 2px solid rgb(200, 100, 100);
+        background: rgb(10, 0, 0);
+    }
+}

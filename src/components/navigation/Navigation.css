@@ -1,15 +1,11 @@
 @layer component {
     :root {
         --top-panel-max-height: 20vh;
-        --top-panel-overlay-bg: radial-gradient(circle at 50% -25%, black 0%, transparent 25%);
 
         --top-panel-text: #aaa;
-        --top-panel-bg--at-top: rgba(0, 0, 0, 0.25);
-        --top-panel-bg--solid: rgba(0, 0, 0, 0.5);
+        --top-panel-bg: rgba(0, 0, 0, 0.5);
 
-        --bottom-navigation-bg: radial-gradient(circle at 50% -25%, #222 0%, #111 100%);
-
-        --connections-bg: linear-gradient(140deg, #3a0387 0%, #1b0346 25%, #1b0346 75%, #4307b1);
+        --bottom-navigation-bg: radial-gradient(circle at 50% -25%, #222 0%, #000 100%);
     }
 
     /* body {
@@ -46,7 +42,7 @@
         max-height: var(--top-panel-max-height);
 
         z-index: 2147483647;
-        background: var(--top-panel-bg--solid);
+        background: var(--top-panel-bg);
 
         backdrop-filter: blur(4px);
 
@@ -56,13 +52,6 @@
             transform 0.3s ease-in-out,
             background 0.3s ease,
             box-shadow 0.3s ease;
-    }
-
-    #top-panel.at-top {
-        background: var(--top-panel-bg--at-top);
-        box-shadow: none;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
     }
 
     #top-panel.hidden {

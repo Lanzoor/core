@@ -319,6 +319,8 @@ function BottomNavigationRoot() {
                         <h2>General</h2>
                         <a href="/">Frontpage</a>
                         <a href="/about">About</a>
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <a href="/roadmap">Roadmap</a>
                         <a href="/map">Site map</a>
                     </div>
                     <div className="group">
