@@ -20,7 +20,7 @@
         },
         {
             "source": "/privacy-policy/:path*",
-            "destination": "/privacy-policy/v1/:path*",
+            "destination": "/privacy-policy/v2/:path*",
             "permanent": false
         }
     ]
