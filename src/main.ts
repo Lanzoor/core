@@ -87,3 +87,21 @@ if the styles somehow don't load, please ensure that the correct CSS file is inj
         }
     }
 }
+
+export async function trackPageView() {
+    try {
+        await fetch('https://api.lanzoor.dev/analytics', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                path: location.pathname,
+            }),
+        });
+    } catch {}
+}
+
+trackPageView().catch(() => {});
+
+// IMPORTANT: For now, main.ts does not get loaded when loading any page within /public. Instead, it is loaded via Navigation.tsx via imports. I'll have to figure out how to run this script while minimizing the amount of script tags in HTML scripts. But for now... this is more than enough. Thanks for listening to my T ED talk. It helps me out... a lot.
