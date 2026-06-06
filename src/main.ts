@@ -9,12 +9,12 @@ export namespace Core {
 
     export async function pingServer(route: string, options?: RequestInit): Promise<any | undefined> {
         try {
-            const urlRegex = /^https:\/\/(www|api)\.[^/]+(\/.*)?$/;
-            const pathRegex = /^(\/[a-zA-Z0-9_-]+)+\/?$/;
-            if (!urlRegex.test(route) || !pathRegex.test(route)) {
-                console.warn(`route ${route} did not match the recommended fetch API structure.
-this warning exits purely for preventing mistakes, and may (or should) be ignored if you know what you're doing`);
-            }
+            //             const urlRegex = /^https:\/\/(www|api)\.[^/]+(\/.*)?$/;
+            //             const pathRegex = /^(\/[a-zA-Z0-9_-]+)+\/?$/;
+            //             if (!urlRegex.test(route) || !pathRegex.test(route)) {
+            //                 console.warn(`route ${route} did not match the recommended fetch API structure.
+            // this warning exits purely for preventing mistakes, and may (or should) be ignored if you know what you're doing`);
+            //             }
 
             const result = await fetch(route, options);
 
