@@ -103,6 +103,7 @@ export async function trackPageView() {
             return;
         }
 
+        console.log('debug message, please ignore');
         await fetch('https://api.lanzoor.dev/analytics', {
             method: 'POST',
             keepalive: true,
