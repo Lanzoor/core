@@ -17,11 +17,6 @@
             "source": "/site-map/:path*",
             "destination": "/map/:path*",
             "permanent": false
-        },
-        {
-            "source": "/privacy-policy/:path*",
-            "destination": "/privacy-policy/v2/:path*",
-            "permanent": false
         }
     ]
 }
