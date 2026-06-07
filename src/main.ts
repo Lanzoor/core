@@ -109,7 +109,7 @@ export async function trackPageView() {
             keepalive: true,
             headers: {
                 'Content-Type': 'application/json',
-                'X-Client': process.env.NEXT_PUBLIC_ANALYTICS_SECRET || '',
+                'X-Client': 'lanzoor-web-dev-six-seven', // imma fix this and implement a better CSRF proof thingy later for now tho i need to make sure this is working
             },
             body: JSON.stringify({
                 path: location.pathname + location.search,
