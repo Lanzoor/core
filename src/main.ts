@@ -90,6 +90,8 @@ if the styles somehow don't load, please ensure that the correct CSS file is inj
 
 export async function trackPageView() {
     try {
+        if (navigator.doNotTrack === '1') return;
+
         let isTrackingAllowed = localStorage.getItem('isTrackingAllowed');
 
         if (isTrackingAllowed === null) {
@@ -97,7 +99,7 @@ export async function trackPageView() {
             localStorage.setItem('isTrackingAllowed', isTrackingAllowed);
         }
 
-        if (isTrackingAllowed === 'false') {
+        if (isTrackingAllowed !== 'true') {
             return;
         }
 
@@ -106,14 +108,17 @@ export async function trackPageView() {
             keepalive: true,
             headers: {
                 'Content-Type': 'application/json',
+                'X-Client': process.env.NEXT_PUBLIC_ANALYTICS_SECRET || '',
             },
             body: JSON.stringify({
-                path: location.pathname,
+                path: location.pathname + location.search,
             }),
         });
     } catch {}
 }
 
-trackPageView().catch(() => {});
+if (typeof window !== 'undefined') {
+    trackPageView();
+}
 
 // IMPORTANT: For now, main.ts does not get loaded when loading any page within /public. Instead, it is loaded via Navigation.tsx via imports. I'll have to figure out how to run this script while minimizing the amount of script tags in HTML scripts. But for now... this is more than enough. Thanks for listening to my T ED talk. It helps me out... a lot.

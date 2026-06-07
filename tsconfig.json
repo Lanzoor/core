@@ -9,7 +9,8 @@
         "types": ["node"],
         "paths": {
             "@/*": ["./src/*"]
-        }
+        },
+        "noImplicitAny": true
     },
     "include": ["src"]
 }
