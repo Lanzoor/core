@@ -104,6 +104,8 @@ export async function trackPageView() {
         }
 
         console.log('debug message, please ignore');
+        console.log('before fetch');
+
         await fetch('https://api.lanzoor.dev/analytics', {
             method: 'POST',
             keepalive: true,
@@ -115,11 +117,16 @@ export async function trackPageView() {
                 path: location.pathname + location.search,
             }),
         });
-    } catch {}
+
+        console.log('after fetc');
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 if (typeof window !== 'undefined') {
     trackPageView();
+    console.log('bfected');
 }
 
 // IMPORTANT: For now, main.ts does not get loaded when loading any page within /public. Instead, it is loaded via Navigation.tsx via imports. I'll have to figure out how to run this script while minimizing the amount of script tags in HTML scripts. But for now... this is more than enough. Thanks for listening to my T ED talk. It helps me out... a lot.
