@@ -1,3 +1,5 @@
+import { getVisitorId } from '@/main';
+
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('analytics-toggle');
 
@@ -19,4 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateButton();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const visitorId = document.getElementById('visitor-id');
+
+    if (!visitorId) return;
+
+    visitorId.textContent = getVisitorId();
 });

@@ -35,31 +35,51 @@
 
             <ul>
                 <li>
-                    <b>The pathname of your visit.</b>
+                    <b>The pathname of your visit.</b><br>
                     This is used to measure page views and understand which pages are visited most frequently.
                 </li>
 
                 <li>
-                    <b>The country associated with your visit.</b>
+                    <b>The country associated with your visit.</b><br>
                     This is used to understand the geographic distribution of visitors and identify which regions are
                     using the website.
                 </li>
 
                 <li>
-                    <b>The timestamp of your visit.</b>
+                    <b>The timestamp of your visit.</b><br>
                     This is used to determine when visits occurred and to assist with troubleshooting issues that may be
                     related to specific website versions or deployments.
                 </li>
 
                 <li>
-                    <b>The referrer.</b>
+                    <b>The referrer.</b><br>
                     This indicates which page or website led you to this website. It is used to understand how visitors
                     discover the website and which external sources are directing traffic to it.
                 </li>
 
                 <li>
-                    <b>The user-agent of your visit.</b>
+                    <b>The user-agent of your visit.</b><br>
                     This is used to determine whether the request was authentic or not.
+                </li>
+
+                <li>
+                    <b>The visitor ID.</b><br>
+                    The visitor ID is a random anonymous identifier.
+                    This is used to distinguish unique visitors,
+                    and provide support for data deletion.
+                    <b>
+                        It is not linked to any accounts or a personal identity.
+                        Users can clear it by clearing site data / localStorage.
+                    </b><br><br>
+
+                    Your visitor ID is <code id="visitor-id">...</code>.
+                    If you don't see a visitor ID,
+                    that means you do not have data collection enabled,
+                    and the site hasn't generated a user ID for you yet.
+                    <b>
+                        Alternatively, you can check for the <code>visitorId</code> field in your browser's
+                        localStorage.
+                    </b>
                 </li>
             </ul>
 
@@ -91,11 +111,14 @@
             <h2>How to Request Data Deletion</h2>
 
             <p>
-                If you would like data associated with your visits to be removed, feel free to <a
-                    href="#connections">get in touch</a> and provide as
-                much information as possible about the visit, such as the approximate date, page visited, and country
-                associated with the request. While deletion requests will be handled in good faith, it may not always be
-                possible to identify a specific visit record.
+                If you would like data associated with your visits to be removed, feel free to
+                <a href="#connections">
+                    get in touch
+                </a> and
+                <b>
+                    provide information such as the <a href="#visitor-id">visitor ID</a>, your country, your browser,
+                    and more.
+                </b>
             </p>
 
             <h2>Third-Party Services</h2>

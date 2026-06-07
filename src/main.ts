@@ -88,6 +88,19 @@ if the styles somehow don't load, please ensure that the correct CSS file is inj
     }
 }
 
+export function getVisitorId(): string {
+    const visitorKey = 'visitorId';
+
+    let id = localStorage.getItem(visitorKey);
+
+    if (!id) {
+        id = crypto.randomUUID();
+        localStorage.setItem(visitorKey, id);
+    }
+
+    return id;
+}
+
 export async function trackPageView() {
     try {
         if (navigator.doNotTrack === '1') return;
@@ -111,6 +124,7 @@ export async function trackPageView() {
             keepalive: true,
             headers: {
                 'Content-Type': 'application/json',
+                'X-Visitor-Id': getVisitorId(),
                 'X-Client': 'lanzoor-web-dev-six-seven', // imma fix this and implement a better CSRF proof thingy later for now tho i need to make sure this is working
             },
             body: JSON.stringify({
