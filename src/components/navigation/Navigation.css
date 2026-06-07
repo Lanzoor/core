@@ -16,6 +16,44 @@
         padding-top: calc(25vh + var(--div-padding));
     }
 
+    .notice-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        padding: 40px;
+
+        background: linear-gradient(120deg, rgba(200, 0, 0, 0.5), rgba(100, 0, 0, 0.5));
+        box-shadow: 0 10px 50px rgb(150, 0, 0);
+        backdrop-filter: blur(4px);
+
+        z-index: 9999;
+
+        transition: opacity 0.5s ease;
+    }
+
+    .notice-bar img {
+        width: 40px;
+    }
+
+    .notice-bar button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .notice-bar.closed {
+        opacity: 0;
+        pointer-events: none;
+    }
+
     #top-panel,
     #top-panel * {
         border-radius: 0;

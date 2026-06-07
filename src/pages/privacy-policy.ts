@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const enabled = localStorage.getItem('isTrackingAllowed') !== 'false';
 
         toggleButton!.textContent = enabled ? 'Disable Analytics' : 'Enable Analytics';
+        toggleButton!.className = enabled ? 'enabled' : 'disabled';
     }
 
     toggleButton.addEventListener('click', () => {

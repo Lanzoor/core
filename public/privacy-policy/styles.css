@@ -1,0 +1,31 @@
+@layer page {
+    #analytics-toggle {
+        border: none;
+        padding: 20px;
+        font-size: 30px;
+        font-family: 'JetBrains Mono';
+        margin: 20px 0;
+        border-radius: 5px;
+        cursor: pointer;
+
+        transition: 0.5s ease;
+    }
+
+    #analytics-toggle.enabled {
+        color: rgba(100, 255, 100);
+        background: rgba(25, 100, 25, 0.25);
+    }
+
+    #analytics-toggle.enabled:hover {
+        background: rgba(25, 100, 25, 0.5);
+    }
+
+    #analytics-toggle.disabled {
+        color: rgb(255, 100, 100);
+        background: rgba(100, 25, 25, 0.25);
+    }
+
+    #analytics-toggle.disabled:hover {
+        background: rgba(100, 25, 25, 0.5);
+    }
+}

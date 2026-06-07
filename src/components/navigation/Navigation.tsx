@@ -484,3 +484,40 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.warn('failed to fetch from status:\n\t', error);
     }
 });
+
+function Notice() {
+    const [isNoticeOpen, setIsNoticeOpen] = useState(false);
+
+    useEffect(() => {
+        const seen = localStorage.getItem('hasSeenNotice');
+
+        if (seen !== 'true') {
+            setIsNoticeOpen(true);
+        }
+    }, []);
+
+    return (
+        <div className={`notice-bar${isNoticeOpen ? '' : ' closed'}`}>
+            <p>
+                <b>The privacy policy has been updated recently.</b> This website now collects some basic information such as your approximate country, the pathname of your visit, and more. For more information about opting out, please check the <a href="/privacy-policy">updated privacy policy</a>.
+            </p>
+
+            <button
+                className="close"
+                onClick={() => {
+                    localStorage.setItem('hasSeenNotice', 'true');
+                    setIsNoticeOpen(false);
+                }}
+            >
+                <img src="/assets/icons/close.svg" />
+            </button>
+        </div>
+    );
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const root = document.createElement('div');
+    root.className = 'notice';
+    document.body.appendChild(root);
+    createRoot(root).render(<Notice />);
+});
