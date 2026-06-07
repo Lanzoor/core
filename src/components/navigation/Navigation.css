@@ -5,7 +5,7 @@
         --top-panel-text: #aaa;
         --top-panel-bg: rgba(0, 0, 0, 0.5);
 
-        --bottom-navigation-bg: radial-gradient(circle at 50% -25%, #222 0%, #000 100%);
+        --bottom-navigation-bg: radial-gradient(circle at 50% -25%, #22054d 0%, #000 100%);
     }
 
     /* body {
@@ -375,7 +375,7 @@
     #bottom-navigation {
         padding: auto 10%;
         background: var(--bottom-navigation-bg);
-        border-top: 3px solid #444;
+        border-top: 3px solid rgba(133, 91, 224, 0.5);
 
         display: flex;
         flex-direction: column;
@@ -387,18 +387,18 @@
     }
 
     #bottom-navigation #navigation {
-        width: 100%;
-        border-bottom: 3px solid #444;
+        padding: 4% 10%;
+        border-bottom: 3px solid rgba(133, 91, 224, 0.5);
     }
 
     #bottom-navigation #navigation #navigation-links {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        justify-content: flex-start;
+        justify-content: center;
         flex-wrap: wrap;
 
-        gap: 2%;
+        gap: 10%;
     }
 
     #bottom-navigation #navigation #navigation-links .group {
@@ -410,10 +410,22 @@
     }
 
     #bottom-navigation #navigation #navigation-links .group h2 {
-        margin: 5px 0;
+        margin: 5px 0 20px 0;
+        font-family: 'JetBrains Mono';
+        font-size: 30px;
+
+        color: rgb(123, 61, 255);
     }
+
     #bottom-navigation #navigation #navigation-links a {
         display: inline-block;
+
+        color: #bbb;
+    }
+
+    #bottom-navigation #navigation #navigation-links a:hover {
+        color: #eee;
+        text-decoration: none;
     }
 
     #bottom-navigation #bottom {
@@ -450,179 +462,6 @@
         margin: 2% 0;
         opacity: 0.75;
     }
-
-    /*
-    #connections #container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        flex-direction: row;
-        gap: 15px;
-    }
-
-    #connections #socials,
-    #connections #support {
-        font-family: 'JetBrains Mono';
-
-        margin: 0;
-        padding: 30px;
-        background: rgba(0, 0, 0, 0.25);
-        border: 2px solid rgb(255, 255, 255, 0.5);
-        border-radius: 30px;
-        box-shadow: 0 0 10px rgb(255, 255, 255, 0.5);
-
-        transition: box-shadow 0.2s ease;
-    }
-
-    #connections #socials:hover,
-    #connections #support:hover {
-        box-shadow:
-            0 10px 20px rgb(255, 255, 255, 0.25),
-            inset 0 0 10px rgb(255, 255, 255, 0.5);
-    }
-
-    #connections #socials {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    #connections #social-icons {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-
-        flex-direction: row;
-        gap: 15px;
-    }
-
-    #connections #social-icons img {
-        display: inline-block;
-
-        width: 60px;
-        height: 60px;
-        filter: drop-shadow(0 0 5px rgb(130, 130, 130));
-
-        transition: filter 0.2s ease;
-    }
-
-    #connections #social-icons img:hover {
-        filter: drop-shadow(0 5px 10px rgb(130, 130, 130));
-    }
-
-    #discord-status {
-        font-family: 'JetBrains Mono';
-
-        background: #12022f;
-
-        margin: 2rem;
-        padding: 2rem;
-        border-radius: 2rem;
-        border: 0.5rem solid #30078f;
-        box-shadow: 0 0 10px #360ed8;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 4rem;
-
-        text-align: left;
-
-        color: #bca1ff;
-        text-shadow: 0 0 10px #360ed8;
-
-        animation: insetBlackGlow linear 4s infinite;
-        transition:
-            box-shadow 0.2s ease,
-            background 0.5s ease;
-    }
-
-    #discord-status b {
-        color: #7b47ff;
-        text-shadow: 0 0 10px #5512ff;
-    }
-
-    @keyframes insetBlackGlow {
-        0% {
-            box-shadow: 0 0 10px #360ed8;
-        }
-
-        50% {
-            box-shadow:
-                0 0 10px #360ed8,
-                inset 0 0 40px #4713c3;
-        }
-
-        100% {
-            box-shadow: 0 0 10px #360ed8;
-        }
-    }
-
-    #discord-status:hover {
-        background: #220a5d;
-        cursor: pointer;
-    }
-
-    #discord-status #avatar {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        border: 6px solid transparent;
-
-        background:
-            linear-gradient(120deg, #5634ff, #8f72da, #824dff, #7e42ff) border-box,
-            #2f3136 padding-box;
-        background-clip: border-box, padding-box;
-
-        box-shadow: 0 8px 20px #6d0bc3;
-
-        transition: transform 0.2s ease;
-    }
-
-    #discord-status #avatar:hover {
-        transform: translateY(-3px);
-    }
-
-    #discord-status #nameplate {
-        width: 100%;
-    }
-
-    #discord-status #display-name {
-        text-decoration: none;
-        background: linear-gradient(180deg, #ded3ff, #7c35ff);
-        color: transparent;
-        text-shadow: 0 0 10px #8819ff;
-
-        background-clip: text;
-        -webkit-background-clip: text;
-    }
-
-    #discord-status #nameplate hr {
-        margin: 1rem 0;
-        height: 5px;
-    }
-
-    .status-online {
-        color: #6dff6d;
-        text-shadow: 0 0 10px #12a212;
-    }
-
-    .status-idle {
-        color: #fff56d;
-        text-shadow: 0 0 10px #8a8207;
-    }
-
-    .status-dnd {
-        color: #fd5858;
-        text-shadow: 0 0 10px #8a0707;
-    }
-
-    .status-offline {
-        color: #9c9c9c;
-        text-shadow: 0 0 10px #555555;
-    } */
 
     @media (max-width: 768px) {
         #navigation-panel {

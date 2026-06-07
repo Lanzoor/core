@@ -312,8 +312,6 @@ function BottomNavigationRoot() {
     return (
         <>
             <section id="navigation">
-                <h1>Navigation</h1>
-
                 <nav id="navigation-links">
                     <div className="group">
                         <h2>General</h2>
