@@ -163,7 +163,7 @@
         font-size: 20px;
 
         padding: 5px 10px;
-        color: var(--top-panel-text);
+        color: #aaa;
 
         pointer-events: auto;
 
@@ -177,10 +177,12 @@
 
     #top-panel--links a.current:hover {
         color: rgb(168, 124, 255);
+        text-shadow: 0 0 10px rgb(168, 124, 255, 0.5);
     }
 
     #top-panel--links a:not(.current):hover {
-        color: #777;
+        color: rgba(220, 220, 220);
+        text-shadow: 0 0 10px rgba(220, 220, 220, 0.5);
     }
 
     #navigation--close {
@@ -510,7 +512,7 @@
             font-size: 25px;
         }
         #top-panel--links a {
-            font-size: 10px;
+            font-size: 15px;
         }
     }
 }
