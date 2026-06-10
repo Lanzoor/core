@@ -141,9 +141,6 @@
         --th-bg: rgba(255, 255, 255, 0.15);
         --hr-bg: #333;
 
-        --code-bg: #222;
-        --code-text: #ddd;
-
         --debug-primary: rgb(255, 0, 0);
         --debug-secondary: rgb(255, 129, 129);
 
@@ -754,23 +751,19 @@
         display: inline-block;
         font-family: 'JetBrains Mono';
         padding: 4px 8px;
-        border-radius: 10px;
-        margin: 4px 0;
+        border-radius: 5px;
     }
 
     code {
-        background-color: rgb(35, 35, 55);
-        color: rgb(170, 190, 220);
-        border: 1px solid rgb(181, 186, 255);
-
-        /* background: var(--code-bg);
-        color: var(--code-text); */
+        background: rgb(20, 13, 0);
+        color: rgb(255, 220, 140);
+        padding: 2px 6px;
     }
 
     kbd {
-        background-color: rgb(35, 35, 55);
-        color: rgb(170, 190, 220);
-        border: 1px solid rgb(181, 186, 255);
+        background: rgb(0, 18, 20);
+        color: rgb(140, 249, 255);
+        padding: 2px 6px;
     }
 
     pre {
