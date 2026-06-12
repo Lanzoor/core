@@ -17,6 +17,11 @@
             "source": "/site-map/:path*",
             "destination": "/map/:path*",
             "permanent": false
+        },
+        {
+            "source": "/projects/core-api/changelog/:path*",
+            "destination": "https://api.lanzoor.dev/docs/changelog/:path*",
+            "permanent": false
         }
     ]
 }

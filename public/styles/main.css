@@ -275,6 +275,11 @@
         color: var(--text);
     }
 
+    main.frozen {
+        overflow: hidden;
+        touch-action: none;
+    }
+
     /* p {
         line-height: 1.75;
     } */

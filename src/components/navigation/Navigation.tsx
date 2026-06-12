@@ -485,30 +485,70 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function Notice() {
     const [isNoticeOpen, setIsNoticeOpen] = useState(false);
+    const [mobile_isInPrivacyPolicy, mobile_setIsInPrivacyPolicy] = useState(false);
 
     useEffect(() => {
-        const seen = localStorage.getItem('hasSeenNotice');
+        const main = document.querySelector('main');
 
-        if (seen !== 'true') {
+        if (!main) return;
+
+        if (window.location.pathname === '/privacy-policy') {
+            mobile_setIsInPrivacyPolicy(true);
+            main.classList.remove('frozen');
+            return;
+        }
+
+        const hasSeenNotice = localStorage.getItem('hasSeenNotice');
+
+        if (hasSeenNotice !== 'true') {
             setIsNoticeOpen(true);
+            main.classList.add('frozen');
+        } else {
+            setIsNoticeOpen(false);
+            main.classList.remove('frozen');
         }
     }, []);
 
     return (
-        <div className={`notice-bar${isNoticeOpen ? '' : ' closed'}`}>
-            <p>
-                <b>The privacy policy has been updated recently.</b> This website now collects some basic information such as your approximate country, the pathname of your visit, and more. For more information about opting out, please check the <a href="/privacy-policy">updated privacy policy</a>.
-            </p>
+        <div className={`notice-bar${isNoticeOpen ? ' open' : ''}${mobile_isInPrivacyPolicy ? ' mobile_hide' : ''}`}>
+            <div className="description">
+                <h1>[ notice ]</h1>
 
-            <button
-                className="close"
-                onClick={() => {
-                    localStorage.setItem('hasSeenNotice', 'true');
-                    setIsNoticeOpen(false);
-                }}
-            >
-                <img src="/assets/icons/close.svg" />
-            </button>
+                <p>
+                    This website collects a limited amount of information such as your approximate country, the pathname of your visit, and more. <b>We do not collect your data by default.</b> Please check <a href="privacy-policy">our privacy policy</a> for more information.
+                    <br />
+                    You can use the buttons to the right to either enable or disable analytics. <b>Clicking either button will hide this panel.</b>
+                </p>
+
+                <p className="mobile">
+                    <br />
+                    <b>Your viewport width is small, which changed the layout of this panel to cover the entire screen.</b> Visiting the privacy policy page won't show this panel, <b>and no changes to your preferences will be made.</b>
+                </p>
+            </div>
+
+            <div className="buttons">
+                <button
+                    className="disable"
+                    onClick={() => {
+                        localStorage.setItem('hasSeenNotice', 'true');
+                        localStorage.setItem('isTrackingAllowed', 'false');
+                        setIsNoticeOpen(false);
+                    }}
+                >
+                    Disable analytics
+                </button>
+
+                <button
+                    className="enable"
+                    onClick={() => {
+                        localStorage.setItem('hasSeenNotice', 'true');
+                        localStorage.setItem('isTrackingAllowed', 'true');
+                        setIsNoticeOpen(false);
+                    }}
+                >
+                    Enable analytics
+                </button>
+            </div>
         </div>
     );
 }

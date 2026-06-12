@@ -88,7 +88,11 @@ if the styles somehow don't load, please ensure that the correct CSS file is inj
     }
 }
 
-export function getVisitorId(): string {
+export function getVisitorId(): string | null {
+    if (localStorage.getItem('isTrackingAllowed') !== 'true' && !localStorage.getItem('visitorId')) {
+        return null;
+    }
+
     const visitorKey = 'visitorId';
 
     let id = localStorage.getItem(visitorKey);
@@ -108,7 +112,7 @@ export async function trackPageView() {
         let isTrackingAllowed = localStorage.getItem('isTrackingAllowed');
 
         if (isTrackingAllowed === null) {
-            isTrackingAllowed = 'true';
+            isTrackingAllowed = 'false';
             localStorage.setItem('isTrackingAllowed', isTrackingAllowed);
         }
 
@@ -116,7 +120,10 @@ export async function trackPageView() {
             return;
         }
 
-        console.log('debug message, please ignore');
+        let visitorId = getVisitorId();
+
+        if (!visitorId) return;
+
         console.log('before fetch');
 
         await fetch('https://api.lanzoor.dev/analytics', {
@@ -124,7 +131,7 @@ export async function trackPageView() {
             keepalive: true,
             headers: {
                 'Content-Type': 'application/json',
-                'X-Visitor-Id': getVisitorId(),
+                'X-Visitor-Id': visitorId,
                 'X-Client': 'lanzoor-web-dev-six-seven', // imma fix this and implement a better CSRF proof thingy later for now tho i need to make sure this is working
             },
             body: JSON.stringify({

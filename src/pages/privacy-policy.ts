@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const enabled = localStorage.getItem('isTrackingAllowed') !== 'false';
 
         localStorage.setItem('isTrackingAllowed', enabled ? 'false' : 'true');
+        localStorage.setItem('hasSeenNotice', 'true');
 
         updateButton();
     });
@@ -28,5 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!visitorId) return;
 
-    visitorId.textContent = getVisitorId();
+    visitorId.textContent = getVisitorId() ?? '...';
 });

@@ -30,28 +30,69 @@
 
         padding: 40px;
 
-        background: linear-gradient(120deg, rgba(200, 0, 0, 0.5), rgba(100, 0, 0, 0.5));
+        background: rgba(20, 0, 0);
         box-shadow: 0 10px 50px rgb(150, 0, 0);
+        border-top: 2px solid rgba(255, 200, 200);
         backdrop-filter: blur(4px);
 
         z-index: 9999;
 
         transition: opacity 0.5s ease;
+
+        font-size: 20px;
+
+        opacity: 0;
+        pointer-events: none;
     }
 
-    .notice-bar img {
-        width: 40px;
+    .notice-bar.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .notice-bar .buttons {
+        min-width: 30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 20px;
     }
 
     .notice-bar button {
-        background: none;
+        font-family: 'JetBrains Mono';
+        background: transparent;
         border: none;
         cursor: pointer;
+        font-size: 20px;
+        border-radius: 2147483647px;
+        padding: 10px 20px;
+
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+
+        transition: 0.25s ease;
     }
 
-    .notice-bar.closed {
-        opacity: 0;
-        pointer-events: none;
+    .notice-bar button.enable {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: transparent;
+    }
+
+    .notice-bar button:hover {
+        color: rgb(20, 0, 0);
+        background: white;
+        box-shadow: 0 0 20px white;
+    }
+
+    .notice-bar h1 {
+        color: rgba(255, 150, 150);
+        margin: 10px 0;
+    }
+
+    .notice-bar .mobile {
+        display: none;
     }
 
     #top-panel,
@@ -499,6 +540,46 @@
     }
 
     @media (max-width: 1080px) {
+        .notice-bar {
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+
+            inset: 5% 2.5% 5% 2.5%;
+            margin: 0;
+
+            padding-top: 10%;
+            padding-bottom: 10%;
+
+            width: 95%;
+
+            border-top: none;
+            box-shadow: 0 0 50px rgb(150, 0, 0);
+            border-radius: 50px;
+
+            z-index: 2147483647;
+
+            font-size: 15px;
+            overflow-y: auto;
+        }
+
+        .notice-bar .buttons {
+            min-width: 0;
+        }
+
+        .notice-bar button {
+            font-size: 10px;
+        }
+
+        .notice-bar .mobile {
+            display: block;
+        }
+
+        .notice-bar.mobile-hide {
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 
     @media (max-width: 1200px) {
