@@ -538,7 +538,7 @@
     }
 
     @media (max-width: 1080px) {
-        .analytics-notice-bar {
+        .analytics-notice-panel {
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
@@ -562,19 +562,19 @@
             overflow-y: auto;
         }
 
-        .analytics-notice-bar .buttons {
+        .analytics-notice-panel .buttons {
             min-width: 0;
         }
 
-        .analytics-notice-bar button {
+        .analytics-notice-panel button {
             font-size: 10px;
         }
 
-        .analytics-notice-bar .mobile {
+        .analytics-notice-panel .mobile {
             display: block;
         }
 
-        .analytics-notice-bar.mobile-hide {
+        .analytics-notice-panel.mobile-hide {
             opacity: 0;
             pointer-events: none;
         }
