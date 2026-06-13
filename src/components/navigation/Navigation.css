@@ -16,7 +16,7 @@
         padding-top: calc(25vh + var(--div-padding));
     }
 
-    .notice-bar {
+    .analytics-notice-panel {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -37,20 +37,18 @@
 
         z-index: 9999;
 
-        transition: opacity 0.5s ease;
-
         font-size: 20px;
 
         opacity: 0;
         pointer-events: none;
     }
 
-    .notice-bar.open {
+    .analytics-notice-panel.open {
         opacity: 1;
         pointer-events: auto;
     }
 
-    .notice-bar .buttons {
+    .analytics-notice-panel .buttons {
         min-width: 30%;
         display: flex;
         flex-direction: row;
@@ -60,7 +58,7 @@
         gap: 20px;
     }
 
-    .notice-bar button {
+    .analytics-notice-panel button {
         font-family: 'JetBrains Mono';
         background: transparent;
         border: none;
@@ -75,23 +73,23 @@
         transition: 0.25s ease;
     }
 
-    .notice-bar button.enable {
+    .analytics-notice-panel button.enable {
         background: rgba(255, 255, 255, 0.25);
         border-color: transparent;
     }
 
-    .notice-bar button:hover {
+    .analytics-notice-panel button:hover {
         color: rgb(20, 0, 0);
         background: white;
         box-shadow: 0 0 20px white;
     }
 
-    .notice-bar h1 {
+    .analytics-notice-panel h1 {
         color: rgba(255, 150, 150);
         margin: 10px 0;
     }
 
-    .notice-bar .mobile {
+    .analytics-notice-panel .mobile {
         display: none;
     }
 
@@ -439,7 +437,7 @@
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
 
         gap: 10%;
     }
@@ -540,7 +538,7 @@
     }
 
     @media (max-width: 1080px) {
-        .notice-bar {
+        .analytics-notice-bar {
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
@@ -564,21 +562,25 @@
             overflow-y: auto;
         }
 
-        .notice-bar .buttons {
+        .analytics-notice-bar .buttons {
             min-width: 0;
         }
 
-        .notice-bar button {
+        .analytics-notice-bar button {
             font-size: 10px;
         }
 
-        .notice-bar .mobile {
+        .analytics-notice-bar .mobile {
             display: block;
         }
 
-        .notice-bar.mobile-hide {
+        .analytics-notice-bar.mobile-hide {
             opacity: 0;
             pointer-events: none;
+        }
+
+        #bottom-navigation #navigation #navigation-links {
+            flex-wrap: wrap;
         }
     }
 

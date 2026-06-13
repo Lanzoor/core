@@ -40,5 +40,9 @@
         #left-panel {
             display: none;
         }
+
+        main section {
+            padding: 4%;
+        }
     }
 }

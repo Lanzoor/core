@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Core } from '@/main';
+import { Analytics, Core } from '@/main';
 
 // @ts-ignore
 import '@/components/navigation/Navigation.css';
@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-function Notice() {
+function AnalyticsNotice() {
     const [isNoticeOpen, setIsNoticeOpen] = useState(false);
     const [mobile_isInPrivacyPolicy, mobile_setIsInPrivacyPolicy] = useState(false);
 
@@ -494,7 +494,6 @@ function Notice() {
 
         if (window.location.pathname === '/privacy-policy') {
             mobile_setIsInPrivacyPolicy(true);
-            main.classList.remove('frozen');
             return;
         }
 
@@ -502,20 +501,18 @@ function Notice() {
 
         if (hasSeenNotice !== 'true') {
             setIsNoticeOpen(true);
-            main.classList.add('frozen');
         } else {
             setIsNoticeOpen(false);
-            main.classList.remove('frozen');
         }
     }, []);
 
     return (
-        <div className={`notice-bar${isNoticeOpen ? ' open' : ''}${mobile_isInPrivacyPolicy ? ' mobile_hide' : ''}`}>
+        <div className={`analytics-notice-panel${isNoticeOpen ? ' open' : ''}${mobile_isInPrivacyPolicy ? ' mobile-hide' : ''}`}>
             <div className="description">
                 <h1>[ notice ]</h1>
 
                 <p>
-                    This website collects a limited amount of information such as your approximate country, the pathname of your visit, and more. <b>We do not collect your data by default.</b> Please check <a href="privacy-policy">our privacy policy</a> for more information.
+                    This website collects a limited amount of information such as your approximate country, the pathname of your visit, and more. <b>We do not collect your data by default.</b> Please refer to <a href="privacy-policy">our privacy policy</a> for more information.
                     <br />
                     You can use the buttons to the right to either enable or disable analytics. <b>Clicking either button will hide this panel.</b>
                 </p>
@@ -530,8 +527,8 @@ function Notice() {
                 <button
                     className="disable"
                     onClick={() => {
+                        Analytics.setEnabled(false);
                         localStorage.setItem('hasSeenNotice', 'true');
-                        localStorage.setItem('isTrackingAllowed', 'false');
                         setIsNoticeOpen(false);
                     }}
                 >
@@ -541,8 +538,9 @@ function Notice() {
                 <button
                     className="enable"
                     onClick={() => {
+                        Analytics.setEnabled(true);
+                        Analytics.initialize();
                         localStorage.setItem('hasSeenNotice', 'true');
-                        localStorage.setItem('isTrackingAllowed', 'true');
                         setIsNoticeOpen(false);
                     }}
                 >
@@ -555,7 +553,7 @@ function Notice() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.createElement('div');
-    root.className = 'notice';
+    root.className = 'analytics-notice';
     document.body.appendChild(root);
-    createRoot(root).render(<Notice />);
+    createRoot(root).render(<AnalyticsNotice />);
 });

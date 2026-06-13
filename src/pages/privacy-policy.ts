@@ -1,4 +1,4 @@
-import { getVisitorId } from '@/main';
+import { Analytics } from '@/main';
 
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('analytics-toggle');
@@ -6,20 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!toggleButton) return;
 
     function updateButton() {
-        const enabled = localStorage.getItem('isTrackingAllowed') !== 'false';
-
-        toggleButton!.textContent = enabled ? 'Disable Analytics' : 'Enable Analytics';
-        toggleButton!.className = enabled ? 'enabled' : 'disabled';
+        Analytics.toggleEnabled();
     }
 
-    toggleButton.addEventListener('click', () => {
-        const enabled = localStorage.getItem('isTrackingAllowed') !== 'false';
-
-        localStorage.setItem('isTrackingAllowed', enabled ? 'false' : 'true');
-        localStorage.setItem('hasSeenNotice', 'true');
-
-        updateButton();
-    });
+    toggleButton.addEventListener('click', updateButton);
 
     updateButton();
 });
@@ -29,5 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!visitorId) return;
 
-    visitorId.textContent = getVisitorId() ?? '...';
+    visitorId.textContent = Analytics.getVisitorId() ?? '...';
 });

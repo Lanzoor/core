@@ -9,13 +9,6 @@ export namespace Core {
 
     export async function pingServer(route: string, options?: RequestInit): Promise<any | undefined> {
         try {
-            //             const urlRegex = /^https:\/\/(www|api)\.[^/]+(\/.*)?$/;
-            //             const pathRegex = /^(\/[a-zA-Z0-9_-]+)+\/?$/;
-            //             if (!urlRegex.test(route) || !pathRegex.test(route)) {
-            //                 console.warn(`route ${route} did not match the recommended fetch API structure.
-            // this warning exits purely for preventing mistakes, and may (or should) be ignored if you know what you're doing`);
-            //             }
-
             const result = await fetch(route, options);
 
             if (!result.ok) {
@@ -87,67 +80,99 @@ if the styles somehow don't load, please ensure that the correct CSS file is inj
         }
     }
 }
+export namespace Analytics {
+    const TRACKING_KEY = 'isTrackingAllowed';
+    const VISITOR_KEY = 'visitorId';
 
-export function getVisitorId(): string | null {
-    if (localStorage.getItem('isTrackingAllowed') !== 'true' && !localStorage.getItem('visitorId')) {
-        return null;
+    function generateVisitorId(): string {
+        return crypto.randomUUID();
     }
 
-    const visitorKey = 'visitorId';
-
-    let id = localStorage.getItem(visitorKey);
-
-    if (!id) {
-        id = crypto.randomUUID();
-        localStorage.setItem(visitorKey, id);
+    export function isEnabled(): boolean {
+        return localStorage.getItem(TRACKING_KEY) === 'true';
     }
 
-    return id;
-}
+    export function setEnabled(value: boolean): void {
+        if (value) {
+            localStorage.setItem(TRACKING_KEY, 'true');
 
-export async function trackPageView() {
-    try {
-        if (navigator.doNotTrack === '1') return;
+            if (!localStorage.getItem(VISITOR_KEY)) {
+                localStorage.setItem(VISITOR_KEY, generateVisitorId());
+            }
+        } else {
+            localStorage.setItem(TRACKING_KEY, 'false');
 
-        let isTrackingAllowed = localStorage.getItem('isTrackingAllowed');
+            if (localStorage.getItem(VISITOR_KEY)) {
+                localStorage.removeItem(VISITOR_KEY);
+            }
+        }
+    }
 
-        if (isTrackingAllowed === null) {
-            isTrackingAllowed = 'false';
-            localStorage.setItem('isTrackingAllowed', isTrackingAllowed);
+    export function toggleEnabled(): void {
+        if (isEnabled()) {
+            setEnabled(false);
+        } else {
+            setEnabled(false);
+        }
+    }
+
+    export function getVisitorId(): string | null {
+        if (!isEnabled()) {
+            return null;
         }
 
-        if (isTrackingAllowed !== 'true') {
+        let id = localStorage.getItem(VISITOR_KEY);
+
+        if (!id) {
+            id = generateVisitorId();
+            localStorage.setItem(VISITOR_KEY, id);
+        }
+
+        return id;
+    }
+
+    export async function trackPageView(): Promise<void> {
+        try {
+            if (!isEnabled()) {
+                return;
+            }
+
+            const visitorId = getVisitorId();
+
+            if (!visitorId) {
+                return;
+            }
+
+            await fetch('https://api.lanzoor.dev/analytics', {
+                method: 'POST',
+                keepalive: true,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Visitor-Id': visitorId,
+                    'X-Client': 'lanzoor-web-dev-six-seven',
+                },
+                body: JSON.stringify({
+                    path: location.pathname + location.search,
+                }),
+            });
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    export function initialize(): void {
+        if (typeof window === 'undefined') {
             return;
         }
 
-        let visitorId = getVisitorId();
+        if (localStorage.getItem(TRACKING_KEY) === null) {
+            localStorage.setItem(TRACKING_KEY, 'false');
+        }
 
-        if (!visitorId) return;
-
-        console.log('before fetch');
-
-        await fetch('https://api.lanzoor.dev/analytics', {
-            method: 'POST',
-            keepalive: true,
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Visitor-Id': visitorId,
-                'X-Client': 'lanzoor-web-dev-six-seven', // imma fix this and implement a better CSRF proof thingy later for now tho i need to make sure this is working
-            },
-            body: JSON.stringify({
-                path: location.pathname + location.search,
-            }),
-        });
-
-        console.log('after fetc');
-    } catch (err) {
-        console.error(err);
+        void trackPageView();
     }
 }
 
-if (typeof window !== 'undefined') {
-    trackPageView();
-    console.log('bfected');
-}
+Analytics.initialize();
 
 // IMPORTANT: For now, main.ts does not get loaded when loading any page within /public. Instead, it is loaded via Navigation.tsx via imports. I'll have to figure out how to run this script while minimizing the amount of script tags in HTML scripts. But for now... this is more than enough. Thanks for listening to my T ED talk. It helps me out... a lot.

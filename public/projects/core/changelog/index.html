@@ -14,7 +14,7 @@
 <body>
     <main>
         <section>
-            <h1 class="lt-track">Changelog</h1>
+            <h1>Changelog</h1>
 
             <p>
                 This page contains a list of all changes and updates made to the website.
@@ -32,8 +32,51 @@
             </blockquote>
 
             <hr>
+        </section>
 
-            <h2 class="lt-track" id="v26-23-5">Minor update v26.23.5</h2>
+        <section id="v26-23-6">
+            <h1>Minor update v26.23.6</h1>
+
+            <p class="dim">
+                Release date: <b>June 13th, 2026</b>
+            </p>
+
+            <p>
+                Small update today.
+            </p>
+
+            <ul>
+                <li>
+                    <span class="col bright purple">ƒ</span>
+                    Fixed an issue where the frozen state wouldn't get removed after the analytics panel is hidden.
+                </li>
+
+                <li>
+                    <span class="col bright yellow">~</span>
+                    <b>Completely overhauled the margin system.</b>
+                    Please do note that the pages within
+                    <code>/troubleshooting</code> hasn't been updated along yet. <i>We will work on this soon.</i>
+                </li>
+
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Improved the structure within changelogs.
+                </li>
+
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Improved analytics toggle logic.
+                </li>
+
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Unified <code>&lt;meta&gt;</code> tag usage across pages.
+                </li>
+            </ul>
+        </section>
+
+        <section id="v26-23-5">
+            <h1>Minor update v26.23.5</h1>
 
             <p class="dim">
                 Release date: <b>June 12th, 2026</b>
@@ -88,10 +131,10 @@
                     to hide the panel when you make a choice via the button.
                 </li>
             </ul>
+        </section>
 
-            <hr>
-
-            <h2 class="lt-track" id="v26-23-4">Minor update v26.23.4</h2>
+        <section id="v26-23-4">
+            <h1>Minor update v26.23.4</h1>
 
             <p class="dim">
                 Release date: <b>June 10th, 2026</b>
@@ -114,10 +157,10 @@
                     Removed the annoying margin for <code>code</code> and <code>kbd</code> elements.
                 </li>
             </ul>
+        </section>
 
-            <hr>
-
-            <h2 class="lt-track" id="v26-23-3">Minor update v26.23.3</h2>
+        <section id="v26-23-3">
+            <h1>Minor update v26.23.3</h1>
 
             <p class="dim">
                 Release date: <b>June 9th, 2026</b>
@@ -164,23 +207,31 @@
                     <code>/troubleshooting/status.html</code>, in favor of the new work-in-progress one.
                 </li>
             </ul>
+        </section>
 
-            <h2 class="lt-track" id="legend">Legend</h2>
+        <section id="legend">
+            <h1>Legend</h1>
 
-            <h3>Naming Conventions for Changes</h3>
+            <h2>Naming Conventions for Changes</h2>
 
             <p>
                 All changes are written in <b>the past tense.</b>
                 This makes them easier to read for visitors who may not be familiar with Git commit conventions.
             </p>
 
-            <h3>Change Prefixes</h3>
+            <h2>Change Prefixes</h2>
 
             <p>
                 Every change is prefixed with a symbol indicating what happened.
             </p>
 
             <ul>
+                <li>
+                    <b>A purple fancy f</b>
+                    (<span class="col bright purple">ƒ</span>)
+                    indicates that an issue has been fixed.
+                </li>
+
                 <li>
                     <b>A green plus sign</b>
                     (<span class="col bright green">+</span>)
@@ -200,13 +251,6 @@
                 </li>
 
                 <li>
-                    In some cases, a red
-                    <span class="col red">!</span>
-                    may appear before the symbol. This means the change is significant, and changes major aspects of the
-                    website.
-                </li>
-
-                <li>
                     In some cases, a blue
                     <span class="col bright blue">p</span>
                     may appear after the symbol. This means the change is provisional and may be reverted in the future.
@@ -214,11 +258,12 @@
             </ul>
 
             <blockquote class="warning">
-                <b>Please note that change prefixes are only intended as a quick summary of a change.</b>
+                <b class="col bright yellow">
+                    Please note that change prefixes are only intended as a quick summary of a change.
+                </b>
                 They are subjective and may not fully describe everything included in an update.
                 For example, an entry marked with a plus sign may also contain modifications to existing features.
             </blockquote>
-
         </section>
     </main>
     <script type="module" src="/out/components/navigation/Navigation.js"></script>
