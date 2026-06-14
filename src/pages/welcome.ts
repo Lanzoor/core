@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     letters = Array.from(document.querySelectorAll('#lanzoor-letters span')).map((element) => element as HTMLSpanElement);
 
-    fonts = ['JetBrains Mono', 'Fira Code', 'Noto Sans', 'Noto Sans Mono', 'Geist'];
+    fonts = ['JetBrains Mono', 'Fira Code', 'Noto Sans', 'Noto Sans Mono'];
 
     fontIndex = 0;
 

@@ -342,7 +342,10 @@ function BottomNavigationRoot() {
                 </nav>
             </section>
 
-            <section id="bottom">
+            <section
+                className="spacing"
+                id="bottom"
+            >
                 <div className="flex-child">
                     <h1 className="logo">
                         <span className="head">lanzoor</span>.<span className="tail">dev</span>
@@ -356,7 +359,7 @@ function BottomNavigationRoot() {
                 </div>
 
                 <div
-                    className="flex-child"
+                    className="flex-child spacing"
                     id="connections"
                 >
                     <h2>Connections</h2>
@@ -512,7 +515,7 @@ function AnalyticsNotice() {
                 <h1>[ notice ]</h1>
 
                 <p>
-                    This website collects a limited amount of information such as your approximate country, the pathname of your visit, and more. <b>We do not collect your data by default.</b> Please refer to <a href="privacy-policy">our privacy policy</a> for more information.
+                    This website collects a limited amount of information such as your approximate country, the pathname of your visit, and more. <b>We do not collect your data by default.</b> Please refer to <a href="/privacy-policy">our privacy policy</a> for more information.
                     <br />
                     You can use the buttons to the right to either enable or disable analytics. <b>Clicking either button will hide this panel.</b>
                 </p>

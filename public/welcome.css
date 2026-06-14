@@ -164,7 +164,7 @@
     }
 
     #welcome--profile #hobbies #programming {
-        background: radial-gradient(ellipse at top left, rgba(0, 195, 255, 0.1) 0%, transparent 30%), black;
+        background: radial-gradient(circle at top left, rgba(0, 195, 255, 0.1) 0%, transparent 30%), black;
     }
 
     #welcome--profile #hobbies #programming .stack-group {

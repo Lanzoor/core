@@ -28,10 +28,60 @@
 
             <blockquote class="warning">
                 <b class="col bright yellow">Not all changes warrant a new changelog!</b>
-                When a change is very minor and urgent, it may not show up here.
+                When a change is very small and/or urgent, it may not show up here.
             </blockquote>
 
             <hr>
+        </section>
+
+        <section id="v26-23-7">
+            <h1>Minor update v26.23.7</h1>
+
+            <p>
+                A bit of an internal update today.
+            </p>
+
+            <ul>
+                <li>
+                    <span class="col bright purple">ƒ</span>
+                    Fixed an issue where the privacy policy link within the analytics panel would take you
+                    to the 404 page.
+                </li>
+
+                <li>
+                    <span class="col bright purple">ƒ</span>
+                    Fixed a logic issue within the analytics panel,
+                    where the panel would still show up on mobile devices in the privacy policy page.
+                </li>
+
+                <li>
+                    <span class="col bright yellow">~</span>
+                    <b>
+                        Reworked the current font size convention to use <code>em</code> units instead of
+                        <code>px</code>.
+                    </b>
+                    This would allow responsive layouts to be easier to implement, and also
+                    improve readability on mobile devices.
+                </li>
+
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Improved the design of the analytics panel,
+                    in order to make it friendly for devices with a
+                    significantly short width.
+                </li>
+
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Renamed the frontpage stylesheet from <code>styles.css</code> to <code>welcome.css</code> in order
+                    to match the new conventions.
+                </li>
+
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Improved phrasing of some paragraphs within certain sections of the website.
+                </li>
+            </ul>
         </section>
 
         <section id="v26-23-6">
@@ -214,9 +264,22 @@
 
             <h2>Naming Conventions for Changes</h2>
 
+            <h3>Change Writing Conventions</h3>
+
             <p>
-                All changes are written in <b>the past tense.</b>
-                This makes them easier to read for visitors who may not be familiar with Git commit conventions.
+                Changes are written in <b>the past tense</b> rather than the imperative mood commonly used in Git
+                commits.
+                This improves readability for visitors who are not familiar with development workflows.
+            </p>
+
+            <p>
+                Each change entry ends with a period (<code>.</code>).
+            </p>
+
+            <h3>Change Order</h3>
+
+            <p>
+                Changes are generally ordered from the most significant to the least significant.
             </p>
 
             <h2>Change Prefixes</h2>
@@ -227,7 +290,7 @@
 
             <ul>
                 <li>
-                    <b>A purple fancy f</b>
+                    <b>A purple f</b>
                     (<span class="col bright purple">ƒ</span>)
                     indicates that an issue has been fixed.
                 </li>
