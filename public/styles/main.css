@@ -108,6 +108,14 @@
     font-optical-sizing: auto;
 }
 
+.jp,
+.jp *,
+.sawarabi-gothic,
+.sawarabi-gothic * {
+    font-family: 'Sawarabi Gothic', sans-serif;
+    font-optical-sizing: auto;
+}
+
 /* ==================== Layer Hierarchies ==================== */
 
 @layer base, structure, page, component;
