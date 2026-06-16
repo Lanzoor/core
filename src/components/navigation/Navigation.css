@@ -94,11 +94,6 @@
         display: none;
     }
 
-    .analytics-notice-panel.mobile-hide {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
     #top-panel,
     #top-panel * {
         border-radius: 0;

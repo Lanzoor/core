@@ -574,43 +574,80 @@
         padding: var(--div-padding);
     }
 
-    section.no-padding {
+    .no-padding {
         padding: 0;
     }
 
+    .no-margin {
+        margin: 0;
+    }
+
     section.fixed-bg {
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        background-attachment: fixed !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
     }
 
     section.stretched {
         min-height: calc(100vh);
     }
 
-    section.centered.horizontally {
-        align-items: center;
-        text-align: center;
-    }
-
-    section.aligned.left {
+    .text-align--left {
         text-align: left;
     }
-    section.aligned.center {
+    .text-align--center {
         text-align: center;
     }
-    section.aligned.right {
+    .text-align--right {
         text-align: right;
     }
 
-    main section {
+    .align--flex-start {
+        align-items: flex-start;
+    }
+    .align--center {
+        align-items: center;
+    }
+    .align--flex-end {
+        align-items: flex-end;
+    }
+
+    .align-self--flex-start {
+        align-self: flex-start;
+    }
+    .align-self--center {
+        align-self: center;
+    }
+    .align-self--flex-end {
+        align-self: flex-end;
+    }
+
+    .justify--flex-start {
+        justify-content: flex-start;
+    }
+    .justify--center {
+        justify-content: center;
+    }
+    .justify--flex-end {
+        justify-content: flex-end;
+    }
+    .justify--between {
+        justify-content: space-between;
+    }
+    .justify--around {
+        justify-content: space-around;
+    }
+
+    main section,
+    main section header {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    main section:not(.no-spacing) {
+    main section:not(.no-spacing),
+    main section header:not(.no-spacing) {
         gap: 1em;
     }
 
@@ -718,6 +755,33 @@
 
     .logo .tail {
         color: #777;
+    }
+
+    .structure {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+
+        font-size: 0.8em;
+        color: #888;
+        letter-spacing: 0.1em;
+    }
+
+    .structure a {
+        color: #888;
+        text-decoration: none;
+
+        transition: color 0.2s;
+    }
+
+    .structure .separator {
+        color: #555;
+        user-select: none;
+    }
+
+    .structure a:last-of-type {
+        color: #ddd;
+        text-shadow: 0 0 10px rgba(221, 221, 221, 0.5);
     }
 
     /* ==================== inline-blocks ==================== */

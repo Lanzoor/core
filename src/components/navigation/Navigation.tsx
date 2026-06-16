@@ -377,8 +377,6 @@ function BottomNavigationRoot() {
                         use the connections below to get in touch!
                     </p>
 
-                    <hr />
-
                     <div id="connections">
                         <div className="connection">
                             <img src="/assets/icons/discord.svg" />
@@ -389,7 +387,7 @@ function BottomNavigationRoot() {
                                 href="https://www.discord.com"
                                 target="_blank"
                             >
-                                @lanzoor | 1160164047111606292
+                                lanzoor
                             </a>
                         </div>
                         <div className="connection">
@@ -401,7 +399,7 @@ function BottomNavigationRoot() {
                                 href="https://www.reddit.com/user/Lanzoor/"
                                 target="_blank"
                             >
-                                @Lanzoor
+                                Lanzoor
                             </a>
                         </div>
                         <div className="connection">
@@ -437,7 +435,7 @@ function BottomNavigationRoot() {
                                 href="https://www.youtube.com/@lanzoorgaming"
                                 target="_blank"
                             >
-                                @lanzoorgaming
+                                lanzoorgaming
                             </a>
                         </div>
                         <div className="connection">
@@ -449,12 +447,8 @@ function BottomNavigationRoot() {
                         </div>
                     </div>
 
-                    <hr />
-
                     <p className="dim">
-                        ⚠ Please do not spam or try to scam me, you <i>will</i> get <b>ignored, blocked and reported without any warnings.</b>
-                        <br />
-                        <br />I try to respond to inquiries as quickly as possible, but <b>I do recommend using Discord / email for most inquiries!</b>
+                        Check <a href="/about#about--contact">this article</a> for more information!
                     </p>
                 </div>
             </section>

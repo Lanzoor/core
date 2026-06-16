@@ -9,27 +9,76 @@
 
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/structure/documents.css">
+    <link rel="stylesheet" href="/projects/core/changelog/styles.css">
 </head>
 
 <body>
     <main>
         <section>
+            <span class="structure">
+                <a href="/">Home</a>
+
+                <span class="separator">›</span>
+
+                <a href="/projects">Projects</a>
+
+                <span class="separator">›</span>
+
+                <a href="/projects/core">Core</a>
+
+                <span class="separator">›</span>
+
+                <a href="/projects/core/changelog">Changelog</a>
+            </span>
+
             <h1>Changelog</h1>
 
             <p>
                 This page contains a list of all changes and updates made to the website.
+                <b>You can use the search bar below to search for a version!</b>
             </p>
-
-            <blockquote class="info">
-                <b class="col bright green">Tip:</b> You can link directly to a specific version using its anchor ID.
-                For example, <code>v26.1.0</code> becomes <code>#v26-1-0</code>, so the URL would be
-                <code>https://www.lanzoor.dev/projects/core/changelog#v26-1-0</code>.
-            </blockquote>
 
             <blockquote class="warning">
                 <b class="col bright yellow">Not all changes warrant a new changelog!</b>
                 When a change is very small and/or urgent, it may not show up here.
             </blockquote>
+        </section>
+
+        <section id="v26-23-9">
+            <h1>Minor update v26.23.9</h1>
+
+            <p>
+                <b>We're officially getting ready for the navigation UI/UX overhaul!</b>
+                This update adds several features related to the quality of life.
+            </p>
+
+            <ul>
+                <li>
+                    <span class="col bright purple">ƒ</span>
+                    Fixed an issue where the analytics panel would pop up in the privacy policy page even after seeing
+                    it.
+                </li>
+
+                <li>
+                    <span class="col bright green">+</span>
+                    <b>Added breadcrumbs to most major pages.</b> This would allow for easier navigation and clarity.
+                </li>
+
+                <li>
+                    <span class="col bright green">+</span>
+                    Added a search feature to the changelog page.
+                </li>
+
+                <li>
+                    <span class="col bright green">+</span>
+                    Implemented a basic <a href="/about">about</a> page.
+                </li>
+
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Improved the structure of some pages on mobile devices.
+                </li>
+            </ul>
         </section>
 
         <section id="v26-23-8">
@@ -344,8 +393,23 @@
             </blockquote>
         </section>
     </main>
+
+    <div id="search-overlay">
+        <p id="search-description">
+            Search for a version name!
+        </p>
+
+        <div id="search-options">
+            <input type="text" id="search-bar" placeholder="Enter a version (e.g. v26.1.0)">
+            <button id="search-button">Search</button>
+        </div>
+    </div>
+
+    <button id="search-toggle">🔍</button>
+
     <script type="module" src="/out/components/navigation/Navigation.js"></script>
     <script type="module" src="/out/components/left-panel/LeftPanel.js"></script>
+    <script type="module" src="/out/pages/projects/core/changelog.js"></script>
 </body>
 
 </html>

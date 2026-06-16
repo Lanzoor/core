@@ -1,0 +1,102 @@
+@layer page {
+    #search-toggle {
+        background: #8156ff;
+        position: fixed;
+
+        left: 1em;
+        bottom: 1em;
+
+        padding: 0.5em;
+        border-radius: 2147483647px;
+        border: none;
+        font-size: 1em;
+
+        transition: 0.5s ease;
+
+        z-index: 1000;
+    }
+
+    #search-toggle:hover {
+        background: #a689ff;
+        box-shadow: 0 0 10px #8156ff;
+        cursor: pointer;
+    }
+
+    #search-overlay {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(50%);
+
+        position: fixed;
+        inset: 0;
+
+        padding: 2em 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1em;
+
+        background: radial-gradient(circle at bottom, rgba(0, 0, 0, 0.75), transparent 50%);
+        z-index: 999;
+
+        transition: transform 0.5s ease;
+    }
+
+    #search-overlay.visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    #search-description {
+        font-size: 0.75em;
+        letter-spacing: 0.1em;
+    }
+
+    #search-options {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #search-bar {
+        font-family: 'JetBrains Mono';
+
+        padding: 0.5em;
+        border: 1px solid #7155ff;
+        background-color: #1e1e1e;
+        box-shadow: 0 0 20px rgba(84, 25, 153, 0.6);
+        color: white;
+        font-size: 1em;
+        transition: 0.2s ease;
+        width: min(600px, 80vw);
+    }
+
+    #search-bar::placeholder {
+        color: #888;
+    }
+
+    #search-bar:focus {
+        outline: none;
+        border-color: #825dff;
+    }
+
+    #search-button {
+        font-family: 'JetBrains Mono';
+
+        background: #7155ff;
+        border: none;
+        color: white;
+
+        padding: 0 10px;
+
+        transition: 0.5s ease;
+    }
+
+    #search-button:hover {
+        background: #aa91ff;
+        cursor: pointer;
+    }
+}

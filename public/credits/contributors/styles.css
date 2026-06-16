@@ -17,7 +17,7 @@
         align-items: left;
         gap: 4em;
 
-        padding: 5% 10%;
+        padding: 2em;
         width: 100%;
     }
 
@@ -58,11 +58,11 @@
 
     .quote {
         margin-top: 1em;
+        width: fit-content;
 
+        padding: 0.5em;
         padding-left: 1em;
 
-        width: fit-content;
-        padding: 0.5em;
         opacity: 0.75;
     }
 
@@ -88,8 +88,8 @@
     }
 
     .contributors .contributor img {
-        width: 128px;
-        height: 128px;
+        width: 7.5em;
+        height: 7.5em;
 
         border-radius: 50%;
 
