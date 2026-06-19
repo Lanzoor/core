@@ -74,7 +74,7 @@ function setNavigation(value?: boolean) {
     let navigationOverlay = document.getElementById('navigation-overlay');
 
     if (navigationOverlay) {
-        navigationOverlay.className = overlayStates.navigation ? 'active' : '';
+        navigationOverlay.className = overlayStates.navigation ? 'visible' : '';
     }
 }
 
@@ -117,14 +117,14 @@ function Destination({ value, context }: { value: Link; context?: Context }) {
                             <img
                                 src="/assets/icons/caret-down.svg"
                                 alt="▼"
-                                className={`panel-icon chevron${open ? ' open' : ''}`}
+                                className={`chevron ${open ? ' open' : ''}`}
                             />
                         )}
                     </div>
                 </li>
 
                 {value.children && open && (
-                    <ul className={`dropdown${open ? ' open' : ''}`}>
+                    <ul className={`plain dropdown${open ? ' open' : ''}`}>
                         {value.children.map((d, i) => (
                             <Destination
                                 key={i}
@@ -189,16 +189,23 @@ function OverlayRoot() {
     return (
         <>
             <div id="navigation-overlay">
-                <div id="navigation-panel">
-                    <div id="navigation--close">
-                        <p>Close</p>
+                <div
+                    id="navigation-panel"
+                    className="spacing"
+                >
+                    <div className="header">
+                        <h1 className="logo">
+                            <span className="head">lanzoor</span>.<span className="tail">dev</span>
+                        </h1>
+
                         <img
                             src="/assets/icons/close.svg"
-                            alt="×"
-                            className="panel-icon"
+                            alt="x"
+                            onClick={() => setNavigation(false)}
                         />
                     </div>
 
+                    <hr />
                     <nav>
                         <ul>
                             {destinations.map((d, i) => (
@@ -346,110 +353,76 @@ function BottomNavigationRoot() {
                 className="spacing"
                 id="bottom"
             >
-                <div className="flex-child">
+                <div className="spacing">
                     <h1 className="logo">
                         <span className="head">lanzoor</span>.<span className="tail">dev</span>
                     </h1>
                     A website by Lanzoor, including projects, showcases, documents, and more!
-                    <footer>
-                        © 2026 | lanzoor.dev
-                        <br />
-                        frontend <b id="footer--frontend">...</b> | backend <b id="footer--backend">...</b>
-                    </footer>
                 </div>
 
-                <div
-                    className="flex-child spacing"
-                    id="connections"
-                >
-                    <h2>Connections</h2>
+                <hr />
 
-                    <p>
-                        If you have any{' '}
-                        <b>
-                            <span className="col bright black">questions</span>
-                            {', '}
-                            <span className="col bright yellow">suggestions</span>
-                            {', '}
-                            or <span className="col bright red">concerns</span>
-                            {', '}
-                        </b>
-                        use the connections below to get in touch!
-                    </p>
-
+                <div id="footer">
                     <div id="connections">
-                        <div className="connection">
-                            <img src="/assets/icons/discord.svg" />
+                        <a
+                            href="https://www.discord.com"
+                            target="_blank"
+                        >
+                            <img
+                                src="/assets/icons/socials/discord.svg"
+                                alt="Discord"
+                            />
+                        </a>
 
-                            <div>Discord</div>
+                        <a
+                            href="https://www.reddit.com/user/Lanzoor/"
+                            target="_blank"
+                        >
+                            <img
+                                src="/assets/icons/socials/reddit.svg"
+                                alt="Reddit"
+                            />
+                        </a>
 
-                            <a
-                                href="https://www.discord.com"
-                                target="_blank"
-                            >
-                                lanzoor
-                            </a>
-                        </div>
-                        <div className="connection">
-                            <img src="/assets/icons/reddit.svg" />
+                        <a
+                            href="https://github.com/Lanzoor"
+                            target="_blank"
+                        >
+                            <img
+                                src="/assets/icons/socials/github.svg"
+                                alt="GitHub"
+                            />
+                        </a>
 
-                            <div>Reddit</div>
+                        <a
+                            href="https://steamcommunity.com/id/lanzoor/"
+                            target="_blank"
+                        >
+                            <img
+                                src="/assets/icons/socials/steam.svg"
+                                alt="steam"
+                            />
+                        </a>
 
-                            <a
-                                href="https://www.reddit.com/user/Lanzoor/"
-                                target="_blank"
-                            >
-                                Lanzoor
-                            </a>
-                        </div>
-                        <div className="connection">
-                            <img src="/assets/icons/github.svg" />
+                        <a
+                            href="https://www.youtube.com/@lanzoorgaming"
+                            target="_blank"
+                        >
+                            <img
+                                src="/assets/icons/socials/youtube.svg"
+                                alt="YouTube"
+                            />
+                        </a>
 
-                            <div>GitHub</div>
-
-                            <a
-                                href="https://github.com/Lanzoor"
-                                target="_blank"
-                            >
-                                Lanzoor
-                            </a>
-                        </div>
-                        <div className="connection">
-                            <img src="/assets/icons/steam.svg" />
-
-                            <div>Steam</div>
-
-                            <a
-                                href="https://steamcommunity.com/id/lanzoor/"
-                                target="_blank"
-                            >
-                                lanzoor | Lanzoor13
-                            </a>
-                        </div>
-                        <div className="connection">
-                            <img src="/assets/icons/youtube.svg" />
-
-                            <div>YouTube</div>
-
-                            <a
-                                href="https://www.youtube.com/@lanzoorgaming"
-                                target="_blank"
-                            >
-                                lanzoorgaming
-                            </a>
-                        </div>
-                        <div className="connection">
-                            <img src="/assets/icons/gmail.svg" />
-
-                            <div>Email</div>
-
-                            <a href="mailto:lanzoorsupport@gmail.com">lanzoorsupport@gmail.com</a>
-                        </div>
+                        <a href="mailto:lanzoorsupport@gmail.com">
+                            <img
+                                src="/assets/icons/socials/email.svg"
+                                alt="Email"
+                            />
+                        </a>
                     </div>
 
-                    <p className="dim">
-                        Check <a href="/about#about--contact">this article</a> for more information!
-                    </p>
+                    <footer>© 2026 | lanzoor.dev</footer>
                 </div>
             </section>
         </>

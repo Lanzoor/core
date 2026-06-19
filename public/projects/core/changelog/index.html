@@ -15,7 +15,7 @@
 <body>
     <main>
         <section>
-            <span class="structure">
+            <span class="breadcrumbs">
                 <a href="/">Home</a>
 
                 <span class="separator">›</span>
@@ -44,12 +44,71 @@
             </blockquote>
         </section>
 
-        <section id="v26-23-9">
-            <h1>Minor update v26.23.9</h1>
+        <section id="v26-24-0" class="toc-track">
+            <h1>v26.24.0: The Navigation Overhaul</h1>
+
+            <p class="dim">
+                Release date: <b>June 19th, 2026</b>
+            </p>
+
+            <p>
+                <b>The long-awaited navigation UI/UX overhaul is finally here!</b><br><br>
+
+                I hesitated quite a bit before publishing this update, but who knows what will happen?
+                Anyways, this major update includes several improvements to the navigation experience across the
+                website.<br><br>
+
+                <b>
+                    As always, please feel free to <a href="#connections">get in touch</a>!
+                </b>
+                We'd love to hear your feedback. Have a nice day!
+            </p>
+
+            <ul>
+                <li>
+                    <span class="col bright yellow">~</span>
+                    <b>Completely reworked the design of the navigation panels.</b>
+                </li>
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Massively simplified and improved the design of the footer and its connections.
+                </li>
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Reworked the design of <code>hr</code> elements.
+                </li>
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Improved the design of breadcrumbs navigation.
+                </li>
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Renamed some unintuitive internal names.
+                </li>
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Reworked the <a href="/credits/assets/">asset credits page</a>.
+                </li>
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Reworked the asset structure.
+                </li>
+                <li>
+                    <span class="col bright yellow">~</span>
+                    Improved the validation logic of the search feature in the changelog page.
+                </li>
+            </ul>
+        </section>
+
+        <section id="v26-23-9" class="toc-track">
+            <h2>Minor update v26.23.9</h2>
+
+            <p class="dim">
+                Release date: <b>June 16th, 2026</b>
+            </p>
 
             <p>
                 <b>We're officially getting ready for the navigation UI/UX overhaul!</b>
-                This update adds several features related to the quality of life.
             </p>
 
             <ul>
@@ -61,7 +120,8 @@
 
                 <li>
                     <span class="col bright green">+</span>
-                    <b>Added breadcrumbs to most major pages.</b> This would allow for easier navigation and clarity.
+                    <b>Added breadcrumbs navigation to most major pages.</b> This would allow for easier navigation and
+                    clarity.
                 </li>
 
                 <li>
@@ -82,7 +142,11 @@
         </section>
 
         <section id="v26-23-8">
-            <h1>Minor update v26.23.8</h1>
+            <h2>Minor update v26.23.8</h2>
+
+            <p class="dim">
+                Release date: <b>June 15th, 2026</b>
+            </p>
 
             <ul>
                 <li>
@@ -99,7 +163,11 @@
         </section>
 
         <section id="v26-23-7">
-            <h1>Minor update v26.23.7</h1>
+            <h2>Minor update v26.23.7</h2>
+
+            <p class="dim">
+                Release date: <b>June 14th, 2026</b>
+            </p>
 
             <p>
                 A bit of an internal update today.
@@ -149,7 +217,7 @@
         </section>
 
         <section id="v26-23-6">
-            <h1>Minor update v26.23.6</h1>
+            <h2>Minor update v26.23.6</h2>
 
             <p class="dim">
                 Release date: <b>June 13th, 2026</b>
@@ -190,7 +258,7 @@
         </section>
 
         <section id="v26-23-5">
-            <h1>Minor update v26.23.5</h1>
+            <h2>Minor update v26.23.5</h2>
 
             <p class="dim">
                 Release date: <b>June 12th, 2026</b>
@@ -248,7 +316,7 @@
         </section>
 
         <section id="v26-23-4">
-            <h1>Minor update v26.23.4</h1>
+            <h2>Minor update v26.23.4</h2>
 
             <p class="dim">
                 Release date: <b>June 10th, 2026</b>
@@ -274,7 +342,7 @@
         </section>
 
         <section id="v26-23-3">
-            <h1>Minor update v26.23.3</h1>
+            <h2>Minor update v26.23.3</h2>
 
             <p class="dim">
                 Release date: <b>June 9th, 2026</b>
@@ -389,14 +457,15 @@
                     Please note that change prefixes are only intended as a quick summary of a change.
                 </b>
                 They are subjective and may not fully describe everything included in an update.
-                For example, an entry marked with a plus sign may also contain modifications to existing features.
+                <b>For example, an entry marked with a plus sign may also contain modifications to existing
+                    features.</b>
             </blockquote>
         </section>
     </main>
 
     <div id="search-overlay">
         <p id="search-description">
-            Search for a version name!
+            Search for a version!
         </p>
 
         <div id="search-options">
@@ -408,7 +477,7 @@
     <button id="search-toggle">🔍</button>
 
     <script type="module" src="/out/components/navigation/Navigation.js"></script>
-    <script type="module" src="/out/components/left-panel/LeftPanel.js"></script>
+    <script type="module" src="/out/components/toc/toc.js"></script>
     <script type="module" src="/out/pages/projects/core/changelog.js"></script>
 </body>
 

@@ -1,4 +1,13 @@
 @layer page {
+    :root {
+        --search-overlay-bg: radial-gradient(circle at bottom, rgba(0, 0, 0, 0.75), transparent 75%);
+    }
+
+    body > main > section {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
     #search-toggle {
         background: #8156ff;
         position: fixed;
@@ -38,10 +47,12 @@
         justify-content: flex-end;
         gap: 1em;
 
-        background: radial-gradient(circle at bottom, rgba(0, 0, 0, 0.75), transparent 50%);
+        background: var(--search-overlay-bg);
         z-index: 999;
 
-        transition: transform 0.5s ease;
+        transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
     }
 
     #search-overlay.visible {
@@ -98,5 +109,11 @@
     #search-button:hover {
         background: #aa91ff;
         cursor: pointer;
+    }
+
+    @media (max-width: 1080px) {
+        :root {
+            --search-overlay-bg: radial-gradient(circle at bottom, rgb(0, 0, 0), transparent 75%);
+        }
     }
 }

@@ -3,18 +3,18 @@ import { createRoot } from 'react-dom/client';
 import { Core } from '@/main';
 
 // @ts-ignore
-import '@/components/left-panel/LeftPanel.css';
+import '@/components/toc/toc.css';
 
-Core.DOM.loadCSS('/out/components/left-panel/LeftPanel.css');
+Core.DOM.loadCSS('/out/components/toc/toc.css');
 
-function LeftPanel() {
-    const ltTracks = Array.from(document.getElementsByClassName('lt-track')).map((e) => e as HTMLElement);
+function ToCPanel() {
+    const ltTracks = Array.from(document.getElementsByClassName('toc-track')).map((e) => e as HTMLElement);
 
     return (
         <>
             <ul>
                 {ltTracks.map((el, i) => (
-                    <LeftPanelItem
+                    <TocPanelItem
                         key={i}
                         element={el}
                     />
@@ -24,7 +24,7 @@ function LeftPanel() {
     );
 }
 
-function LeftPanelItem({ element }: { element: HTMLElement }) {
+function TocPanelItem({ element }: { element: HTMLElement }) {
     const tag = element.tagName.toLowerCase();
     if (!/^h[1-3]$/i.test(tag)) return null;
     const level = parseInt(tag[1]!);
@@ -40,11 +40,11 @@ function LeftPanelItem({ element }: { element: HTMLElement }) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const leftPanel = document.createElement('div');
-    leftPanel.id = 'left-panel';
+    const tocPanel = document.createElement('div');
+    tocPanel.id = 'toc-panel';
 
     const main = document.querySelector('main');
-    document.body.insertBefore(leftPanel, main);
+    document.body.insertBefore(tocPanel, main);
 
-    createRoot(leftPanel).render(<LeftPanel />);
+    createRoot(tocPanel).render(<ToCPanel />);
 });

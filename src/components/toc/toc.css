@@ -1,0 +1,48 @@
+@layer component {
+    :root {
+        --toc-panel--width: 20%;
+
+        --toc-panel--text: #ccc;
+        --toc-panel--text-muted: #666;
+        --toc-panel--border: #222;
+        --toc-panel--accent: #7c3aed;
+        --toc-panel--hover: rgba(124, 58, 237, 0.08);
+        --toc-panel--active: rgba(124, 58, 237, 0.15);
+    }
+
+    #toc-panel {
+        position: fixed;
+        inset: 0 0 0 auto;
+
+        width: var(--toc-panel--width);
+        height: 100%;
+
+        padding-top: var(--top-panel-max-height);
+
+        overflow-y: auto;
+    }
+
+    #toc-panel,
+    #toc-panel ul {
+        background: transparent;
+    }
+
+    #toc-panel li {
+        text-decoration: none;
+    }
+
+    main section {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    @media (max-width: 1080px) {
+        #toc-panel {
+            display: none;
+        }
+
+        main section {
+            padding: 4%;
+        }
+    }
+}

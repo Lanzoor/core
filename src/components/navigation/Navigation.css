@@ -60,7 +60,7 @@
 
     .analytics-notice-panel button {
         font-family: 'JetBrains Mono';
-        font-size: 1em;
+        font-size: 0.5em;
 
         background: transparent;
         border: none;
@@ -184,7 +184,9 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+
         width: 100%;
+        height: 100%;
 
         gap: 5px;
 
@@ -225,20 +227,6 @@
         text-shadow: 0 0 10px rgba(220, 220, 220, 0.5);
     }
 
-    #navigation--close {
-        display: flex;
-        position: relative;
-
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: min(10px, 1vh);
-
-        padding: 0 min(20px, 2vh);
-
-        height: 100%;
-    }
-
     .panel-icon {
         margin: 0;
         padding: 0;
@@ -259,45 +247,17 @@
     }
 
     .chevron {
+        width: 2em;
+        height: 2em;
+
         transform: rotate(-90deg);
+
+        transition: all 0.5s ease;
+        pointer-events: auto;
     }
 
     .chevron.open {
         transform: rotate(0deg);
-    }
-
-    #navigation--close p {
-        margin: 0;
-        padding: 0;
-        color: var(--top-panel-text);
-
-        font-size: min(30px, 3vh);
-        font-family: 'Space Grotesk';
-    }
-
-    #navigation--close p,
-    #navigation--close button {
-        color: white;
-    }
-
-    #navigation--close {
-        justify-content: right;
-
-        top: 0;
-
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
-
-        height: var(--top-panel-height);
-
-        cursor: pointer;
-    }
-
-    #navigation-overlay,
-    #navigation-overlay * {
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.5s ease;
     }
 
     #navigation-overlay {
@@ -315,37 +275,59 @@
 
         z-index: 2147483647;
 
+        opacity: 0;
+        pointer-events: none;
         transition: opacity 0.5s ease;
+
+        cursor: pointer;
     }
 
-    #navigation-overlay.active,
-    #navigation-overlay.active * {
+    #navigation-overlay.visible {
         opacity: 1;
         pointer-events: auto;
     }
 
     #navigation-panel {
         position: fixed;
+        inset: 0 0 0 auto;
+
+        padding: 2em;
 
         background: rgba(0, 0, 0, 0.75);
 
-        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.75);
-
-        backdrop-filter: blur(4px);
-
-        width: 40%;
-        height: 100%;
-
-        right: 0;
-
         overflow-y: auto;
+
+        cursor: default;
+
+        transform: translateX(100%);
+    }
+
+    #navigation-overlay.visible #navigation-panel {
+        transform: translateX(0);
+        transition: transform 0.5s ease;
+    }
+
+    #navigation-panel .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        gap: 10em;
+    }
+
+    #navigation-panel .header img {
+        width: 2em;
+        height: 2em;
+    }
+
+    #navigation-panel nav {
+        width: 100%;
     }
 
     #navigation-panel nav ul {
-        border-radius: 10px;
-        margin: 10px;
         padding: 0 40px;
-
         line-height: 1;
 
         background: rgba(0, 0, 0, 0.05);
@@ -357,8 +339,9 @@
         position: relative;
 
         padding: 0;
-        margin: 10px 0;
+        margin: 0.25em 0;
         line-height: 1;
+        min-width: 20vw;
     }
 
     #navigation-panel nav div {
@@ -371,14 +354,14 @@
     }
 
     #navigation-panel nav a {
-        font-family: 'Space Grotesk';
-        font-size: min(25px, 5vh);
+        font-family: 'JetBrains Mono';
+        font-size: 0.9em;
 
         color: #ccc;
         text-shadow: 0 0 10px black;
         text-decoration: none;
 
-        padding: 5px;
+        padding: 0.5em;
         margin: 0;
 
         height: 100%;
@@ -388,12 +371,7 @@
             text-shadow 0.5s ease;
     }
 
-    #navigation-panel nav ul ul a {
-        font-size: 20px;
-    }
-
     #navigation-panel nav a:hover {
-        transform: none;
         text-decoration: underline;
 
         color: #777;
@@ -438,9 +416,9 @@
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
 
-        gap: 10%;
+        gap: 6em;
     }
 
     #bottom-navigation #navigation #navigation-links .group {
@@ -452,7 +430,7 @@
     }
 
     #bottom-navigation #navigation #navigation-links .group h2 {
-        margin: 5px 0 20px 0;
+        margin: 0.25em 0 0.5em 0;
         font-family: 'JetBrains Mono';
         font-size: 30px;
 
@@ -472,12 +450,18 @@
 
     #bottom-navigation #bottom {
         width: 100%;
+    }
 
+    #bottom-navigation #footer {
         display: flex;
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between;
-        gap: 5%;
+        width: 100%;
+    }
+
+    #bottom-navigatoin #footer footer {
+        text-align: right;
     }
 
     #bottom-navigation #connections {
@@ -485,19 +469,24 @@
         flex-direction: column;
     }
 
-    #bottom-navigation #connections .connection {
+    #bottom-navigation #connections {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-        gap: 2%;
-
-        margin: 1% 0;
+        gap: 0.8em;
     }
 
-    #bottom-navigation #connections .connection img {
-        width: 40px;
-        height: auto;
+    #bottom-navigation #connections img {
+        width: 1.75em;
+        height: 1.75em;
+        opacity: 0.6;
+
+        transition: 0.5s ease;
+    }
+
+    #bottom-navigation #connections img:hover {
+        opacity: 1;
     }
 
     footer {
@@ -506,35 +495,10 @@
     }
 
     @media (max-width: 768px) {
-        #navigation-panel {
-            width: 75vw;
-        }
-
-        #navigation-panel nav ul a {
-            font-size: 20px;
-        }
-
-        #navigation-panel nav ul ul a {
-            font-size: 17.5px;
-        }
-
         #top-panel,
         #navigation-overlay,
         #navigation-panel {
             backdrop-filter: none;
-        }
-
-        #navigation-overlay {
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        #navigation-panel nav ul {
-            padding: 0 20px;
-        }
-
-        .panel-icon {
-            width: 30px;
-            height: 30px;
         }
     }
 
@@ -567,10 +531,6 @@
             min-width: 0;
         }
 
-        .analytics-notice-panel button {
-            font-size: 10px;
-        }
-
         .analytics-notice-panel .mobile {
             display: block;
         }
@@ -583,6 +543,10 @@
         #bottom-navigation #navigation #navigation-links {
             flex-wrap: wrap;
         }
+
+        #bottom-navigation #footer footer {
+            font-size: 0.75em;
+        }
     }
 
     @media (max-width: 1200px) {
@@ -593,10 +557,10 @@
 
     @media (max-width: 1600px) {
         #top-panel .logo {
-            font-size: 25px;
+            font-size: 1em;
         }
         #top-panel--links a {
-            font-size: 15px;
+            font-size: 0.5em;
         }
     }
 }

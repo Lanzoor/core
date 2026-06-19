@@ -2,10 +2,11 @@
     .icon-group {
         display: flex;
         flex-direction: row;
-        gap: 2em;
+        gap: 1em;
     }
+
     .icon-group img {
-        width: 7.5em;
-        height: 7.5em;
+        width: 4em;
+        height: 4em;
     }
 }
