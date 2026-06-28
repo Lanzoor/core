@@ -22,6 +22,11 @@
             "source": "/projects/core-api/changelog/:path*",
             "destination": "https://api.lanzoor.dev/docs/changelog/:path*",
             "permanent": false
+        },
+        {
+            "source": "/docs/math/googology/CIN/:path*",
+            "destination": "/docs/math/googology/consistent-illion-notation/:path*",
+            "permanent": false
         }
     ]
 }

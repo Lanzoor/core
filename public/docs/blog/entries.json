@@ -53,5 +53,16 @@
             "year": "2026",
             "month": "05"
         }
+    },
+    {
+        "path": "2026/06/monthly-recap.html",
+        "slug": "monthly-recap",
+        "title": "Monthly Recap | June 2026",
+        "description": "a monthly recap for June 2026",
+        "tags": ["blog", "monthly-recap"],
+        "date": {
+            "year": "2026",
+            "month": "06"
+        }
     }
 ]

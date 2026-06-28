@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Analytics, Core } from '@/main';
+import { Core } from '@/main';
 
 // @ts-ignore
 import '@/components/navigation/Navigation.css';
@@ -325,7 +325,6 @@ function BottomNavigationRoot() {
                         <a href="/">Frontpage</a>
                         <a href="/about">About</a>
                         <a href="/privacy-policy">Privacy Policy</a>
-                        <a href="/roadmap">Roadmap</a>
                         <a href="/map">Site map</a>
                     </div>
                     <div className="group">
@@ -453,77 +452,77 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-function AnalyticsNotice() {
-    const [isNoticeOpen, setIsNoticeOpen] = useState(false);
-    const [mobile_isInPrivacyPolicy, mobile_setIsInPrivacyPolicy] = useState(false);
+// function AnalyticsNotice() {
+//     const [isNoticeOpen, setIsNoticeOpen] = useState(false);
+//     const [mobile_isInPrivacyPolicy, mobile_setIsInPrivacyPolicy] = useState(false);
 
-    useEffect(() => {
-        const main = document.querySelector('main');
+//     useEffect(() => {
+//         const main = document.querySelector('main');
 
-        if (!main) return;
+//         if (!main) return;
 
-        if (window.location.pathname === '/privacy-policy') {
-            mobile_setIsInPrivacyPolicy(true);
-            return;
-        }
+//         if (window.location.pathname === '/privacy-policy') {
+//             mobile_setIsInPrivacyPolicy(true);
+//             return;
+//         }
 
-        const hasSeenNotice = localStorage.getItem('hasSeenNotice');
+//         const hasSeenNotice = localStorage.getItem('hasSeenNotice');
 
-        if (hasSeenNotice !== 'true') {
-            setIsNoticeOpen(true);
-        } else {
-            setIsNoticeOpen(false);
-        }
-    }, []);
+//         if (hasSeenNotice !== 'true') {
+//             setIsNoticeOpen(true);
+//         } else {
+//             setIsNoticeOpen(false);
+//         }
+//     }, []);
 
-    return (
-        <div className={`analytics-notice-panel${isNoticeOpen ? ' open' : ''}${mobile_isInPrivacyPolicy ? ' mobile-hide' : ''}`}>
-            <div className="description">
-                <h1>[ notice ]</h1>
+//     return (
+//         <div className={`analytics-notice-panel${isNoticeOpen ? ' open' : ''}${mobile_isInPrivacyPolicy ? ' mobile-hide' : ''}`}>
+//             <div className="description">
+//                 <h1>[ notice ]</h1>
 
-                <p>
-                    This website collects a limited amount of information such as your approximate country, the pathname of your visit, and more. <b>We do not collect your data by default.</b> Please refer to <a href="/privacy-policy">our privacy policy</a> for more information.
-                    <br />
-                    You can use the buttons to the right to either enable or disable analytics. <b>Clicking either button will hide this panel.</b>
-                </p>
+//                 <p>
+//                     This website collects a limited amount of information such as your approximate country, the pathname of your visit, and more. <b>We do not collect your data by default.</b> Please refer to <a href="/privacy-policy">our privacy policy</a> for more information.
+//                     <br />
+//                     You can use the buttons to the right to either enable or disable analytics. <b>Clicking either button will hide this panel.</b>
+//                 </p>
 
-                <p className="mobile">
-                    <br />
-                    <b>Your viewport width is small, which changed the layout of this panel to cover the entire screen.</b> Visiting the privacy policy page won't show this panel, <b>and no changes to your preferences will be made.</b>
-                </p>
-            </div>
+//                 <p className="mobile">
+//                     <br />
+//                     <b>Your viewport width is small, which changed the layout of this panel to cover the entire screen.</b> Visiting the privacy policy page won't show this panel, <b>and no changes to your preferences will be made.</b>
+//                 </p>
+//             </div>
 
-            <div className="buttons">
-                <button
-                    className="disable"
-                    onClick={() => {
-                        Analytics.setEnabled(false);
-                        localStorage.setItem('hasSeenNotice', 'true');
-                        setIsNoticeOpen(false);
-                    }}
-                >
-                    Disable analytics
-                </button>
+//             <div className="buttons">
+//                 <button
+//                     className="disable"
+//                     onClick={() => {
+//                         Analytics.setEnabled(false);
+//                         localStorage.setItem('hasSeenNotice', 'true');
+//                         setIsNoticeOpen(false);
+//                     }}
+//                 >
+//                     Disable analytics
+//                 </button>
 
-                <button
-                    className="enable"
-                    onClick={() => {
-                        Analytics.setEnabled(true);
-                        Analytics.initialize();
-                        localStorage.setItem('hasSeenNotice', 'true');
-                        setIsNoticeOpen(false);
-                    }}
-                >
-                    Enable analytics
-                </button>
-            </div>
-        </div>
-    );
-}
+//                 <button
+//                     className="enable"
+//                     onClick={() => {
+//                         Analytics.setEnabled(true);
+//                         Analytics.initialize();
+//                         localStorage.setItem('hasSeenNotice', 'true');
+//                         setIsNoticeOpen(false);
+//                     }}
+//                 >
+//                     Enable analytics
+//                 </button>
+//             </div>
+//         </div>
+//     );
+// }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const root = document.createElement('div');
-    root.className = 'analytics-notice';
-    document.body.appendChild(root);
-    createRoot(root).render(<AnalyticsNotice />);
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     const root = document.createElement('div');
+//     root.className = 'analytics-notice';
+//     document.body.appendChild(root);
+//     createRoot(root).render(<AnalyticsNotice />);
+// });

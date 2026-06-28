@@ -381,11 +381,11 @@
 
     main ul:not(.plain),
     main ol:not(.plain) {
-        margin: 1em 0;
-        background-color: rgba(255, 255, 255, 0.04);
+        margin: 0 2em;
+        /* background-color: rgba(255, 255, 255, 0.04);
         border-radius: 1em;
 
-        padding: 0.5em 2em;
+        padding: 0.5em 2em; */
     }
 
     main li:not(.plain) {

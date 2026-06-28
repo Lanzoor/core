@@ -80,99 +80,99 @@ if the styles somehow don't load, please ensure that the correct CSS file is inj
         }
     }
 }
-export namespace Analytics {
-    const TRACKING_KEY = 'isTrackingAllowed';
-    const VISITOR_KEY = 'visitorId';
+// export namespace Analytics {
+//     const TRACKING_KEY = 'isTrackingAllowed';
+//     const VISITOR_KEY = 'visitorId';
 
-    function generateVisitorId(): string {
-        return crypto.randomUUID();
-    }
+//     function generateVisitorId(): string {
+//         return crypto.randomUUID();
+//     }
 
-    export function isEnabled(): boolean {
-        return localStorage.getItem(TRACKING_KEY) === 'true';
-    }
+//     export function isEnabled(): boolean {
+//         return localStorage.getItem(TRACKING_KEY) === 'true';
+//     }
 
-    export function setEnabled(value: boolean): void {
-        if (value) {
-            localStorage.setItem(TRACKING_KEY, 'true');
+//     export function setEnabled(value: boolean): void {
+//         if (value) {
+//             localStorage.setItem(TRACKING_KEY, 'true');
 
-            if (!localStorage.getItem(VISITOR_KEY)) {
-                localStorage.setItem(VISITOR_KEY, generateVisitorId());
-            }
-        } else {
-            localStorage.setItem(TRACKING_KEY, 'false');
+//             if (!localStorage.getItem(VISITOR_KEY)) {
+//                 localStorage.setItem(VISITOR_KEY, generateVisitorId());
+//             }
+//         } else {
+//             localStorage.setItem(TRACKING_KEY, 'false');
 
-            if (localStorage.getItem(VISITOR_KEY)) {
-                localStorage.removeItem(VISITOR_KEY);
-            }
-        }
-    }
+//             if (localStorage.getItem(VISITOR_KEY)) {
+//                 localStorage.removeItem(VISITOR_KEY);
+//             }
+//         }
+//     }
 
-    export function toggleEnabled(): void {
-        if (isEnabled()) {
-            setEnabled(false);
-        } else {
-            setEnabled(false);
-        }
-    }
+//     export function toggleEnabled(): void {
+//         if (isEnabled()) {
+//             setEnabled(false);
+//         } else {
+//             setEnabled(false);
+//         }
+//     }
 
-    export function getVisitorId(): string | null {
-        if (!isEnabled()) {
-            return null;
-        }
+//     export function getVisitorId(): string | null {
+//         if (!isEnabled()) {
+//             return null;
+//         }
 
-        let id = localStorage.getItem(VISITOR_KEY);
+//         let id = localStorage.getItem(VISITOR_KEY);
 
-        if (!id) {
-            id = generateVisitorId();
-            localStorage.setItem(VISITOR_KEY, id);
-        }
+//         if (!id) {
+//             id = generateVisitorId();
+//             localStorage.setItem(VISITOR_KEY, id);
+//         }
 
-        return id;
-    }
+//         return id;
+//     }
 
-    export async function trackPageView(): Promise<void> {
-        try {
-            if (!isEnabled()) {
-                return;
-            }
+//     export async function trackPageView(): Promise<void> {
+//         try {
+//             if (!isEnabled()) {
+//                 return;
+//             }
 
-            const visitorId = getVisitorId();
+//             const visitorId = getVisitorId();
 
-            if (!visitorId) {
-                return;
-            }
+//             if (!visitorId) {
+//                 return;
+//             }
 
-            await fetch('https://api.lanzoor.dev/analytics', {
-                method: 'POST',
-                keepalive: true,
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Visitor-Id': visitorId,
-                    'X-Client': 'lanzoor-web-dev-six-seven',
-                },
-                body: JSON.stringify({
-                    path: location.pathname + location.search,
-                }),
-            });
-        } catch (err) {
-            console.error(err);
-        }
-    }
+//             await fetch('https://api.lanzoor.dev/analytics', {
+//                 method: 'POST',
+//                 keepalive: true,
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                     'X-Visitor-Id': visitorId,
+//                     'X-Client': 'lanzoor-web-dev-six-seven',
+//                 },
+//                 body: JSON.stringify({
+//                     path: location.pathname + location.search,
+//                 }),
+//             });
+//         } catch (err) {
+//             console.error(err);
+//         }
+//     }
 
-    export function initialize(): void {
-        if (typeof window === 'undefined') {
-            return;
-        }
+//     export function initialize(): void {
+//         if (typeof window === 'undefined') {
+//             return;
+//         }
 
-        if (localStorage.getItem(TRACKING_KEY) === null) {
-            localStorage.setItem(TRACKING_KEY, 'false');
-        }
+//         if (localStorage.getItem(TRACKING_KEY) === null) {
+//             localStorage.setItem(TRACKING_KEY, 'false');
+//         }
 
-        void trackPageView();
-    }
-}
+//         void trackPageView();
+//     }
+// }
 
-Analytics.initialize();
+// Analytics.initialize();
 
-// IMPORTANT: For now, main.ts does not get loaded when loading any page within /public. Instead, it is loaded via Navigation.tsx via imports. I'll have to figure out how to run this script while minimizing the amount of script tags in HTML scripts. But for now... this is more than enough. Thanks for listening to my T ED talk. It helps me out... a lot.
+// // IMPORTANT: For now, main.ts does not get loaded when loading any page within /public. Instead, it is loaded via Navigation.tsx via imports. I'll have to figure out how to run this script while minimizing the amount of script tags in HTML scripts. But for now... this is more than enough. Thanks for listening to my T ED talk. It helps me out... a lot.

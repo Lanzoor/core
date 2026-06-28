@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consistent Illion Notation | lanzoor.dev</title>
+
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/structure/documents.css">
+    <link rel="stylesheet" href="/docs/blog/styles.css" />
+
+</head>
+
+<body>
+    <main>
+        <section>
+            <span class="breadcrumbs">
+                <a href="/">Home</a>
+
+                <span class="separator">›</span>
+
+                <a href="/docs">Documents</a>
+
+                <span class="separator">›</span>
+
+                <a href="/docs/math">Math</a>
+
+                <span class="separator">›</span>
+
+                <a href="/docs/math/googology">Googology</a>
+
+                <span class="separator">›</span>
+
+                <a href="/docs/math/googology/CIN">Consistent Illion Notation</a>
+            </span>
+
+            <header>
+                <h1>Consistent Illion Notation (CIN)</h1>
+
+                <p>
+                    <b>The better and more consistent notation for big numbers.</b>
+                </p>
+            </header>
+
+            <blockquote>
+                <code>/docs/math/googology/CIN/:path*</code> redirects here.
+            </blockquote>
+        </section>
+
+        <section>
+            <h1>Introduction</h1>
+
+            <p>
+                Ever since I was a kid, I was a huge fan of idle games and large numbers.
+                I also noticed the <b>Conway-Wechsler system</b> was used to describe large numbers.
+                This used to fascinate me, since the names for large numbers sounded like a mythical artifact.
+                <br><br>
+                However, as I grew up, I started noticing how messed up the Conway-Wechsler system is.
+                One of the biggest issues for me is that
+                <b>the Conway-Wechsler system uses phonological adjustments</b>,
+                which means that prefixes can change their shape based on where it's attached to.
+                <br><br>
+                <b>So, I'm very proud to present my own version & improvement of the Conway-Wechsler system.</b>
+                Introducing... the <b>Consistent Illion Notation!</b>
+                CIN for short.
+            </p>
+
+            <h2>What's the goal of CIN?</h2>
+
+            <p>
+                CIN is supposed to make illion index part of large numbers more straight-forward to understand,
+                while also being phonologically consistent and easy to pronounce.
+            </p>
+        </section>
+
+        <section>
+            <h1>The Illion Index</h1>
+
+            <p>
+                <b>We start by converting the number into its illion index form and mantissa.</b>
+
+                Given a number in scientific notation:
+
+                \[
+                m \times 10^{e}
+                \]
+
+                Then, define the constant \(c\) as:
+            </p>
+
+            <ul>
+                <li>\(c = 3\) for Short Scale</li>
+                <li>\(c = 6\) for Long Scale</li>
+            </ul>
+
+            <p>
+                We can obtain the illion index \(n\) of this number with:
+
+                \[
+                n = \left\lfloor \frac{e}{c} \right\rfloor
+                \]
+
+                We can obtain the remainder for the mantissa \(r\) with:
+
+                \[
+                r = e \mod{c}
+                \]
+
+                So, the number would be expressed as:
+
+                \[
+                m \times 10^{r} \quad n\text{-th illion}
+                \]
+            </p>
+
+            <p>
+                CIN's goal is to help simplify the illion index part of big numbers, hence the name.
+                <b>You can use the steps below in order to convert the illion index into a CIN notation.</b>
+            </p>
+
+            <h1>The Rule of Three</h1>
+
+            <p>
+                <b>The Rule of Three</b> (often abbreviated as <b>TRoT</b>) is a fundamental principle in CIN for
+                reading and naming
+                large illion numbers.
+
+                <br>
+
+                It states that
+                <b>every three digits of the illion index are grouped together and assigned a specific name,</b>
+                starting from the right.
+
+                <br><br>
+
+                For example, suppose we have a number with the illion index \(123,456\).
+                The groups of this number would be \(123\) and \(456\).
+                Refer to the table below, which explains how groups are named.
+            </p>
+
+            <h2>Group Names</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Group Name</th>
+                        <th>Group Suffix</th>
+                        <th>Group Suffix Abbreviation</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Nillion Part</th>
+                        <td>(none)</td>
+                        <td>(none)</td>
+                        <td>The last group</td>
+                    </tr>
+                    <tr>
+                        <th>Millinillion Part</th>
+                        <td><code>milli-</code></td>
+                        <td><code>MI</code></td>
+                        <td>The second-to-last group</td>
+                    </tr>
+                    <tr>
+                        <th>Micrillion Part</th>
+                        <td><code>micri-</code></td>
+                        <td><code>MC</code></td>
+                        <td>The third-to-last group</td>
+                    </tr>
+                    <tr>
+                        <th>Nanillion Part</th>
+                        <td><code>nani-</code></td>
+                        <td><code>NA</code></td>
+                        <td>The fourth-to-last group</td>
+                    </tr>
+                    <tr>
+                        <th>Picillion Part</th>
+                        <td><code>pici-</code></td>
+                        <td><code>PC</code></td>
+                        <td>The fifth-to-last group</td>
+                    </tr>
+                    <tr>
+                        <th>Femtillion Part</th>
+                        <td><code>femti-</code></td>
+                        <td><code>FM</code></td>
+                        <td>The sixth-to-last group</td>
+                    </tr>
+                    <tr>
+                        <th>Attillion Part</th>
+                        <td><code>atti-</code></td>
+                        <td><code>AT</code></td>
+                        <td>The seventh-to-last group</td>
+                    </tr>
+                    <tr>
+                        <th>Zeptillion Part</th>
+                        <td><code>zepti-</code></td>
+                        <td><code>ZP</code></td>
+                        <td>The eighth-to-last group</td>
+                    </tr>
+                    <tr>
+                        <th>Yoctillion Part</th>
+                        <td><code>yocti-</code></td>
+                        <td><code>YC</code></td>
+                        <td>The ninth-to-last group</td>
+                    </tr>
+                    <tr>
+                        <th>Rontillion Part</th>
+                        <td><code>ronti-</code></td>
+                        <td><code>RN</code></td>
+                        <td>The tenth-to-last group</td>
+                    </tr>
+                    <tr>
+                        <th>Quectillion Part</th>
+                        <td><code>quecti-</code></td>
+                        <td><code>QU</code></td>
+                        <td>The eleventh-to-last group</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Examples</h2>
+
+            <p>
+                The number that has the illion index \(123,456\) would be broken down into:
+            </p>
+
+            <ul>
+                <li>
+                    <b>nillion part</b> - \(456\)
+                </li>
+                <li>
+                    <b>millinillion part</b> - \(123\)
+                </li>
+            </ul>
+
+            <p>
+                The number that has the illion index \(12,340,567\) would be broken down into:
+            </p>
+
+            <ul>
+                <li>
+                    <b>nillion part</b> - \(567\)
+                </li>
+                <li>
+                    <b>millinillion part</b> - \(340\)
+                </li>
+                <li>
+                    <b>micrillion part</b> - \(12\)
+                </li>
+            </ul>
+        </section>
+    </main>
+
+
+    <script type="module" src="/out/components/navigation/Navigation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+
+</html>

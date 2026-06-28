@@ -1,0 +1,35 @@
+#game {
+    min-width: 100vh;
+}
+
+#game,
+.clickable {
+    align-items: center;
+}
+
+#game button {
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    font-family: 'JetBrains Mono';
+
+    padding: 1em 2em;
+    font-size: 1em;
+
+    border-radius: 0.5em;
+    background: rgb(51, 51, 51);
+    border: none;
+    box-shadow: 0 10px 30px rgba(51, 51, 51, 0.5);
+
+    transition: 0.25s ease;
+
+    margin: 2em 0;
+}
+
+#game button:hover {
+    background: rgb(102, 102, 102);
+    box-shadow: 0 20px 30px rgba(102, 102, 102, 0.5);
+}
+
+#game button:active {
+    transform: translateY(10px);
+}
