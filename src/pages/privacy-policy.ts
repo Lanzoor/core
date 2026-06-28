@@ -1,23 +1,23 @@
-import { Analytics } from '@/main';
+// import { Analytics } from '@/main';
 
-document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('analytics-toggle');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const toggleButton = document.getElementById('analytics-toggle');
 
-    if (!toggleButton) return;
+//     if (!toggleButton) return;
 
-    function updateButton() {
-        Analytics.toggleEnabled();
-    }
+//     function updateButton() {
+//         Analytics.toggleEnabled();
+//     }
 
-    toggleButton.addEventListener('click', updateButton);
+//     toggleButton.addEventListener('click', updateButton);
 
-    updateButton();
-});
+//     updateButton();
+// });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const visitorId = document.getElementById('visitor-id');
+// document.addEventListener('DOMContentLoaded', () => {
+//     const visitorId = document.getElementById('visitor-id');
 
-    if (!visitorId) return;
+//     if (!visitorId) return;
 
-    visitorId.textContent = Analytics.getVisitorId() ?? '...';
-});
+//     visitorId.textContent = Analytics.getVisitorId() ?? '...';
+// });
