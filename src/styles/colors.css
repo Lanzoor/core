@@ -39,6 +39,7 @@
 .col * {
     color: inherit;
 }
+
 .col.black {
     color: var(--black) !important;
 }

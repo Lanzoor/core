@@ -1,45 +1,5 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import { Ba, Ia } from "../Links";
-
-    let frontendVersion: string = $state("...");
-    let backendVersion: string = $state("...");
-
-    onMount(() => {
-        const cleanFunc = () => {
-            frontendVersion = "...";
-            backendVersion = "...";
-        };
-
-        async function loadVersions() {
-            const result = await fetch("https://api.lanzoor.dev/status");
-
-            if (!result.ok) {
-                console.error(
-                    `error: failed to fetch versions: api.lanzoor.dev/status responded with an error\n\t`,
-                    Error(result.statusText),
-                );
-
-                return cleanFunc;
-            }
-
-            const jsonResult = await result.json();
-
-            if (jsonResult.success === true) {
-                frontendVersion = jsonResult?.data.versions.frontend;
-                backendVersion = jsonResult?.data.versions.backend;
-            } else {
-                console.error(
-                    `error: failed to fetch versions: api.lanzoor.dev/status responded with an error\n\t`,
-                    Error(jsonResult),
-                );
-            }
-        }
-
-        loadVersions();
-
-        return cleanFunc;
-    });
 </script>
 
 <section id="footer-panel" class="disable-padding">
@@ -68,7 +28,7 @@
                 <h2>Meta</h2>
                 <a href="/about">About</a>
                 <a href="/contact">Contact</a>
-                <a href="/projects/core/changelog">Changelog</a>
+                <a href="/changelog">Changelog</a>
                 <a href="/credits">Credits</a>
             </div>
             <div class="group">
@@ -88,12 +48,12 @@
 
             <p>
                 A website by Lanzoor, including projects, showcases, documents,
-                and more!<br />
+                and more!
+            </p>
 
-                <span class="dim">
-                    frontend <code>{frontendVersion}</code> | backend
-                    <code>{backendVersion}</code>
-                </span>
+            <p class="dim">
+                v26.28.4 | last updated @ <code>September 10th, 2026</code> |
+                <a href="/changelog/v26-28-4">view changelog</a>
             </p>
         </div>
 

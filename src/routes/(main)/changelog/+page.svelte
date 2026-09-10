@@ -57,7 +57,7 @@
             return;
         }
 
-        window.location.href = `/projects/core/changelog/${entry.version}`;
+        window.location.href = `/changelog/${entry.version}`;
     }
 </script>
 

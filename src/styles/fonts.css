@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap");
 
 .fira-code,
 .fira-code * {
@@ -21,11 +22,6 @@
 .noto-sans,
 .noto-sans * {
     font-family: "Noto Sans", sans-serif;
-}
-
-.ipa,
-.ipa * {
-    color: var(--bright-purple);
 }
 
 .noto-sans-mono,
@@ -53,4 +49,8 @@
 .sawarabi-gothic,
 .sawarabi-gothic * {
     font-family: "Sawarabi Gothic", sans-serif;
+}
+
+.ko-serif {
+    font-family: "Noto Serif KR";
 }

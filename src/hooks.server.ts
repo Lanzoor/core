@@ -18,6 +18,12 @@ const redirects: CoreRedirect[] = [
     {
         from: ["/docs/math/googology/CIN", "/docs/math/googology/cin"],
         to: "/docs/math/googology/consistent-illion-notation",
+        preservePath: true,
+    },
+    {
+        from: ["/projects/core/changelog"],
+        to: "/changelog",
+        preservePath: true,
     },
     {
         from: ["/docs/blog"],
@@ -30,6 +36,7 @@ const redirects: CoreRedirect[] = [
     {
         from: ["/site-map"],
         to: "/map",
+        preservePath: true,
     },
     {
         from: ["/testing", "/tests"],
@@ -38,26 +45,32 @@ const redirects: CoreRedirect[] = [
     {
         from: ["/legacy", "/archived", "/archive"],
         to: "https://legacy.lanzoor.dev",
+        preservePath: true,
     },
     {
         from: ["/legal/tos", "/legal/terms-of-service", "/tos", "/terms"],
         to: "/legal/terms",
+        preservePath: true,
     },
     {
         from: ["/privacy-policy", "/privacy", "/legal/privacy-policy"],
         to: "/legal/privacy",
+        preservePath: true,
     },
     {
         from: ["/api"],
         to: "https://api.lanzoor.dev",
+        preservePath: true,
     },
     {
         from: ["/projects/core-api/changelog"],
         to: "https://api.lanzoor.dev/docs/changelog",
+        preservePath: true,
     },
     {
         from: ["/projects/conlangs"],
         to: "/conlangs",
+        preservePath: true,
     },
 
     // rickroll redirects
@@ -85,6 +98,17 @@ const redirects: CoreRedirect[] = [
     {
         from: ["/projects/anti-lanzoor"],
         to: "https://archive.lanzoor.dev/anti-lanzoor",
+        preservePath: true,
+    },
+    {
+        from: ["/docs/personal-dict/commit-more-more-jump"],
+        to: "/docs/personal-dict/commit-mmj",
+        preservePath: true,
+    },
+    {
+        from: ["/docs/personal-dict/wuduhell"],
+        to: "/docs/personal-dict/wuduhel",
+        preservePath: true,
     },
 ];
 

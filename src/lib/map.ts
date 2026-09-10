@@ -73,6 +73,11 @@ export const sitemap: Page[] = [
         description: "Official updates, notices, or important announcements.",
     },
     {
+        path: "/changelog",
+        title: "Changelog",
+        description: "A list of all changes and updates made to the website.",
+    },
+    {
         path: "/conlangs",
         title: "Conlangs",
         description: "A collection of my constructed languages.",
@@ -179,6 +184,12 @@ export const sitemap: Page[] = [
                         ],
                     },
                 ],
+            },
+            {
+                path: "/docs/personal-dict",
+                title: "Personal Dictionary",
+                description:
+                    "A personal dictionary containing all of the peak words and references me and my friends use.",
             },
         ],
     },

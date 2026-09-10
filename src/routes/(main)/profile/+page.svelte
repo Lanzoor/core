@@ -75,6 +75,8 @@
         },
     ];
 
+    // if ur seeing this uhh then can you please recommend me more trivia i honestly don't fkn know what to write anymore
+
     const triviaList = [
         // Programming & Tech
         "I have a very weird love-hate relationship with programming.",
@@ -102,6 +104,7 @@
         "I have a weird obsession with Greek letters.",
 
         // Common
+        "I have a love-hate relationship with math;<br>love because math is actually a goated subject,<br>and hate because of how it's taught and forced.",
         "My favorite color is purple. It used to be blue, though.",
         "My favorite numbers are 11, 13, and 17.<br>I especially like 13 for some reason.",
         "I prefer cats over dogs.",
@@ -115,26 +118,25 @@
 
     const specialTriviaList = [
         // Programming
-        "text-shadow: 0 0 10px currentColor :walc",
-        "CSS is a programming language if you believe hard enough.",
+        "text-shadow: 0 0 10px currentColor™",
+        "CSS is a programming language if you believe hard enough...",
 
         // Funni
         "I think this text is yellow. Feel free to prove me wrong.",
         "I ate a watermelon while writing this sentence.",
-        "On August 29th, 2026, I made the devastating realization that I was, in fact, allergic to peaches.",
+        "I'm allergic to peaches.",
         "Your Lanzaforge™ subscription expires in 10 minutes.<br>Please renew immediately to continue using lanzoor.dev.",
-        "Emu is meaning... smile!!",
+        "emu is meaning smile!! :walc",
 
         // Easter Eggs
         "I am legally required to put at least one easter egg in every website I make.",
         "Enter the Konami code.",
         "May the eggs duplicate in peace.",
-        "Nice weather today.",
         "It-all-begins.",
         "I like spending time on the frontpage without doing anything whatsoever.",
         "Lan lan man. The sixteenth developer, lying hidden somewhere in this website. The one they call the Ultimate Procrastinator. Watch out for him.",
 
-        '<b class="col bright yellow">Hey, thank you for spending a little bit of your time here! ♡</b><br>I put a lot of myself into the things I make, so knowing that someone chose to look at them genuinely means a lot to me.',
+        '<b class="col bright yellow">Hey, thank you for spending a little bit of your time here! ♡</b><br>I put a lot of myself into the things I make, so knowing that someone chose to look at them really means a lot to me.',
     ];
 
     type TriviaType = null | "normal" | "special";
@@ -245,14 +247,14 @@
 
     <p>
         <b>My MBTI type is <span class="col bright cyan">INTP</span>.</b><br />
-        I enjoy understanding why and how things work instead of simply memorizing
-        things.<br />
+        I absolutely <i>HATE</i> memorizing stuff without second thought. I
+        enjoy understanding why and how things work.<br />
     </p>
 
     <p>
         I am introverted unless I'm online.<br />
         I have social anxiety and chronic depression. I also show symptoms associated
-        with ADHD, OCD, and potentially autism.
+        with autism, OCD, and OCD.
     </p>
 
     <p>
@@ -426,15 +428,16 @@
         <h1>🔐 Cybersecurity</h1>
 
         <p>
-            Over time, my curiosity about how computers work naturally expanded
-            into networking and cybersecurity. <b
-                >Rather than focusing solely on writing software, I also enjoy
-                understanding how systems <span class="col bright cyan"
-                    >communicate</span
-                >, where they can
+            Over time, my curiosity about how computers work expanded into
+            networking and cybersecurity.
+
+            <b>
+                I like understanding how systems
+
+                <span class="col bright cyan">communicate</span>, where they can
                 <span class="col bright red">fail</span>, and how they can be
-                <span class="col bright green">secured</span>.</b
-            >
+                <span class="col bright green">improved</span>.
+            </b>
         </p>
 
         <h2>Interests</h2>
@@ -450,9 +453,8 @@
         </div>
 
         <p>
-            I enjoy learning about the principles that make the Internet work,
-            which is why networking fascinates me so much. I'm also really
-            interested in OSINT
+            I like learning networking as well as how the internet actually
+            works. I'm also really interested in OSINT
             <span class="dim">(Open Source Intelligence)</span>
             and OPSEC.
             <span class="dim">(Operational Security)</span>
@@ -464,23 +466,16 @@
 
         <p>
             <b>
-                I currently use <span class="col bright purple"
-                    >EndeavourOS</span
-                >
+                I currently use
+
+                <span class="col bright purple">EndeavourOS</span>
                 as my primary operating system.
-                <span class="dim">(or kernel, whatever)</span>
+                <span class="dim">(or kernel, whatever lmao)</span>
             </b>
             <br />
             I switched to Linux at around
             <span class="col bright cyan">May 2025</span>, starting with
-            <span class="col bright green">Linux Mint</span>. Nowadays, I use
-            Linux for just about everything.
-        </p>
-
-        <p>
-            I also keep <span class="col bright blue">Windows</span> installed. Although
-            I genuinely want to wipe it off my disk, I'm obligated to keep it for
-            music production.
+            <span class="col bright green">Linux Mint</span>.
         </p>
 
         <h2>Development Environments</h2>
@@ -491,16 +486,17 @@
                 <span class="col bright blue">VSCodium</span>
             </b>
             for most tasks.
-            <i
-                >This is exactly why I have literal leveling bars in the editor.</i
-            >
+            <span class="dim">
+                (this is exactly why i have literal leveling bars in the editor
+                😭)
+            </span>
         </p>
 
         <p>
             <b>
                 I also use <span class="col bright black">Zed</span> as an alternative
                 editor,
-            </b> since I find it easier to work with.
+            </b> since I find it easier to work with in some cases.
         </p>
     </section>
 </section>
@@ -558,7 +554,7 @@
                 <b>I learned English through the immersion method™.</b> Basically,
                 I spent my free time consuming English content and communicating with
                 friends online. This method was very effective for me because I was
-                able to learn while genuinely enjoying the process.
+                able to learn while actually enjoying it.
             </p>
         </li>
         <li>
@@ -623,27 +619,24 @@
     </ul>
 
     <p>
-        <b
-            >I'm willing to help anyone learn or practice any of the languages
-            listed above,</b
-        >
+        <b>
+            I'm willing to help anyone learn or practice any of the languages
+            listed above,
+        </b>
         especially Korean, English and Japanese.
         <i>Though, please do note that I'm not really the best at teaching.</i>
     </p>
 
     <p>
-        I am also interested in learning languages such as <b
-            >German, Dutch and Greek</b
-        >.
+        I am also interested in learning languages such as
+
+        <b> German, Dutch and Greek </b>.
     </p>
 
     <h1>Linguistics</h1>
 
     <p>
-        As much as I enjoy learning languages, <b
-            >I also enjoy taking them apart and figuring out how they actually
-            work.</b
-        >
+        I also enjoy taking them apart and figuring out how they actually work.
     </p>
 
     <p>
@@ -656,9 +649,8 @@
     </p>
 
     <p>
-        I also enjoy making my own languages
-        <span class="dim">(conlangs, constructed languages)</span>
-        in my free time!
+        I also occasionally make my own languages
+        <span class="dim">(conlangs, constructed languages)</span>.
     </p>
 </section>
 
@@ -685,8 +677,8 @@
 
     <p>
         <b>I have been interested in astronomy since I was very young.</b> That interest
-        eventually led me toward physics, where I enjoy learning about the principles
-        that govern how the world works.
+        eventually led me towards physics. I enjoy learning about the principles that
+        govern how the world works.
     </p>
 
     <h2>Gaming</h2>
@@ -735,12 +727,11 @@
         <div class="stack" title="semiquaver when">
             <span class="col bright cyan">Quaver</span>
         </div>
-        ⬩
-        <div class="stack" title="PHENOMENAL game btw">
-            <span class="col bright red">vivid</span>/<span
-                class="col bright cyan">stasis</span
-            >
-        </div>
+    </div>
+
+    <div hidden>
+        vivid/stasis used to be here, but it's kinda broke on linux<br />
+        sadge
     </div>
 
     <h3>Platformer Games</h3>
@@ -753,10 +744,7 @@
             Geometry Dash
         </div>
         ⬩
-        <div
-            class="stack col bright red"
-            title="holy cow it peak platformer gaem!!"
-        >
+        <div class="stack col bright red" title="omg it peak platformer gaem!!">
             Celeste
         </div>
     </div>
@@ -764,9 +752,11 @@
     <h3>Other Games</h3>
 
     <div class="stacks">
+        <div class="stack col green" title="creeper aww mann">Minecraft</div>
+        ⬩
         <div
             class="stack col bright black"
-            title="Lan lan man. The sixteenth developer, lying hidden somewhere in this website. The one they call the Ultimate Procrastinator. Watch out for him. "
+            title="Lan lan man. The sixteenth developer, lying hidden somewhere in this website. The one they call the Ultimate Procrastinator. Watch out for him."
         >
             Danganronpa
         </div>
@@ -774,10 +764,10 @@
 
     <p>
         <b>
-            I play games in my free time, mostly as a way to relax and have fun.
+            I play games in my free time, mostly as a way to relax and just have
+            fun.
         </b>
-        I particularly enjoy games that challenge my timing, problem-solving skills,
-        or patience.
+        I usually like playing chill games.
     </p>
 
     <h2>Other Interests</h2>
@@ -785,10 +775,10 @@
     <p>Some of my other interests include:</p>
 
     <ul>
-        <li>Math.</li>
+        <li>Solving math problems.</li>
         <li>Solving Rubik's cubes.</li>
         <li>
-            Listening to music, and playing instruments such as the drum or the
+            Listening to music, and playing instruments such as the drum and the
             piano.
         </li>
         <li>Watching anime.</li>
@@ -803,8 +793,8 @@
             I enjoy building things that let me turn my ideas into something
             tangible.
         </b><br />
-        Most of what I make involves programming, whether it is websites, tools, experiments,
-        or smaller projects made simply to explore an idea.
+        Most of what I make involves programming, including websites, tools, experiments
+        and smaller projects.
     </p>
 
     <p>

@@ -34,11 +34,16 @@
 
     <ul>
         <li>
+            <a href="/api/docs/">API Documentation</a> - Official documentation for
+            the API of this website.
+        </li>
+        <li>
             <a href="/blog/">Blog</a> - {getPageData("/blog")?.description}
         </li>
         <li>
-            <a href="/api/docs/">API Documentation</a> - Official documentation for
-            the API of this website.
+            <a href="/docs/personal-dict">Personal Dictionary</a> - {getPageData(
+                "/docs/personal-dict",
+            )?.description}
         </li>
     </ul>
 </section>

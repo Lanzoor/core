@@ -2,9 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { type ChangelogEntry } from "../src/lib/types";
 
-const CHANGELOG_ROOT = path.resolve(
-    "src/routes/(main)/projects/core/changelog/(entries)/",
-);
+const CHANGELOG_ROOT = path.resolve("src/routes/(main)/changelog/(entries)/");
 const OUTPUT = path.join(CHANGELOG_ROOT, "entries.json");
 
 const entries: ChangelogEntry[] = [];
@@ -61,5 +59,5 @@ entries.sort((a, b) => Number(b.published) - Number(a.published));
 await fs.writeFile(OUTPUT, JSON.stringify(entries, null, 4));
 
 console.log(
-    `successfully generated ${entries.length} changelog entries @ /projects/core/changelog/(entries)/entries.json`,
+    `successfully generated ${entries.length} changelog entries @ /changelog/(entries)/entries.json`,
 );
