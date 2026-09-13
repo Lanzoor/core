@@ -1,5 +1,17 @@
 [
     {
+        "title": "hiatus announcement",
+        "description": "help",
+        "tags": [
+            "serious",
+            "personal",
+            "announcement",
+            "blog"
+        ],
+        "published": "2026-09-12T15:00:00.000Z",
+        "slug": "2026/09/hiatus"
+    },
+    {
         "title": "core Has Been Completed",
         "description": "core has been completed after months of development. This is a recap of the completion of core, as well as what comes next.",
         "tags": [

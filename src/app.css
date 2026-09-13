@@ -17,7 +17,7 @@ html {
 }
 
 :root {
-    --bg: #111;
+    --bg: #0c0c0c;
     --text: #ccc;
     --text-bold: #cacaca;
 
@@ -371,7 +371,7 @@ use this when you have to i guess
 
     z-index: 3000000000;
 
-    background: #111;
+    background: var(--bg);
 }
 
 ::selection {

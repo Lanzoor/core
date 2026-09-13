@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Break from "../Blocks/Break.svelte";
+
     let { children }: { children: import("svelte").Snippet } = $props();
 </script>
 
@@ -10,6 +12,9 @@
     </p>
 
     <p class="dim">
-        Viewer discretion is advised. Please proceed with caution.
+        Viewer discretion is advised. Please proceed with caution.<br />
+        Keep scrolling below to view the article.
     </p>
 </blockquote>
+
+<Break height="20em" />

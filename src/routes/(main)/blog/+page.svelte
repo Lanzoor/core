@@ -5,6 +5,7 @@
 
     const availableTags = [
         "important",
+        "serious",
         "announcement",
         "blog",
         "personal",
@@ -204,6 +205,9 @@
     .tag.active .tagname.important {
         color: var(--red);
     }
+    .tag.active .tagname.serious {
+        color: rgb(255, 120, 176);
+    }
 
     .tag.active .tagname.announcement {
         color: var(--cyan);
@@ -222,7 +226,7 @@
         color: var(--bright-orange);
     }
     .tag.active .tagname.personal {
-        color: var(--orange);
+        color: var(--bright-purple);
     }
 
     #search {

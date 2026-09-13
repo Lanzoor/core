@@ -275,57 +275,50 @@
         <h1>Tech</h1>
 
         <p>
-            <b
-                >Ever since I was around ten years old, I've been fascinated by
-                computers.</b
-            >
-            I've always enjoyed
-            <b
-                >making short games and programs, taking computers apart,
-                figuring out how they work, and learning what goes on behind the
-                scenes.</b
-            >
+            <b>
+                I've been fascinated by computers ever since I was around ten.
+            </b>
+            I've always enjoyed making short games and programs.
         </p>
 
         <p>
-            <b
-                >Today, I spend most of my time building software & websites and
-                exploring topics like cybersecurity.</b
-            >
+            <b>
+                Nowadays I spend most of my time building software & websites
+                and exploring topics like cybersecurity.
+            </b>
         </p>
 
         <h1>🖥️ Programming</h1>
 
         <p>
             <b
-                >Programming always has been my favorite hobby, and also the
-                hobby that I'm the most passionate about.</b
-            ><br />
+                >Programming has always been my favorite hobby, and also the
+                hobby I'm the most passionate about.</b
+            >
         </p>
 
         <p>
-            Although I loved programming ever since I was around ten years old,
             <b>
-                it wasn't until <span class="col bright green">late 2024</span>
-                that I actually started taking programming seriously.
-            </b><br />
-            <b
-                >Since then, it's become one of the things I spend the most time
-                doing.</b
-            >
+                I actually started taking programming seriously in around
+                <span class="col bright green">late 2024</span>.
+            </b>
+        </p>
+
+        <p>
+            Since then, it's become one of the things I spend the most time
+            doing.
         </p>
 
         <h2>🌐 Web Development</h2>
 
         <p>
-            <b
-                >Most of my projects are web-based because of how accessible the
-                web is.</b
-            >
+            <b>
+                Most of my projects are web-based because of how accessible the
+                web is.
+            </b>
             If someone has a browser,
-            <i>they can view what I build instantly</i> without having to wait for
-            the code to compile or to download. That makes it the perfect platform
-            for experimenting with ideas.
+            <i>they can view what I build instantly</i> without having to download
+            or compile anything.
         </p>
 
         <h3>Frameworks</h3>
@@ -932,6 +925,11 @@
     #tech {
         background: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(2px);
+        color: rgba(231, 231, 255, 0.75);
+    }
+
+    #tech b {
+        color: rgba(223, 223, 255, 0.8);
     }
 
     .stacks {
