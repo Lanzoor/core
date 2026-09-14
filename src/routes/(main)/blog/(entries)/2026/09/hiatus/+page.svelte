@@ -22,9 +22,10 @@
     <h1>hiatus announcement</h1>
 
     <ContentWarning
-        >this blog entry contains profanity and discussions of suicide whatever
-        yadda yadda</ContentWarning
+        >this blog entry contains profanity and discussions of suicide whatever</ContentWarning
     >
+
+    <h2>September 13th</h2>
 
     <p>
         oh. my. fucking. god.<br />let's not yap and just get to the point
@@ -55,5 +56,37 @@
         I'm not saying this to ask for sympathy either. Just move on. Continue
         doing whatever the fuck you were doing. I don't have much time to write
         this either. Bye.
+    </p>
+
+    <h2>September 14th, 2026</h2>
+
+    <p>i don't really write updates to existing documents but whatever.</p>
+
+    <p>
+        The situation hasn't improved in the slightest. I've lost my sense of
+        time. One hour feels like an eternity while another feels instant.
+        Although I was able to get some sleep I'm still dizzy as actual fuck
+        right now. I couldn't focus at all in school. I felt like throwing up.
+    </p>
+
+    <p>
+        I'm changing my mindset. I'm honestly letting myself sit through all of
+        this pain. Why? Because nobody fucking cares. Nobody gives a fuck
+        whether I suffer or not. Couldn't have been more obvious for a person
+        who got called an idiot by his own father. Yes, that's me. I'm not
+        pulling myself out of this anymore. Just let everything happen. Suffer
+        silently. Make sure to not affect others. Fuck my life.
+    </p>
+
+    <p>
+        I'm so fucking disappointed in the fact that there just aren't concrete
+        solutions I can follow. Although I've been harming myself lately I'm
+        probably not going to kill myself. I really don't know why.
+    </p>
+
+    <p>
+        This is probably the last edit I'm going to make. I'll probably write
+        the rest in my private diary. Bye. Sorry if this is kind of unorganized,
+        I don't even know whether it's myself writing this.
     </p>
 </section>

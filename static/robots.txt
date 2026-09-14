@@ -2,7 +2,7 @@
 User-agent: *
 Disallow: /legacy/
 Disallow: /assets/
-Disallow: /docs/blog/
+Disallow: /blog/
 Disallow: /testing/
 
 # panic routes (might save my ass when i actually accidentally push these)
