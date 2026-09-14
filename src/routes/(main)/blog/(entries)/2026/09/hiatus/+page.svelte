@@ -58,7 +58,7 @@
         this either. Bye.
     </p>
 
-    <h2>September 14th, 2026</h2>
+    <h2>September 14th</h2>
 
     <p>i don't really write updates to existing documents but whatever.</p>
 
