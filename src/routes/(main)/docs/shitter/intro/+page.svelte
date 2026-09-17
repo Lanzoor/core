@@ -52,8 +52,11 @@
     <h2>The Group Members</h2>
 
     <p>
-        Members listed below are the protagonists of this story. They shall be
-        referred to as <b>"the group" or "the group members".</b>
+        Members listed below are <span
+            title="yes this is a danganronpa reference :walc"
+            >the protagonists of this crazy story.</span
+        >
+        They shall be referred to as <b>"the group" or "the group members".</b>
     </p>
 
     <ul>
@@ -69,15 +72,15 @@
             Discord user <code>@lanzoor</code> - Henceforth mentioned as
             <b>"Lanzoor"</b>
         </li>
-        <li>
-            Discord user <code>@caden3269</code> - <b>Caden Tan</b>, henceforth
-            mentioned as <b>"Caden"</b>
-        </li>
     </ul>
 
     <p>Below are some other people that helped us.</p>
 
     <ul>
+        <li>
+            Discord user <code>@caden3269</code> - <b>Caden Tan</b>, henceforth
+            mentioned as <b>"Caden"</b>
+        </li>
         <li>
             Discord user <code>@nspyeahaha</code> - Henceforth mentioned as
             <b>"NSP"</b>
