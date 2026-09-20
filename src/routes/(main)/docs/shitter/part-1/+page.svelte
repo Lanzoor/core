@@ -9,26 +9,22 @@
 
     <h2>1-1: The Calm Before the Storm (late 2023 - early 2024)</h2>
 
-    <p class="col bright red">
-        NOTE: All of this data is based off of the results of asking the people
-        associated with this shit and getting access to the CoS server (which is
-        a great place for all the evidence). Dates will be confirmed when
-        appropriate.
+    <blockquote class="warning">
+        <span class="col bright yellow">Note:</span> All of this data is based
+        off of the results of asking the people associated with this shit and
+        getting access to the Unofficial CoS
+        <span class="dim">(Chants Of Sennaar)</span> Discord. (which is a great place
+        for all the evidence) Dates will be confirmed when appropriate.
+    </blockquote>
+
+    <p>
+        This is the start of the journey. A journey where Shitter becomes the
+        <b>shitty</b>, the <b>shittier</b>, and the <b>shittiest</b>.
     </p>
 
     <p>
-        This is the start of the journey.
-
-        <b>
-            A journey where Shitter becomes shitter, shittier, and the
-            shittiest.
-        </b>
-    </p>
-
-    <p>
-        Shitter's alias at this time was JHoCoSP. Before this the same account
-        was known as WMWMWM...WMKWM...WMWMWM but this was prior to the following
-        incidents.
+        <b>Shitter's alias at this time was JHoCoSP.</b> Before this the same account
+        was known as WMWMWM...WMKWM...WMWMWM but this was prior to the following incidents.
     </p>
 
     <p>
@@ -45,14 +41,20 @@
 
     <p>
         We actually know Shitter's rough location; during this time, he lived in
-        the Negros Island Region in the Philippines (he has mentioned this
-        before). <b
-            >Despite literally being Filipino, he proceeded to insult the
-            Philippines in the CoS server.</b
-        > Despite the activity of TCG (who is also Filipino) and another Filipino
-        server member, the insults didn't stop. At one point, he spammed "KILL YOURSELF"
-        but in his old conlang known as Tousi (reclaimed by TCG and kekeee as Tfêidiyesiwaŋ
-        But Better) in TCG's DMs.
+        the Negros Island Region in the Philippines. (he has mentioned this
+        before)
+    </p>
+
+    <p>
+        <b>
+            Despite literally being Filipino, he proceeded to insult the
+            Philippines in the CoS server.
+        </b>
+
+        Despite the activity of TCG (who is also Filipino) and another Filipino
+        server member, the insults didn't stop. At one point, he spammed "KILL
+        YOURSELF" but in his old conlang known as Tousi (reclaimed by TCG and
+        kekeee as Tfêidiyesiwaŋ But Better) in TCG's DMs.
     </p>
 
     <p>
@@ -76,8 +78,11 @@
     <p>
         Apparently, according to Shitter's message, he fell into deep
         depression, and left a message saying he'd kill himself on April 1st and
-        stop using all social media. (such as Discord, Reddit and Youtube) Of
-        course, everyone thought of it as a misplaced April Fools joke.
+        stop using all social media.
+
+        <span class="dim">(including Discord, Reddit and YouTube)</span>
+
+        Of course, everyone thought of it as a misplaced April Fools joke.
         According to kekeee, he was "acting chill about all of this, which made
         [him] suspicious."
     </p>

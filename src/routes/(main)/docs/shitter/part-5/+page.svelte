@@ -133,10 +133,11 @@
 
             Oh so now you're trying to deny all of this? Acting dismissive is
             like proving "I AM SHITTY!!!" You almost did commit suicide? Sure!
-            But we don't care! You literally weren't serious about all of this.
-            You made a fucking ARG and made us <i>suffer</i>. Is suicide harming
-            someone other than yourself? NO! Is making a fucking ARG harming
-            someone both physically and mentally? YES!
+            We DID mention that in part 1, go check it out! But we don't care!
+            You literally weren't serious about all of this. You made a fucking
+            ARG and made us <i>suffer</i>. Is suicide harming someone other than
+            yourself? NO! Is making a fucking ARG harming someone both
+            physically and mentally? YES!
         </li>
         <li>
             "To add, everyone would also insult their own country, and it's
@@ -212,6 +213,8 @@
             <h1 style="font-size: 10em;">FUCK YOU SHITTER.</h1>
         </li>
     </ul>
+
+    <p>did we just ragebait Shitter-</p>
 
     <DocumentNavigation
         previous={{ href: "/docs/shitter/part-4", title: "Part 4" }}

@@ -22,6 +22,7 @@
     {...rest}
     target={external ? "_blank" : undefined}
     rel={external ? "noopener noreferrer" : undefined}
+    data-sveltekit-reload
 >
     {@render children()}
 </a>
