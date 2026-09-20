@@ -19,8 +19,9 @@
     </p>
 
     <p>
-        <i>This is not intended as an offensive phrase.</i> Originates from the following
-        messages by TCG at around October 2026.
+        <i>This is not intended as an offensive phrase.</i> The meme got popular from
+        the following messages by TCG at around October 2026, although the meme has
+        existed before.
     </p>
 
     <img src={Genetic} alt="being filipino" style="width: 20em" />

@@ -26,7 +26,7 @@
             >MORE MORE JUMP!</Ia
         >
 
-        in the hit game <Ia external href="https://www.colorfulstage.com/"
+        from the hit game <Ia external href="https://www.colorfulstage.com/"
             >Project Sekai</Ia
         >.
     </p>
