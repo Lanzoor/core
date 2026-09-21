@@ -52,10 +52,10 @@
             </p>
 
             <p class="dim">
-                <b>v26.28.4</b> | last updated @
-                <code>September 13rd, 2026</code>
+                <b>v26.28.5</b> | last updated @
+                <code>September 21st, 2026</code>
                 |
-                <a href="/changelog/v26-28-4">view changelog</a>
+                <a href="/changelog/v26-28-5">view changelog</a>
             </p>
         </div>
 

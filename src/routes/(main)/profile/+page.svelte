@@ -400,22 +400,25 @@
         </p>
 
         <p>
-            I have made a few CLI, TUI and GUI programs using Python before, and
-            I have experience with most of the common libraries.
+            <b
+                >I have made a few CLI, TUI and GUI programs using Python
+                before, and I have experience with most of the common libraries.</b
+            >
+            I also have experience making math-related animation videos using
+            <code>manim</code>.
         </p>
 
         <p>
             Nowadays, though,
 
-            <b
-                >I usually find myself using Python and some scripting languages
-                in order to <span class="col bright green"
-                    >automate repetitive tasks</span
-                >.</b
+            <b>
+                I usually use Python as a scripting language and
+
+                <span class="col bright green">
+                    automate repetitive tasks
+                </span>,</b
             >
-            <span class="dim"
-                >(e.g. making backups, running long commands repeatedly)</span
-            >
+            such as making backups and running long commands.
         </p>
 
         <h1>🔐 Cybersecurity</h1>
@@ -453,9 +456,7 @@
             <span class="dim">(Operational Security)</span>
         </p>
 
-        <h1>Uses</h1>
-
-        <h2>Operating System</h2>
+        <h1>Development Environment</h1>
 
         <p>
             <b>
@@ -470,8 +471,6 @@
             <span class="col bright cyan">May 2025</span>, starting with
             <span class="col bright green">Linux Mint</span>.
         </p>
-
-        <h2>Development Environments</h2>
 
         <p>
             <b>
@@ -791,7 +790,7 @@
     </p>
 
     <p>
-        I also enjoy creating conlangs, videos and some music in my free time.
+        I also enjoy creating videos and occasionally conlangs in my free time.
         For information about my projects, consider checking the dedicated
         <a href="/projects">projects</a> page out!
     </p>
@@ -800,7 +799,10 @@
 <section id="trivia">
     <h1>Trivia</h1>
 
-    <p>Want to learn something random about me?<br />Click the button below!</p>
+    <p>
+        Want to learn something random about me?<br />
+        <b>Click the button below!</b>
+    </p>
 
     <button onclick={pickTrivia}>Generate Trivia</button>
 
@@ -884,17 +886,17 @@
     }
 
     #intro .tags .tag {
-        opacity: 0.5;
+        color: rgba(100, 100, 100, 0.9);
         transition: 2s ease;
     }
 
     #intro .tags .tag:hover {
-        opacity: 1;
+        color: rgba(200, 200, 200, 0.9);
         letter-spacing: 0.1em;
         cursor: pointer;
         transform: scale(1.1);
-        transition: 0.5s ease;
         text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        transition: 0.5s ease;
     }
 
     #bio {
@@ -925,11 +927,17 @@
     #tech {
         background: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(2px);
-        color: rgba(231, 231, 255, 0.75);
+        color: rgba(240, 240, 255, 0.75);
     }
 
     #tech b {
-        color: rgba(223, 223, 255, 0.8);
+        color: rgba(230, 230, 255, 0.8);
+    }
+
+    #tech h1,
+    #tech h2,
+    #tech h3 {
+        color: rgba(220, 220, 255, 0.9);
     }
 
     .stacks {
@@ -1039,13 +1047,13 @@
         background: rgb(0, 0, 20);
         background:
             radial-gradient(
-                circle at 40% 40%,
+                circle at 30% 30%,
                 rgba(115, 0, 255, 0.1),
                 transparent
             ),
             radial-gradient(
-                circle at 60% 60%,
-                rgba(0, 238, 255, 0.1),
+                circle at 70% 70%,
+                rgba(0, 238, 255, 0.05),
                 transparent
             ),
             black;
@@ -1094,15 +1102,20 @@
         color: #111;
         padding: 0.5em 1em;
         border: 2px solid white;
-        border-radius: 2147483647px;
+        border-radius: 200px;
 
         align-self: center;
         transition: 200ms ease;
     }
 
     #trivia button:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.25);
         color: white;
+    }
+
+    #trivia button:active {
+        transform: scale(1.05);
     }
 
     #trivia .quote {
