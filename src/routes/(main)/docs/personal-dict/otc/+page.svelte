@@ -10,15 +10,15 @@
     <p>1. noun</p>
 
     <p>
-        <b>We like to present OTC as a group.</b> However, in reality, it's more
-        of a <i>concept</i> that you can only truly comprehend by using divine intellect
-        and senses.
+        <b>
+            OTC is a group of people surrounding kekeee and TheCasualGuy's
+            online relationships.
+        </b> Primary members include kekeee, TheCasualGuy, Lanzoor, Reymie and more.
     </p>
 
     <p>
-        <b
-            >OTC doesn't mean or stand for anything; and yet, it means
-            everything that has existed, exists, and will exist.</b
-        >
+        OTC stands for literally <b>everything</b>, but common acronyms include
+        "Only Tired Cbaers", "Onwards Toward the Cosmos", "Overly Taxed
+        Conlangers", and "Overthrowing Terrible Coslangs".
     </p>
 </section>

@@ -17,7 +17,7 @@
 
     <p>
         1.
-        <span class="ipa">[ˈtɒ.ljuː.in]</span>
+        <span class="ipa">/ˈtɒ.ljuː.in/</span>
     </p>
 
     <p>

@@ -8,7 +8,7 @@
     <h1>peam</h1>
 
     <p>
-        1. <span class="ipa">[pɪm]</span>
+        1. <span class="ipa">/pɪm/</span>
     </p>
 
     <p>

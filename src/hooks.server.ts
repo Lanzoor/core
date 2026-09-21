@@ -28,6 +28,7 @@ const redirects: CoreRedirect[] = [
     {
         from: ["/docs/blog"],
         to: "/blog",
+        preservePath: true,
     },
     {
         from: ["/docs/shitter"],
@@ -90,6 +91,7 @@ const redirects: CoreRedirect[] = [
     {
         from: ["/repo", "/source", "/source-code"],
         to: "https://github.com/Lanzoor/core",
+        preservePath: true,
     },
     {
         from: ["/repo-real"],
@@ -108,6 +110,14 @@ const redirects: CoreRedirect[] = [
     {
         from: ["/docs/personal-dict/wuduhell"],
         to: "/docs/personal-dict/wuduhel",
+        preservePath: true,
+    },
+    {
+        from: [
+            "/docs/personal-dict/wysi",
+            "/docs/personal-dict/when-you-see-it",
+        ],
+        to: "/docs/personal-dict/727",
         preservePath: true,
     },
 ];

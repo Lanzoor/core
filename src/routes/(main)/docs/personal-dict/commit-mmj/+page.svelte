@@ -14,7 +14,7 @@
     <p>
         1. verb phrase,
         <span class="ipa"
-            >[kəˈ.mɪtˈ] [mɔː<sup>ɹ</sup>] [mɔː<sup>ɹ</sup>] [dʒʌmp]</span
+            >/kəˈ.mɪtˈ/ /mɔː<sup>ɹ</sup>/ /mɔː<sup>ɹ</sup>/ /dʒʌmp/</span
         >
     </p>
 

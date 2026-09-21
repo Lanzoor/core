@@ -9,7 +9,7 @@
     <h1>airillion</h1>
 
     <p>
-        1. counter noun, <span class="ipa">[ɑi'ɹɪ.lɪ.ən]</span>
+        1. counter noun, <span class="ipa">/ɑi'ɹɪ.lɪ.ən/</span>
     </p>
 
     <p>

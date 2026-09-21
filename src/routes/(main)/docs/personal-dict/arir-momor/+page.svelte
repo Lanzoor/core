@@ -9,7 +9,7 @@
     <h1>arir momor (Arir Momor)</h1>
 
     <p>
-        1. noun, <span class="ipa">[ɑ'ɹiɹ] [mo'mɔɹ]</span>
+        1. noun, <span class="ipa">/ɑ'ɾiɾ/ /mo'mɔɾ/</span>
     </p>
 
     <p>

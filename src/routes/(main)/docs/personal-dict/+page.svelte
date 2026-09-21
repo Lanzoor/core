@@ -25,6 +25,9 @@
             <a href="/docs/personal-dict/319">319</a>
         </li>
         <li>
+            <a href="/docs/personal-dict/727">727</a>
+        </li>
+        <li>
             <a href="/docs/personal-dict/8266">8266</a>
         </li>
     </ul>
@@ -58,6 +61,16 @@
 
         <li>
             <a href="/docs/personal-dict/genetic-disease">genetic disease</a>
+        </li>
+    </ul>
+
+    <ul>
+        <h2>Mm</h2>
+
+        <li>
+            <a href="/docs/personal-dict/manifest-gamblers-fallacy"
+                >manifest gambler's fallacy</a
+            >
         </li>
     </ul>
 
@@ -112,6 +125,9 @@
         </li>
         <li>
             <a href="/docs/personal-dict/wuduhell">wuduhell</a>
+        </li>
+        <li>
+            <a href="/docs/personal-dict/wysi">WYSI (WHEN YOU SEE IT)</a>
         </li>
     </ul>
 </section>

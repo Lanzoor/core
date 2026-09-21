@@ -8,8 +8,8 @@
     <h1>tol</h1>
 
     <p>
-        1. pronoun, <span class="ipa">[tol]</span> /
-        <span class="ipa">[tʰol]</span>
+        1. pronoun, <span class="ipa">/tol/</span> /
+        <span class="ipa">/tʰol/</span>
     </p>
 
     <p>

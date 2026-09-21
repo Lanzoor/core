@@ -10,7 +10,12 @@
 
     <p>
         A very very VERY walc number. This is a reference to the airi6 comm
-        song, <Ia external href="https://youtu.be/TRN2e84qIcM">イレヴンス</Ia> (Eleventh).
+        song, <Ia
+            external
+            href="https://youtu.be/TRN2e84qIcM"
+            class="jp"
+            lang="jp">イレヴンス</Ia
+        > (Eleventh).
     </p>
 
     <p>This is also TheCasualGuy's favorite prime number.</p>

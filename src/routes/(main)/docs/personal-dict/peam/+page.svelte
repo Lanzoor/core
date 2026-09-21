@@ -8,7 +8,7 @@
     <h1>peam</h1>
 
     <p>
-        1. adjective, <span class="ipa">[piːm]</span>
+        1. adjective, <span class="ipa">/piːm/</span>
     </p>
 
     <p>
@@ -16,7 +16,7 @@
     </p>
 
     <p>
-        2. expression, <span class="ipa">[piːm]</span>
+        2. expression, <span class="ipa">/piːm/</span>
     </p>
 
     <p>

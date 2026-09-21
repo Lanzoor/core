@@ -9,7 +9,7 @@
 
     <p>
         1. pronoun,
-        <span class="ipa">[vɹo]</span>
+        <span class="ipa">/vɹo/</span>
     </p>
 
     <p>

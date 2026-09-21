@@ -10,7 +10,7 @@
 
     <p>
         1. noun (adjective + noun),
-        <span class="ipa">[dʒə.ˈnet.ɪk] [/dɪ.ˈziːz/]</span>
+        <span class="ipa">/dʒə.ˈnet.ɪk/ /dɪ.ˈziːz/</span>
     </p>
 
     <p>

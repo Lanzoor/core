@@ -1,7 +1,7 @@
 <script lang="ts">
     let { links }: { links: string[] } = $props();
 
-    let overflow = $derived(links.length > 3 || links.join("").length >= 50);
+    let overflow = $derived(links.length > 3 || links.join("").length >= 100);
 </script>
 
 <blockquote>

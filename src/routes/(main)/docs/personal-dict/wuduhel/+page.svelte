@@ -12,7 +12,8 @@
 
     <p>
         1. phrase / expression
-        <span class="ipa">[ˈwət.də.hel]</span>
+        <span class="ipa">/ˈwət.də.hel/</span> /
+        <span class="ipa">/ˈwə.də.hel/</span>
     </p>
 
     <p>
