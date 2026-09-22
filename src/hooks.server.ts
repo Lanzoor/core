@@ -16,6 +16,10 @@ const redirects: CoreRedirect[] = [
         preservePath: true,
     },
     {
+        from: ["/projects/videos"],
+        to: "https://www.youtube.com/@lanzoormakesvideos",
+    },
+    {
         from: ["/docs/math/googology/CIN", "/docs/math/googology/cin"],
         to: "/docs/math/googology/consistent-illion-notation",
         preservePath: true,

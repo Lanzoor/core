@@ -1,5 +1,6 @@
 <script lang="ts">
     import { pickRandom, randInt } from "$lib";
+    import { Ia } from "$lib/components/Links";
     import Breadcrumbs from "$lib/components/Navigation/Breadcrumbs.svelte";
 
     const profileDesc = "very cool profile image of my original character Iris";
@@ -673,9 +674,40 @@
         govern how the world works.
     </p>
 
+    <h2>Math</h2>
+
+    <p>
+        <b>
+            I <i>really</i> enjoy solving math problems in my free time, especially
+            calculus and geometry.
+        </b>
+
+        Not because I like to brag, but because I'm genuinely fascinated by
+        math. I'm not the best at it, but I try to gradually improve every day.
+    </p>
+
+    <p>
+        I have experience with writing LaTeX notes and proofs. Also, as
+        mentioned earlier, I've created multiple math-related animations and
+        demonstrations using a Python library called <code>manim</code>.
+    </p>
+
+    <h2>Making Videos</h2>
+
+    <p>
+        <b>I often post funny and goofy videos to YouTube.</b>
+        (<Ia external href="/projects/videos">link</Ia>)
+    </p>
+
     <h2>Gaming</h2>
 
-    <h3>Idle/Clicker/Incremental Games</h3>
+    <p>
+        <b>
+            I play games especially when I'm tired, as a way to relax and just
+            have fun.
+        </b>
+        I usually like playing chill games.
+    </p>
 
     <div class="stacks">
         <div
@@ -700,8 +732,6 @@
         </div>
     </div>
 
-    <h3>Rhythm Games</h3>
-
     <div class="stacks">
         <div
             class="stack"
@@ -722,11 +752,9 @@
     </div>
 
     <div hidden>
-        vivid/stasis used to be here, but it's kinda broke on linux<br />
+        vivid/stasis used to be here, but it's kinda broken on linux<br />
         sadge
     </div>
-
-    <h3>Platformer Games</h3>
 
     <div class="stacks">
         <div
@@ -741,8 +769,6 @@
         </div>
     </div>
 
-    <h3>Other Games</h3>
-
     <div class="stacks">
         <div class="stack col green" title="creeper aww mann">Minecraft</div>
         ⬩
@@ -754,20 +780,11 @@
         </div>
     </div>
 
-    <p>
-        <b>
-            I play games in my free time, mostly as a way to relax and just have
-            fun.
-        </b>
-        I usually like playing chill games.
-    </p>
-
     <h2>Other Interests</h2>
 
     <p>Some of my other interests include:</p>
 
     <ul>
-        <li>Solving math problems.</li>
         <li>Solving Rubik's cubes.</li>
         <li>
             Listening to music, and playing instruments such as the drum and the
@@ -1116,6 +1133,7 @@
 
     #trivia button:active {
         transform: scale(1.05);
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
     }
 
     #trivia .quote {
