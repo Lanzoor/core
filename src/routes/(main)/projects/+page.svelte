@@ -105,6 +105,34 @@
 
         <div class="project">
             <div class="header">
+                <div class="status wip">wip</div>
+
+                <h1>kagipass</h1>
+            </div>
+
+            <p class="description">
+                Generate deterministic, strong passwords using the kagipass
+                algorithm.
+            </p>
+
+            <div class="information">
+                <div class="tags">
+                    <div class="tag program">program</div>
+                    <div class="tag cli">cli</div>
+                </div>
+
+                <div class="links">
+                    links:
+
+                    <Ia href="https://github.com/Lanzaforge/kagipass" external
+                        >source</Ia
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="header">
                 <div class="status complete">complete</div>
 
                 <h1>BHOJ <span class="dim">(Bro Had One Job)</span></h1>
@@ -194,12 +222,8 @@
     }
 
     #container {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
         gap: 3em;
 
         width: 100%;
@@ -222,37 +246,6 @@
 
         position: relative;
         overflow: hidden;
-    }
-
-    .project::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-
-        background: linear-gradient(
-            160deg,
-            transparent,
-            transparent 20%,
-            rgba(166, 131, 255, 0.1) 40%,
-            transparent 60%,
-            transparent 100%
-        );
-
-        opacity: 0;
-        transition: 500ms ease;
-        pointer-events: none;
-    }
-
-    .project:hover {
-        cursor: pointer;
-
-        background: rgb(28, 13, 69);
-        border-color: rgb(144, 92, 255);
-        box-shadow: 0 10px 25px rgba(111, 16, 255, 0.5);
-    }
-
-    .project:hover::after {
-        opacity: 1;
     }
 
     .project .header {

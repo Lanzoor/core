@@ -176,7 +176,7 @@
             />
 
             <div class="name-group">
-                <div class="name">Lanzoor</div>
+                <div class="name">Lapis Lanzuli</div>
 
                 <div class="handle">@lanzoor</div>
             </div>
@@ -191,12 +191,12 @@
 
         <div class="description">
             <b
-                >hii, my name is <span class="col bright purple">Lanzoor</span
+                >My name is <span class="col bright purple">Lapis Lanzuli</span
                 >!</b
             ><br />
-            i'm just a random student from Korea who enjoys creating things, solving
+            I'm just a random student from Korea who enjoys creating things, solving
             interesting problems, and learning something new every day.<br />
-            i'm obsessed with programming, learning languages, science and anime!<br
+            I'm obsessed with programming, learning languages, science and anime!<br
             />
         </div>
     </section>
@@ -207,22 +207,24 @@
 
     <p>
         <b>
-            I go by the name of <span class="col bright purple">Lanzoor</span>,
-            which is pronounced
-            <span class="ipa">/lɑn.ˈzoʊɹ/</span>.
+            I go by the name of
+            <span class="col bright purple">Lapis Lanzuli</span>, which is
+            roughly pronounced
+            <span class="ipa">/ˈlæpɪs lænˈzʊliː/</span>.
         </b>
-        <br />
-        I just randomly thought of it when I was young or something.
     </p>
 
     <p>
-        If you're close to me, feel free to call me Lanzy (<span class="ipa"
-            >/ˈlæn.ziː/</span
-        >) or lan lan man.<br />
-        I also have a lot of aliases, such as
-        <span class="col bright blue">Lapis Lazuli</span>
-        <span class="ipa"> /ˈlæpɪs læˈzʊliː/ </span> and
-        <span class="col green">Praseodymium Crystal</span>.
+        My primary name used to be
+        <span class="col bright purple">Lanzoor</span>, but people kept
+        mispronouncing my name. To be fair, it was kind of misleading. It's
+        still my "internal" name, though.
+    </p>
+
+    <p>
+        If you're close to me, feel free to call me just Lapis or Lanzuli. Other
+        names include Lanzy (<span class="ipa">/ˈlæn.ziː/</span>) and lan lan
+        man.
     </p>
 
     <h1>
@@ -230,7 +232,9 @@
     </h1>
 
     <p>
-        <b>I am from South Korea 🇰🇷!</b>
+        <b title="I am not from North Korea. yes there's a difference :walc"
+            >I am from South Korea 🇰🇷!</b
+        >
         I currently live in 📍 Gyeonggi-do.
     </p>
 

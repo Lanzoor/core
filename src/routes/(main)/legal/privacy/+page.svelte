@@ -49,8 +49,8 @@
 
     <p>
         <b>
-            Lanzoor, as well as Lanzaforge, is not affiliated with the services
-            listed below. We do not control how these services process
+            Lapis Lanzuli, as well as Lanzaforge, is not affiliated with the
+            services listed below. We do not control how these services process
             information, and do not access or use information collected by these
             services for its own purposes.
         </b>

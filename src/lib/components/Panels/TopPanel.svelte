@@ -116,7 +116,7 @@
         max-height: var(--top-panel-max-height);
 
         z-index: 2147483647;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.75);
 
         backdrop-filter: blur(4px);
 

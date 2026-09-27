@@ -26,10 +26,9 @@
 
     <p>
         This website is maintained by
-        <span class="col bright purple">Lanzoor</span>, an individual developer
-        from Korea, as part of the organization
-        <Ia href="https://www.lanzaforge.org/" external>Lanzaforge</Ia>. For
-        more information about myself, consider checking my
+        <span class="col bright purple">Lapis Lanzuli</span>, an individual
+        developer from Korea. For more information about myself, consider
+        checking my
         <a href="/profile">profile</a> page out!
     </p>
 
@@ -60,9 +59,8 @@
     <h2>Can I use the content from this website?</h2>
 
     <p>
-        Unless otherwise stated, the content on this website belongs to
-        <Ia href="https://www.lanzaforge.org" external>Lanzaforge</Ia>, and
-        primarily Lanzoor. Please ask for permission before redistributing or
+        Unless otherwise stated, the content on this website primarily belongs
+        to the owner. Please ask for permission before redistributing or
         modifying personal works.
     </p>
 

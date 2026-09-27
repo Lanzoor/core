@@ -7,7 +7,7 @@
         <nav>
             <div class="group">
                 <h2>General</h2>
-                <a href="/">Frontpage</a>
+                <a href="/">Home</a>
                 <a href="/profile">Profile</a>
                 <a href="/map">Site map</a>
             </div>
@@ -47,15 +47,15 @@
             </h1>
 
             <p>
-                A website by Lanzoor, including projects, showcases, documents,
-                and more!
+                A website by Lapis Lanzuli, including projects, showcases,
+                documents, and more!
             </p>
 
             <p class="dim">
-                <b>v26.28.5</b> | last updated @
-                <code>September 22nd, 2026</code>
+                <b>v26.28.6</b> | last updated @
+                <code>September 27th, 2026</code>
                 |
-                <a href="/changelog/v26-28-5">view changelog</a>
+                <a href="/changelog/v26-28-6">view changelog</a>
             </p>
         </div>
 

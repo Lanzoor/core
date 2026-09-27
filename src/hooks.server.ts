@@ -17,7 +17,7 @@ const redirects: CoreRedirect[] = [
     },
     {
         from: ["/projects/videos"],
-        to: "https://www.youtube.com/@lanzoormakesvideos",
+        to: "https://www.youtube.com/@lapis-lanzuli",
     },
     {
         from: ["/docs/math/googology/CIN", "/docs/math/googology/cin"],

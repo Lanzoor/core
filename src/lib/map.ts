@@ -45,7 +45,7 @@ export const sitemap: Page[] = [
         path: "/",
         title: "Welcome!",
         description:
-            "A website by Lanzoor, including projects, showcases, documents, and more!",
+            "A website by Lapis Lanzuli, including projects, showcases, documents, and more!",
 
         metadata: {
             ogTitle: "lanzoor.dev",

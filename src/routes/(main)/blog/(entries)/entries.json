@@ -1,5 +1,16 @@
 [
     {
+        "title": "Meta Update",
+        "description": "An update regarding changes to myself.",
+        "tags": [
+            "personal",
+            "announcement",
+            "blog"
+        ],
+        "published": "2026-09-26T15:00:00.000Z",
+        "slug": "2026/09/meta-update"
+    },
+    {
         "title": "hiatus announcement",
         "description": "help",
         "tags": [

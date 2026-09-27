@@ -85,8 +85,12 @@
 
             <p>
                 <b class="egg">{message}</b><br />
-                My name is <span class="col bright purple">Lanzoor</span>, a
-                student from South Korea who likes
+                My name is <span class="col bright purple">Lapis Lanzuli</span>,
+                <span class="dim">
+                    (also known as <span class="col bright purple">Lanzoor</span
+                    >)
+                </span>
+                a student from South Korea who likes
                 <span class="col green">programming</span>,
                 <span class="col yellow">science</span>,
                 <span class="col orange">languages</span> and more.<br />
@@ -99,7 +103,7 @@
         <p>
             <b>
                 Make yourself at home, explore things at your own pace and
-                <span class="col bright purple">have fun!</span> ♥
+                <span class="col bright purple">have fun!</span>
             </b>
         </p>
     </section>
@@ -110,7 +114,7 @@
 
             <p>
                 <i class="col bright purple">Not sure where to start?</i> Here are
-                a few places worth checking out.
+                some places worth checking out.
             </p>
 
             <div class="links">
