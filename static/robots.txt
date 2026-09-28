@@ -4,6 +4,7 @@ Disallow: /legacy/
 Disallow: /assets/
 Disallow: /blog/
 Disallow: /testing/
+Disallow: /test/
 
 # panic routes (might save my ass when i actually accidentally push these)
 
