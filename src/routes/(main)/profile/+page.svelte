@@ -750,8 +750,13 @@
             <span class="col bright magenta">osu!</span>
         </div>
         ⬩
-        <div class="stack" title="semiquaver when">
-            <span class="col bright cyan">Quaver</span>
+        <div
+            class="stack"
+            title="PHENOMENAL game btw please check it out its ultra/peam"
+        >
+            <span style="color: #ff0070">vivid</span>/<span
+                style="color: #00ffff">stasis</span
+            >
         </div>
     </div>
 
