@@ -3,6 +3,7 @@
 
     export const metadata = {
         published: new Date("2026-10-07T00:00:00+09:00"),
+        commit: "https://github.com/Lanzoor/core/commit/70dfadf8e3084edfc45e85bd1220e286b9ef6ad9",
     };
 </script>
 
@@ -11,6 +12,10 @@
 
     <p class="dim">
         Release date: <b>October 7th, 2026</b><br />
+        Source: <Ia
+            href="https://github.com/Lanzoor/core/commit/70dfadf8e3084edfc45e85bd1220e286b9ef6ad9"
+            external>github</Ia
+        >
     </p>
 
     <ul>
