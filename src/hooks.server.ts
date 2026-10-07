@@ -16,13 +16,8 @@ const redirects: CoreRedirect[] = [
         preservePath: true,
     },
     {
-        from: ["/projects/videos"],
+        from: ["/projects/videos", "/videos"],
         to: "https://www.youtube.com/@lapis-lanzuli",
-    },
-    {
-        from: ["/docs/math/googology/CIN", "/docs/math/googology/cin"],
-        to: "/docs/math/googology/consistent-illion-notation",
-        preservePath: true,
     },
     {
         from: ["/projects/core/changelog"],
@@ -78,7 +73,7 @@ const redirects: CoreRedirect[] = [
         preservePath: true,
     },
 
-    // rickroll redirects
+    // rickroll redirects. i have no idea why i have this
     {
         from: ["/it-all-begins"],
         to: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -96,10 +91,6 @@ const redirects: CoreRedirect[] = [
         from: ["/repo", "/source", "/source-code"],
         to: "https://github.com/Lanzoor/core",
         preservePath: true,
-    },
-    {
-        from: ["/repo-real"],
-        to: "https://github.com/Lanzoor/core",
     },
     {
         from: ["/projects/anti-lanzoor"],

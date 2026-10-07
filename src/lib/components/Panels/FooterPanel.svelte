@@ -52,10 +52,10 @@
             </p>
 
             <p class="dim">
-                <b>v26.28.6</b> | last updated @
-                <code title="GMT+9">October 2nd, 2026</code>
+                <b>v26.28.7</b> | last updated @
+                <code title="GMT+9">October 7th, 2026</code>
                 |
-                <a href="/changelog/v26-28-6">view changelog</a>
+                <a href="/changelog/v26-28-7">view changelog</a>
             </p>
         </div>
 
@@ -105,8 +105,7 @@
                     />
 
                     <span class="handle">
-                        @<span class="col bright purple">lanzoor</span
-                        >makesvideos
+                        @<span class="col bright purple">lapis-lanzuli</span>
                     </span>
                 </Ba>
 

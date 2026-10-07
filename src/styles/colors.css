@@ -116,3 +116,7 @@
     text-shadow: 0 0 10px
         oklch(from currentColor calc(l * 0.7) calc(c * 2) calc(h + 10)) !important;
 }
+.highlight {
+    background: rgba(255, 255, 100, 0.85);
+    color: #111;
+}

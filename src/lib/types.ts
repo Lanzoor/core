@@ -2,6 +2,7 @@ export type ChangelogEntry = {
     version: string;
     title?: string;
     published: Date;
+    commit?: string;
 };
 
 export type BlogEntry = {

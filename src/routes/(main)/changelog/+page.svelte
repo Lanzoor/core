@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { Ia } from "$lib/components/Links";
     import Breadcrumbs from "$lib/components/Navigation/Breadcrumbs.svelte";
     import entries from "./(entries)/entries.json";
 
@@ -68,8 +69,8 @@
 
     <p>
         This page contains a list of all changes and updates made to the
-        website.
-        <b>You can use the search bar below to search for a version!</b>
+        website.<br />
+        <b>You can use the search bar below to search for a version.</b>
     </p>
 
     <p>
@@ -89,10 +90,6 @@
 </section>
 
 <section id="entries">
-    <p>
-        <b>Found {entries.length} changelog entries.</b>
-    </p>
-
     <div class="search-options enable-spacing">
         <p>
             {status}
@@ -111,6 +108,10 @@
         </div>
     </div>
 
+    <p>
+        <b>Found {entries.length} changelog entries.</b>
+    </p>
+
     {#each groups as group}
         <h1>Version group {group.id}</h1>
 
@@ -123,9 +124,8 @@
                         </a>{#if entry.title}: {entry.title}{/if}<br />
                     </h2>
 
-                    <p class="dim">
-                        pushed on
-                        <b
+                    <p>
+                        <b class="dim"
                             >{new Date(entry.published).toLocaleString(
                                 "en-US",
                                 {
@@ -134,6 +134,9 @@
                                 },
                             )}</b
                         >
+                        {#if entry.commit}
+                            • <Ia href={entry.commit} external>commit</Ia>
+                        {/if}
                     </p>
                 </li>
             {/each}
@@ -142,7 +145,7 @@
 
     <p class="dim">
         Please note that versions prior to <code>v26.23.3</code> aren't listed here,
-        as they were not documented.
+        as they were simply not documented.
     </p>
 </section>
 

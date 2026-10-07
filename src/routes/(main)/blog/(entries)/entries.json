@@ -1,30 +1,18 @@
 [
     {
         "title": "Meta Update",
-        "description": "An update regarding changes to myself.",
+        "description": "An update regarding changes to myself as well as my digital identity.",
         "tags": [
             "personal",
             "announcement",
             "blog"
         ],
-        "published": "2026-09-26T15:00:00.000Z",
-        "slug": "2026/09/meta-update"
-    },
-    {
-        "title": "hiatus announcement",
-        "description": "help",
-        "tags": [
-            "serious",
-            "personal",
-            "announcement",
-            "blog"
-        ],
-        "published": "2026-09-12T15:00:00.000Z",
-        "slug": "2026/09/hiatus"
+        "published": "2026-10-06T15:00:00.000Z",
+        "slug": "2026/10/meta-update"
     },
     {
         "title": "core Has Been Completed",
-        "description": "core has been completed after months of development. This is a recap of the completion of core, as well as what comes next.",
+        "description": "A recap of core, its completion, as well as what comes next.",
         "tags": [
             "important",
             "announcement",

@@ -1,6 +1,11 @@
 [
     {
+        "published": "2026-10-06T15:00:00.000Z",
+        "version": "v26-28-7"
+    },
+    {
         "published": "2026-09-26T15:00:00.000Z",
+        "commit": "https://github.com/Lanzoor/core/commit/405a4f38d1e2a71d6605f1d04b8fc160eedfc09b",
         "version": "v26-28-6"
     },
     {
@@ -24,7 +29,7 @@
         "version": "v26-28-1"
     },
     {
-        "title": "Finale",
+        "title": "acta est fabula, plaudite.",
         "published": "2026-08-12T15:00:00.000Z",
         "version": "v26-28-0"
     },

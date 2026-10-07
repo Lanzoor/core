@@ -25,7 +25,7 @@
     const interval = setInterval(() => {
         time = formatTime();
         date = formatDate();
-    }, 1000);
+    }, 5000);
 
     $effect(() => {
         return () => clearInterval(interval);
@@ -115,6 +115,7 @@
         "I am obsessed with monospace fonts.",
         "I can spend an unreasonable amount of time choosing a font.",
         "I have a tendency to memorize random things perfectly.",
+        "This sentence is false.",
     ];
 
     const specialTriviaList = [
@@ -128,6 +129,9 @@
         "I'm allergic to peaches.",
         "Your Lanzaforge™ subscription expires in 10 minutes.<br>Please renew immediately to continue using lanzoor.dev.",
         "emu is meaning smile!! :walc",
+        "acta est fabula, plaudite.",
+        "life/changing",
+        "visual/studio",
 
         // Easter Eggs
         "I am legally required to put at least one easter egg in every website I make.",
@@ -244,7 +248,8 @@
                 >(KST, Korean Standard Time)</span
             > timezone.</b
         ><br />
-        It is currently <b>{time}</b>, <b>{date}</b> in my location.<br />
+        It is currently <b>{time}</b>, <b>{date}</b> in my location.
+        <span class="dim">(updated every 5 seconds)</span><br />
         Feel free to send me messages whether I'm online or not!
     </p>
 
@@ -252,14 +257,15 @@
 
     <p>
         <b>My MBTI type is <span class="col bright cyan">INTP</span>.</b><br />
-        I absolutely <i>HATE</i> memorizing stuff without second thought. I
-        enjoy understanding why and how things work.<br />
+        I absolutely <i>HATE</i> memorizing stuff without second thought. I want
+        to understand why and how things work.<br />
     </p>
 
     <p>
-        I am introverted unless I'm online.<br />
+        I am <i>extremely</i> introverted unless I'm online.<br />
         I have social anxiety and chronic depression. I also show symptoms associated
-        with autism, OCD, and OCD.
+        with autism, ADHD, and OCD. Please ignore me if you manage to find me in real
+        life. /hj
     </p>
 
     <p>
@@ -478,22 +484,16 @@
         </p>
 
         <p>
-            <b>
-                I use a heavily customized version of
-                <span class="col bright blue">VSCodium</span>
-            </b>
-            for most tasks.
-            <span class="dim">
-                (this is exactly why i have literal leveling bars in the editor
-                😭)
-            </span>
+            I also have experience with managing virtual machines. They're
+            pretty cool I guess.
         </p>
 
         <p>
             <b>
-                I also use <span class="col bright black">Zed</span> as an alternative
-                editor,
-            </b> since I find it easier to work with in some cases.
+                I use a <i>heavily</i> customized version of
+                <span class="col bright blue">VSCodium</span>
+            </b>
+            for most tasks.
         </p>
     </section>
 </section>
@@ -752,7 +752,7 @@
         ⬩
         <div
             class="stack"
-            title="PHENOMENAL game btw please check it out its ultra/peam"
+            title="PHENOMENAL game btw. please check it out its ultra/peam"
         >
             <span style="color: #ff0070">vivid</span>/<span
                 style="color: #00ffff">stasis</span

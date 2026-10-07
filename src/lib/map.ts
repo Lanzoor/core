@@ -59,13 +59,6 @@ export const sitemap: Page[] = [
         options: {
             legalNotice: false,
         },
-
-        // children: [
-        //     {
-        //         path: '/about/donations',
-        //         title: 'Donations',
-        //     },
-        // ],
     },
     {
         path: "/blog",
@@ -171,19 +164,12 @@ export const sitemap: Page[] = [
                 path: "/docs/math",
                 title: "Math",
                 description: "My documents related to math.",
-
-                children: [
-                    {
-                        path: "/docs/googology",
-                        title: "Googology",
-                        children: [
-                            {
-                                path: "/docs/googology/consistent-illion-notation",
-                                title: "Consistent Illion Notation",
-                            },
-                        ],
-                    },
-                ],
+            },
+            {
+                path: "/docs/tech",
+                title: "Tech",
+                description:
+                    "My documents related to programming, cybersecurity, as well as just tech in general.",
             },
             {
                 path: "/docs/personal-dict",

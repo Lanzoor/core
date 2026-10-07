@@ -1,12 +1,12 @@
 <script lang="ts">
     export const metadata = {
-        title: "Finale",
+        title: "acta est fabula, plaudite.",
         published: new Date("2026-08-13T00:00:00+09:00"),
     };
 </script>
 
 <section>
-    <h1>v26.28.0: Finale</h1>
+    <h1>v26.28.0: acta est fabula, plaudite.</h1>
 
     <p class="dim">
         Release date: <b>August 13th, 2026</b>

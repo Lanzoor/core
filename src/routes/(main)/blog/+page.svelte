@@ -80,15 +80,11 @@
         <h1>Blog Portal</h1>
 
         <p>
-            Hello there! This is a page where you can find all of my blogs.<br
-            />
-            <i>Click one of the headers below to warp into that page.</i>
+            This is a page where you can find all of my blog entries.<br />
+            Unlike <a href="/docs">documents</a>, this section contains more
+            subjective and personal topics.
         </p>
     </header>
-
-    <p>
-        <b>Found {sortedEntries.length} blog entries.</b>
-    </p>
 </section>
 
 <section id="search">
@@ -134,6 +130,10 @@
 </section>
 
 <section>
+    <p>
+        <b>Found {sortedEntries.length} blog entries.</b>
+    </p>
+
     {#each groups as group}
         <h1>
             {new Date(group[0].published).toLocaleString("en-US", {

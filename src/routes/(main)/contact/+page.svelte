@@ -40,18 +40,22 @@
         <b>hello@lanzoor.dev</b>, or
         <b>support@lanzoor.dev</b>
         are forwarded to my personal email address,
-        <a href="mailto:lanzoor-general@proton.me">lanzoor-general@proton.me</a
-        >. Feel free to contact my personal email address as well.
+        <a href="mailto:lapis-lanzuli@proton.me">lapis-lanzuli@proton.me</a>.
+        Feel free to contact my personal email address as well.
     </p>
 
     <p>
-        <i
-            >Replies will currently come from
-            <a href="mailto:lanzoor-general@proton.me"
-                >lanzoor-general@proton.me</a
+        <i>
+            Replies will currently come from
+            <a href="mailto:lapis-lanzuli@proton.me">lapis-lanzuli@proton.me</a
             >, not the
-            <code>@lanzoor.dev</code> addresses. Thank you for your understanding.</i
-        >
+            <code>@lanzoor.dev</code> addresses. Thank you for your understanding.
+        </i>
+    </p>
+
+    <p class="dim">
+        Why did it change from <code>lanzoor-general@proton.me</code>?
+        <a href="/blog/2026/10/meta-update#email">Read more</a>
     </p>
 
     <h2>Social Media</h2>

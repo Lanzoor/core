@@ -1,12 +1,12 @@
 <script lang="ts" module>
-    import Break from "$lib/components/Blocks/Break.svelte";
     import BlogBreadcrumbs from "$lib/components/Navigation/BlogBreadcrumbs.svelte";
 
     export const metadata = {
         title: "Meta Update",
-        description: "An update regarding changes to myself.",
+        description:
+            "An update regarding changes to myself as well as my digital identity.",
         tags: ["personal", "announcement", "blog"],
-        published: new Date("2026-09-27T00:00:00+09:00"),
+        published: new Date("2026-10-07T00:00:00+09:00"),
     };
 </script>
 
@@ -23,7 +23,7 @@
 
     <p>Hi,</p>
 
-    <h2>Name Update</h2>
+    <h2 id="name">Name Update</h2>
 
     <p>
         <b
@@ -60,7 +60,33 @@
         I may change my name again if this one doesn't really stick.
     </p>
 
-    <h2>Lanzaforge Update</h2>
+    <h2 id="email">Email Update</h2>
+
+    <p>
+        As I updated my primary alias, I've created another Proton email
+        address, which is <code>lapis-lanzuli@proton.me</code>.
+    </p>
+
+    <p>
+        I've also created a backup Gmail address. <span class="dim"
+            >(yes i now have at least 10 email addresses lmfao)</span
+        ><br />
+        Unfortunately
+        <code>lapislanzuli@gmail.com</code>
+        was taken, so i had to use <code>lapislanzuli319@gmail.com</code> instead.
+    </p>
+
+    <p>
+        <b>
+            I'm not going to change or delete any of email addresses starting
+            with <code>lanzoor</code>!
+        </b>
+
+        I've just decided to use them for accounts, and the Lapis Lanzuli ones
+        for general communication.
+    </p>
+
+    <h2 id="lanzaforge">Lanzaforge Update</h2>
 
     <p>
         <b>Lanzaforge is no longer going to be an organization.</b> For now.
@@ -77,11 +103,4 @@
     </p>
 
     <p>Lanzaforge is going to stay more as a "group" for all of my projects.</p>
-
-    <Break height="20em" />
-
-    <p>
-        sorry if the writing feels a bit soulless. i still feel like absolute
-        s%!t right now.
-    </p>
 </section>

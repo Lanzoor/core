@@ -61,8 +61,9 @@
         </header>
 
         <p>
-            Something went wrong while processing your request. The server
-            encountered an unexpected error and could not complete the request.
+            Something went wrong while processing your request.<br />
+            The server encountered an unexpected error and could not complete the
+            request.
         </p>
 
         <p>
@@ -74,88 +75,131 @@
 {/if}
 
 <style lang="css">
-    @layer page {
-        #error-404 {
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(100, 0, 255, 0.15),
-                    transparent 60%
-                ),
-                radial-gradient(
-                    circle,
-                    rgba(220, 50, 255, 0.12),
-                    transparent 55%
-                );
+    #error-404 {
+        background:
+            radial-gradient(circle, rgba(100, 0, 255, 0.15), transparent 60%),
+            radial-gradient(circle, rgba(220, 50, 255, 0.12), transparent 55%);
 
-            background-size:
-                200% 200%,
-                180% 180%;
+        background-size:
+            200% 200%,
+            180% 180%;
 
+        background-position:
+            0% 0%,
+            100% 100%;
+
+        animation: Background404 20s ease-in-out infinite;
+    }
+
+    @keyframes Background404 {
+        0% {
             background-position:
                 0% 0%,
                 100% 100%;
-
-            animation: Background404 20s ease-in-out infinite;
         }
 
-        @keyframes Background404 {
-            0% {
-                background-position:
-                    0% 0%,
-                    100% 100%;
-            }
-
-            25% {
-                background-position:
-                    100% 25%,
-                    25% 75%;
-            }
-
-            50% {
-                background-position:
-                    75% 100%,
-                    0% 25%;
-            }
-
-            75% {
-                background-position:
-                    25% 75%,
-                    75% 0%;
-            }
-
-            100% {
-                background-position:
-                    0% 0%,
-                    100% 100%;
-            }
+        25% {
+            background-position:
+                100% 25%,
+                25% 75%;
         }
 
-        #internal-error {
-            background: radial-gradient(
-                circle at 50% 50%,
-                rgba(0, 4, 255, 0.25),
-                transparent
-            );
+        50% {
+            background-position:
+                75% 100%,
+                0% 25%;
         }
 
-        section header {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5em;
+        75% {
+            background-position:
+                25% 75%,
+                75% 0%;
         }
 
-        section header .separator {
-            width: 2px;
-            height: 2em;
+        100% {
+            background-position:
+                0% 0%,
+                100% 100%;
+        }
+    }
 
-            background: rgba(255, 255, 255, 0.25);
+    #internal-error {
+        background:
+            radial-gradient(circle, rgba(0, 30, 255, 0.15), transparent 60%),
+            radial-gradient(circle, rgba(48, 210, 255, 0.12), transparent 55%);
+
+        background-size:
+            200% 200%,
+            180% 180%;
+
+        background-position:
+            0% 0%,
+            100% 100%;
+
+        animation: InternalError 20s ease-in-out infinite;
+    }
+
+    @keyframes InternalError {
+        0% {
+            background-position:
+                0% 0%,
+                100% 100%;
         }
 
-        section p {
-            text-align: center;
+        25% {
+            background-position:
+                100% 25%,
+                25% 75%;
         }
+
+        50% {
+            background-position:
+                75% 100%,
+                0% 25%;
+        }
+
+        75% {
+            background-position:
+                25% 75%,
+                75% 0%;
+        }
+
+        100% {
+            background-position:
+                0% 0%,
+                100% 100%;
+        }
+    }
+
+    section {
+        text-shadow: 4px 4px 1px color-mix(in oklch, currentColor, black 60%);
+    }
+
+    section header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5em;
+        letter-spacing: 0.1em;
+
+        transition: 2s ease;
+        cursor: pointer;
+    }
+
+    section header:hover {
+        letter-spacing: 0.2em;
+        transition: 200ms ease;
+    }
+
+    section header .separator {
+        width: 2px;
+        height: 2em;
+
+        background: rgba(255, 255, 255, 0.25);
+    }
+
+    section p {
+        text-align: center;
     }
 </style>

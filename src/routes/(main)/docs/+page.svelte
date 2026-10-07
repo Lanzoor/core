@@ -10,9 +10,8 @@
         <h1>Document Portal</h1>
 
         <p>
-            Hello there! This is a page where you can find all of my documents.<br
-            />
-            <i>Click one of the links below to warp into that page!</i>
+            <b>This is a page where you can find all of my documents.</b><br />
+            Most of them are just me overanalyzing some niche topic.
         </p>
     </header>
 
@@ -28,15 +27,15 @@
                 "/docs/linguistics",
             )?.description}
         </li>
+        <li>
+            <a href="/docs/tech">Tech</a> - {getPageData("/docs/tech")
+                ?.description}
+        </li>
     </ul>
 
     <h2>Other Documents</h2>
 
     <ul>
-        <li>
-            <a href="/api/docs/">API Documentation</a> - Official documentation for
-            the API of this website.
-        </li>
         <li>
             <a href="/blog/">Blog</a> - {getPageData("/blog")?.description}
         </li>

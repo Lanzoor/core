@@ -8,7 +8,7 @@
     export const metadata = {
         title: "core Has Been Completed",
         description:
-            "core has been completed after months of development. This is a recap of the completion of core, as well as what comes next.",
+            "A recap of core, its completion, as well as what comes next.",
         tags: ["important", "announcement", "blog", "core", "monthly-recap"],
         published: new Date("2026-08-13T00:00:00+09:00"),
     };
