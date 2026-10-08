@@ -633,22 +633,16 @@
     <h1>Linguistics</h1>
 
     <p>
-        I also enjoy taking them apart and figuring out how they actually work.
-    </p>
-
-    <p>
-        <b
-            >I love exploring grammar, pronunciation, writing systems, and other
-            aspects of linguistics.</b
-        >
+        <b>
+            I love studying grammar, pronunciation, writing systems, and other
+            aspects of linguistics.
+        </b>
         I want to explore how languages work, and furthermore help other people learn
-        languages as well.
+        languages as well. I've probably spent way too much time analyzing English
+        grammar.
     </p>
 
-    <p>
-        I also occasionally make my own languages
-        <span class="dim">(conlangs, constructed languages)</span>.
-    </p>
+    <p>I also occasionally make conlangs, I guess.</p>
 </section>
 
 <section id="other-interests">
@@ -721,19 +715,9 @@
             Antimatter Dimensions
         </div>
         ⬩
-        <div
-            class="stack col bright blue"
-            title="This is one of the first idle games I've ever played. It's peak."
-        >
-            Cell to Singularity
-        </div>
+        <div class="stack col bright blue">Cell to Singularity</div>
         ⬩
-        <div
-            class="stack col bright orange"
-            title="I don't get why people hate this so much. It's such a peak game."
-        >
-            Idle Slayer
-        </div>
+        <div class="stack col bright orange">Idle Slayer</div>
     </div>
 
     <div class="stacks">
@@ -746,14 +730,14 @@
             <span class="col bright blue">Ice</span>
         </div>
         ⬩
-        <div class="stack" title="click the rhombicosidodecahedrons">
+        <div
+            class="stack"
+            title="click the rhombicosidodecahedrons        to the beat"
+        >
             <span class="col bright magenta">osu!</span>
         </div>
         ⬩
-        <div
-            class="stack"
-            title="PHENOMENAL game btw. please check it out its ultra/peam"
-        >
+        <div class="stack" title="PHENOMENAL game btw. it changed my life">
             <span style="color: #ff0070">vivid</span>/<span
                 style="color: #00ffff">stasis</span
             >
@@ -766,10 +750,7 @@
     </div>
 
     <div class="stacks">
-        <div
-            class="stack col bright yellow"
-            title="brings me a lot of nostalgia"
-        >
+        <div class="stack col bright yellow" title="GEOMETRY DASH- epic drop">
             Geometry Dash
         </div>
         ⬩
@@ -794,12 +775,18 @@
     <p>Some of my other interests include:</p>
 
     <ul>
-        <li>Solving Rubik's cubes.</li>
         <li>
-            Listening to music, and playing instruments such as the drum and the
-            piano.
+            <b>Solving Rubik's cubes.</b> My PB / PR
+            <span class="dim">(yes you heard that right.)</span> on the 3x3 is 14.6
+            seconds.
         </li>
-        <li>Watching anime.</li>
+        <li>
+            <b
+                >Listening to music, and playing instruments such as the drum
+                and the piano.</b
+            >
+        </li>
+        <li><b>Watching anime.</b> yuri is so peak i swear</li>
     </ul>
 </section>
 

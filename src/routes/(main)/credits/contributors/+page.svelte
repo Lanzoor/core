@@ -55,31 +55,6 @@
 
         <div class="card">
             <img
-                src="/assets/contributors/kiui6.png"
-                alt="kiui6"
-                title="kiui6"
-            />
-
-            <div class="description">
-                <h1>
-                    <span lang="jp" class="jp">きゐ</span>
-                </h1>
-
-                <div class="roles">Security · Quality Assurance</div>
-
-                <p>
-                    A gigachad programmer from Russia who pointed out potential
-                    issues within the website and gave some great ideas.
-                </p>
-
-                <div class="quote">
-                    He is Russian. He's probably built different. 🥵🥶💀
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img
                 src="/assets/contributors/derukugi.png"
                 alt="derukugi"
                 title="derukugi"
@@ -109,27 +84,6 @@
     </p>
 
     <div class="cards">
-        <div class="card">
-            <img
-                src="/assets/contributors/default.png"
-                alt="conaxsilver"
-                title="conaxsilver"
-            />
-
-            <div class="description">
-                <h1>conaxsilver</h1>
-
-                <div class="roles">Quality Assurance · Supporter</div>
-
-                <p>
-                    A genius from Japan who gave some great quality assurance
-                    and bug reports for the website.
-                </p>
-
-                <div class="quote jp" lang="jp">むいむい！</div>
-            </div>
-        </div>
-
         <div class="card">
             <img
                 src="/assets/contributors/sweden_finlandia.hoi4.png"

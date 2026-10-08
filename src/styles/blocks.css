@@ -128,7 +128,8 @@ section.stretched {
 }
 
 main section:not(.disable-layout),
-main section header:not(.disable-layout) {
+main section header:not(.disable-layout),
+.enable-layout {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -136,7 +137,8 @@ main section header:not(.disable-layout) {
 }
 
 main section:not(.disable-spacing),
-main section header:not(.disable-spacing) {
+main section header:not(.disable-spacing),
+.enable-layout {
     gap: 1em;
 }
 
