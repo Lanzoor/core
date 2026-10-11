@@ -1,66 +1,64 @@
-@layer global {
-    :root {
-        --anchor: #aaa;
-        --anchor-hover: #777;
-    }
+:root {
+    --anchor: #aaa;
+    --anchor-hover: #777;
+}
 
-    code:not(.plain),
-    kbd:not(.plain) {
-        display: inline-block;
-        font-family: "JetBrains Mono";
-        padding: 4px 8px;
-        border-radius: 5px;
-    }
+code:not(.plain),
+kbd:not(.plain) {
+    display: inline-block;
+    font-family: "JetBrains Mono";
+    padding: 4px 8px;
+    border-radius: 5px;
+}
 
-    code:not(.plain) {
-        background: rgb(20, 13, 0);
-        color: rgb(255, 220, 140);
-        padding: 2px 6px;
-    }
+code:not(.plain) {
+    background: rgb(20, 13, 0);
+    color: rgb(255, 220, 140);
+    padding: 2px 6px;
+}
 
-    kbd:not(.plain) {
-        background: rgb(0, 18, 20);
-        color: rgb(140, 249, 255);
-        padding: 2px 6px;
-    }
+kbd:not(.plain) {
+    background: rgb(0, 18, 20);
+    color: rgb(140, 249, 255);
+    padding: 2px 6px;
+}
 
-    kbd.plain {
-        display: inline-block;
-        font-family: "JetBrains Mono";
-        color: #777;
-    }
+kbd.plain {
+    display: inline-block;
+    font-family: "JetBrains Mono";
+    color: #777;
+}
 
-    kbd.plain::before {
-        content: "<";
-    }
+kbd.plain::before {
+    content: "<";
+}
 
-    kbd.plain::after {
-        content: ">";
-    }
+kbd.plain::after {
+    content: ">";
+}
 
-    a.-block-anchor,
-    a.plain {
-        color: inherit;
-        cursor: pointer;
-        text-decoration: none;
-    }
+a.-block-anchor,
+a.plain {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
 
-    a:not(.-block-anchor):not(.plain) {
-        text-decoration: none;
-        display: inline-block;
+a:not(.-block-anchor):not(.plain) {
+    text-decoration: none;
+    display: inline-block;
 
-        color: var(--anchor);
+    color: var(--anchor);
 
-        transition: color 0.2s ease;
-    }
+    transition: color 0.2s ease;
+}
 
-    a:not(.-block-anchor):not(.plain):hover {
-        text-decoration: underline;
-        color: var(--anchor-hover);
-    }
+a:not(.-block-anchor):not(.plain):hover {
+    text-decoration: underline;
+    color: var(--anchor-hover);
+}
 
-    .ipa,
-    .ipa * {
-        color: var(--bright-purple);
-    }
+.ipa,
+.ipa * {
+    color: var(--bright-purple);
 }

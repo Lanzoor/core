@@ -42,9 +42,6 @@ strong {
     font-weight: 600;
 
     color: var(--text-bold);
-    transition:
-        text-shadow 0.2s,
-        color 0.2s;
 }
 
 h1,
@@ -55,7 +52,6 @@ h5,
 h6,
 th {
     color: var(--heading);
-    font-family: "Noto Sans Mono";
     font-weight: 400;
 }
 

@@ -138,6 +138,22 @@ export const sitemap: Page[] = [
         title: "Documents",
         children: [
             {
+                path: "/docs/gaming",
+                title: "Gaming",
+                description:
+                    "My documents related to games that I usually play.",
+
+                children: [
+                    {
+                        path: "/docs/gaming/how-to-do-the-dawn-hisomeru-voice",
+                        title: "How To Do The Dawn Hisomeru Voice",
+
+                        description:
+                            "An in-depth guide on how to sound like Dawn Hisomeru from the hit game vivid/stasis.",
+                    },
+                ],
+            },
+            {
                 path: "/docs/linguistics",
                 title: "Linguistics",
                 description: "My documents related to linguistics.",

@@ -38,7 +38,7 @@
 
 <style>
     :global(.-external-link) {
-        color: #fff;
+        color: #fff !important;
         display: inline-flex;
         align-items: baseline;
         justify-content: center;
