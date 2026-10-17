@@ -17,7 +17,7 @@
         {@render sidebar()}
     </nav>
 
-    <div class="enable-main">
+    <div class="enable-initial-padding main">
         {@render children()}
     </div>
 </div>
@@ -34,7 +34,7 @@
         overflow-y: auto;
     }
 
-    .enable-main {
+    .main {
         flex: 1;
         min-width: 0;
         height: 100vh;

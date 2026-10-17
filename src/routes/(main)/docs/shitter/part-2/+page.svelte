@@ -23,11 +23,17 @@
         worst mistakes we ever made.
     </p>
 
-    <p>So yeah. About two to three months later, Shitter crashed out, AGAIN.</p>
+    <Break height="50vh" />
+
+    <p>
+        So yeah. Around two or three months later, <b
+            >Shitter crashes out, AGAIN.</b
+        >
+    </p>
 
     <p>
         Of course we get super fucking mad. And then. Do you know what Shitter
-        does?
+        does? Take a wild guess.
     </p>
 
     <Break height="50vh" />
@@ -37,40 +43,48 @@
     <h1 style="font-size: 5em">HE MAKES <i>ANOTHER</i> DUMBFUCK ARG.</h1>
 
     <p>
-        Yeah. This dude literally has no remorse. This time it's somehow even
-        shittier. He is literally living up to his own name.
-    </p>
-
-    <p>
         <b>
-            Shitter committed SO MANY WAR CRIMES AND MISTAKES WITH THIS ARG.
+            Yeah. This dude literally has no regret. And, guess what. THIS TIME
+            IT'S SOMEHOW <i>EVEN SHITTIER</i>. He is literally living up to his
+            own name.
         </b>
     </p>
 
     <p>
         <b>
-            HE LITERALLY TOOK A PICTURE OF HIS CLASS, WITH ALL HIS CLASSMATES,
+            Shitter committed SO MANY WAR CRIMES AND MISTAKES WITH THIS ARG.<br
+            />
+            HE LITERALLY TOOK A PICTURE OF HIS CLASSMATES,
             <i
                 ><u style="font-size: 1.5em"
                     >WITHOUT ANY PERMISSION WHATSOEVER,</u
                 ></i
             > USED A FREE PHOTOMOSH FILTER, PUT DISTORTED INSTANCES OF HAN CHARACTERS
-            ON THEIR FACES, AND POSTED IT.
+            ON THEIR FACES, AND POSTED IT FOR EVERYONE TO SEE.
         </b>
-
-        Last time I checked teenagers didn't want to be used as a tool to fuel
-        someone's weird ass desires, right? (Shitter also kinda doxxed himself
-        in his school after this 😭😭)
     </p>
 
-    <p>Here is the picture.</p>
+    <p>
+        Last time I checked, teenagers don't want to be used as a tool to fuel
+        someone's weirdass catshit dogshit batshit ARG. <span class="dim"
+            >(Shitter also kinda doxxed himself his school after this 😭😭)</span
+        >
+    </p>
 
-    <img src={shittyARG} alt="Shitty ARG made by Shitter" style="width: 40em" />
+    <details class="enable-layout">
+        <summary> Here is the picture. Use it at your own will. </summary>
 
-    <span class="dim"
-        >(editors note: WHAT UNFORTUNATE SOUL DID BRO HAVE TO NAME “HORSE” IN
-        CJK - TheCasualGuy)
-    </span>
+        <img
+            src={shittyARG}
+            alt="Shitty ARG made by Shitter"
+            style="width: 40em"
+        />
+
+        <p class="dim">
+            (editors note: WHAT UNFORTUNATE SOUL DID BRO HAVE TO NAME "HORSE" IN
+            CJK - TheCasualGuy)
+        </p>
+    </details>
 
     <p>
         There were also some diagrams like this made by Shitter himself, but
@@ -107,11 +121,11 @@
 
     <p>
         <i>
-            (There was a server made by Shitter himself to spread clues and it
-            had weird Han characters. Of course no one paid attention and it
-            slowly got forgotten, because no one wanted to solve this
-            shitfuckery. I am the only one who vividly remembers this server,
-            but I forgot to take any screenshots. - Lanzoor)
+            (There was a server made by Shitter himself to spread clues related
+            to the second ARG.<br />
+            The channel names and descriptions had weird Han characters. Of course
+            no one paid attention because the ARG was just shitty. I am the only one
+            who vividly remembers this server existing. - Lanzoor)
         </i>
     </p>
 

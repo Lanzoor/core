@@ -4,13 +4,13 @@
     import { navigationOverlay } from "$lib/overlays.svelte";
     import { Ba, Ia } from "../Links";
 
-    type TopPanelDestination = {
+    type NavigationLink = {
         href: string;
         name: string;
         external?: boolean;
     };
 
-    const topPanelDestinations: TopPanelDestination[] = [
+    const navigationLinks: NavigationLink[] = [
         { href: "/", name: "welcome!" },
         { href: "/profile", name: "profile" },
         { href: "/about", name: "about" },
@@ -21,10 +21,10 @@
     const HIDE_THRESHOLD = 100;
     let hidden = $state(false);
 
-    function isCurrent(destination: TopPanelDestination) {
-        return destination.href === "/"
+    function isCurrent(navigationLink: NavigationLink) {
+        return navigationLink.href === "/"
             ? page.url.pathname === "/"
-            : page.url.pathname.startsWith(destination.href);
+            : page.url.pathname.startsWith(navigationLink.href);
     }
 
     onMount(() => {
@@ -55,7 +55,7 @@
     </Ba>
 
     <nav class="links">
-        {#each topPanelDestinations as destination}
+        {#each navigationLinks as destination}
             {#if destination.external}
                 <Ia
                     href={destination.href}

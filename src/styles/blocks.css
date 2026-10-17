@@ -127,8 +127,9 @@ section.stretched {
     }
 }
 
-main section:not(.disable-layout),
-main section header:not(.disable-layout),
+section:not(.disable-layout),
+section header:not(.disable-layout),
+details:not(.disable-layout),
 .enable-layout {
     display: flex;
     flex-direction: column;
@@ -136,18 +137,17 @@ main section header:not(.disable-layout),
     justify-content: flex-start;
 }
 
-main section:not(.disable-spacing),
-main section header:not(.disable-spacing),
+section:not(.disable-spacing),
+section header:not(.disable-spacing),
 .enable-layout {
     gap: 1em;
 }
 
 main > section:first-of-type:not(.disable-initial-padding),
-.enable-main > section:first-of-type:not(.disable-initial-padding),
-.enable-initial-padding:not(.disable-initial-padding) {
-    padding-top: calc(20vh + 4em);
+.enable-initial-padding {
+    padding-top: calc(20vh + 4em) !important;
 }
 
 main section.enable-padding {
-    padding: 4em;
+    padding: 3em;
 }
