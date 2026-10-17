@@ -14,15 +14,15 @@
     import Konami from "$lib/components/EasterEggs/Konami.svelte";
 
     import { page } from "$app/state";
-    import { pageIndex } from "$lib/map";
+    import { defaultOptions, pageIndex } from "$lib/map";
     import { normalizePath } from "$lib/path";
     import { cleanupOldData } from "$lib/cleanup";
 
     const currentPage = $derived(
-        pageIndex.get(normalizePath(page.url.pathname)) ?? pageIndex.get("/")!,
+        pageIndex.get(normalizePath(page.url.pathname)),
     );
 
-    const options = $derived(currentPage.options);
+    const options = $derived(currentPage?.options ?? defaultOptions);
 
     let { children } = $props();
 
@@ -44,30 +44,30 @@
 </script>
 
 <svelte:head>
-    {#if options.useSitemapMetadata}
+    {#if options && options.useSitemapMetadata}
         <title>
-            {currentPage.title
+            {currentPage?.title
                 ? `${currentPage.title}${currentPage.options.titlePad ? " | lanzoor.dev" : ""}`
                 : "lanzoor.dev"}
         </title>
         <meta
             property="og:type"
-            content={currentPage.metadata?.ogType ?? "website"}
+            content={currentPage?.metadata?.ogType ?? "website"}
         />
         <meta
             property="og:title"
-            content={currentPage.metadata?.ogTitle ??
-                currentPage.title ??
+            content={currentPage?.metadata?.ogTitle ??
+                currentPage?.title ??
                 "lanzoor.dev"}
         />
         <meta
             property="og:description"
-            content={currentPage.description ?? ""}
+            content={currentPage?.description ?? ""}
         />
-        <meta name="description" content={currentPage.description ?? ""} />
+        <meta name="description" content={currentPage?.description ?? ""} />
         <meta
             name="theme-color"
-            content={currentPage.metadata?.themeColor ?? "#6f27f5"}
+            content={currentPage?.metadata?.themeColor ?? "#6f27f5"}
         /><meta property="og:url" content={page.url.href} />
     {/if}
 </svelte:head>

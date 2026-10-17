@@ -5,6 +5,10 @@
     let { children } = $props();
 </script>
 
+<svelte:head>
+    <title>Shitter Explained, For Real!!</title>
+</svelte:head>
+
 {#snippet sidebar()}
     <Ba href="/docs/shitter/intro">
         <h2>Shitter Explained,<br />For Real!!</h2>
