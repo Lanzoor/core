@@ -1,6 +1,7 @@
 <script lang="ts">
     import { page } from "$app/state";
     import { getPageData, pageIndex } from "$lib/map";
+    import { Ia } from "../Links";
 
     const currentPage = $derived(getPageData(page.url.pathname));
 
@@ -30,8 +31,8 @@
             <div class="separator">›</div>
         {/if}
 
-        <a href={crumb.path}>
+        <Ia href={crumb.path} class="keep-color">
             {crumb.path === "/" ? "Home" : crumb.title}
-        </a>
+        </Ia>
     {/each}
 </div>

@@ -1,19 +1,27 @@
 :root {
-    --th-bg: rgba(255, 255, 255, 0.15);
     --hr-bg: rgba(255, 255, 255, 0.1);
 }
 
-main table:not(.plain),
-main th:not(.plain),
-main td:not(.plain) {
+table:not(.plain),
+th:not(.plain),
+td:not(.plain) {
     align-self: flex-start;
 
     text-align: center;
     border-collapse: collapse;
     padding: 0.75em;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+
     transition:
         background-color 0.2s,
         box-shadow 0.2s;
+}
+
+th:not(.plain) {
+    color: var(--text-bold);
+    font-weight: 500;
+
+    background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -54,12 +62,7 @@ pre:not(.plain) code {
     min-width: max-content;
 }
 
-main th:not(.plain) {
-    background: var(--th-bg);
-    color: var(--text-bold);
-}
-
-main blockquote:not(.plain) {
+blockquote:not(.plain) {
     border-left: 4px solid rgba(255, 255, 255, 0.25);
     margin-left: 0;
     background: rgba(255, 255, 255, 0.08);
@@ -67,33 +70,33 @@ main blockquote:not(.plain) {
     padding: 0.5em 1em;
 }
 
-main blockquote:not(.plain).info {
+blockquote:not(.plain).info {
     border-left-color: rgb(92, 255, 97);
     background: rgba(21, 255, 0, 0.08);
 }
 
-main blockquote:not(.plain).warning {
+blockquote:not(.plain).warning {
     border-left-color: rgb(255, 222, 92);
     background: rgba(255, 255, 0, 0.08);
 }
 
-main blockquote:not(.plain).error {
+blockquote:not(.plain).error {
     border-left-color: rgb(255, 92, 92);
     background: rgba(255, 0, 0, 0.08);
 }
 
-main ul:not(.plain),
-main ol:not(.plain) {
+ul:not(.plain),
+ol:not(.plain) {
     margin: 0 1em;
     padding: 0;
 }
 
-main li:not(.plain) {
+li:not(.plain) {
     margin: 0.25em 0.5em;
 }
 
-main ul:not(.plain) ul:not(.plain),
-main ol:not(.plain) ol:not(.plain) {
+ul:not(.plain) ul:not(.plain),
+ol:not(.plain) ol:not(.plain) {
     list-style-type: circle;
     margin-top: 0.5em;
     margin-left: 1em;
@@ -148,6 +151,6 @@ main > section:first-of-type:not(.disable-initial-padding),
     padding-top: calc(20vh + 4em) !important;
 }
 
-main section.enable-padding {
+section.enable-padding {
     padding: 3em;
 }

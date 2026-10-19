@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { Ia } from "$lib/components/Links";
     import Breadcrumbs from "$lib/components/Navigation/Breadcrumbs.svelte";
     import type { BlogEntry } from "$lib/types";
     import entries from "./(entries)/entries.json";
@@ -146,9 +147,9 @@
         {#each group as blog}
             <div>
                 <h2>
-                    <a href={`/blog/${blog.slug}`}>
+                    <Ia href={`/blog/${blog.slug}`} class="keep-color">
                         {blog.title}
-                    </a>
+                    </Ia>
                 </h2>
 
                 <p>

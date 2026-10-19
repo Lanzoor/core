@@ -51,23 +51,26 @@
     </p>
 
     <p>
+        By the way, can we discuss the WAR CRIMES Shitter committed while making
+        this ARG?
+    </p>
+
+    <p>
         <b>
-            Shitter committed SO MANY WAR CRIMES AND MISTAKES WITH THIS ARG.<br
-            />
-            HE LITERALLY TOOK A PICTURE OF HIS CLASSMATES,
+            At one point, he LITERALLY took a picture of his <i>CLASSMATES</i>,
             <i
                 ><u style="font-size: 1.5em"
-                    >WITHOUT ANY PERMISSION WHATSOEVER,</u
+                    >without ANY permission whatsoever,</u
                 ></i
-            > USED A FREE PHOTOMOSH FILTER, PUT DISTORTED INSTANCES OF HAN CHARACTERS
-            ON THEIR FACES, AND POSTED IT FOR EVERYONE TO SEE.
+            > used a FREE PHOTOMOSH FILTER, put distorted instances of Han characters
+            ALL OVER THEIR FACES, and POSTED IT without ANY second thought.
         </b>
     </p>
 
     <p>
         Last time I checked, teenagers don't want to be used as a tool to fuel
         someone's weirdass catshit dogshit batshit ARG. <span class="dim"
-            >(Shitter also kinda doxxed himself his school after this 😭😭)</span
+            >(During this Shitter also kinda doxxed his school 😭😭)</span
         >
     </p>
 
@@ -87,36 +90,10 @@
     </details>
 
     <p>
-        There were also some diagrams like this made by Shitter himself, but
-        they are now lost to history. Shitter also tried to get under disguise
-        under the account <code>@item_poleggik</code> to spy on Lanzoor's
-        server, but it quickly got noticed and handled.
-
-        <b>
-            It would be later revealed this account was owned both by Shitter
-            and Venda, one of his "friends".
-        </b>
-    </p>
-
-    <p>
-        He also just fucked up Japanese (HE IDOLIZES JAPAN) which made the group
-        members PISSED AS FUCK. Lanzoor knows more Japanese than this guy even
-        though he's Korean just because he TRIES, while SHITTER DOESN'T EVEN
-        TRY.
-    </p>
-
-    <p>
-        This ARG worked similarly to the previous Shitter ARG, where Shitter
-        would randomly DM the members. This ARG did NOT get solved. Not because
-        it was hard, but because
-
-        <b>
-            WHO IN THE ACTUAL HYPERARTICULATED BILABIAL-RHONTIC DELTANATED TRILL
-            WOULD EVEN WANT TO SOLVE THIS??
-        </b>
-
-        Shitter already gave enough work for us to do, and now he wanted to put
-        us in that pain all again.
+        <b
+            >There were also some diagrams like this made by Shitter himself,
+            but they're now lost to history.</b
+        >
     </p>
 
     <p>
@@ -129,9 +106,47 @@
         </i>
     </p>
 
+    <p>
+        Shitter also tried to get under disguise under the account
+        <code>@item_poleggik</code>
+        to spy on Lanzoor's server, but it quickly got noticed and banned.
+
+        <b>
+            It would be later revealed this account was co-owned by Shitter and
+            Venda, one of his "friends".
+        </b>
+    </p>
+
+    <p>
+        He also just fucked up Japanese (HE IDOLIZES JAPAN) which made the group
+        members (especially Lanzoor) PISSED AS FUCK. Lanzoor knows more Japanese
+        than this guy even though he's Korean just because he TRIES, while
+        SHITTER DOESN'T EVEN TRY.
+    </p>
+
+    <p>
+        <b
+            >This ARG worked similarly to the previous Shitter ARG, where
+            Shitter would randomly DM the members with clues.</b
+        >
+    </p>
+
+    <p>
+        This ARG ended up never getting solved. Not because it was hard, but
+        because
+
+        <b>
+            WHO IN THE ACTUAL HYPERARTICULATED BILABIAL-RHONTIC DELTANATED TRILL
+            WOULD EVEN WANT TO SOLVE THIS??
+        </b>
+
+        Shitter already gave enough work for us to do, and now he wanted to put
+        us in that pain all again.
+    </p>
+
     <p>And then Shitter leaves and is gone forever.</p>
 
-    <Break height="5em" />
+    <Break height="19em" />
 
     <p>
         ...of course not we're only at Part 2 what are we even trying to hide at
@@ -146,27 +161,42 @@
     </p>
 
     <p>
-        He came back with the nickname "furofuro", which later got changed to
-        "Pℓ4y3r". Lanzoor found Shitter in the Celestial Stronghold server
-        (owned by Digamma) and furofuro literally begged Lanzoor for
-        forgiveness. Do you know the funniest thing here?
+        <b
+            >He came back with the nickname "furofuro", which later got changed
+            into "Pℓ4y3r"</b
+        >, whose name is a reference to one of his old rebrands, "Pl4y3r".
+    </p>
+
+    <p>
+        <b>
+            Lanzoor first found Shitter in the Celestial Stronghold server.
+            <span class="dim">(owned by Digamma)</span>
+        </b>
+    </p>
+
+    <p>
+        ...of course, Shitter literally begged Lanzoor and the group members for
+        forgiveness. Guess what excuse bro uses.
     </p>
 
     <Break height="50vh" />
 
+    <p>Ding ding ding! That's correct!</p>
+
     <h2>
-        HE TRIED TO JUSTIFY ALL OF HIS PREVIOUS ACTIONS BY MAKING AN EXCUSE
-        ABOUT """POOR LIVING CONDITION."""
+        HE TRIES TO JUSTIFY ALL OF HIS PREVIOUS ACTIONS BY MAKING AN EXCUSE
+        ABOUT HIS """POOR LIVING CONDITIONS."""
     </h2>
 
     <h1 style="font-size: 5em"><i>AGAIN.</i></h1>
 
     <p>
-        Very predictable I know. Being the dumbest fuck Lanzoor is, he decided
-        to forgive him after thinking for a while, while kekeee and TheCasualGuy
-        took longer to forgive him for obvious reasons. Lanzoor even tried to
-        negotiate kekeee into believing that he should forgive him because
-        Lanzoor was in his dumbfuck arc. (oh my god why did i even do this 😭)
+        Very fucking predictable I know. Being the dumbest fuck Lanzoor is, he
+        decided to forgive him after thinking for a while, while kekeee and
+        TheCasualGuy took longer to forgive him for obvious reasons. Lanzoor
+        even tried to negotiate kekeee into believing that he should forgive him
+        because Lanzoor was in his dumbfuck arc. (oh my god why did i even do
+        this 😭)
     </p>
 
     <p>

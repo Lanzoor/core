@@ -74,7 +74,7 @@
         on September 27th, 2021, with the global version eventually releasing on
         October 9th, 2025, published on platforms such as Google Play and the
         App Store. The game has undoubtedly changed the course of human history
-        forever.
+        forever. /s
     </p>
 
     <p>
@@ -87,6 +87,21 @@
     <p>
         This is like the fifth time Shitter ruined a certain fandom or a game
         for us.
+    </p>
+
+    <p>
+        Speaking of Trickcal,
+        <b>
+            On August 23rd, Shitter made a brand new alt account, which he used
+            to join the CoS server undercover the day after.
+        </b>
+    </p>
+
+    <p>
+        ...guess what Shitter behavior he did.
+        <b>HE LITERALLY SENT TRICKCAL MEMES.</b>
+        (oh my god this is so fucking painfully obvious 😭) After approval from Lanzoor
+        and his shitter-detector 2000™, he was banned off of CoS server pretty quickly.
     </p>
 
     <h2>5-2: THE FINAL BLOW (late 2026)</h2>

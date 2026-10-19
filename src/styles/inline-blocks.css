@@ -1,23 +1,18 @@
-:root {
-    --anchor: #aaa;
-    --anchor-hover: #777;
-}
-
-code:not(.plain),
-kbd:not(.plain) {
+code,
+kbd {
     display: inline-block;
     font-family: "JetBrains Mono";
     padding: 4px 8px;
     border-radius: 5px;
 }
 
-code:not(.plain) {
+code {
     background: rgb(20, 13, 0);
     color: rgb(255, 220, 140);
     padding: 2px 6px;
 }
 
-kbd:not(.plain) {
+kbd {
     background: rgb(0, 18, 20);
     color: rgb(140, 249, 255);
     padding: 2px 6px;
@@ -44,18 +39,26 @@ a.plain {
     text-decoration: none;
 }
 
-a:not(.-block-anchor):not(.plain) {
+a:not(.-block-anchor) {
     text-decoration: none;
     display: inline-block;
 
-    color: var(--anchor);
+    color: #aaa;
 
     transition: color 0.2s ease;
 }
 
-a:not(.-block-anchor):not(.plain):hover {
+a:not(.-block-anchor):hover {
     text-decoration: underline;
-    color: var(--anchor-hover);
+    color: #777;
+}
+
+main > section a:not(.block-anchor):not(.keep-color) {
+    color: var(--bright-purple);
+}
+
+main > section a:not(.block-anchor):not(.keep-color):hover {
+    color: var(--purple);
 }
 
 .ipa,

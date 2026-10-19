@@ -119,9 +119,12 @@
             {#each group.entries as entry}
                 <li>
                     <h2>
-                        <a href="/projects/core/changelog/{entry.version}">
+                        <Ia
+                            href="/projects/core/changelog/{entry.version}"
+                            class="keep-color"
+                        >
                             {entry.version}
-                        </a>{#if entry.title}: {entry.title}{/if}<br />
+                        </Ia>{#if entry.title}: {entry.title}{/if}<br />
                     </h2>
 
                     <p>
