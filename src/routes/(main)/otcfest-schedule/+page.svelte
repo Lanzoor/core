@@ -11,6 +11,11 @@
         schedule may change unexpectedly depending on the situation.
     </p>
 
+    <p class="dim">
+        Note: +0:00 is 7:27 PM, GMT+13. The event lasts 3 days, 4 hours each
+        day.
+    </p>
+
     <div class="scrollable">
         <table>
             <thead>

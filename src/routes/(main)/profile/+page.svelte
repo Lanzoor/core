@@ -186,13 +186,6 @@
             </div>
         </div>
 
-        <div class="tags">
-            <span class="tag">he/him</span> ⬩ <span class="tag">korean</span> ⬩
-            <span class="tag">programmer</span>
-            ⬩ <span class="tag">languages</span>
-            ⬩ <span class="tag">science</span>
-        </div>
-
         <div class="description">
             <b
                 >My name is <span class="col bright purple">Lapis Lanzuli</span
@@ -243,26 +236,29 @@
     </p>
 
     <p>
-        <b
-            >We use the glorious GMT+9 <span class="dim"
+        <b>
+            We use the glorious GMT+9 <span class="dim"
                 >(KST, Korean Standard Time)</span
-            > timezone.</b
-        ><br />
-        It is currently <b>{time}</b>, <b>{date}</b> in my location.
-        <span class="dim">(updated every 5 seconds)</span><br />
-        Feel free to send me messages whether I'm online or not!
+            > timezone.
+        </b><br />
+        It is currently
+        <span
+            title="This counter is updated every 5 seconds. I don't want to overload your browser, yk."
+        >
+            <b>{time}</b>, <b>{date}</b>
+        </span> in my location. Feel free to send me messages regardless of this counter.
     </p>
 
     <h1><span class="col bright yellow">[ 03 ]</span> personality & meta</h1>
 
     <p>
         <b>My MBTI type is <span class="col bright cyan">INTP</span>.</b><br />
-        I absolutely <i>HATE</i> memorizing stuff without second thought. I want
+        I absolutely <i>HATE</i> memorizing stuff without second thought. I like
         to understand why and how things work.<br />
     </p>
 
     <p>
-        I am <i>extremely</i> introverted unless I'm online.<br />
+        I am <i>EXTREMELY</i> introverted unless I'm online.<br />
         I have social anxiety and chronic depression. I also show symptoms associated
         with autism, ADHD, and OCD. Please ignore me if you manage to find me in real
         life. /hj
@@ -309,15 +305,9 @@
         </p>
 
         <p>
-            <b>
-                I actually started taking programming seriously in around
-                <span class="col bright green">late 2024</span>.
-            </b>
-        </p>
-
-        <p>
-            Since then, it's become one of the things I spend the most time
-            doing.
+            I actually started taking programming seriously in around
+            <span class="col bright green">late 2024</span>. Since then it's
+            become one of my favorite hobbies.
         </p>
 
         <h2>🌐 Web Development</h2>
@@ -335,7 +325,9 @@
         <h3>Frameworks</h3>
 
         <div class="stacks">
-            <div class="stack svelte">SvelteKit</div>
+            <div class="stack svelte" title="SVELTE SUPREMACY RAHHHH">
+                SvelteKit
+            </div>
             ⬩
             <div class="stack next">Next.js</div>
         </div>
@@ -375,11 +367,12 @@
             >
             development as well! I've built
             <b
-                >REST APIs, Discord bots, database integrations, and the API
-                powering this website <span class="dim"
-                    >(which probably has more uptime than github 💀)</span
-                ></b
-            >.
+                >REST APIs, Discord bots, database integrations, and API
+                systems.
+            </b>
+            <span class="dim"
+                >(my API systems prob have more uptime than github 💀)</span
+            >
         </p>
 
         <h2>🖥️ General Programming</h2>
@@ -420,16 +413,10 @@
         </p>
 
         <p>
-            Nowadays, though,
-
-            <b>
-                I usually use Python as a scripting language and
-
-                <span class="col bright green">
-                    automate repetitive tasks
-                </span>,</b
-            >
-            such as making backups and running long commands.
+            I also use Python for
+            <span class="col bright green">automating repetitive tasks</span>
+            (such as making backups and running long commands) and
+            <span class="col bright cyan">cybersec</span> utilities.
         </p>
 
         <h1>🔐 Cybersecurity</h1>
@@ -484,8 +471,8 @@
         </p>
 
         <p>
-            I also have experience with managing virtual machines. They're
-            pretty cool I guess.
+            I also have experience with managing virtual machines because why
+            not. They're pretty cool I guess.
         </p>
 
         <p>
@@ -553,6 +540,8 @@
                 friends online. This method was very effective for me because I was
                 able to learn while actually enjoying it.
             </p>
+
+            <p>I'm still a bit weak at language output, though.</p>
         </li>
         <li>
             <h3>
@@ -573,9 +562,8 @@
             </p>
 
             <p>
-                As a Korean speaker, I found Japanese relatively easy because
-                the two languages share similar grammar and vocabulary roots. I
-                enjoy studying Japanese by comparing it with Korean.
+                As a Korean speaker I find Japanese relatively easy because the
+                two languages share similar grammar and vocabulary roots.
             </p>
         </li>
         <li>
@@ -642,7 +630,7 @@
         grammar.
     </p>
 
-    <p>I also occasionally make conlangs, I guess.</p>
+    <p>I also occasionally spend my time making conlangs.</p>
 </section>
 
 <section id="other-interests">
@@ -662,7 +650,7 @@
 
     <p>
         I enjoy studying most branches of science, but I especially like <b
-            >🔭 astronomy, ⚛️ physics, and 🧪 chemistry.</b
+            >astronomy, physics, and chemistry.</b
         >
     </p>
 
@@ -679,9 +667,6 @@
             I <i>really</i> enjoy solving math problems in my free time, especially
             calculus and geometry.
         </b>
-
-        Not because I like to brag, but because I'm genuinely fascinated by
-        math. I'm not the best at it, but I try to gradually improve every day.
     </p>
 
     <p>
@@ -694,7 +679,9 @@
 
     <p>
         <b>I often post funny and goofy videos to YouTube.</b>
-        (<Ia external href="/projects/videos">link</Ia>)
+        (<Ia external href="/projects/videos">link</Ia>) Most of them are just
+        inner jokes and memes you'll probably NEVER understand but I
+        <i>occasionally</i> make quality content.
     </p>
 
     <h2>Gaming</h2>
@@ -737,20 +724,18 @@
             <span class="col bright magenta">osu!</span>
         </div>
         ⬩
-        <div class="stack" title="PHENOMENAL game btw. it changed my life">
+        <div class="stack" title="PHENOMENAL game btw. life/changing">
             <span style="color: #ff0070">vivid</span>/<span
                 style="color: #00ffff">stasis</span
             >
         </div>
     </div>
 
-    <div hidden>
-        vivid/stasis used to be here, but it's kinda broken on linux<br />
-        sadge
-    </div>
-
     <div class="stacks">
-        <div class="stack col bright yellow" title="GEOMETRY DASH- epic drop">
+        <div
+            class="stack col bright yellow"
+            title="duh duh duh duh dudududududududu- GEOMETRY DASH *epic drop*"
+        >
             Geometry Dash
         </div>
         ⬩
@@ -776,7 +761,7 @@
 
     <ul>
         <li>
-            <b>Solving Rubik's cubes.</b> My PB / PR
+            <b>Solving Rubik's cubes.</b> My PB & PR
             <span class="dim">(yes you heard that right.)</span> on the 3x3 is 14.6
             seconds.
         </li>
@@ -891,25 +876,6 @@
 
     #intro .description {
         padding: 0 5%;
-    }
-
-    #intro .tags {
-        text-align: center;
-        font-size: 1.2em;
-    }
-
-    #intro .tags .tag {
-        color: rgba(100, 100, 100, 0.9);
-        transition: 2s ease;
-    }
-
-    #intro .tags .tag:hover {
-        color: rgba(200, 200, 200, 0.9);
-        letter-spacing: 0.1em;
-        cursor: pointer;
-        transform: scale(1.1);
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-        transition: 0.5s ease;
     }
 
     #bio {
