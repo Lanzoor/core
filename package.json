@@ -16,21 +16,21 @@
     "devDependencies": {
         "@sveltejs/adapter-auto": "^7.0.1",
         "@sveltejs/adapter-vercel": "^6.3.4",
-        "@sveltejs/kit": "^2.63.0",
-        "@sveltejs/vite-plugin-svelte": "^7.1.2",
-        "@types/node": "^26.1.1",
-        "prettier": "^3.9.1",
+        "@sveltejs/kit": "^2.70.3",
+        "@sveltejs/vite-plugin-svelte": "^7.3.1",
+        "@types/node": "^26.6.5",
+        "prettier": "^3.9.10",
         "prettier-plugin-svelte": "^4.1.1",
-        "svelte": "^5.56.1",
-        "svelte-check": "^4.6.0",
-        "tsx": "^4.23.0",
+        "svelte": "^5.57.2",
+        "svelte-check": "^4.7.7",
+        "tsx": "^4.23.15",
         "typescript": "^6.0.3",
-        "vite": "^8.0.16"
+        "vite": "^8.3.5"
     },
     "dependencies": {
         "decimal.js": "^10.6.0",
-        "katex": "^0.18.1",
-        "shiki": "^4.4.3"
+        "katex": "^0.18.10",
+        "shiki": "^4.5.0"
     },
     "packageManager": "pnpm@12.9.1+sha512.06b055fff5cd20dc12781de173ced3310ce0951bf2ec620211a16045d5444d5c93a663210764ef29a653a610459ba0368f0e74f84d80c54723cf95aae7bc0d6d"
 }
