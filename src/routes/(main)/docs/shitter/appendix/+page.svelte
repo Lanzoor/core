@@ -28,7 +28,7 @@
         attention, and giving attention is helping him. We are taking our risks
         for more document material. Please do not find his account and message
         Shitter just to harass him. Seriously, do not do that, or else...
-    </p>``
+    </p>
 
     <h2 style="color: red; font-family: serif; filter: contrast(20) blur(2px);">
         He might even get interested in <i>you</i>.

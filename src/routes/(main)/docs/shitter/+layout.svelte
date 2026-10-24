@@ -1,6 +1,6 @@
 <script lang="ts">
     import Sidebar from "$lib/components/Layouts/Sidebar.svelte";
-    import { Ba } from "$lib/components/Links";
+    import { Ba, Ia } from "$lib/components/Links";
 
     let { children } = $props();
 </script>
@@ -14,25 +14,25 @@
         <h2>Shitter Explained,<br />For Real!!</h2>
     </Ba>
 
-    <a href="/docs/shitter/part-0">
+    <Ia href="/docs/shitter/part-0">
         Part 0: <span class="dim">A SHOT IN THE DARK</span>
-    </a>
-    <a href="/docs/shitter/part-1">
+    </Ia>
+    <Ia href="/docs/shitter/part-1">
         Part 1: <span class="dim">NO SOUND, NO MEMORY</span>
-    </a>
-    <a href="/docs/shitter/part-2">
+    </Ia>
+    <Ia href="/docs/shitter/part-2">
         Part 2: <span class="dim">SHIP OF FOOLS</span>
-    </a>
-    <a href="/docs/shitter/part-3">
+    </Ia>
+    <Ia href="/docs/shitter/part-3">
         Part 3: <span class="dim">THE WITLESS</span>
-    </a>
-    <a href="/docs/shitter/part-4">
+    </Ia>
+    <Ia href="/docs/shitter/part-4">
         Part 4: <span class="dim">DEATH AT 20,000 VOLTS</span>
-    </a>
-    <a href="/docs/shitter/part-5">
+    </Ia>
+    <Ia href="/docs/shitter/part-5">
         Part 5: <span class="dim">HEART OF THE SUNRISE</span>
-    </a>
-    <a href="/docs/shitter/appendix">Appendix</a>
+    </Ia>
+    <Ia href="/docs/shitter/appendix">Appendix</Ia>
 {/snippet}
 
 <Sidebar {sidebar} class="shitter-sidebar enable-initial-padding">
